@@ -1,24 +1,96 @@
 # README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|mail|string|null: false, unique:true|
+|birthday|integer|null: false|
+|residence|string|null:false|
+|gender|integer|null:false|
 
-* Ruby version
+has_many :images
+has_many :messages
+has_many :groups
+has_one  :profile
+has_many :followings
+has_many :followers
+has_many :communities, through: :members
 
-* System dependencies
+## user_imagesテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|content|string||
+|user_id|references|null: false, foreign_key:true|
+|status|integer||
 
-* Database creation
+belongs_to :user
 
-* Database initialization
+## profilesテーブル
 
-* How to run the test suite
+|Column|Type|Options|
+|------|----|-------|
+|age|integer||
 
-* Services (job queues, cache servers, search engines, etc.)
+belongs_to :user
 
-* Deployment instructions
+## followingテーブル
 
-* ...
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+
+has_many :followers, through: :relations
+belongs_to :user
+
+## followersテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key:true|
+
+has_many :followings, through: :relations
+belongs_to :user
+
+## relationshipsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|following_id|references|null: false, foreign_key:true|
+|followers_id|references|null: false, foreign_key:true|
+
+belongs_to :following
+belongs_to :follower
+
+
+## messagesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|content|string|null: false|
+|rerationsships_id|integer|null: false, foreign_key:true|
+|image_url|string||
+
+belongs_to :relations
+
+## communitiesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|category|integer|null: false|
+|community_name|string|null: false|
+|image_url|string|null: false|
+
+has_many :users, through: :members
+
+## membersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|community_id|integer|null: false, foreign_key: true|
+
+belongs_to :community
+belongs_to :user
