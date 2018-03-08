@@ -69,8 +69,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|follow_to_man|references|null: false, foreign_key:true|
-|follow_to_female|references|null: false, foreign_key:true|
+|like_man|references|null: false, foreign_key:true|
+|like_female|references|null: false, foreign_key:true|
 |match_man_id|referances|null: false, foreign_key:true|
 |match_female_id|referances|null: false, foreign_key:true|
 
