@@ -12,11 +12,10 @@
 |gender|integer|null:false|
 
 has_many :images
-has_many :messages
 has_many :groups
 has_one  :profile
-has_many :followings
-has_many :followers
+has_one :female
+has_one :man
 has_many :communities, through: :members
 
 ## user_imagesテーブル
@@ -33,37 +32,40 @@ belongs_to :user
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|references|null: false, foreign_key:true|
 |age|integer||
 
 belongs_to :user
 
-## followingテーブル
+## mansテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key:true|
 
-has_many :followers, through: :relations
+has_many :followers, through: :relationships
 belongs_to :user
 
-## followersテーブル
+## femalesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key:true|
 
-has_many :followings, through: :relations
+has_many :followings, through: :relationships
 belongs_to :user
 
 ## relationshipsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|following_id|references|null: false, foreign_key:true|
-|followers_id|references|null: false, foreign_key:true|
+|follow_to_man|references|null: false, foreign_key:true|
+|follow_to_female|references|null: false, foreign_key:true|
+|match_man_id|referances|null: false, foreign_key:true|
+|match_female_id|referances|null: false, foreign_key:true|
 
-belongs_to :following
-belongs_to :follower
+belongs_to :man
+belongs_to :female
 
 
 ## messagesテーブル
@@ -74,7 +76,7 @@ belongs_to :follower
 |rerationsships_id|integer|null: false, foreign_key:true|
 |image_url|string||
 
-belongs_to :relations
+belongs_to :relationships
 
 ## communitiesテーブル
 
