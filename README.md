@@ -11,12 +11,14 @@
 |residence|string|null:false|
 |gender|integer|null:false|
 
-has_many :images
-has_many :groups
-has_one  :profile
-has_one :female
-has_one :man
-has_many :communities, through: :members
+### Association
+
+- has_many :images
+- has_many :groups
+- has_one  :profile
+- has_one :female
+- has_one :man
+- has_many :communities, through: :members
 
 ## user_imagesテーブル
 
@@ -26,7 +28,9 @@ has_many :communities, through: :members
 |user_id|references|null: false, foreign_key:true|
 |status|integer||
 
-belongs_to :user
+### Association
+
+- belongs_to :user
 
 ## profilesテーブル
 
@@ -35,7 +39,9 @@ belongs_to :user
 |user_id|references|null: false, foreign_key:true|
 |age|integer||
 
-belongs_to :user
+### Association
+
+- belongs_to :user
 
 ## mansテーブル
 
@@ -43,8 +49,10 @@ belongs_to :user
 |------|----|-------|
 |user_id|references|null: false, foreign_key:true|
 
-has_many :followers, through: :relationships
-belongs_to :user
+### Association
+
+- has_many :followers, through: :relationships
+- belongs_to :user
 
 ## femalesテーブル
 
@@ -52,8 +60,10 @@ belongs_to :user
 |------|----|-------|
 |user_id|references|null: false, foreign_key:true|
 
-has_many :followings, through: :relationships
-belongs_to :user
+### Association
+
+- has_many :followings, through: :relationships
+- belongs_to :user
 
 ## relationshipsテーブル
 
@@ -64,8 +74,10 @@ belongs_to :user
 |match_man_id|referances|null: false, foreign_key:true|
 |match_female_id|referances|null: false, foreign_key:true|
 
-belongs_to :man
-belongs_to :female
+### Association
+
+- belongs_to :man
+- belongs_to :female
 
 
 ## messagesテーブル
@@ -76,7 +88,9 @@ belongs_to :female
 |rerationsships_id|integer|null: false, foreign_key:true|
 |image_url|string||
 
-belongs_to :relationships
+### Association
+
+- belongs_to :relationships
 
 ## communitiesテーブル
 
@@ -86,7 +100,9 @@ belongs_to :relationships
 |community_name|string|null: false|
 |image_url|string|null: false|
 
-has_many :users, through: :members
+### Association
+
+- has_many :users, through: :members
 
 ## membersテーブル
 |Column|Type|Options|
@@ -94,5 +110,7 @@ has_many :users, through: :members
 |user_id|integer|null: false, foreign_key: true|
 |community_id|integer|null: false, foreign_key: true|
 
-belongs_to :community
-belongs_to :user
+### Association
+
+- belongs_to :community
+- belongs_to :user
