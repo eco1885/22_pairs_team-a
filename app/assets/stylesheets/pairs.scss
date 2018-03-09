@@ -1,3 +1,29 @@
-// Place all the styles related to the pairs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+  height: 60px;
+  background-color: gray;
+  position: relative;
+}
+
+.body
+  .wrapper {
+    height: 100%;
+    width: 928px;
+    margin: 0 auto;
+    display: flex;
+    .sidebar {
+      width: 188px;
+      border-left: 1px solid #cbced0;
+      border-right: 1px solid #cbced0;
+      background-color: blue;
+    }
+    .main_contents {
+      min-height: 100vh;
+      width: calc(100vw - 190px);
+      background-color: orange;
+
+    }
+  }
+
+
+
+
