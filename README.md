@@ -43,7 +43,7 @@
 
 - belongs_to :user
 
-## mansテーブル
+## malesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -71,7 +71,7 @@
 |------|----|-------|
 |like_man|references|null: false, foreign_key:true|
 |like_female|references|null: false, foreign_key:true|
-|match_man_id|referances|null: false, foreign_key:true|
+|match_male_id|referances|null: false, foreign_key:true|
 |match_female_id|referances|null: false, foreign_key:true|
 
 ### Association
