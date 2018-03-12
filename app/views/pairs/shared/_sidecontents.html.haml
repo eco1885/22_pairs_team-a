@@ -1,0 +1,135 @@
+.sidecontents
+  .sidemenu
+    .my_profile_summary
+
+      %p.profile_photo
+        %a
+          %img{:height => "60", "ng-src" => "https://static-pairs.akamaized.net/public/img/all/img_jp/avatar/placeholder_woman.png?v=1&impolicy=pairs160x160&imwidth=160&width=160&height=160", :src => "assets/placeholder_woman.png", :width => "60"}/
+
+
+      %p.profile_name
+        %a ジャイ子 剛田家
+
+      %p.profile_status.is_free_member
+        %a ここに年齢
+
+    .my_profile_input_rate
+      %p.input_rate_label
+        %span.input_rate_percent_value ここに%
+
+      .box_input_rate_grahp
+        .input_rate_grahp_value.is_percent_100
+
+    / .ml10.mb15
+    /   %a
+    /     %img
+
+    .box_my_status
+      %ul.my_statuse_list
+
+        %li.my_status_item.leftover_like
+          %p.status_label 残りいいね数
+          %p#total_like_numbers.stats_value 9億
+          %a.button_c.button_orange_a.link_more 追加する
+
+        %li.my_status_item.leftover_point
+          %p.status_label ポイント残高
+          %p#total_point_numbers.stats_value 9億
+          %a.button_c.button_orange_a.link_more 追加する
+
+
+    .box_my_private_mode
+      %a
+        .box_pm
+          .pm_state_image
+          %p.pm_state_text プライベートモードがOFFになっています
+
+    %nav.box_gnavi
+      .box_gnavis01
+        %p.gnavi_title さがす
+        %ul
+          %li.gnavi_item.is_currentgnavi_item.is_current
+            %a
+              %span お相手を探す
+
+      .box_gnavis02
+        %p.gnavi_title いいね
+        %ul
+          %li.gnavi_item
+            %a 相手からのいいね
+          %li.gnavi_item
+            %a 自分からのいいね
+          %li.gnavi_item
+            %a お気に入り
+
+      .box_gnavis03
+        %p.gnavi_title マッチング
+        %ul
+          %li.gnavi_item
+            %a メッセージ
+
+      .box_gnavis04
+        %p.gnavi_title コミュニティ
+        %ul
+          %li.gnavi_item
+            %a コミュニティを探す
+
+      .box_gnavis04
+        %p.gnavi_title 年齢確認
+        %ul
+          %li.gnavi_item
+            %a 年齢確認
+
+      .box_gnavis04
+        %p.gnavi_title 有料サービス
+        %ul
+          %li.gnavi_item.ng-hide
+            %a 有料会員とは？
+          %li.gnavi_item.ng-hide
+            %a プレミアムオプション
+          %li.gnavi_item
+            %a レディースオプション
+          %li.gnavi_item
+            %a Pairsポイント
+
+      .box_gnavis04
+        %a 足あと
+        %ul
+          %li.gnavi_item
+            %a 足あと
+      .box_gnavis04
+        %p.gnavi_title 各種設定
+        %ul#sidemenu_settings
+          %li.gnavi_item
+            %a 通知/いいね上限
+          %li.gnavi_item
+            %a
+          %li.gnavi_item
+            %a 非表示・ブロック
+          %li.gnavi_item
+            %a オフラインモード設定
+      .box_gnavis04
+        .gnavi_title 足あと
+        %ul
+          %li.gnavi_item
+          %a 足あと
+      .box_gnavis04
+        %p 各種設定
+        %ul#sidemenu_settings
+          %li.gnavi_item
+            %a.to-notify 通知/いいね上限
+          %li.gnavi_item
+          %li.gnavi_item
+            %a 非表示・ブロック
+          %li.gnavi_item オフラインモード設定
+      .box_gnavis04
+        %p.gnavi_title 困ったときは
+        %ul#sidemenu_settings
+          %li.gnavi_item
+            %a 弁護士相談費用サポート
+    %nav.box_other_navi
+      %ul
+        %li.other_navi_item.other_navi_item01
+          %a はじめての方へ
+        %li.other_navi_item.other_navi_item03
+          %a ヘルプ
