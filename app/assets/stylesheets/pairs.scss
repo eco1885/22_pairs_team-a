@@ -5,11 +5,24 @@ body {
   color: #54595d;
   background: #fff;
 
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.body {
   .wrapper {
     height: 100%;
     width: 928px;
     margin: 0 auto;
     display: flex;
+    .sidebar {
+      width: 188px;
+      border-left: 1px solid #cbced0;
+      border-right: 1px solid #cbced0;
+      background-color: blue;
+    }
   }
 }
 
