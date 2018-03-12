@@ -4,7 +4,13 @@ header {
   position: relative;
 }
 
-.body
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.body {
   .wrapper {
     height: 100%;
     width: 928px;
@@ -16,14 +22,8 @@ header {
       border-right: 1px solid #cbced0;
       background-color: blue;
     }
-    .main_contents {
-      min-height: 100vh;
-      width: calc(100vw - 190px);
-      background-color: orange;
-
-    }
   }
-
+}
 
 
 
