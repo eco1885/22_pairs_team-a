@@ -1,5 +1,5 @@
     .sidecontents {
-      // display: table-cell;
+      display: table-cell;
       height: 100%;
       width: 188px;
       padding-top: 15px;
@@ -8,6 +8,13 @@
       border-left: 1px solid #cbced0;
       background-color: #f7f7f7;
       .sidemenu {
+        height: 100%;
+        width: 188px;
+        padding-top: 15px;
+        vertical-align: top;
+        border-right: 1px solid #cbced0;
+        border-left: 1px solid #cbced0;
+        background-color: #f7f7f7;
         .my_profile_summary{
           margin-bottom: 12px;
           text-align: center;
