@@ -3,23 +3,24 @@
     z-index: 10;
     border-bottom: 1px solid #cbced0;
     background: #fff;
-    box-shadow: 0 1px 2px rgba(94,94,94,.1);
+    box-shadow: 0 1px 2px rgba(94, 94, 94, 0.1);
     .box_header_inner {
       line-height: 1.0;
       position: relative;
       width: 928px;
       margin: 0 auto;
       padding: 14px 0;
+      @include clearfix();
       .header_logo {
         float: left;
         margin-top: -4px;
         margin-right: 12px;
-        clear: both;
         a {
           transition: background-color .25s linear;
           text-decoration: none;
           color: inherit;
           outline: none;
+          font-size: 100%;
           img {
             vertical-align: bottom;
           }
@@ -28,7 +29,7 @@
       .pairs_concept {
         font-size: 12px;
         // font-size: 1.2rem;
-        // float: left;
+        float: left;
         margin-top: 10px;
         letter-spacing: 1px;
         color: #a1a7ac;
@@ -36,15 +37,26 @@
 
 
 
-      .box_header_notifCenterd {
+      .box_header_notifCentered {
         float: right;
+        @include clearfix();
         .notifCentered_item {
           position: relative;
           float: left;
           width: 60px;
           list-style: none;
+          @include clearfix();
           .hide {
             text-align: center;
+          }
+          .hide:before {
+            background-position: -190px -101px;
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            content: '';
+            background-image: url(https://photos-5.dropbox.com/t/2/AABWJwlD9IuJQY2Oc28XlCunShPt3q2Yk4OIIR6jiYte1w/12/921251696/png/32x32/1/_/1/2/icon_sprites.png/EJD5seoJGLECIAcoBw/Sa7MLUicA0zikHvvrTrX28R40EP6RoHdn6gYVcny-w0?preserve_transparency=1&size=1280x960&size_mode=3),none;
+            background-repeat: no-repeat;
           }
         }
       }
