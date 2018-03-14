@@ -13,6 +13,9 @@ Devise.setup do |config|
 =======
   # config.secret_key = '8c39e7e21e56cd0e3f82ed54a3418eb65a43e53baaf1bf4545a4db272387bda44521caafc178813b8636b38bd7ed11afe56b4f45f6ad499102ac17583755c642'
   # config.secret_key = '661120fc4e2e927f4d70fa1c8e54ff85585892e7b73f9dbb1565b09573c307d33ed2945176324adcac7ac34931d6a74a1ff1951a10edf88c5128056b3bb3740d'
+<<<<<<< HEAD
+>>>>>>> origin/loginFunctionBranch
+=======
 >>>>>>> origin/loginFunctionBranch
 
   # ==> Mailer Configuration
@@ -120,6 +123,9 @@ Devise.setup do |config|
 =======
   # config.pepper = 'daa0eb4149848716e202476fde81823c4d5666cc13da029b309cbd2bba45a5ac50b61c870cb5c2566f1620615697ccf7e645a68f2033a0d8ad14cc7f4279f915'
   # config.pepper = 'd8523427ad3227e8765457d5c4ffc49a06d42168645d3deb16667f779195e1f79d53dc9103df54041fcd87d95b23db59c4db807bde7e77fb41904a1b6a22b492'
+<<<<<<< HEAD
+>>>>>>> origin/loginFunctionBranch
+=======
 >>>>>>> origin/loginFunctionBranch
 
   # Send a notification to the original email when the user's email is changed.
