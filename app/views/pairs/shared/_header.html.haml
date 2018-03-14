@@ -7,5 +7,11 @@
     %ul.box_header_notifCentered{"ng-if" => "!inWelcomeTutorialSms", "notification-header" => ""}
       %li#notifCentered_item.notifCentered_item.notifCentered_messeage
         %a.hide{href: ""}
+      %a{:href => "", "ui-sref" => "search/grid"}
+        %img{:src => "assets/pairs_logo.png", :width => "88"}/
+    %p.pairs_concept Facebookではじめる恋愛・結婚
+    %ul.box_header_notifCentered{"ng-if" => "!inWelcomeTutorialSms", "notification-header" => ""}
+      %li#notifCentered_item.notifCentered_item.notifCentered_messeage
+        %a.hide{:href => ""}
           #header_matching_count{"unread-badge-message" => ""}
     %div{"notification-matched-partners" => ""}

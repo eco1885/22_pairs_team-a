@@ -5,6 +5,12 @@ body {
   color: #54595d;
   background: #fff;
 
+  .clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+  }
+
   .body {
     .wrapper {
       height: 100%;
@@ -14,3 +20,4 @@ body {
     }
   }
 }
+

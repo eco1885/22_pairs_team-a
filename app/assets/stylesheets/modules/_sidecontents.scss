@@ -3,6 +3,11 @@
       height: 100%;
       width: 190px;
       vertical-align: top;
+      width: 188px;
+      padding-top: 15px;
+      vertical-align: top;
+      border-right: 1px solid #cbced0;
+      border-left: 1px solid #cbced0;
       background-color: #f7f7f7;
       .sidemenu {
         height: 100%;
@@ -97,6 +102,14 @@
             @include clearfix();
             .my_status_item {
               @include my_status_item;
+            .my_status_item {
+              float: left;
+              box-sizing: border-box;
+              width: 50%;
+              padding: 10px 0;
+              text-align: center;
+              box-shadow: 1px 1px 0 white inset;
+              list-style: none;
             }
             .leftover_like {
               border-right: 1px solid #cbced0;
@@ -237,6 +250,37 @@
             ul {
               .gnavi_item {
                 @include gnavi_item;
+          a {
+            .box_pm {
+              padding: 15px 10px;
+              .pm_state_image {
+                display: flex;
+                display: -webkit-flex;
+              }
+              .pm_state_text {
+                font-size: 12px;
+                font-weight: 700;
+                margin-top: 12px;
+                text-align: center;
+                color: #788086;
+              }
+            }
+          }
+        }
+        .box_gnavi {
+          .box_gnavis01 {
+            padding: 20px 0 12px;
+            border-bottom: 1px solid #cbced0;
+            box-shadow: 0 1px 0 white;
+            .gnavi_title {
+              font-size: 13px;
+              // font-size: 1.3rem;
+              margin: 0 0 4px 20px;
+              color: #bec3c9;
+              .gnavi_item {
+                font-size: 14px;
+                font-size: 1.4rem;
+                position: relative;
               }
             }
           }
@@ -249,6 +293,18 @@
             ul {
               .gnavi_item {
                 @include gnavi_item;
+            padding: 20px 0 12px;
+            border-bottom: 1px solid #cbced0;
+            box-shadow: 0 1px 0 white;
+            .gnavi_title {
+              font-size: 13px;
+              // font-size: 1.3rem;
+              margin: 0 0 4px 20px;
+              color: #bec3c9;
+              .gnavi_item {
+                font-size: 14px;
+                font-size: 1.4rem;
+                position: relative;
               }
             }
           }
@@ -261,6 +317,18 @@
             ul {
               .gnavi_item {
                 @include gnavi_item;
+            padding: 20px 0 12px;
+            border-bottom: 1px solid #cbced0;
+            box-shadow: 0 1px 0 white;
+            .gnavi_title {
+              font-size: 13px;
+              // font-size: 1.3rem;
+              margin: 0 0 4px 20px;
+              color: #bec3c9;
+              .gnavi_item {
+                font-size: 14px;
+                font-size: 1.4rem;
+                position: relative;
               }
             }
           }
@@ -273,6 +341,18 @@
             ul {
               .gnavi_item {
                 @include gnavi_item;
+            padding: 20px 0 12px;
+            border-bottom: 1px solid #cbced0;
+            box-shadow: 0 1px 0 white;
+            .gnavi_title {
+              font-size: 13px;
+              // font-size: 1.3rem;
+              margin: 0 0 4px 20px;
+              color: #bec3c9;
+              .gnavi_item {
+                font-size: 14px;
+                font-size: 1.4rem;
+                position: relative;
               }
             }
           }
@@ -309,3 +389,8 @@
     }
 
 
+      }
+        .box_other_navi {
+          padding: 20px;
+        }
+      }
