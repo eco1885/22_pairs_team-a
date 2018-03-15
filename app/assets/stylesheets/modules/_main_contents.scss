@@ -141,7 +141,7 @@
           height: 30px;
           width: 80px;
           line-height: 2.7;
-          #selectStyle{
+          .select_style{
             -webkit-appearance: menulist-button;
             width: 81.3594px;
             position: absolute;
@@ -434,7 +434,7 @@
               height: 55px;
               width: 115px;
             }
-            #SSL_style{
+            .ssl_link{
               display:block;
               color:#000000;
               text-decoration:none;

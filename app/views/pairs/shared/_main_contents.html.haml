@@ -24,7 +24,7 @@
         .box_grid_header01
           %p.header_diplay_label 表示人数:
           .header_display_select
-            %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched#selectStyle
+            %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched.select_style
               %option{selected: "selected", value: "16"} 16人
               %option{value: "32"} 32人
               %option{value: "64"} 64人
@@ -120,6 +120,6 @@
               %td
                 = link_to do
                   = image_tag "//smarticon.geotrust.com/smarticon?ref=pairs.lv", alt: "クリックして企業プロファイルを表示", name: "doidxvgm", oncontextmenu: "return false;"
-                = link_to "SSLとは", "", target: "_blank", id:"SSL_style"
+                = link_to "SSLとは", "", target: "_blank", class:"ssl_link"
     %p.footer_approved インターネット異性紹介事業 届出済み
     %small.footer_copyright (c) eureka, Inc.
