@@ -20,12 +20,11 @@
             %li.tab_item.tab_item02
               = link_to "", "", id: "tab_item002"
         %p.search_result_count 46人中 7人表示
-      .box_grid_header
       .box_grid_header.clearfix
         .box_grid_header01
           %p.header_diplay_label 表示人数:
           .header_display_select
-            %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched{style: "-webkit-appearance: menulist-button; width: 81.3594px; position: absolute; opacity: 0; height: 29px; font-size: 12px;"}
+            %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched#selectStyle
               %option{selected: "selected", value: "16"} 16人
               %option{value: "32"} 32人
               %option{value: "64"} 64人
@@ -121,6 +120,6 @@
               %td
                 = link_to do
                   = image_tag "//smarticon.geotrust.com/smarticon?ref=pairs.lv", alt: "クリックして企業プロファイルを表示", name: "doidxvgm", oncontextmenu: "return false;"
-                = link_to "SSLとは", "", {style: "display:block; color:#000000; text-decoration:none; font:bold 12px 'ＭＳ ゴシック',sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;", target: "_blank"}
+                = link_to "SSLとは", "", target: "_blank", id:"SSL_style"
     %p.footer_approved インターネット異性紹介事業 届出済み
     %small.footer_copyright (c) eureka, Inc.

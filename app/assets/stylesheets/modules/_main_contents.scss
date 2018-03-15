@@ -141,6 +141,14 @@
           height: 30px;
           width: 80px;
           line-height: 2.7;
+          #selectStyle{
+            -webkit-appearance: menulist-button;
+            width: 81.3594px;
+            position: absolute;
+            opacity: 0;
+            height: 29px;
+            font-size: 12px;
+          }
           .customSelect{
             cursor: pointer;
             box-sizing: border-box;
@@ -425,6 +433,16 @@
               border: 0;
               height: 55px;
               width: 115px;
+            }
+            #SSL_style{
+              display:block;
+              color:#000000;
+              text-decoration:none;
+              font: bold 12px 'ＭＳ ゴシック',sans-serif;
+              letter-spacing:.5px;
+              text-align:center;
+              margin:0px;
+              padding:0px;
             }
           }
         }
