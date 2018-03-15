@@ -2,8 +2,8 @@
   %div
     %div
       %div
-        %a.showPersonalViewModal
-          %img.list_view_user_photo.image-circle{height: "152", src: "https://photos-3.dropbox.com/t/2/AACyHZKQtMEvHbEpD96nVxc9DEhLzYc_8y0XAEPDFMzj4A/12/535539453/jpeg/32x32/1/_/1/2/%E8%A5%BF%E9%87%8E%E4%B8%83%E7%80%AC.jpeg/EJD5seoJGC4gBygH/EIqGYvBUCs2N34RpvLSgbs9eQUuWoSHX2ZKN484rLZ4?size=2048x1536&size_mode=3", width: "152"}/
+        = link_to class: "showPersonalViewModal" do
+          = image_tag "https://lh3.googleusercontent.com/F90t0RCwPpsxLWHuAxZxJntagAbCLW20BgcY44mljphwTgtAN1C3Df8pIwqLKfkN0AywfjMmmTTyTjwuY6q_bqU5bWxo33M0j7VJPVbercsR12fQrwzaLlkojLk_wnjlmujkFGE5A290fnIWGAl7rp-vdQGjrEX6tXjvKhcBXmUutoUl9VgQlqZx3WKx-W91Y0pNqMfQzOn_gv2A9wC6HBx5qKvkekSdkJ8cGXhWffyeOI1XDX2WP3QcO5DaSxB4ZE76djSDnJfkimvHDbpG_B8uJE1sN6YWr5IYnSr_lCkMQbdyRGsVUceYrvfwfRTri_G28az4FRx2_cvdg7FnWJ5Gf6ltwJJXhai4LLkVXyCSbAo8k6D_0kHloFHdWOPnT8vL0ZttvEiCxQe4sZj70Mv3nsmIYUFRj4oQJd6Ff1cVsgYG7o4oYopdN82eYUFouN4cHVnpX1bmne1dmC16AiW4VKwo6DlqYwoaMWh4EUn1YzGPZxQqCqgRZSmEm2ewsgNKZzv-TlGAI5570jD5ny52SiKZtDlm5JdN_aSHGYPcuOxpW2TB4kekudPFTu38Lq3n4BDWvuZJ-e8zIzzBtAiHfwASNJMHxLDbOh2KWnlfe0E0e7l4vRsFJ22tweL4hKCNeIdU9rsXzVl3-kcwKqMSi4XZwgqV=w204-h247-no", class: "list_view_user_photo image-circle", height: "152", width: "152"
   .PrivateMode
     .box_user_info01
       %p.user_summary
@@ -22,5 +22,5 @@
     .box_button_like
       %div
         %span
-          %a.button_like.button_like_default.button_pink_c.button_like_view.button_d{href: ""}
+          = link_to "", class: "button_like button_like_default button_pink_c button_like_view button_d" do
             %span.like いいね！

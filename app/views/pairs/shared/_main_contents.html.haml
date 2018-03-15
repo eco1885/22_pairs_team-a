@@ -11,14 +11,14 @@
         広告
       .box_search_menu
         .button_search_setting
-          %a#openSearchConditionBtn.button_b.button_white_a.is_set_search_condition{href: ""}
+          = link_to "", id: "openSearchConditionBtn", class: "button_b button_white_a is_set_search_condition" do
             %span.is_set_search_condition 検索条件設定中
         %nav.box_change_view_tabs
           %ul.change_view_tabs
             %li.tab_item.tab_item01.is_current
-              %a#tab_item001{href: ""}
+              = link_to "", "", id: "tab_item001"
             %li.tab_item.tab_item02
-              %a#tab_item002{href: ""}
+              = link_to "", "", id: "tab_item002"
         %p.search_result_count 46人中 7人表示
       .box_grid_header
       .box_grid_header.clearfix
@@ -52,9 +52,14 @@
             %div
               %div
                 %div
+<<<<<<< HEAD
+                  = link_to "", class: "showPersonalViewModal" do
+                    = image_tag "https://lh3.googleusercontent.com/F90t0RCwPpsxLWHuAxZxJntagAbCLW20BgcY44mljphwTgtAN1C3Df8pIwqLKfkN0AywfjMmmTTyTjwuY6q_bqU5bWxo33M0j7VJPVbercsR12fQrwzaLlkojLk_wnjlmujkFGE5A290fnIWGAl7rp-vdQGjrEX6tXjvKhcBXmUutoUl9VgQlqZx3WKx-W91Y0pNqMfQzOn_gv2A9wC6HBx5qKvkekSdkJ8cGXhWffyeOI1XDX2WP3QcO5DaSxB4ZE76djSDnJfkimvHDbpG_B8uJE1sN6YWr5IYnSr_lCkMQbdyRGsVUceYrvfwfRTri_G28az4FRx2_cvdg7FnWJ5Gf6ltwJJXhai4LLkVXyCSbAo8k6D_0kHloFHdWOPnT8vL0ZttvEiCxQe4sZj70Mv3nsmIYUFRj4oQJd6Ff1cVsgYG7o4oYopdN82eYUFouN4cHVnpX1bmne1dmC16AiW4VKwo6DlqYwoaMWh4EUn1YzGPZxQqCqgRZSmEm2ewsgNKZzv-TlGAI5570jD5ny52SiKZtDlm5JdN_aSHGYPcuOxpW2TB4kekudPFTu38Lq3n4BDWvuZJ-e8zIzzBtAiHfwASNJMHxLDbOh2KWnlfe0E0e7l4vRsFJ22tweL4hKCNeIdU9rsXzVl3-kcwKqMSi4XZwgqV=w204-h247-no", class: "list_view_user_photo image-circle", height: "152", width: "152"
+=======
                   %a.showPersonalViewModal
                     %img.list_view_user_photo.image-circle{height: "152", src: "https://lh3.googleusercontent.com/F90t0RCwPpsxLWHuAxZxJntagAbCLW20BgcY44mljphwTgtAN1C3Df8pIwqLKfkN0AywfjMmmTTyTjwuY6q_bqU5bWxo33M0j7VJPVbercsR12fQrwzaLlkojLk_wnjlmujkFGE5A290fnIWGAl7rp-vdQGjrEX6tXjvKhcBXmUutoUl9VgQlqZx3WKx-W91Y0pNqMfQzOn_gv2A9wC6HBx5qKvkekSdkJ8cGXhWffyeOI1XDX2WP3QcO5DaSxB4ZE76djSDnJfkimvHDbpG_B8uJE1sN6YWr5IYnSr_lCkMQbdyRGsVUceYrvfwfRTri_G28az4FRx2_cvdg7FnWJ5Gf6ltwJJXhai4LLkVXyCSbAo8k6D_0kHloFHdWOPnT8vL0ZttvEiCxQe4sZj70Mv3nsmIYUFRj4oQJd6Ff1cVsgYG7o4oYopdN82eYUFouN4cHVnpX1bmne1dmC16AiW4VKwo6DlqYwoaMWh4EUn1YzGPZxQqCqgRZSmEm2ewsgNKZzv-TlGAI5570jD5ny52SiKZtDlm5JdN_aSHGYPcuOxpW2TB4kekudPFTu38Lq3n4BDWvuZJ-e8zIzzBtAiHfwASNJMHxLDbOh2KWnlfe0E0e7l4vRsFJ22tweL4hKCNeIdU9rsXzVl3-kcwKqMSi4XZwgqV=w204-h247-no", width: "152"}/
                     %img.list_view_user_photo.image-circle{height: "152", src: "assets/西野七瀬.jpeg", width: "152"}/
+>>>>>>> 190e05e0d5d876d93f82decf9bee48b81a5d55d7
             .PrivateMode
               .box_user_info01
                 %p.user_summary
@@ -74,7 +79,8 @@
               .box_button_like
                 %div
                   %span
-                    %a.button_like.button_like_default.button_pink_c.button_like_view.button_d{href: ""}
+                    / %a.button_like.button_like_default.button_pink_c.button_like_view.button_d{href: ""}
+                    = link_to "", class: "button_like button_like_default button_pink_c button_like_view button_d" do
                       %span.like いいね！
           %li.list_view_user_item
             %div
@@ -253,37 +259,37 @@
     %nav.footer_navi
       %ul
         %li.footer_navi_item
-          %a{href: "#", target: "_blank"} Pairsとは
+          = link_to "Pairsとは", "#", target: "_blank"
         %li.footer_navi_item
-          %a{href: "#"} 幸せレポート
+          = link_to "幸せレポート", "#"
         %li.footer_navi_item
-          %a{href: "#"} 安心の常時監視体制
+          = link_to "安心の常時監視体制", "#"
         %li.footer_navi_item
-          %a{href: "#"} 安心のセキュリティー
+          = link_to "安心のセキュリティー", "#"
         %li.footer_navi_item
-          %a{href: "#", target: "_blank"} ヘルプ
+          = link_to "ヘルプ", "#", target: "_blank"
         %li.footer_navi_item
-          %a{href: "#"} お問い合わせ
+          = link_to "お問い合わせ", "#"
       %ul
         %li.footer_navi_item
-          %a{href: "#", target: "_blank"} 会社概要
+          = link_to "会社概要", "#", target: "_blank"
         %li.footer_navi_item
-          %a{href: "#"} 利用規約
+          = link_to "利用規約", "#"
         %li.footer_navi_item
-          %a{href: "#"} プライバシーポリシー
+          = link_to "プライバシーポリシー", "#"
         %li.footer_navi_item
-          %a{href: "#"} 特定商取引法に基づく表示
+          = link_to "特定商取引法に基づく表示", "#"
     .footer_label
       .footer_label_horizontal_box
-        %a
+        = link_to do
           .link_to_truste.mr60
-            %img{height: "52", src: "https://static-pairs.akamaized.net/public/img/sp/img_jp/statics/truste/truste_ja.png", width: "162"}/
+            = image_tag "https://static-pairs.akamaized.net/public/img/sp/img_jp/statics/truste/truste_ja.png", height: "52", width: "162"
         %table.footer_label_ssl{border: "0", title: "このマークは、SSLで通信を保護している証です。", width: "135"}
           %tbody
             %tr
               %td{align: "center", valign: "top", width: "115"}
-                %a
-                  %img{alt: "クリックして企業プロファイルを表示", border: "0", height: "55", name: "doidxvgm", oncontextmenu: "return false;", src: "//smarticon.geotrust.com/smarticon?ref=pairs.lv", width: "115"}/
-                %a{style: "display:block; color:#000000; text-decoration:none; font:bold 12px 'ＭＳ ゴシック',sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;", target: "_blank"} SSLとは
+                = link_to do
+                  = image_tag "//smarticon.geotrust.com/smarticon?ref=pairs.lv", alt: "クリックして企業プロファイルを表示", border: "0", height: "55", name: "doidxvgm", oncontextmenu: "return false;", width: "115"
+                = link_to "SSLとは", "", {style: "display:block; color:#000000; text-decoration:none; font:bold 12px 'ＭＳ ゴシック',sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;", target: "_blank"}
     %p.footer_approved インターネット異性紹介事業 届出済み
     %small.footer_copyright (c) eureka, Inc.
