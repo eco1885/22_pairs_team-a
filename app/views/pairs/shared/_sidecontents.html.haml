@@ -3,17 +3,20 @@
     .my_profile_summary
 
       %p.profile_photo
-        %a
-          %img{height: "60", "ng-src" => "https://static-pairs.akamaized.net/public/img/all/img_jp/avatar/placeholder_woman.png?v=1&impolicy=pairs160x160&imwidth=160&width=160&height=160", src: "https://lh3.googleusercontent.com/onZExYrLkqq2l0QBLMpT1Mp9Vgwq8IKArl8UML5S4u8w2jLKs5gXuuJ6O0ErU07nSUCmcA3NmSNZJrZ74IV8IZFY3dnQQTdCuCmFEMYBvZhzdYhBZGDGxhTMmK26K-opAaLFkyMTOx5nExmb5b5hAh-0JoVRwvQMxCWNtr14Ms4BW26loLBXpVpnWYBxslP0I-QJsxD2vWRhJ7Ee1sE0pw3K6L7SNAh1yt4OnHWSUTexcYCv5j9uUGMp1BndmF0BKjTvATPhjdWrAeE5gMdT9pmGOKEpmQzUHgSpHOe7Z6SWJ6hcrG4ESJAycmR3mueXgSd9deBmUfZPDedhwG0eGGZ_veWVMizFLQBIBafVX_uqwGc8BNy5kc9EHUf8UQK3FqzQh_2ewBulpJuO7p68Vkrs_1YFH751IvNAwbdMd46LiMU_-GVMGUMaLbO8pdVE6TDO85wjNwKgVb5_z1ZvT9b1x7uEv1PI7dPjo98SbNnQJUGcKSyfFD4rfAWJZLA9SdCJktR6kDTpqfKxHNVZJK2JZWh4ODnE8TkE2JYFhWcb9SB48CPPsbIJl18QTMWwVRm9ZzWkK4KWgT6EbZnvmqshQiCq3rIZLWotiQ=s636-no", width: "60"}/
-
+        = link_to "" do
+          =image_tag "https://lh3.googleusercontent.com/onZExYrLkqq2l0QBLMpT1Mp9Vgwq8IKArl8UML5S4u8w2jLKs5gXuuJ6O0ErU07nSUCmcA3NmSNZJrZ74IV8IZFY3dnQQTdCuCmFEMYBvZhzdYhBZGDGxhTMmK26K-opAaLFkyMTOx5nExmb5b5hAh-0JoVRwvQMxCWNtr14Ms4BW26loLBXpVpnWYBxslP0I-QJsxD2vWRhJ7Ee1sE0pw3K6L7SNAh1yt4OnHWSUTexcYCv5j9uUGMp1BndmF0BKjTvATPhjdWrAeE5gMdT9pmGOKEpmQzUHgSpHOe7Z6SWJ6hcrG4ESJAycmR3mueXgSd9deBmUfZPDedhwG0eGGZ_veWVMizFLQBIBafVX_uqwGc8BNy5kc9EHUf8UQK3FqzQh_2ewBulpJuO7p68Vkrs_1YFH751IvNAwbdMd46LiMU_-GVMGUMaLbO8pdVE6TDO85wjNwKgVb5_z1ZvT9b1x7uEv1PI7dPjo98SbNnQJUGcKSyfFD4rfAWJZLA9SdCJktR6kDTpqfKxHNVZJK2JZWh4ODnE8TkE2JYFhWcb9SB48CPPsbIJl18QTMWwVRm9ZzWkK4KWgT6EbZnvmqshQiCq3rIZLWotiQ=s636-no", height:"60", width:"60"
 
       %p.profile_name
+<<<<<<< Updated upstream
         %a 秋元康 東京
           %img{:height => "60", "ng-src" => "https://static-pairs.akamaized.net/public/img/all/img_jp/avatar/placeholder_woman.png?v=1&impolicy=pairs160x160&imwidth=160&width=160&height=160", :src => "assets/placeholder_woman.png", :width => "60"}/
 
+=======
+        = link_to "秋元康 東京", ""
+>>>>>>> Stashed changes
 
       %p.profile_status.is_free_member
-        %a ここに年齢
+        = link_to "ここに年齢",""
 
     .my_profile_input_rate
       %p.input_rate_label
@@ -32,16 +35,16 @@
         %li.my_status_item.leftover_like
           %p.status_label 残りいいね数
           %p#total_like_numbers.stats_value 9億
-          %a.button_c.button_orange_a.link_more 追加する
+          = link_to "追加する","",class: "button_c button_orange_a link_more"
 
         %li.my_status_item.leftover_point
           %p.status_label ポイント残高
           %p#total_point_numbers.stats_value 9億
-          %a.button_c.button_orange_a.link_more 追加する
+          = link_to "追加する","",class: "button_c button_orange_a link_more"
 
 
     .box_my_private_mode
-      %a
+      =link_to "" do
         .box_pm
           .box_pm_state
             .pm_state_image
@@ -54,74 +57,82 @@
         %p.gnavi_title さがす
         %ul
           %li.gnavi_item.is_currentgnavi_item.is_current
-            %a.sidemenu_link
+            =link_to "",class: "sidemenu_link" do
               %span お相手を探す
 
       .box_gnavis02
         %p.gnavi_title いいね
         %ul
           %li.gnavi_item
-            %a.sidemenu_link 相手からのいいね
+            =link_to "相手からのいいね","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link 自分からのいいね
+            =link_to "自分からのいいね","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link お気に入り
+            =link_to "お気に入り","",class: "sidemenu_link"
 
       .box_gnavis03
         %p.gnavi_title マッチング
         %ul
           %li.gnavi_item
-            %a.sidemenu_link メッセージ
+            =link_to "メッセージ","",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title コミュニティ
         %ul
           %li.gnavi_item
-            %a.sidemenu_link コミュニティを探す
+            =link_to "コミュニティを探す","",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 年齢確認
         %ul
           %li.gnavi_item
-            %a.sidemenu_link 年齢確認
+            =link_to "年齢確認","",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 有料サービス
         %ul
           %li.gnavi_item.ng-hide
-            %a.sidemenu_link 有料会員とは？
+            =link_to "有料会員とは？","",class: "sidemenu_link"
           %li.gnavi_item.ng-hide
-            %a.sidemenu_link プレミアムオプション
+            =link_to "プレミアムオプション","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link レディースオプション
+            =link_to "レディースオプション","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link Pairsポイント
+            =link_to "Pairsポイント","",class: "sidemenu_link"
 
       .box_gnavis04
         .gnavi_title 足あと
         %ul
           %li.gnavi_item
+<<<<<<< Updated upstream
             %a.sidemenu_link 足あと
 
+=======
+            =link_to "足あと","",class: "sidemenu_link"
+>>>>>>> Stashed changes
       .box_gnavis04
         %p.gnavi_title 各種設定
         %ul#sidemenu_settings
           %li.gnavi_item
-            %a.sidemenu_link 通知/いいね上限
+            =link_to "通知/いいね上限","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link 非表示・ブロック
+            =link_to "非表示・ブロック","",class: "sidemenu_link"
           %li.gnavi_item
-            %a.sidemenu_link オフラインモード設定
+            =link_to "オフラインモード設定","",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 困ったときは
         %ul#sidemenu_settings
           %li.gnavi_item
+<<<<<<< Updated upstream
             %a.sidemenu_link 弁護士相談費用サポート
 
+=======
+            =link_to "弁護士相談費用サポート","",class: "sidemenu_link"
+>>>>>>> Stashed changes
     %nav.box_other_navi
       %ul
         %li.other_navi_item.other_navi_item01
-          %a はじめての方へ
+          =link_to "はじめての方へ","",class: "sidemenu_link"
         %li.other_navi_item.other_navi_item03
-          %a ヘルプ
+          =link_to "ヘルプ","",class: "sidemenu_link"

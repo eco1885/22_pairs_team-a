@@ -1,11 +1,12 @@
 %header#main_header.main_header{"ng-if" => "!env.isJpLogin()"}
   .box_header_inner
     .header_logo
-      %a{href: "", "ui-sref" => "search/grid"}
-        %img{src: "https://lh3.googleusercontent.com/tAf4l3si3yoL0qAywcjJvh81kw-lEaj9T6b5NaSGw8RLfYhOj4_wePhf40L0qqXLeV_NZc7hWuk8BnsdnuVuXiHMti-x2GLmNgW7soEmD2l__TEyW7gQgMy9Bok7ZVTTtjG4C5X5JlR8kkeT0yb4PQPI269oqcuWplwEaWuA7pafHRlF3cqDmop-lnig2kwokeKBPaSUXcLrsTIcybr9ebL9caJpawqpQVML2Qr1eM8IcaS7OE8x7B-I58F9alFJwr57sy8B-iZbws_8U3A9F0Efqlzanw7kAgsDSCNy6gBOCGK8f7dGe74p4kMEDOeTifq8rZII46-nCT1BAWlK2E4fkkuUfIgxLhsvcYfdVuDNmN4cJRhWjxcXz4dM9GqQAT3uS0lomVaMyLR-JVSC-T2V71kKD_ZOiqk8laWUT7JcYglDotspYwB7S1chLpi9-lC-UqBG0KclubzaFeia_H6FbeIkVon0KFh0BD_hVafj-L3la_tsE1a5YlU_QQ7_mClFceEcI0MFapqlqtq7N7vCzTaI3eeNTAkGcKzNL6qqGxinD-WCXoax-ZufgRyV9khFPQFUPl7wugHA6-NJi-_oYPb1sPa6OmQMxRg=w864-h342-no", width: "88"}/
+      = link_to "" do
+        =image_tag "https://lh3.googleusercontent.com/tAf4l3si3yoL0qAywcjJvh81kw-lEaj9T6b5NaSGw8RLfYhOj4_wePhf40L0qqXLeV_NZc7hWuk8BnsdnuVuXiHMti-x2GLmNgW7soEmD2l__TEyW7gQgMy9Bok7ZVTTtjG4C5X5JlR8kkeT0yb4PQPI269oqcuWplwEaWuA7pafHRlF3cqDmop-lnig2kwokeKBPaSUXcLrsTIcybr9ebL9caJpawqpQVML2Qr1eM8IcaS7OE8x7B-I58F9alFJwr57sy8B-iZbws_8U3A9F0Efqlzanw7kAgsDSCNy6gBOCGK8f7dGe74p4kMEDOeTifq8rZII46-nCT1BAWlK2E4fkkuUfIgxLhsvcYfdVuDNmN4cJRhWjxcXz4dM9GqQAT3uS0lomVaMyLR-JVSC-T2V71kKD_ZOiqk8laWUT7JcYglDotspYwB7S1chLpi9-lC-UqBG0KclubzaFeia_H6FbeIkVon0KFh0BD_hVafj-L3la_tsE1a5YlU_QQ7_mClFceEcI0MFapqlqtq7N7vCzTaI3eeNTAkGcKzNL6qqGxinD-WCXoax-ZufgRyV9khFPQFUPl7wugHA6-NJi-_oYPb1sPa6OmQMxRg=w864-h342-no", width: "88"
     %p.pairs_concept Facebookではじめる恋愛・結婚
     %ul.box_header_notifCentered{"ng-if" => "!inWelcomeTutorialSms", "notification-header" => ""}
       %li#notifCentered_item.notifCentered_item.notifCentered_messeage
+<<<<<<< Updated upstream
         %a.hide{href: ""}
       %a{:href => "", "ui-sref" => "search/grid"}
         %img{:src => "assets/pairs_logo.png", :width => "88"}/
@@ -13,5 +14,8 @@
     %ul.box_header_notifCentered{"ng-if" => "!inWelcomeTutorialSms", "notification-header" => ""}
       %li#notifCentered_item.notifCentered_item.notifCentered_messeage
         %a.hide{:href => ""}
+=======
+        =link_to "",class: "hide" do
+>>>>>>> Stashed changes
           #header_matching_count{"unread-badge-message" => ""}
     %div{"notification-matched-partners" => ""}
