@@ -1,11 +1,13 @@
 @import "reset";
 @import "mixin/clearfix";
 @import "pairs";
+@import "variable";
 @import "mixin/box_gnavis";
 @import "mixin/gnavi_title";
 @import "mixin/gnavi_item";
 @import "mixin/my_status_item";
 @import "mixin/clearfix";
+@import "mixin/button";
 @import "modules/header";
 @import "modules/sidecontents";
 @import "modules/header";
@@ -13,3 +15,4 @@
 @import "modules/pagenation";
 @import "modules/main_footer";
 @import "modules/main_contents";
+@import "modules/myprofile";

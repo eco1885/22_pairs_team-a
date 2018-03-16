@@ -1,0 +1,107 @@
+@mixin button_a {
+  font-size: 1.4rem;
+  line-height: 1.0;
+  display: block;
+  padding: 12px;
+  text-align: center;
+  border-radius: 30px;
+}
+@mixin button_b {
+  font-size: 1.4rem;
+  line-height: 1.0;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border-radius: 30px;
+}
+@mixin button_c {
+  font-size: 1.2rem;
+  line-height: 1.0;
+  display: inline-block;
+  padding: 4px 10px 6px;
+  border-radius: 30px;
+}
+@mixin button_f {
+  font-size: 1.2rem;
+  line-height: 1.0;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+@mixin button_e {
+  font-size: 2.2rem;
+  line-height: 1.0;
+  display: block;
+  padding: 16px;
+  text-align: center;
+  border-radius: 30px;
+}
+@mixin button_red_a {
+  color: #fff;
+  background-color: #e53935;
+  box-shadow: 0 2px 0 #bb1e1a;
+}
+@mixin button_blue_a {
+  color: #fff;
+  background-color: #00b8c0;
+  box-shadow: 0 3px 0 #00abb3;
+}
+@mixin button_white_a {
+  color: #8d9399;
+  border: 1px solid #cbced0;
+  background-color: #fff;
+  box-shadow: 0 2px 0 #c9c9c9;
+}
+@mixin button_orange_a {
+  color: #fff;
+  background-color: #ffbe40;
+  box-shadow: 0 3px 0 #dea22e;
+}
+@mixin button_orange_d {
+  color: #fff;
+  background-color: #ffa800;
+  box-shadow: 0 3px 0 #dea22e;
+}
+@mixin button_pink_a {
+  color: #fff;
+  background-color: #f06976;
+  box-shadow: 0 2px 0 #ed4655;
+}
+@mixin button_pink_c {
+  color: #fff;
+  background-color: #f48d97;
+  box-shadow: 0 3px 0 #f06976;
+}
+@mixin button_pink_d {
+  color: #fff;
+  background-color: #f8b1b8;
+  box-shadow: 0 3px 0 #f48d97;
+}
+@mixin button_gray_a {
+  color: #8d9399;
+  background-color: #f3f3f3;
+  box-shadow: 0 2px 0 #c9c9c9;
+}
+@mixin button_like_done {
+  position: relative;
+  top: 2px;
+}
+@mixin button_like_default {
+  cursor: pointer;
+}
+@mixin button_mitene_d {
+  cursor: pointer;
+}
+@mixin button_like_c {
+  cursor: pointer;
+}
+@mixin button_like_closed {
+  font-size: 1.9rem;
+  color: #fff;
+  background-color: #cbced0;
+  box-shadow: 0 3px 0 #cbced0;
+}
+@mixin button_like_mitene_displayed {
+  color: #fff;
+  background-color: #ffbe40;
+}
