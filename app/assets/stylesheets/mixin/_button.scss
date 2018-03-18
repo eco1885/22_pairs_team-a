@@ -1,5 +1,6 @@
 @mixin button_a {
   font-size: 1.4rem;
+  font-size: 14px;
   line-height: 1.0;
   display: block;
   padding: 12px;
@@ -8,6 +9,7 @@
 }
 @mixin button_b {
   font-size: 1.4rem;
+  font-size: 14px;
   line-height: 1.0;
   display: block;
   padding: 10px;
@@ -16,6 +18,7 @@
 }
 @mixin button_c {
   font-size: 1.2rem;
+  font-size: 12px;
   line-height: 1.0;
   display: inline-block;
   padding: 4px 10px 6px;
@@ -23,6 +26,7 @@
 }
 @mixin button_f {
   font-size: 1.2rem;
+  font-size: 12px;
   line-height: 1.0;
   display: inline-block;
   padding: 8px 12px;
@@ -30,6 +34,7 @@
 }
 @mixin button_e {
   font-size: 2.2rem;
+  font-size: 22px;
   line-height: 1.0;
   display: block;
   padding: 16px;
@@ -51,6 +56,13 @@
   border: 1px solid #cbced0;
   background-color: #fff;
   box-shadow: 0 2px 0 #c9c9c9;
+}
+@mixin button_white_a_disabled {
+  position: relative;
+  top: 2px;
+  cursor: default;
+  background-color: #f3f3f3;
+  box-shadow: none;
 }
 @mixin button_orange_a {
   color: #fff;
@@ -97,6 +109,7 @@
 }
 @mixin button_like_closed {
   font-size: 1.9rem;
+  font-size: 19px;
   color: #fff;
   background-color: #cbced0;
   box-shadow: 0 3px 0 #cbced0;
