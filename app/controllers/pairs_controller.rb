@@ -7,4 +7,7 @@ class PairsController < ApplicationController
 
   end
 
+  def from_partner
+
+  end
 end
