@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'pairs#index'
 
   get 'like' => 'pairs#from_partner'
-
+  get 'messages' => 'pairs#messages_index'
 
 end
