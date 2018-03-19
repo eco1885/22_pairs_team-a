@@ -1,8 +1,10 @@
 .main_contents {
   min-height: 100vh;
   width: calc(100vw - 190px);
-  & .main{
+  .contents_padding{
     padding:20px 0 0 17px;
+  }
+  & .main{
     min-height:500px;
     margin-bottom: 50px;
     .box_notice_summry{
