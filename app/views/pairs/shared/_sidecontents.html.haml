@@ -58,17 +58,17 @@
         %p.gnavi_title いいね
         %ul
           %li.gnavi_item
-            =link_to "相手からのいいね","",class: "sidemenu_link"
+            =link_to "相手からのいいね",like_from_partner_path,class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "自分からのいいね","",class: "sidemenu_link"
+            =link_to "自分からのいいね",like_from_me_path,class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "お気に入り","",class: "sidemenu_link"
+            =link_to "お気に入り",like_favorite_path,class: "sidemenu_link"
 
       .box_gnavis03
         %p.gnavi_title マッチング
         %ul
           %li.gnavi_item
-            =link_to "メッセージ","",class: "sidemenu_link"
+            =link_to "メッセージ","/messages",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title コミュニティ
