@@ -1,0 +1,152 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+img {
+  vertical-align: bottom;
+}
+html, body {
+  height: 100%;
+  color: #54595d;
+  font-size: 62.5%;
+}
+
+.ng-hide {
+  display: none;
+}
+.title_a {
+  font-size: 1.4rem;
+  font-size: 14px;
+  line-height: 1.0;
+  padding-left: 8px;
+  color: #8d9399;
+  border-left: 3px solid #8d9399;
+}
+.image-round {
+  border-radius: 4px;
+}
+.link_help {
+  @include link_help();
+  font-size: 1.2rem;
+  font-size: 12px;
+  margin-top: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #00abb3;
+}
+
+.fnt12 {
+  font-size: 1.2rem!important;
+}
+.fnt14 {
+  font-size: 1.4rem!important;
+}
+.w30p {
+  width: 30%!important;
+}
+.w50p {
+  width: 50%!important;
+}
+.mr10 {
+  margin-right: 10%!important;
+}
+.ml10 {
+  margin-left: 10px!important;
+}
+.mt5 {
+  margin-top: 5px!important;
+}
+.mt10 {
+  margin-top: 10px!important;
+}
+.mt30 {
+  margin-top: 30px!important;
+}
+.mb5 {
+  margin-bottom: 5px!important;
+}
+.mb20 {
+  margin-bottom: 20px!important;
+}
+.mb30 {
+  margin-bottom: 30px!important;
+}
+.mb40 {
+  margin-bottom: 40px!important;
+}
+.pb0 {
+  padding-bottom: 0px!important;
+}
+.pb10 {
+  padding-bottom: 10px!important;
+}
+
+// ボタンクラス
+.button_a {
+  @include button_a;
+}
+.button_b {
+  @include button_b;
+}
+.button_c {
+  @include button_c;
+}
+.button_f {
+  @include button_f;
+}
+.button_e {
+  @include button_e;
+}
+.button_red_a {
+  @include button_red_a;
+}
+.button_blue_a {
+  @include button_blue_a;
+}
+.button_white_a {
+  @include button_white_a;
+}
+.button_white_a_disabled {
+  @include button_white_a_disabled;
+}
+.button_orange_a {
+  @include button_orange_a;
+}
+.button_orange_d {
+  @include button_orange_d;
+}
+.button_pink_a {
+  @include button_pink_a;
+}
+.button_pink_c {
+  @include button_pink_c;
+}
+.button_pink_d {
+  @include button_pink_d;
+}
+.button_gray_a {
+  @include button_gray_a;
+}
+.button_like_done {
+  @include button_like_done;
+}
+.button_like_default {
+  @include button_like_default;
+}
+.button_mitene_d {
+  @include button_mitene_d;
+}
+.button_like_c {
+  @include button_like_c;
+}
+.button_like_closed {
+  @include button_like_closed;
+}
+.button_like_mitene_displayed {
+  @include button_like_mitene_displayed;
+}
