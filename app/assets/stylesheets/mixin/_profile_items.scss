@@ -36,6 +36,10 @@
     padding: 15px 10px;
     .box_community_item_img {
       display: inline-block;
+      img {
+        height: 70px;
+        width: 70px;
+      }
       .community_item_img {
         margin-bottom: 5px;
       }

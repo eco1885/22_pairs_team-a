@@ -179,6 +179,8 @@
               padding: 6px;
               img {
                 margin-right: 10px;
+                height: 35px;
+                width: 35px;
               }
               p {
                 display: inline-block;
@@ -234,6 +236,8 @@
               }
               img {
                 max-width: 100%;
+                height: 390px;
+
               }
             }
             .my_display_photo_item {
@@ -278,6 +282,10 @@
                 }
                 .image-round {
                   border-radius: 4px;
+                  img {
+                    height: 98px;
+                    width: 98px;
+                  }
                 }
                 .link_photo_edit {
                   font-size: 1rem;
