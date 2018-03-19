@@ -45,34 +45,10 @@
         .user_selected_list
       .box_list_view_user
         %ul.list_view_users
-          / = render partial: "pairs/shared/list_view_user_item" ユーザーのテンプレ
-        %ul.list_view_users.clearfix
-          %li.list_view_user_item
-            = link_to "", class: "showPersonalViewModal" do
-              = image_tag "https://lh3.googleusercontent.com/F90t0RCwPpsxLWHuAxZxJntagAbCLW20BgcY44mljphwTgtAN1C3Df8pIwqLKfkN0AywfjMmmTTyTjwuY6q_bqU5bWxo33M0j7VJPVbercsR12fQrwzaLlkojLk_wnjlmujkFGE5A290fnIWGAl7rp-vdQGjrEX6tXjvKhcBXmUutoUl9VgQlqZx3WKx-W91Y0pNqMfQzOn_gv2A9wC6HBx5qKvkekSdkJ8cGXhWffyeOI1XDX2WP3QcO5DaSxB4ZE76djSDnJfkimvHDbpG_B8uJE1sN6YWr5IYnSr_lCkMQbdyRGsVUceYrvfwfRTri_G28az4FRx2_cvdg7FnWJ5Gf6ltwJJXhai4LLkVXyCSbAo8k6D_0kHloFHdWOPnT8vL0ZttvEiCxQe4sZj70Mv3nsmIYUFRj4oQJd6Ff1cVsgYG7o4oYopdN82eYUFouN4cHVnpX1bmne1dmC16AiW4VKwo6DlqYwoaMWh4EUn1YzGPZxQqCqgRZSmEm2ewsgNKZzv-TlGAI5570jD5ny52SiKZtDlm5JdN_aSHGYPcuOxpW2TB4kekudPFTu38Lq3n4BDWvuZJ-e8zIzzBtAiHfwASNJMHxLDbOh2KWnlfe0E0e7l4vRsFJ22tweL4hKCNeIdU9rsXzVl3-kcwKqMSi4XZwgqV=w204-h247-no", class: "list_view_user_photo image-circle"
-            .PrivateMode
-              .box_user_info01
-                %p.user_summary
-                  %span.is_3days
-                  %span.user_area{limit_length: "5"} 東京
-                  %span.user_age 23歳
-              .box_user_info03
-                %p.user_chemistry.user_chemistry_a.is_chemistry_heart75_a
-                  60%
-                %p.user_like_count.user_like_count_a
-                  %span
-                    %em 100
-                    %em ?
-                .user_tweet
-                  .user_tweet_body
-                    はじめまして！
-              .box_button_like
-                %div
-                  %span
-                    = link_to "", class: "button_like button_like_default button_pink_c button_like_view button_d" do
-                      %span.like いいね！
+          - @users.each do |user|
+            = render partial: "pairs/shared/list_view_user_item", locals:{user: user}
       .box_result_pager
-        = paginate(@users)
+        = paginate(@usersPage)
       .box_like_remaining
         %p
           あと

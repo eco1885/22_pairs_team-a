@@ -18,9 +18,17 @@
           %em 100
       .user_tweet
         .user_tweet_body
-          はじめまして！
+          = user.nickname
+          / はじめまして！
     .box_button_like
       %div
         %span
-          = link_to "", class: "button_like button_like_default button_pink_c button_like_view button_d" do
-            %span.like いいね！
+          = form_for(current_user.following_relationships.build(following_id: user.id),html:{class: "button_like button_like_default button_pink_c button_like_view button_d"}) do |f|
+            = f.hidden_field :following_id
+            = f.submit "いいね！", class: "submitColor"
+          / = form_for(current_user.following_relationships.build(following_id: user.id),html:{class: "button_like button_like_default button_pink_c button_like_view button_d"}) do |f|
+          /   = f.hidden_field :following_id
+          /   = f.submit "いいね！",style:"none"
+
+          / = link_to "", class: "button_like button_like_default button_pink_c button_like_view button_d" do
+          /   %span.like いいね！
