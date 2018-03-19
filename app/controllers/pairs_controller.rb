@@ -7,4 +7,7 @@ class PairsController < ApplicationController
   def myprofile
   end
 
+  def from_partner
+
+  end
 end
