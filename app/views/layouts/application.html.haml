@@ -12,6 +12,9 @@
       .body
         .wrapper
           = render partial: "pairs/shared/sidecontents"
-          = yield
+          .main_contents
+            = yield
+            #main_footer.main_footer
+              = render partial: "pairs/shared/footer"
     -else
       = yield
