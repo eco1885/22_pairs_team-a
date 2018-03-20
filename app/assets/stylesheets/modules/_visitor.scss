@@ -19,52 +19,158 @@
 }
 
 //広告より下部分
+table {
+  margin: 2px;
+  padding: 2px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
 .common_page_bpx {
   margin-bottom: 25px;
   padding: 15px;
   background-color: #f3f3f3;
 }
-  %p.common_title<
-    過去ー週間の足あと：
-    %em.fnt_pink02>
-      %span.visitor_count<> 118
-      人
-  .common_box_inner.pt0
-    .box_visitor_list
-      %table.visitor_lists.sample
-        %tbody
-          %tr
-            %th.date
-            %td.time
-            %td.user_summary
-              %a
-                %img.user_image.image-circle
-              .summary_inner
-                %p.user_info
-                  %a
-                %a
-                  .div
-                    %strong
-                      %span.user_age
-                      %span.user_area
-                    %span.user_profile_item
-                    %span.user_profile_item
-                    %span.user_profile_item
-                %ul.user_community_list.sample
-              .visitor_like_box
-                .data_like_buttons.like
-                  %span
-                    %a.button_like.button_like_default.button_pink_c.button_like_view.button_d
-                      %span.like
-    %div
-      %p.three_dots
-        %img{src: ""}
-      %p.more_visitor_text
-      .common_button_area.mb20
-        %p.button_item.w40p
-          .button_e.button_pink_b
-            = link_to "/" do
-              aiko
+.common_title {
+  //クリアフィックスの記載が、本番にあり！
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+.common_box_inner {
+  padding: 20px 0;
+  background-color: #fff;
+}
 
+.box_visitor_view {
+  .box_visitor_list {
+    table {
+      font-size: 1.2rem;
+      width: 100%;
+      border-collapse: collapse;
+      .date {
+        font-weight: 400;
+        width: 55px;
+        text-align: center;
+        vertical-align: top;
+        border-right: 1px solid rgb(225, 227, 229);
+        border-bottom: 1px solid rgb(225, 227 ,229);
+        padding: 10px;
+      }
+      .time {
+        width: 40px;
+        text-align: center;
+        vertical-align: top;
+        border-right: 1px solid rgb(225, 227, 229);
+        border-bottom: 1px solid rgb(225, 227 ,229);
+        padding: 10px;
+      }
+      .user_summary {
+        vertical-align: middle;
+        border-bottom: 1px solid rgb(225, 227 ,229);
+        padding: 10px;
+      }
+      .user_image {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: top;
+        height: 64px;
+        width: 64px;
+      }
+      .summary_inner {
+        display: inline-block;
+        width: 285px;
+        min-height: 60px;
+        vertical-align: middle;
+        .user_info {
+          margin-bottom: 5px;
+        }
+        a div strong {
+          font-weight: bold;
+        }
+        .user_community_list {
+          vertical-align: middle;
+        }
+      }
+      .community_item {
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+        color: rgb(0, 171, 179);
+        background-color: rgb(225, 249, 250);
+        margin: 0px 5px 3px 0px;
+        padding: 4px 8px;
+        border-radius: 10px;
+        .community_link {
+          color: rgb(0, 171, 179);
+        }
+      }
+      .visitor_like_box {
+        display: inline-block;
+        float: right;
+        .data_like_buttons {
+          margin-top: 15px;
+          .button_like_default {
+            &:before {
+              position: relative;
+              top: 2px;
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              margin-right: 4px;
+              content: "";
+              background-image:url(https://lh3.googleusercontent.com/ke-dJr7AnSd6JLFySq_pbOftUo-INEAsEZ3lsh5BpxMKXWNN9IGMBsGOYXbAPs3iytqpUZmRspPk0wxXNm7oTYz0bEVy5UJ7doyaTj4tJZEpvXpfmYK-JNnZOuhYjx6Dj3vj4NCZUXcbQYt0wyTalo3J_UkeoQAl0toqH-kSlXtEMmNfukojkjxLrkpHZ7o5snDIfNIXa3tXp-B4uAqxWSNgCkMnMtPCZHkvVnAXmN6fl6pqKYzAXCHd32JLq3xswFlA5rv0Jh40YYQ8wAjGfbLsLglax9gaB2zVdI39yYmQS7wrD9bGM3EVoo07Ab6OpS4GLaSrdcrapmN1U1pQAERM4v1MLTdCv1KSi_7FMPf-JEkvJz4WlM5wFHHvlrBtBkTaIhJLlpPwp6dP2CwDvHpFqOy14iAC91ANoH8Jfe1hm58pk905Y0dqg2adQGevEnSaLAhxTHPyFJBV_kMpV-wG-FwEkvhNuzlLCIxqZ0csaGbCwcJFVDAdPHBCuIDwXsWdD3iDz4ibxfzTq2cAnUxtzopngscQDz7qgXIbJa8blz31rSv1ImKKCuh5u36nKqDt-E-rcPHqdIGJ8ZSXvU3Fi-XUcLRIvbguyuRri9AhB32fqhoeVyqtYCvhRY4nJ3C3tSVq6UUgTOivlnmWHhAZc-EnuMEw=w259-h1188-no),none;
+              background-repeat: no-repeat;
+              background-position: 0 -45px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .box_visitor_pager {
+    .pager_info.common_text.text_center {
+      padding-top: 15px;
+      text-align: center;
+    }
+    .box_result_pager.box_pager {
+      @include clearfix();
+      display: inline-block;
+      .pager_pre {
+        float: left;
+      }
+      .pager_next {
+        float: right;
+      }
+      .pager_nums {
+        text-align: center;
+        display: inline-block;
+      }
+    }
+  }
+  .box_more_visitor {
+    .three_dots {
+      margin-bottom: 40px;
+      padding: 15px 0;
+      text-align: center;
+      border-bottom: 1px solid #e1e3e5;
+    }
+    .more_visitor_text {
+      font-size: 1.6rem;
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #788086;
+    }
+  }
+}
+.common_button_area {
+  text-align: center;
+  .button_item,
+  .button_item_form {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
 
 //『setting』ページ画面
