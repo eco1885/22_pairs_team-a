@@ -404,6 +404,7 @@
       .box_join_community {
         @include box_join_community;
         .join_community_title_b {
+          @include clearfix();
           @include join_community_title_b;
           .title_a {
             margin-top: 8px;
@@ -428,12 +429,11 @@
             padding-top: 40px;
             text-align: center;
             color: #8d9399;
-          }
-          a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: underline;
-            color: #00abb3;
+            a {
+              display: inline-block;
+              margin-top: 10px;
+              color: #00abb3;
+            }
           }
         }
         .box_community_pager {

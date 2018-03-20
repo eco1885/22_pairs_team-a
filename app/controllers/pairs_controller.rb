@@ -7,6 +7,8 @@ class PairsController < ApplicationController
 
   end
 
+  def search_one
+  end
 
   def myprofile
   end
