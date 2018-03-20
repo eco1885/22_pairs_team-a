@@ -1,10 +1,9 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum gender: {男性:1, 女性:2}
+  enum gender: {male:1, female:2}
 
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   has_many :followings, through: :following_relationships
@@ -28,7 +27,4 @@ class User < ApplicationRecord
     followings & followers
   end
 
-  # def unfollow!(other_user)
-  #   following_relationships.find_by(following_id: other_user.id).destroy
-  # end
 end
