@@ -25,7 +25,7 @@ table {
   border-spacing: 0px;
   border-collapse: collapse;
 }
-.common_page_bpx {
+.common_page_box {
   margin-bottom: 25px;
   padding: 15px;
   background-color: #f3f3f3;
@@ -40,6 +40,11 @@ table {
 .common_box_inner {
   padding: 20px 0;
   background-color: #fff;
+}
+.common_text {
+  font-size: 1.4rem;
+  font-size: 14px;
+  margin: 0 15px 20px;
 }
 
 .box_visitor_view {
@@ -163,6 +168,13 @@ table {
       color: #788086;
     }
   }
+  .visitor_setting_item {
+    margin: 0px 15px 20px;
+    .parts {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
 }
 .common_button_area {
   text-align: center;
@@ -174,3 +186,63 @@ table {
 }
 
 //『setting』ページ画面
+.common_inner_title {
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 15px 20px;
+  padding-left: 8px;
+  border-left: 4px solid #00abb3;
+  color: #00abb3;
+}
+//デフォルトラジオボタンの非表示
+.form_radio input[type="radio"] {
+  display: none;
+}
+//ラベルの装飾変更
+.form_radio label:not(.label_image) {
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1.0;
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  cursor: pointer;
+  text-align: center;
+  color: #788086;
+  padding: 4px 0px 4px 15px;
+  border-radius: 2px;
+}
+//チェックボックス（空）の作成
+.form_radio label:not(.label_image) {
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 17px;
+    height: 17px;
+    margin-top: -10px;
+    content: "";
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e1e3e5;
+    border-image: initial;
+    border-radius: 50%;
+    background: #f3f3f3;
+  }
+}
+//ラベル選択時のフォント変更 + チェック（緑）の作成
+.form_radio input[type="radio"]:checked + label {
+  color: #00abb3;
+  &:after {
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    width: 7px;
+    height: 7px;
+    margin-top: -4px;
+    content: "";
+    border-radius: 50%;
+    background: #00abb3;
+  }
+}
