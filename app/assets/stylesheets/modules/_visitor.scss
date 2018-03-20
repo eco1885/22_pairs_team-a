@@ -1,0 +1,70 @@
+//『list』ページ画面
+//広告より上部分
+.common_page_header {
+  margin-bottom: 12px;
+  .page_back {
+    margin-right: 10px;
+    cursor: pointer;
+    @include common_page_header_page_back();
+  }
+  .page_tile {
+    font-size: 1.6rem;
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8d9399;
+  }
+}
+.float_right {
+  float: right;
+}
+
+//広告より下部分
+.common_page_bpx {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f3f3f3;
+}
+  %p.common_title<
+    過去ー週間の足あと：
+    %em.fnt_pink02>
+      %span.visitor_count<> 118
+      人
+  .common_box_inner.pt0
+    .box_visitor_list
+      %table.visitor_lists.sample
+        %tbody
+          %tr
+            %th.date
+            %td.time
+            %td.user_summary
+              %a
+                %img.user_image.image-circle
+              .summary_inner
+                %p.user_info
+                  %a
+                %a
+                  .div
+                    %strong
+                      %span.user_age
+                      %span.user_area
+                    %span.user_profile_item
+                    %span.user_profile_item
+                    %span.user_profile_item
+                %ul.user_community_list.sample
+              .visitor_like_box
+                .data_like_buttons.like
+                  %span
+                    %a.button_like.button_like_default.button_pink_c.button_like_view.button_d
+                      %span.like
+    %div
+      %p.three_dots
+        %img{src: ""}
+      %p.more_visitor_text
+      .common_button_area.mb20
+        %p.button_item.w40p
+          .button_e.button_pink_b
+            = link_to "/" do
+              aiko
+
+
+//『setting』ページ画面

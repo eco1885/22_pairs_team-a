@@ -1,0 +1,42 @@
+.common_page_bpx
+  %p.common_title<
+    過去ー週間の足あと：
+    %em.fnt_pink02>
+      %span.visitor_count<> 118
+      人
+  .common_box_inner.pt0
+    .box_visitor_list
+      %table.visitor_lists.sample
+        %tbody
+          %tr
+            %th.date
+            %td.time
+            %td.user_summary
+              %a
+                %img.user_image.image-circle
+              .summary_inner
+                %p.user_info
+                  %a
+                %a
+                  .div
+                    %strong
+                      %span.user_age
+                      %span.user_area
+                    %span.user_profile_item
+                    %span.user_profile_item
+                    %span.user_profile_item
+                %ul.user_community_list.sample
+              .visitor_like_box
+                .data_like_buttons.like
+                  %span
+                    %a.button_like.button_like_default.button_pink_c.button_like_view.button_d
+                      %span.like
+    %div
+      %p.three_dots
+        %img{src: ""}
+      %p.more_visitor_text
+      .common_button_area.mb20
+        %p.button_item.w40p
+          .button_e.button_pink_b
+            = link_to "/" do
+              aiko
