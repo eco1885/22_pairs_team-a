@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users do
     member do
      get :following, :followers
@@ -14,4 +13,6 @@ Rails.application.routes.draw do
   get 'like/favorite' => 'pairs#favorite'
   get "myprofile" => "pairs#myprofile"
   get "searchone" => "pairs#search_one"
+  get "visitorlist" => "pairs#visitor_list"
+  get "visitorsetting" => "pairs#visitor_setting"
 end
