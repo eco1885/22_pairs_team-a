@@ -48,6 +48,13 @@ img {
   vertical-align: bottom;
 }
 
+table {
+  margin: 2px;
+  padding: 2px;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
 html, body {
   height: 100%;
   color: #54595d;
@@ -100,6 +107,9 @@ html, body {
 }
 .fnt14 {
   font-size: 1.4rem!important;
+}
+.fnt16 {
+  font-size: 1.6rem!important;
 }
 .fnt20 {
   font-size: 2.0rem!important;

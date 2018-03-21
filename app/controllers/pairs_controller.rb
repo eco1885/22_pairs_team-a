@@ -27,4 +27,7 @@ class PairsController < ApplicationController
 
   def visitor_setting
   end
+
+  def parts
+  end
 end

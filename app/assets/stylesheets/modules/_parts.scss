@@ -1,0 +1,584 @@
+/* 下記、『設定ボタン』からのポップアップする画面*/
+.box_custom_display_form {
+  display: none;     /*jsトグルで表示・非表示変更が可能*/
+  position: absolute;
+  z-index: 1000;
+  top: -30px; /*ファイル2で表示させる場合はコメアウト*/
+  left: 100%;
+  width: 430px;
+  cursor: auto;
+}
+.custom_display_form_inner {
+  position: relative;
+  padding: 20px;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+}
+.custom_display_form_inner:after, .custom_display_form_inner:before {
+  position: absolute;
+  top: 38px;
+  right: 100%;
+  width: 0;
+  height: 0;
+  content: "";
+  pointer-events: none;
+  border: solid transparent;
+}
+.custom_display_form_inner:before {
+  margin-left: -10px;
+  border-width: 10px;
+  border-color: rgba(208,211,212,0);
+  border-right-color: #d0d3d4;
+}
+.custom_display_form_inner:after {
+  margin-left: -9px;
+  border-width: 9px;
+  border-color: rgba(255,255,255,0);
+  border-right-color: #fff;
+}
+.custom_display_form_title {
+  font-size: 1.5rem;
+  line-height: 1.0;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  color: #00abb3;
+  border-left: 4px solid #00abb3;
+}
+.custom_display_form_list {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e1e3e5;
+  border-radius: 4px;
+}
+.custom_display_form_list:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.form_item {
+  font-size: 1.3rem;
+  position: relative;
+  top: 1px;
+  float: left;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 6px 12px;
+  border-right: 1px solid #e1e3e5;
+  border-bottom: 1px solid #e1e3e5;
+}
+.form_item.nomargin {
+  margin-bottom: 0;
+}
+.form_item.is_checked {
+  color: #00abb3;
+  background-color: #e1f9fa;
+}
+.form_item:nth-child(2n) {
+  border-right: none;
+}
+/* チェックボックスを、nonチェックとチェック時で画像が変わる仕組み*/
+label:before {
+  display: inline-block;
+  width: 19px;
+  height: 18px;
+  margin: 0 4px 0 0;
+  content: "";
+  vertical-align: top;
+  background-image: url(images/icon_sprites.png);
+  background-position: 0 -105px;
+}
+.is_checked label:before {
+  background-position: -27px -105px;
+}
+.text_center {
+  text-align: center;
+}
+.button_cancel {
+  display: inline-block;
+  width: 120px;
+}
+.button_commit {
+  display: inline-block;
+  width: 160px;
+  margin-left: 10px;
+}
+/* 上記、『設定ボタン』からのポップアップする画面*/
+
+// 『閉じるボタン』
+// 『閉じるボタン』
+
+/*下記、『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ */
+.box_modal_window {
+  &.modal_fixed {
+    // コンテンツエリア内で表示させる為、下記4つを一旦コメアウト
+    // position: fixed;
+    // top: 100px;
+  }
+  // position: absolute;
+  // z-index: 2001;
+  letter-spacing: .5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  .box_modal_window_inner {
+    position: relative;
+    box-sizing: border-box;
+    width: 600px;
+    padding: 28px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .modal_close {
+    position: absolute;
+    top: -26px;
+    right: -26px;
+    img {
+      height: 53px;
+      width: 53px;
+    }
+  }
+  .modal_sub_title_b {
+    font-size: 1.5rem;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #788086;
+    border-left: 4px solid #788086;
+  }
+  .modal_hideblock_text {
+    font-size: 1.3rem;
+    font-size: 13px;
+    line-height: 1.8em;
+    margin-bottom: 15px;
+  }
+  .modal_note_border {
+    padding-bottom: 20px;
+    border: thin solid #c9c9c9;
+    li {
+      font-size: 1.5rem;
+      font-size: 15px;
+      padding: 20px 0 0 40px;
+      .hide_block_radio {
+        display: none;
+      }
+      label {
+        cursor: pointer;
+        &:not(.label_image) {
+          &:before {
+            position: absolute;
+            left: 40px;
+            width: 17px;
+            height: 17px;
+            margin-top: 2px;
+            content: "";
+            border: 1px solid #e1e3e5;
+            border-radius: 50%;
+            background: #f3f3f3;
+          }
+        }
+      }
+      input[type=radio]:checked + label {
+        &:after {
+          position: absolute;
+          z-index: 1;
+          left: 46px;
+          width: 7px;
+          height: 7px;
+          margin-top: 8px;
+          content: "";
+          border-radius: 50%;
+          background: #53b7bb;
+        }
+      }
+    }
+    .modal_hideblock_inner_text {
+      font-size: 1.4rem;
+      font-size: 14px;
+      margin: 20px;
+    }
+    .modal_hideblock_inner_text_notice {
+      font-size: 1.2rem;
+      font-size: 12px;
+      margin: 20px;
+    }
+    .text_red {
+      color: #e53935;
+    }
+  }
+  .modal_button_area {
+    button {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}
+/*上記、『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ */
+
+/*下記、『非表示系』画面ポップアップ*/
+.box_modal_window {
+  .modal_note_area_b {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  .modal_text_a {
+    font-size: 1.5rem;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .modal_button_area {
+    button {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
+}
+/*上記、『非表示系』画面ポップアップ*/
+
+
+/*下記、『違反者通報箇所』（別ページ）*/
+.main {
+  min-height: 500px;
+  margin-bottom: 50px;
+}
+.main.contents_padding {
+  padding: 20px 0 0 17px;
+}
+
+.common_page_box {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f3f3f3;
+}
+.common_title {
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 0 15px;
+}
+.common_box_inner {
+  padding: 20px 0;
+  background-color: #fff;
+  .common_text {
+    .link {
+      img {
+        height: 12px;
+        width: 12px;
+        vertical-align: middle;
+        border: 0;
+        margin: 0 3px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.common_text {
+  font-size: 1.4rem;
+  font-size: 14px;
+  margin: 0 15px 20px;
+  em {
+    color: #ed4655;
+  }
+}
+.common_text a, .common_list a {
+  text-decoration: underline;
+  color: #00abb3;
+}
+.common_table_b {
+  margin: 0 0 20px;
+  table {
+    font-size: 1.3rem;
+    font-size: 13px;
+    width: 100%;
+    border-top: 1px solid #e1e3e5;
+    border-bottom: 1px solid #e1e3e5;
+  }
+  th {
+    font-weight: 400;
+    width: 25%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #e1e3e5;
+  }
+  td {
+    width: 75%;
+    border-width: 0 0 1px;
+    border-style: solid;
+    border-color: #e1e3e5;
+    img {
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+    }
+  }
+}
+.common_table_b th, .common_table_b td {
+  padding: 25px 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+.common_form {
+  em {
+    color: #ed4655;
+  }
+  .required {
+    font-size: 1.1rem;
+    font-size: 11px;
+    padding: 3px;
+    color: #ed4655;
+  }
+  .parts {
+    margin: 5px 0;
+  }
+}
+.common_inline_box {
+  @include clearfix();
+  .box_left {
+    float: left;
+  }
+  .box_right {
+    float: right;
+  }
+}
+// ラジオボタン（チェック）設定箇所
+.form_radio input[type=radio] {
+  display: none;
+}
+.form_radio input[type=radio]:checked+label:after {
+  position: absolute;
+  top: 50%;
+  left: -4px;
+  width: 7px;
+  height: 7px;
+  margin-top: -4px;
+  content: "";
+  border-radius: 50%;
+  background: #00abb3;
+}
+.form_radio label:not(.label_image) {
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1;
+  position: relative;
+  display: inline-block;
+  margin-left: 12px;
+  padding: 4px 0 4px 15px;
+  cursor: pointer;
+  text-align: center;
+  color: #788086;
+  border-radius: 2px;
+}
+.form_radio label:not(.label_image):before {
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  width: 17px;
+  height: 17px;
+  margin-top: -10px;
+  content: "";
+  border: 1px solid #e1e3e5;
+  border-radius: 50%;
+  background: #f3f3f3;
+}
+textarea {
+  font-size: 1.3rem;
+  font-size: 13px;
+  line-height: 1.8;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #cdced0;
+  border-radius: 4px;
+  background: #fff;
+}
+.common_note {
+  font-size: 1.2rem;
+  font-size: 12px;
+  margin: 0 15px 20px;
+  color: #8d9399;
+}
+.common_inner_title {
+  font-size: 1.5rem;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 15px 20px;
+  padding-left: 8px;
+  color: #00abb3;
+  border-left: 4px solid #00abb3;
+}
+.common_list {
+  font-size: 1.3rem;
+  font-size: 13px;
+  margin: 0 15px 20px 35px;
+  li {
+    margin-bottom: 5px;
+    list-style: outside disc;
+  }
+}
+.common_button_area {
+  text-align: center;
+  .button_item,
+  .button_item_form {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  .button_item button,
+  .button_item_form button {
+    width: 100%;
+  }
+}
+/*上記、『違反者通報箇所』（別ページ）*/
+
+/*下記、『右上アイコン』からのポップアップ*/
+.box_header_message {
+  position: absolute;
+  display: none;
+  top: 55px;
+  right: 0;
+  width: 430px;
+  border: 1px solid #cbced0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(94,94,94,.4);
+}
+.box_header_message:before,
+.box_header_message:after {
+  position: absolute;
+  bottom: 100%;
+  left: 398px;
+  width: 0;
+  height: 0;
+  content: "";
+  pointer-events: none;
+  border: solid transparent;
+}
+.box_header_message:after {
+  margin-left: -8px;
+  border-width: 8px;
+  border-color: rgba(255,255,255,0);
+  border-bottom-color: #fff;
+}
+.box_no_matching {
+  font-size: 1.4rem;
+  padding: 30px 0;
+  text-align: center;
+  color: #788086;
+}
+.box_message_list_title {
+  border-bottom: 1px solid #cbced0;
+  background: #fff;
+}
+.box_message_list_title .list_title {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.box_message_list_title .matching_summary {
+  font-size: 1.3rem;
+  padding: 10px 10px 10px 40px;
+  text-align: center;
+  color: #788086;
+}
+.box_message_list_title .matching_summary em {
+  color: #f06976;
+}
+.box_matching_list {
+  line-height: 1.0;
+  height: 545px;
+  background-color: #fff;
+}
+.box_header_message .box_matching_list {
+  max-height: 380px;
+}
+.box_inner_scroll {
+  position: relative;
+  overflow: hidden;
+}
+.box_matching_list .matching_item {
+  position: relative;
+  border-bottom: 1px solid #cbced0;
+  background-color: #fff;
+/*  height: 83px; *//* height:auto;も切ると同じになる*/
+}
+.box_matching_list .matching_item a {
+  display: block;
+  padding: 14px 10px;
+}
+.box_matching_list .user_photo {
+  float: left;
+  width: 55px;
+  height: auto;/*画像の高さが調整できれば、要らない*/
+  margin-right: 10px;
+}
+.box_matching_list .info_inner {
+  overflow: hidden;
+}
+.box_header_message .box_matching_list .info_inner {
+  width: 325px;
+}
+.user_info01 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  white-space: nowrap;
+}
+.user_info01 span {
+  padding-right: 2px;
+}
+.user_info02 {
+  font-size: 1.2rem;
+  color: #788086;
+}
+.info_inner .text_ellipsis {
+  line-height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;/*上記２つと併用すると『…』となるらしいが、機能せず*/
+}
+.login_time {
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 14px;
+}
+.matching_item a:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.ps-scrollbar-x-rail {
+  position: absolute;
+  bottom: 3px;
+  height: 8px;
+  border-radius: 4px;
+}
+.ps-scrollbar-x {
+  position: absolute;
+  bottom: 0;
+  display: none;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #aaa;
+}
+/* yの二つは省略 */
+.box_message_all_more {
+  border-top: 1px solid #cbced0;
+  background-color: #f1f1f1;
+  box-shadow: 0 -1px 2px rgba(94,94,94,.1);
+}
+.link_all_more {
+  font-size: 1.4rem;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  color: #00abb3;
+}
+/*下記、『右上アイコン』からのポップアップ*/
+
