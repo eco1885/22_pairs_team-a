@@ -24,14 +24,6 @@
   padding: 4px 10px 6px;
   border-radius: 30px;
 }
-@mixin button_f {
-  font-size: 1.2rem;
-  font-size: 12px;
-  line-height: 1.0;
-  display: inline-block;
-  padding: 8px 12px;
-  border-radius: 30px;
-}
 @mixin button_e {
   font-size: 2.2rem;
   font-size: 22px;
@@ -39,6 +31,22 @@
   display: block;
   padding: 16px;
   text-align: center;
+  border-radius: 30px;
+}
+@mixin button_d {
+  font-size: 1.4rem;
+  font-size: 14px;
+  display: block;
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 30px;
+}
+@mixin button_f {
+  font-size: 1.2rem;
+  font-size: 12px;
+  line-height: 1.0;
+  display: inline-block;
+  padding: 8px 12px;
   border-radius: 30px;
 }
 @mixin button_red_a {
@@ -79,6 +87,11 @@
   background-color: #f06976;
   box-shadow: 0 2px 0 #ed4655;
 }
+@mixin button_pink_b {
+  color: #fff;
+  background-color: #f48d97;
+  box-shadow: 0 2px 0 #f06976;
+}
 @mixin button_pink_c {
   color: #fff;
   background-color: #f48d97;
@@ -94,6 +107,7 @@
   background-color: #f3f3f3;
   box-shadow: 0 2px 0 #c9c9c9;
 }
+
 @mixin button_like_done {
   position: relative;
   top: 2px;
