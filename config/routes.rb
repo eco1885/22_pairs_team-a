@@ -5,7 +5,7 @@ Rails.application.routes.draw do
      get :following, :followers
     end
   end
-  
+
   root 'pairs#index'
   get 'messages' => 'pairs#messages_index'
   resources :relationships, only: [:create, :destroy]
