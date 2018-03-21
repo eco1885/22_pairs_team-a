@@ -22,6 +22,9 @@ class PairsController < ApplicationController
   def visitor_list
   end
 
+  def visitor_list_zero
+  end
+
   def visitor_setting
   end
 end

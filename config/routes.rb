@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get "myprofile" => "pairs#myprofile"
   get "searchone" => "pairs#search_one"
   get "visitorlist" => "pairs#visitor_list"
+  get "visitorlistzero" => "pairs#visitor_list_zero"
   get "visitorsetting" => "pairs#visitor_setting"
 end

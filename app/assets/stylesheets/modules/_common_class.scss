@@ -101,8 +101,17 @@ html, body {
 .fnt14 {
   font-size: 1.4rem!important;
 }
+.fnt20 {
+  font-size: 2.0rem!important;
+}
+.fnt_pink01 {
+  color: #ed4655!important;
+}
 .fnt_pink02 {
   color: #f06976!important;
+}
+.w20p {
+  width: 20%!important;
 }
 .w30p {
   width: 30%!important;
@@ -128,6 +137,9 @@ html, body {
 .mt30 {
   margin-top: 30px!important;
 }
+.mt60 {
+  margin-top: 60px!important;
+}
 .mb5 {
   margin-bottom: 5px!important;
 }
@@ -143,11 +155,17 @@ html, body {
 .mb40 {
   margin-bottom: 40px!important;
 }
+.mb60 {
+  margin-bottom: 60px!important;
+}
 .pt0 {
   padding-top: 0px!important;
 }
 .pt15 {
   padding-top: 15px!important;
+}
+.pt60 {
+  padding-top: 60px!important;
 }
 .pb0 {
   padding-bottom: 0px!important;
@@ -173,7 +191,7 @@ html, body {
   @include button_c;
 }
 .button_d {
-  @include button_c;
+  @include button_d;
 }
 .button_f {
   @include button_f;
