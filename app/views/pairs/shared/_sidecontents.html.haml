@@ -51,7 +51,7 @@
         %p.gnavi_title さがす
         %ul
           %li.gnavi_item.is_currentgnavi_item.is_current
-            =link_to "",class: "sidemenu_link" do
+            =link_to root_path,class: "sidemenu_link" do
               %span お相手を探す
 
       .box_gnavis02
@@ -68,7 +68,7 @@
         %p.gnavi_title マッチング
         %ul
           %li.gnavi_item
-            =link_to "メッセージ","/messages",class: "sidemenu_link"
+            =link_to "メッセージ",messages_path,class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title コミュニティ
