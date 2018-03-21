@@ -46,6 +46,9 @@ table {
   font-size: 14px;
   margin: 0 15px 20px;
 }
+.text_center {
+  text-align: center;
+}
 
 .box_visitor_view {
   .box_visitor_list {
@@ -139,8 +142,8 @@ table {
       text-align: center;
     }
     .box_result_pager.box_pager {
+      width: auto;
       @include clearfix();
-      display: inline-block;
       .pager_pre {
         float: left;
       }

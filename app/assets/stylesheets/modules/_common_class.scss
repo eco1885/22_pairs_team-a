@@ -17,8 +17,25 @@ body {
 }
 a {
   text-decoration: none;
+  transition: background-color .25s linear;
+  color: inherit;
+  outline: none;
+}
+.box_other_navi a:hover {
+  text-decoration: underline;
 }
 
+.box_gnavi .gnavi_item a:hover,
+.sidecontents .box_my_private_mode .box_pm:hover {
+  background-color: #dfe1e3;
+}
+.sidecontents .my_profile_summary .profile_name a:hover {
+  color: #8d9399;
+}
+.sidecontents .my_profile_summary .profile_photo img:hover,
+.sidecontents .my_profile_summary .profile_status:hover {
+  opacity: .7;
+}
 li {
   list-style: none;
 }

@@ -45,6 +45,7 @@
           float: left;
           width: 60px;
           list-style: none;
+          text-align: center;
           @include clearfix();
           .hide {
             text-align: center;
