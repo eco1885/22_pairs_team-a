@@ -1,5 +1,84 @@
-.main_contents_style
-  #pairs_search_page.main.box_search_view.contents_padding
-    = render partial: "pairs/shared/notification"
-    = render partial: "pairs/shared/advertising"
-    = render partial: "pairs/shared/box_search_menu"
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      %a.page_back#top_community_btn
+        コミュニティTOP
+      %span.page_tile
+        コミュニティをさがす
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        %form.form_search_category
+        %form.form_search_word
+    .community_input_box
+      .data-community-create-form
+        .common_page_box.community_form_box
+          %p.common_title
+            新しいコミュニティを作成する
+          .comon_box_inner
+            %p.common_inner_title
+              コミュニティを作成するメリット
+            %p.text_center.mb20
+              %img{src: "https://lh3.googleusercontent.com/saXRVMBTkmrVK9zm7Ubb54VOgo87Us_gN8fjjYIFiTm4PL9vcdaFLEYQf8ewc8EvBUQ36VAiC0TX4ckm9MnnuBJFVHoyrEmVoVdoTELhQmgRHd462gPIQqFMh4zVE-6XWRRHh43hASQ4V9zf3rd1HiQ1NBbvv1YdoeGHKr_WXyX0H7FhLfj2Y5SGUDQj7vf_UAYkX3xT9hHp7OZpJ_R4boMK4ki23fkBjoQEsUxAEwAL8QtpqFt65xjy8yWY8GYHdVEmXWtOtCB-0X7rEzmfd5aZbGle6g8iEx_-05IBcA45tb65gpnQVmRnswGIn6NJruYAnfvvKfLecoILmNRdL4KhfBio-uQc8t1s75nVo0bqRNx44mqJ6lbc-ed9m0PRfm7j9EFLfTriU4XYkFRxxg6E9_rK-S4MQA367sMDsmos5XCUAS9wrNMBAZdEUezSV3cTsOlZhc5omincFSonYcxPIF72V7FrFvPeGCXIsn6NRpTZmyiWTJ3yhZqvli5yL9D9j0kA18FJj2yP775cx55IT_C2ehsWdNQ3ETH2OUo5shgGLibB4tEJfqTR1EO8QHbpY426Hi0NXXGIG586oNH2GR_sSs8j8-KO0u27Ew9b9P5UR1PUXpAPK0023vpSbgqwJakTqvnTNH48u2SUqKlP4AxEGlXR=w640-h90-no"}
+            %p.common_text
+              %em
+              ※作成する前に、似たコミュニティがないかご確認ください。
+              %br
+              %em
+              ※コミュニティは、一度作成すると変更することができません。
+            %form.community_form
+              .common_table_b.common_form
+                %table
+                  %tbody
+                    %tr
+                      %th.community_name
+                        %p
+                          コミュニティ名
+                          %em.required
+                            必須
+                      %td.community_name
+                        %input.input_name.input_search_word{type:"text", name:"name", placeholder:"コミュニティ名を入力する", maxlength: "20"}
+                        %em.input_error.error_empty_name.required.hide
+                          ※コミュニティ名を入力して下さい。
+                        %em.input_error.error_over_name.required.hide
+                          ※コミュニティ名は全角20文字までです。
+                    %tr
+                      %th.community_category
+                        カテゴリ
+                        %em.required
+                          必須
+                      %td.community_category
+                        %select.input_category_id
+                        %span.customSelect.input_category_id
+                        %p.fnt_base03.fnt12.mt10
+                          カテゴリは、そのコミュニティの内容をよく表したものを選択してください。
+                        %em.input_error.error_empty_category.required.hide
+                          ※カテゴリを選択して下さい。
+                    %tr
+                      %th.community_photo
+                        コミュニティの
+                        %br
+                        写真
+                        %em.required
+                          必須
+                      %td.community_photo
+                        %input.input_photo#community_photo_url{type:"file", name:"photo", placeholder:"選択してください"}
+                        %p.input_error.error_empty_photo.hide
+                          %em.required
+                            ※写真を選択して下さい。
+                        %p.input_error.error_empty_not_photo.hide
+                          %em.required
+                            ※JPG/PNG/GIF形式の写真を選択してください。
+                        %p.input_error.error_empty_over_photo.hide
+                          %em.required
+                            ※5MB以内の写真を選択して下さい。
+              .common_button_area
+                %p.button_item.w50p
+                  %button.button_a.button_blue_a.input_community
+                    このコミュニティを作成する
+      .community_page_box.community_rules_box
+
+/ ピンク
+https://lh3.googleusercontent.com/6NTvYMSO7C1ZkWGXyiqewDj55NYnNPG-fFsKXq_ri4yMtGsf0pZ3dz72LNl2C98Cyia6Gqxdk9vcv9qykL5pfNJJm-Haa9x5TbeEWHlGziEfQ391qm7lyYf8kve4TI1qasAmfLcgYbTj4nH39Lt7zjbQK1WuyhFDm_8kwnK5L4b4lCysMqtd5TXvmjg-V7chpFntkrmP75I-9Hf3kxVuG84kv8XJqL7Ibt4UDfwBD5wr9siJ4IZXSTGMsNFA28F2gUjnnhmC0-lXzWyctSj_1kXEgZs1WSXGXC_ClfMBjAU3NI3REr-N1ldYxiNfweS9gnXQX-2U20IajgD4D4EPn_He5DTW1KRyxJ4rJkahR1-fCNAMqblJhYB5A6Tibd7a6vRocwHkxNXTKmSBhfPX1POZBYStILgsmrWN_xWzYmahtn9yneJtIKncgQNwqsvYXSpPbRV2HMmPsfG03nVfvdKA9UsYm6vynPDi3VT5LJjtHdr2yV2akEO2JaMUYEvzGacBjSiMwrCoWq9fHJySgwuSPtzUYLTHJZSdWDyhNUOxfwZrfo1i9HaqbcM4MuI8ESeuZJguGho0uKmZmntsbWqpsX6D04w8zUEQM8oEjpHXi93UfRI9imF-1NmsFOvmOPC1eUTgQIBbzNXUmdgiVIBY_bhXikTV=w529-h191-no
+
+/ ブルー
+https://lh3.googleusercontent.com/pBT1ZVl-9lpAnv0vAwmzU2JB2hUSOYyohlahslg8hCH7__SjwWUERBS6KTGioJaWLKHWG70yO4CLATwAGGLgIRT1TZUK_M0O_S8bbNhWcviK2crJVsBQ7fIFXSwJjaXK9Dfqcl51S0woTSX7EHic6-uTMvCphjgndGWr3xe9M7_jN5hUyNNkXlR2eZJg76uAa9a1W3t9VSk88rec5PNQ7EtR2oUnjkBvZ_JuvquD-qzqmWbuXV30b1UEqPwiY1ykGNV5LnEjQBsdnOzVtEoVhxRRj9KypvJ-XpRqyAgHIZgR7Npq66cc7YaD4jXc7uWooHZNX0aXJthNFyucVX0L8tIQAGzGqw-G8R-u-GHVDbM0DPbkLgZmfWiMiwF79_AzRCKefWY-LDcGaHO_BTrWle09o4ZFyhZalwMl1CdKxmf6mvG8A5XDsZZzPVOgMZZ7AZtz_PnRalpDUm6liBXFkZMZWEAJ2YL-Af5eJVjtHEWFVFIeZyDc87u1nD77ccpdWBFrI2O15mBD1XH2-r_ufBwJmGRVqvxDtrO8O3KDRo4Sd5QUvNqfm1JnStooZQpaqOY9yFGMAx6HVgvII_lX72svcpliGc7cghW5IpKFFOy5bUhAODCGpt83wGvXh_QuEj3k3UrTz3aLl8EFqQmYaMsk9AvyYfoP=w529-h191-no
