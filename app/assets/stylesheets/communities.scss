@@ -1,3 +1,101 @@
-// Place all the styles related to the communities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//大枠内
+.box_community_view {
+  // 上と同じクラス
+  .common_inline_box {
+  }
+  //検索ボタン
+  .box_community_header {
+    margin-bottom: 10px;
+    //デバックプロパティ2つ
+    height: 31px;
+    border: 1px solid blue;
+  }
+}
+
+
+//コンテツ内、タイトルバー
+.common_page_header {
+  //デバックプロパティ３つ
+  border: 1px solid green;
+  height: 21px;
+}
+
+
+//メイン内部
+.box_wrapper_inner {
+  @include clearfix();
+  //デバックP2つ
+  height: 1760px;
+  border: 1px solid orange;
+  .box_community_side {
+    float: left;
+    width: 172px;
+    //デバックプロパティ2つ
+    border: 1px solid silver;
+    height: 894px;
+  }
+  .box_community_main {
+    float: right;
+    width: 530px;
+    //デバックプロパティ３つ
+    border: 1px solid yellow;
+    height: 100%;
+    .box_my_community {
+      margin-bottom: 28px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      .my_community_title {
+        margin-bottom: 15px;
+      }
+      .community_list_box {}
+      .my_community_list {
+        @include clearfix();
+        border-bottom: 1px solid #e1e3e5;
+      }
+      .my_community_item {
+        font-size: 1.3rem;
+        font-size: 13px;
+        float: left;
+        box-sizing: border-box;
+        width: 20%;
+        text-align: center;
+        border-right: 1px solid #e1e3e5;
+        background: #fff;
+      }
+    }
+    .box_everyone_community {
+      margin-bottom: 30px;
+      border-width: 2px 0 0;
+      border-style: solid;
+      //デバックプロパティ2つ
+      width: 530px;
+      height: 388px;
+      &.popular_community {
+        border-color: #ffbe40;
+        .data-community-popular-communities {
+          .everyone_community_title {}
+          .community_list_box {}
+          .link_more_community {}
+        }
+      }
+      &.recommend_community {
+        border-color: #00b8c0;
+      }
+      &.newcomer_community {
+        border-color: #f06976;
+      }
+      &.fame_community {
+        border-color: #82cc87;
+      }
+    }
+  }
+}
+
+//関連ページ使用パーツ
+.bg-white {
+  background-color: #fff;
+}
+.box_community_pager {
+  padding: 6px 10px 10px;
+}
+.box_pager {}
