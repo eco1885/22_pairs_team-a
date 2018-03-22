@@ -1,0 +1,11 @@
+.main_contents_style
+  #pairs_search_page.main.box_search_view.contents_padding
+    = render partial: "pairs/shared/notification"
+    = render partial: "pairs/shared/advertising"
+    = render partial: "pairs/shared/box_search_menu"
+  .box_gnavis04
+  =link_to "view（showビュー）", community_view_path,class: "sidemenu_link"
+  .box_gnavis04
+  =link_to "create（newビュー）", community_create_path,class: "sidemenu_link"
+  .box_gnavis04
+  =link_to "search（searchビュー）", search_communities_path,class: "sidemenu_link"

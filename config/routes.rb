@@ -17,4 +17,11 @@ Rails.application.routes.draw do
   get "visitorlistzero" => "pairs#visitor_list_zero"
   get "visitorsetting" => "pairs#visitor_setting"
   get "parts" => "pairs#parts"
+  get "community/view" => "communities#show"
+  get "community/create" => "communities#new"
+  resources :communities, path: "community", only: [:index, :create] do
+    collection do
+      get "search"
+    end
+  end
 end
