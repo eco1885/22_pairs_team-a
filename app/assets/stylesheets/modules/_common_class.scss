@@ -260,3 +260,9 @@ html, body {
 .button_like_mitene_displayed {
   @include button_like_mitene_displayed;
 }
+.button_cancel {
+  @include button_cancel;
+}
+.button_commit {
+  @include button_commit;
+}

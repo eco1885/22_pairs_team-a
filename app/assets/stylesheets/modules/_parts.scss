@@ -7,110 +7,98 @@
   left: 100%;
   width: 430px;
   cursor: auto;
+  .custom_display_form_inner {
+    position: relative;
+    padding: 20px;
+    color: #788086;
+    border: 1px solid #cbced0;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    &:after,
+    &:before {
+      position: absolute;
+      top: 38px;
+      right: 100%;
+      width: 0;
+      height: 0;
+      content: "";
+      pointer-events: none;
+      border: solid transparent;
+    }
+    &:before {
+      margin-left: -10px;
+      border-width: 10px;
+      border-color: rgba(208,211,212,0);
+      border-right-color: #d0d3d4;
+    }
+    &:after {
+      margin-left: -9px;
+      border-width: 9px;
+      border-color: rgba(255,255,255,0);
+      border-right-color: #fff;
+    }
+  }
+  .custom_display_form_title {
+    font-size: 1.5rem;
+    line-height: 1.0;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    color: #00abb3;
+    border-left: 4px solid #00abb3;
+  }
+  .custom_display_form_list {
+    @include clearfix();
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e1e3e5;
+    border-radius: 4px;
+    .form_item {
+      font-size: 1.3rem;
+      font-size: 13px;
+      position: relative;
+      top: 1px;
+      float: left;
+      box-sizing: border-box;
+      width: 50%;
+      padding: 6px 12px;
+      border-right: 1px solid #e1e3e5;
+      border-bottom: 1px solid #e1e3e5;
+      &.is_checked {
+        color: #00abb3;
+        background-color: #e1f9fa;
+      }
+      &:nth-child(2n) {
+        border-right: none;
+      }
+    }
+  }
 }
-.custom_display_form_inner {
-  position: relative;
-  padding: 20px;
-  color: #788086;
-  border: 1px solid #cbced0;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 0 8px rgba(0,0,0,.2);
-}
-.custom_display_form_inner:after, .custom_display_form_inner:before {
-  position: absolute;
-  top: 38px;
-  right: 100%;
-  width: 0;
-  height: 0;
-  content: "";
-  pointer-events: none;
-  border: solid transparent;
-}
-.custom_display_form_inner:before {
-  margin-left: -10px;
-  border-width: 10px;
-  border-color: rgba(208,211,212,0);
-  border-right-color: #d0d3d4;
-}
-.custom_display_form_inner:after {
-  margin-left: -9px;
-  border-width: 9px;
-  border-color: rgba(255,255,255,0);
-  border-right-color: #fff;
-}
-.custom_display_form_title {
-  font-size: 1.5rem;
-  line-height: 1.0;
-  margin-bottom: 15px;
-  padding-left: 10px;
-  color: #00abb3;
-  border-left: 4px solid #00abb3;
-}
-.custom_display_form_list {
-  box-sizing: border-box;
-  margin-bottom: 15px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e1e3e5;
-  border-radius: 4px;
-}
-.custom_display_form_list:after {
-  display: block;
-  content: "";
-  clear: both;
-}
+
 .form_item {
-  font-size: 1.3rem;
-  position: relative;
-  top: 1px;
-  float: left;
-  box-sizing: border-box;
-  width: 50%;
-  padding: 6px 12px;
-  border-right: 1px solid #e1e3e5;
-  border-bottom: 1px solid #e1e3e5;
+  &.nomargin {
+    margin-bottom: 0;
+  }
 }
-.form_item.nomargin {
-  margin-bottom: 0;
-}
-.form_item.is_checked {
-  color: #00abb3;
-  background-color: #e1f9fa;
-}
-.form_item:nth-child(2n) {
-  border-right: none;
-}
-/* チェックボックスを、nonチェックとチェック時で画像が変わる仕組み*/
-label:before {
+/* チェックボックス：nonチェックとチェック時で画像が変わる仕組み*/
+input[type=checkbox]:not(.not_use_default)+label:before {
   display: inline-block;
   width: 19px;
   height: 18px;
   margin: 0 4px 0 0;
   content: "";
   vertical-align: top;
-  background-image: url(images/icon_sprites.png);
+  background-image: url(https://lh3.googleusercontent.com/ke-dJr7AnSd6JLFySq_pbOftUo-INEAsEZ3lsh5BpxMKXWNN9IGMBsGOYXbAPs3iytqpUZmRspPk0wxXNm7oTYz0bEVy5UJ7doyaTj4tJZEpvXpfmYK-JNnZOuhYjx6Dj3vj4NCZUXcbQYt0wyTalo3J_UkeoQAl0toqH-kSlXtEMmNfukojkjxLrkpHZ7o5snDIfNIXa3tXp-B4uAqxWSNgCkMnMtPCZHkvVnAXmN6fl6pqKYzAXCHd32JLq3xswFlA5rv0Jh40YYQ8wAjGfbLsLglax9gaB2zVdI39yYmQS7wrD9bGM3EVoo07Ab6OpS4GLaSrdcrapmN1U1pQAERM4v1MLTdCv1KSi_7FMPf-JEkvJz4WlM5wFHHvlrBtBkTaIhJLlpPwp6dP2CwDvHpFqOy14iAC91ANoH8Jfe1hm58pk905Y0dqg2adQGevEnSaLAhxTHPyFJBV_kMpV-wG-FwEkvhNuzlLCIxqZ0csaGbCwcJFVDAdPHBCuIDwXsWdD3iDz4ibxfzTq2cAnUxtzopngscQDz7qgXIbJa8blz31rSv1ImKKCuh5u36nKqDt-E-rcPHqdIGJ8ZSXvU3Fi-XUcLRIvbguyuRri9AhB32fqhoeVyqtYCvhRY4nJ3C3tSVq6UUgTOivlnmWHhAZc-EnuMEw=w259-h1188-no),none;
+  background-repeat: no-repeat;
   background-position: 0 -105px;
 }
-.is_checked label:before {
+input[type=checkbox]:not(.not_use_default):checked+label:before {
   background-position: -27px -105px;
-}
-.text_center {
-  text-align: center;
-}
-.button_cancel {
-  display: inline-block;
-  width: 120px;
-}
-.button_commit {
-  display: inline-block;
-  width: 160px;
-  margin-left: 10px;
 }
 /* 上記、『設定ボタン』からのポップアップする画面*/
 
-// 『閉じるボタン』
-// 『閉じるボタン』
 
 /*下記、『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ */
 .box_modal_window {
@@ -438,147 +426,172 @@ textarea {
 /*上記、『違反者通報箇所』（別ページ）*/
 
 /*下記、『右上アイコン』からのポップアップ*/
-.box_header_message {
-  position: absolute;
-  display: none;
-  top: 55px;
-  right: 0;
-  width: 430px;
-  border: 1px solid #cbced0;
-  border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 1px 5px rgba(94,94,94,.4);
-}
-.box_header_message:before,
-.box_header_message:after {
-  position: absolute;
-  bottom: 100%;
-  left: 398px;
-  width: 0;
-  height: 0;
-  content: "";
-  pointer-events: none;
-  border: solid transparent;
-}
-.box_header_message:after {
-  margin-left: -8px;
-  border-width: 8px;
-  border-color: rgba(255,255,255,0);
-  border-bottom-color: #fff;
-}
+/**/
+/*マッチしていない場合*/
 .box_no_matching {
   font-size: 1.4rem;
+  font-size: 14px;
   padding: 30px 0;
   text-align: center;
   color: #788086;
 }
-.box_message_list_title {
-  border-bottom: 1px solid #cbced0;
-  background: #fff;
-}
-.box_message_list_title .list_title {
-  font-size: 1.4rem;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.box_message_list_title .matching_summary {
-  font-size: 1.3rem;
-  padding: 10px 10px 10px 40px;
-  text-align: center;
-  color: #788086;
-}
-.box_message_list_title .matching_summary em {
-  color: #f06976;
-}
+/*マッチしている場合*/
 .box_matching_list {
   line-height: 1.0;
   height: 545px;
   background-color: #fff;
 }
-.box_header_message .box_matching_list {
-  max-height: 380px;
-}
-.box_inner_scroll {
-  position: relative;
-  overflow: hidden;
-}
-.box_matching_list .matching_item {
-  position: relative;
-  border-bottom: 1px solid #cbced0;
-  background-color: #fff;
-/*  height: 83px; *//* height:auto;も切ると同じになる*/
-}
-.box_matching_list .matching_item a {
-  display: block;
-  padding: 14px 10px;
-}
-.box_matching_list .user_photo {
-  float: left;
-  width: 55px;
-  height: auto;/*画像の高さが調整できれば、要らない*/
-  margin-right: 10px;
-}
-.box_matching_list .info_inner {
-  overflow: hidden;
-}
-.box_header_message .box_matching_list .info_inner {
-  width: 325px;
-}
-.user_info01 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
-  white-space: nowrap;
-}
-.user_info01 span {
-  padding-right: 2px;
-}
-.user_info02 {
-  font-size: 1.2rem;
-  color: #788086;
-}
-.info_inner .text_ellipsis {
-  line-height: 18px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;/*上記２つと併用すると『…』となるらしいが、機能せず*/
-}
-.login_time {
-  font-size: 1.2rem;
-  position: absolute;
-  bottom: 14px;
-}
-.matching_item a:after {
-  display: block;
-  content: "";
-  clear: both;
-}
-.ps-scrollbar-x-rail {
-  position: absolute;
-  bottom: 3px;
-  height: 8px;
-  border-radius: 4px;
-}
-.ps-scrollbar-x {
-  position: absolute;
-  bottom: 0;
+.box_header_message {
   display: none;
-  height: 8px;
+  z-index: 200;
+  position: absolute;
+  top: 55px;
+  right: 160px;
+  width: 430px;
+  border: 1px solid #cbced0;
   border-radius: 4px;
-  background-color: #aaa;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(94,94,94,.4);
+  &:after,
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 398px;
+    width: 0;
+    height: 0;
+    content: "";
+    pointer-events: none;
+    border: solid transparent;
+  }
+  &:before {
+    margin-left: -9px;
+    border-width: 9px;
+    border-color: rgba(203,206,208,0);
+    border-bottom-color: #cbced0;
+  }
+  &:after {
+    margin-left: -8px;
+    border-width: 8px;
+    border-color: rgba(255,255,255,0);
+    border-bottom-color: #fff;
+  }
+  .box_message_list_title {
+    border-bottom: 1px solid #cbced0;
+    background: #fff;
+    .list_title {
+      font-size: 1.4rem;
+      font-size: 14px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .matching_summary {
+      font-size: 1.3rem;
+      font-size: 13px;
+      padding: 10px 10px 10px 40px;
+      text-align: center;
+      color: #788086;
+      em {
+        color: #f06976;
+      }
+    }
+  }
+  .box_matching_list {
+    max-height: 380px;
+    .matching_item {
+      @include clearfix();
+      position: relative;
+      border-bottom: 1px solid #cbced0;
+      background-color: #fff;
+      a {
+        @include clearfix();
+        display: block;
+        padding: 14px 10px;
+      }
+      &.is_un_answered {
+        .message {
+          &:before {
+            font-size: 9rem;
+            font-size: 9px;
+            position: relative;
+            top: -2px;
+            margin-right: 3px;
+            padding: 2px 4px;
+            content: "未返信";
+            color: #fff;
+            border-radius: 4px;
+            background-color: #f06976;
+          }
+        }
+      }
+    }
+    .user_photo {
+      float: left;
+      width: 55px;
+      height: 55px;
+      margin-right: 10px;
+    }
+    .info_inner {
+      overflow: hidden;
+      width: 325px;
+      .text_ellipsis {
+        line-height: 18px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;/*上記２つと併用すると『…』となるらしいが、機能せず*/
+      }
+    }
+    .user_info01 {
+      font-size: 1.4rem;
+      font-size: 14px;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      span {
+        padding-right: 2px;
+      }
+    }
+    .user_info02 {
+      font-size: 1.2rem;
+      font-size: 12px;
+      color: #788086;
+    }
+    .login_time {
+      font-size: 1.2rem;
+      font-size: 12px;
+      position: absolute;
+      bottom: 14px;
+    }
+  }
+  .box_message_all_more {
+    border-top: 1px solid #cbced0;
+    background-color: #f1f1f1;
+    box-shadow: 0 -1px 2px rgba(94,94,94,.1);
+    .link_all_more {
+      font-size: 1.4rem;
+      font-size: 14px;
+      display: block;
+      padding: 10px;
+      text-align: center;
+      color: #00abb3;
+    }
+  }
 }
+/* 下記、何に使用しているか不明*/
 /* yの二つは省略 */
-.box_message_all_more {
-  border-top: 1px solid #cbced0;
-  background-color: #f1f1f1;
-  box-shadow: 0 -1px 2px rgba(94,94,94,.1);
+.ps-container {
+  .ps-scrollbar-x-rail {
+    position: absolute;
+    bottom: 3px;
+    height: 8px;
+    border-radius: 4px;
+  }
+  .ps-scrollbar-x {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #aaa;
+  }
 }
-.link_all_more {
-  font-size: 1.4rem;
-  display: block;
-  padding: 10px;
-  text-align: center;
-  color: #00abb3;
-}
-/*下記、『右上アイコン』からのポップアップ*/
-
+/*上記、『右上アイコン』からのポップアップ*/
