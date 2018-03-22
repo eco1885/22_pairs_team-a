@@ -51,19 +51,19 @@
       display:  inline;
       float:  left;
 
-  .label_nickname{
-    padding-bottom: 10px;
-    font-weight: 900;
-  }
+      .label_nickname{
+        padding-bottom: 10px;
+        font-weight: 900;
+      }
 
       #user_nickname{
-      margin-top: 10px;
-      padding: 10px;
-      width: 85%;
-      color: #a1a7ac;;
-      background: #f8f9f9;
-      border-radius: 5px;
-      border: none #ccc //radiusで生成されるformの影を消す処理
+        margin-top: 10px;
+        padding: 10px;
+        width: 85%;
+        color: #a1a7ac;;
+        background: #f8f9f9;
+        border-radius: 5px;
+        border: none #ccc //radiusで生成されるformの影を消す処理
     }
   }
 }
@@ -77,10 +77,10 @@
     float: right
   }
 
-    .gender_type_engine{
-      font-weight: 900;
-      display: inline;
-      padding: 10px;
+  .gender_type_engine{
+    font-weight: 900;
+    display: inline;
+    padding: 10px;
   }
 
     .gender_type_label_male{
@@ -165,7 +165,7 @@
       background: white;
       margin-bottom: 18px;
 
-       .label_password{
+      .label_password{
       font-weight: 900;
       padding-bottom: 10px;
   }
@@ -180,11 +180,11 @@
   }
 }
 
-      .field_password_confirmation{
-      background: white;
-      margin-bottom: 18px;
+    .field_password_confirmation{
+    background: white;
+    margin-bottom: 18px;
 
-       .label_password_confirmation{
+      .label_password_confirmation{
       padding-bottom: 10px;
       font-weight: 900;
   }
@@ -200,22 +200,22 @@
 }
 
   .field_checkbox{
-    background: white;
+      background: white;
       margin-bottom: 18px;
       height: 76px;
 
 
     .checkbox_icon{
-  background-image:url(https://lh3.googleusercontent.com/SsuwFUD19y20Sfw2u3WliB75_q1tRg6RP7SRRuUZHatAwCnIKQ3GR5swYv4lgHwOSwluorNIAOJq3JzFTLNu88-jUu9EMBE-vNzziHv5m0VxOusKTllXYgtthgVFj1lRKR8o7LAeRjEgD4nvt3O59iXuGBVosmoMBbPd7aiKlp1m6E-5xzUHi3Mz8_bub4RcLhnvmqze6QmFwUS3elub5Yqn48d5jT_q1CIh-wRV5H-Cy4Cwb_yq8RssG-TWmFDx56hb45EkOUqBLV2qr9UoDjvt6WKwBCh9g3upR8dUK8RCk5aCXQ3HEw1s42S9vhcmv8bOSrk-VvQMbEBRF6AvYC1xqQ_IsxVUi8ZScl_btVU2TnZrpT7Q4xaO2Qedi9RBHcoLXxLOMo6LVeEJkgWNqixfIjP5UGtmIonBtgaNaCl_TXF1Z81j97bCetWi-R-Xn-zdGFh_BKzHJ4mKmz6S-8cyP6Lrh27F5C5L0_duwcE1aCC0-Q_8Na8WQiPSxjhodVUlxd3rJ-ki5nl11O-tFXyVHLKPCMU3LtiIaj7vxLYVLm0zuNcCx4gzKszYXFqSF3Rm2tnwV5714ReN_30g9OaiPpEaMN3eYfZ3Y_evtD0hcb5R-0b5LKrP3TZtweTm8KtxbyVQYUIi4mZOsBs4HjR49lG-UUtn=s52-no);
-  height: 33px;
-  width: 33px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  float: left;
-  position: relative;
-  left: 135px;
-  top: 20px;
-  }
+      background-image:url(https://lh3.googleusercontent.com/SsuwFUD19y20Sfw2u3WliB75_q1tRg6RP7SRRuUZHatAwCnIKQ3GR5swYv4lgHwOSwluorNIAOJq3JzFTLNu88-jUu9EMBE-vNzziHv5m0VxOusKTllXYgtthgVFj1lRKR8o7LAeRjEgD4nvt3O59iXuGBVosmoMBbPd7aiKlp1m6E-5xzUHi3Mz8_bub4RcLhnvmqze6QmFwUS3elub5Yqn48d5jT_q1CIh-wRV5H-Cy4Cwb_yq8RssG-TWmFDx56hb45EkOUqBLV2qr9UoDjvt6WKwBCh9g3upR8dUK8RCk5aCXQ3HEw1s42S9vhcmv8bOSrk-VvQMbEBRF6AvYC1xqQ_IsxVUi8ZScl_btVU2TnZrpT7Q4xaO2Qedi9RBHcoLXxLOMo6LVeEJkgWNqixfIjP5UGtmIonBtgaNaCl_TXF1Z81j97bCetWi-R-Xn-zdGFh_BKzHJ4mKmz6S-8cyP6Lrh27F5C5L0_duwcE1aCC0-Q_8Na8WQiPSxjhodVUlxd3rJ-ki5nl11O-tFXyVHLKPCMU3LtiIaj7vxLYVLm0zuNcCx4gzKszYXFqSF3Rm2tnwV5714ReN_30g9OaiPpEaMN3eYfZ3Y_evtD0hcb5R-0b5LKrP3TZtweTm8KtxbyVQYUIi4mZOsBs4HjR49lG-UUtn=s52-no);
+      height: 33px;
+      width: 33px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      float: left;
+      position: relative;
+      left: 135px;
+      top: 20px;
+    }
 
   .checkbox_text{
     position: relative;
