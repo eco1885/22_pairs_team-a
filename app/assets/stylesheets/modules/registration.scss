@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   }
+
 .main_content{
   clear:  both;
   font-size: 15px;
@@ -204,7 +205,7 @@
       height: 76px;
 
 
-  .checkbox_icon{
+    .checkbox_icon{
   background-image:url(https://lh3.googleusercontent.com/SsuwFUD19y20Sfw2u3WliB75_q1tRg6RP7SRRuUZHatAwCnIKQ3GR5swYv4lgHwOSwluorNIAOJq3JzFTLNu88-jUu9EMBE-vNzziHv5m0VxOusKTllXYgtthgVFj1lRKR8o7LAeRjEgD4nvt3O59iXuGBVosmoMBbPd7aiKlp1m6E-5xzUHi3Mz8_bub4RcLhnvmqze6QmFwUS3elub5Yqn48d5jT_q1CIh-wRV5H-Cy4Cwb_yq8RssG-TWmFDx56hb45EkOUqBLV2qr9UoDjvt6WKwBCh9g3upR8dUK8RCk5aCXQ3HEw1s42S9vhcmv8bOSrk-VvQMbEBRF6AvYC1xqQ_IsxVUi8ZScl_btVU2TnZrpT7Q4xaO2Qedi9RBHcoLXxLOMo6LVeEJkgWNqixfIjP5UGtmIonBtgaNaCl_TXF1Z81j97bCetWi-R-Xn-zdGFh_BKzHJ4mKmz6S-8cyP6Lrh27F5C5L0_duwcE1aCC0-Q_8Na8WQiPSxjhodVUlxd3rJ-ki5nl11O-tFXyVHLKPCMU3LtiIaj7vxLYVLm0zuNcCx4gzKszYXFqSF3Rm2tnwV5714ReN_30g9OaiPpEaMN3eYfZ3Y_evtD0hcb5R-0b5LKrP3TZtweTm8KtxbyVQYUIi4mZOsBs4HjR49lG-UUtn=s52-no);
   height: 33px;
   width: 33px;
@@ -216,21 +217,21 @@
   top: 20px;
   }
 
-.checkbox_text{
-  position: relative;
-  width: 300px;
-  left: 50px;
-  font-size: 14px;
+  .checkbox_text{
+    position: relative;
+    width: 300px;
+    left: 50px;
+    font-size: 14px;
   }
 
 
-.checkbox_label{
-  position: relative;
-  left: 0px;
-  bottom: 48px;
-  font-size: 35px;
-   opacity: 0.0;
-  cursor: pointer;
+  .checkbox_label{
+    position: relative;
+    left: 0px;
+    bottom: 48px;
+    font-size: 35px;
+     opacity: 0.0;
+    cursor: pointer;
 
 }
 
@@ -242,22 +243,21 @@
   }
 }
 
-  .actions{
-  text-align: center;
-  padding: 30px;
+    .actions{
+      text-align: center;
+      padding: 30px;
 
-  input{
-    border: none;
-    background: #f3f3f3;
-    border-radius: 20px;
-    width: 344px;
-    height: 38px;
-    color: #8d9399;
-    box-shadow: 0 2px 0 #c9c9c9;
+    input{
+      border: none;
+      background: #f3f3f3;
+      border-radius: 20px;
+      width: 344px;
+      height: 38px;
+      color: #8d9399;
+      box-shadow: 0 2px 0 #c9c9c9;
     }
   }
 }
-
 
 .main_footer{
   width: 700px;
