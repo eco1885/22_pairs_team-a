@@ -76,11 +76,14 @@
                   %button.button_a.button_blue_a.input_community
                     このコミュニティを作成する
       .community_page_box.community_rules_box
+        / = form_for @community do |f| ：確認画面を介さない場合
         = form_for @community, url: {action: "confirm"} do |f|
           .chat-group-form__field--left
             = f.text_field :community_name, class: "form__message", placeholder: "コミュニティ名を入力する"
           .chat-group-form__field--left
             = f.select :category, Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}, class: "form__message"
+          .chat-group-form__field--left
+            = f.file_field :image, class: "hidden"
             .button_a.button_blue_a.input_community
               = f.submit "このコミュニティを作成する", class: "button_a button_blue_a input_community"
 

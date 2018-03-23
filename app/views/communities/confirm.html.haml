@@ -5,6 +5,12 @@
   .field
     category: #{@community.category}
     = f.hidden_field :category # <=データ保持 %>
+  / .field
+  /   image: = image_tag @community.image.to_s
+  /   = f.hidden_field :image # <=データ保持 %>
+  .field
+    = image_tag @community.image.url
+    = hidden_field_tag :"cache[image]",@community.image.cache_name # <=データ保持 %>
   .actions
     = f.submit 'Back!', name: 'back'  # <=戻る為のname %>
   .actions

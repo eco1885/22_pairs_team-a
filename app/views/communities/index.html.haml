@@ -34,9 +34,9 @@
           - @communities.each do |community|
             = community.community_name
             = community.category
+            = image_tag community.image.url, style: "hegiht:100px; width:100px;"
         .box_everyone_community.newcomer_community
         .box_everyone_community.fame_community
-
 
 
 

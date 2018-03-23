@@ -14,7 +14,9 @@ class CommunitiesController < ApplicationController
     @community = Community.new(community_params)
     if params[:back]
       render :new
-    elsif @community.save
+    elsif
+      @community.image.retrieve_from_cache! params[:cache][:image]
+      @community.save
       # render :index                :値を渡さず、ビューのみを持ってくる
       # redirect_to communities_path :URL自体にアクセスする
       redirect_to community_complete_path
@@ -45,6 +47,6 @@ class CommunitiesController < ApplicationController
 
   private
   def community_params
-    params.require(:community).permit(:community_name, :category)
+    params.require(:community).permit(:community_name, :category, :image)
   end
 end
