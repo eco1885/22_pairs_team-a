@@ -101,7 +101,7 @@
     .mypage_detail_inner_left
       .box_profile_detail
         %p.detail_sub_note.pb10.borderb1
-          項目を選択すると編集できます
+          = link_to '項目を選択すると編集できます', "/users/#{current_user.id}/details/new"
         %p.detail_sub_title
           %span.title_a
             Pairsプロフ
