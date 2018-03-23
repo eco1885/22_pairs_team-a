@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users, only: [:show]
   root 'pairs#index'
   get 'messages' => 'pairs#messages_index'
   resources :relationships, only: [:create, :destroy]
