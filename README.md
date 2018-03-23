@@ -98,7 +98,7 @@
 |------|----|-------|
 |category|integer|null: false|
 |community_name|string|null: false|
-|image_url|string|null: false|
+|image|string|null: false|
 
 ### Association
 
