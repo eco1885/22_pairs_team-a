@@ -39,6 +39,7 @@ gem 'erb2haml'
 gem 'pry-rails'
 gem 'kaminari'
 gem 'devise'
+gem 'enum_help'
 
 
 group :development, :test do

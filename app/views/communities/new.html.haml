@@ -76,6 +76,17 @@
                   %button.button_a.button_blue_a.input_community
                     このコミュニティを作成する
       .community_page_box.community_rules_box
+        = form_for @community, url: {action: "confirm"} do |f|
+          .chat-group-form__field--left
+            = f.text_field :community_name, class: "form__message", placeholder: "コミュニティ名を入力する"
+          .chat-group-form__field--left
+            = f.select :category, Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}, class: "form__message"
+            .button_a.button_blue_a.input_community
+              = f.submit "このコミュニティを作成する", class: "button_a button_blue_a input_community"
+
+
+
+
 
 / ピンク
 https://lh3.googleusercontent.com/6NTvYMSO7C1ZkWGXyiqewDj55NYnNPG-fFsKXq_ri4yMtGsf0pZ3dz72LNl2C98Cyia6Gqxdk9vcv9qykL5pfNJJm-Haa9x5TbeEWHlGziEfQ391qm7lyYf8kve4TI1qasAmfLcgYbTj4nH39Lt7zjbQK1WuyhFDm_8kwnK5L4b4lCysMqtd5TXvmjg-V7chpFntkrmP75I-9Hf3kxVuG84kv8XJqL7Ibt4UDfwBD5wr9siJ4IZXSTGMsNFA28F2gUjnnhmC0-lXzWyctSj_1kXEgZs1WSXGXC_ClfMBjAU3NI3REr-N1ldYxiNfweS9gnXQX-2U20IajgD4D4EPn_He5DTW1KRyxJ4rJkahR1-fCNAMqblJhYB5A6Tibd7a6vRocwHkxNXTKmSBhfPX1POZBYStILgsmrWN_xWzYmahtn9yneJtIKncgQNwqsvYXSpPbRV2HMmPsfG03nVfvdKA9UsYm6vynPDi3VT5LJjtHdr2yV2akEO2JaMUYEvzGacBjSiMwrCoWq9fHJySgwuSPtzUYLTHJZSdWDyhNUOxfwZrfo1i9HaqbcM4MuI8ESeuZJguGho0uKmZmntsbWqpsX6D04w8zUEQM8oEjpHXi93UfRI9imF-1NmsFOvmOPC1eUTgQIBbzNXUmdgiVIBY_bhXikTV=w529-h191-no

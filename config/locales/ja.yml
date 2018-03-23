@@ -1,0 +1,32 @@
+ja:
+  enums:
+    community:
+      category:
+        unselected: カテゴリを選択する
+        music: 音楽
+        movie: 映画
+        entertainment: 芸能人・テレビ
+        game: ゲーム
+        book: 本・マンガ
+        art: アート
+        sport: スポーツ
+        moter: 車・バイク
+        trip: 旅行
+        diy: ホーム・DIY
+        animal: 動物・ペット
+        pc: PC/インターネット
+        fashion: ファッション
+        cook: グルメ・お酒
+        fortune: 占い
+        hobby: 趣味全般
+        marry: 恋愛・結婚
+        spiritual: 心と身体
+        life: 生活
+        health: 美容・健康
+        housekeep: 家事・育児
+        social: 地域
+        school: 学校
+        organization: 会社・団体
+        occupation: 職業・資格
+        qualification: 研究・学問
+        business: ビジネス・経済

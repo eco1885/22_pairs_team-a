@@ -19,9 +19,11 @@ Rails.application.routes.draw do
   get "parts" => "pairs#parts"
   get "community/view" => "communities#show"
   get "community/create" => "communities#new"
+  get "community/complete" => "communities#complete"
   resources :communities, path: "community", only: [:index, :create] do
     collection do
-      get "search"
+      get  "search"
+      post "confirm"
     end
   end
 end

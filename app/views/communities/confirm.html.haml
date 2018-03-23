@@ -1,0 +1,11 @@
+= form_for @community do |f|
+  .field
+    community_name: #{@community.community_name}
+    = f.hidden_field :community_name # <=データ保持 %>
+  .field
+    category: #{@community.category}
+    = f.hidden_field :category # <=データ保持 %>
+  .actions
+    = f.submit 'Back!', name: 'back'  # <=戻る為のname %>
+  .actions
+    = f.submit 'create!'

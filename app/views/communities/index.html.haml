@@ -31,6 +31,9 @@
             .link_more_community
               作る方針（予定）
         .box_everyone_community.recommend_community
+          - @communities.each do |community|
+            = community.community_name
+            = community.category
         .box_everyone_community.newcomer_community
         .box_everyone_community.fame_community
 
