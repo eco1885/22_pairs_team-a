@@ -13,7 +13,7 @@
     %li.footer_navi_item
       = link_to "ヘルプ", "#", target: "_blank"
     %li.footer_navi_item
-      = link_to "お問い合わせ", "#"
+      = link_to "お問い合わせ", destroy_user_session_path, method: :delete
   %ul
     %li.footer_navi_item
       = link_to "会社概要", "#", target: "_blank"

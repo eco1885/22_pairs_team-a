@@ -15,10 +15,10 @@
             %span.gender_type_engine 性別
             %br/
             .radio-inline
-              = f.radio_button :gender, :男性, class: "button_male", checked: "checked"
+              = f.radio_button :gender, :male, class: "button_male", checked: "checked"
               = f.label :gender_男性,"男性", class: "gender_type_label_male "
             .radio-inline
-              = f.radio_button :gender, :女性, class: "button_female"
+              = f.radio_button :gender, :female, class: "button_female"
               = f.label :gender_女性, "女性" , class: "gender_type_label_female"
         .field_email
           = f.label :メールアドレス,  class: 'label_email'
