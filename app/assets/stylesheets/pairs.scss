@@ -19,4 +19,10 @@ body {
       display: flex;
     }
   }
+  .showProfile {
+    position: absolute;
+    z-index: 1000;
+    top: 30px;
+    left: 500px;
+  }
 }
