@@ -27,4 +27,10 @@ class PairsController < ApplicationController
 
   def privacy_setting
   end
+
+  def hide
+  end
+
+  def block
+  end
 end

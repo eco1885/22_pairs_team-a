@@ -1,0 +1,61 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+//02部分、追加要素
+.box_setting_view .box_block_user_list {
+  margin: -20px 0 30px;
+  .user_item {
+    padding: 14px 26px;
+    border-bottom: 1px solid #ceced0;
+    @include clearfix();
+    img {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  .user_photo {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .user_info {
+    font-size: 1.2rem;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    &.hide_item {
+      margin-top: -30px;
+    }
+    strong {
+      font-size: 1.6rem;
+      font-size: 16px;
+      font-weight: 700;
+    }
+  }
+  .button_cancel {
+    float: right;
+    margin-top: 14px;
+  }
+}
+.box_community_pager {
+  &.box_pager {
+    @include clearfix();
+    .pager_pre {
+      float: left;
+    }
+    .pager_next {
+      float: right;
+    }
+    .pager_nums {
+      text-align: center;
+      .pager_num {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+//01部分、追加要素
+
