@@ -24,4 +24,7 @@ class PairsController < ApplicationController
 
   def visitor_setting
   end
+
+  def privacy_setting
+  end
 end
