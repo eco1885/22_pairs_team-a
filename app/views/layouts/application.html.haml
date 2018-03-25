@@ -8,6 +8,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag '/favicon.ico'
   %body
+    %div.bg_overlay
     -unless devise_controller?
       = render partial: "pairs/shared/header"
       .body
@@ -19,5 +20,3 @@
               = render partial: "pairs/shared/footer"
     -else
       = yield
-    %div.bg_overlay
-

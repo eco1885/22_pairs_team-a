@@ -10,10 +10,16 @@ $(function() {
     })
 
   });
-  $(".showProfile").on("click", function(e){
+  $(".modal_close").on("click", function(e){
     e.preventDefault();
     $(".bg_overlay").fadeOut(500);
     $(".showProfile").fadeOut(100);
+  });
+  $(".bg_overlay").on('click', function(e) {
+    if (!$(e.target).closest('.showProfile').length) {
+    $(".bg_overlay").fadeOut(500);
+    $(".showProfile").fadeOut(100);
+    }
   });
 });
 
