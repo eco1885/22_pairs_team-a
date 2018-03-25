@@ -104,14 +104,14 @@
       %li.user_action_item.action_pager_pre
         / %a.button_white_a
         /   %span 前へ
-        = link_to_prev_page @users, "前へ"
+        = link_to_prev_page @users, "前へ", class: "js_click_hide"
       %li.user_action_item.action_favorite.padding_left.is_favorited
         %a#add_favorite_partner.button_white_a
           %span お気に入り
       %li.user_action_item.action_pager_next
         / %a.button_white_a
         /   %span 次へ
-        = link_to_next_page @users, "次へ"
+        = link_to_next_page @users, "次へ", class: "js_click_hide"
       %li.user_action_item.action_hide.margin_right
         %div
           %a.button_white_a
@@ -296,7 +296,7 @@
     %span
       %a.button_like.button_like_default.button_pink_c.button_like_view.button_like_c.button_e
         %span.like いいね！
-.box_result_pager
+.box_result_pager.js_click_hide
   = paginate(@users)
   %p.personal_pager_text.box_like_remaining
     1,972,772人中 2人表示 :

@@ -1,6 +1,7 @@
 $(function() {
   $(".showPersonalViewModal").on("click", function(e){
     e.preventDefault();
+    $(".js_click_hide").hide();
     $(".bg_overlay").fadeIn(300);
     var imageId = $(this).data("id")
     $(".showProfile").each(function(){
