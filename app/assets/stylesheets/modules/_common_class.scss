@@ -61,6 +61,18 @@ html, body {
   font-size: 62.5%;
 }
 
+input[type=text] {
+  font-size: 1.3rem;
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 7px;
+  white-space: nowrap;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
 .ng-hide {
   display: none;
 }
@@ -119,6 +131,9 @@ html, body {
 }
 .fnt_pink02 {
   color: #f06976!important;
+}
+.fnt_base03 {
+  color: #8d9399!important;
 }
 .w20p {
   width: 20%!important;

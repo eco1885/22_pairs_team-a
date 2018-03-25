@@ -196,7 +196,52 @@
   // background-color: rgba(255,255,255,.7);
 }
 
-//関連ページ使用パー
+// 新規作成画面
+.common_page_box {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f3f3f3;
+}
+.comon_box_inner {
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.input_name
+.input_search_word {
+  line-height: 1.2;
+}
+.common_form input[type=text] {
+  width: 100%;
+}
+.input_error {
+  padding-top: 5px;
+}
+.common_table_a,
+.common_table_c {
+  margin: 0 15px 20px;
+  table {
+    font-size: 1.4rem;
+    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cbced0;
+    th{
+      font-weight: 400;
+      color: #00abb3;
+      background-color: #e1f9fa;
+    }
+    th,
+    td {
+      padding: 12px 17px;
+      text-align: left;
+      vertical-align: middle;
+      border: 1px solid #cbced0;
+    }
+  }
+}
+
+//関連ページ使用パーツ
 .ribbon_title {
   font-size: 1.8rem;
   font-size: 18px;
@@ -244,6 +289,7 @@
   background-repeat: no-repeat;
   background-position: right center;
   box-shadow: 0 2px 0 #c9c9c9;
+  width: auto!important;
 }
 .customSelectInner {
   width: 62px;
