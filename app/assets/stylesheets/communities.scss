@@ -241,6 +241,21 @@
   }
 }
 
+//確認画面
+.common_table_b {
+  &.common_form {
+    margin-bottom: 0px;
+    table {
+      margin-bottom: 20px;
+      tr td img {
+        height: 100px;
+        width: 100px;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
 //関連ページ使用パーツ
 .ribbon_title {
   font-size: 1.8rem;

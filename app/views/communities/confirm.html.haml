@@ -1,17 +1,52 @@
-= form_for @community do |f|
-  .field
-    community_name: #{@community.community_name}
-    = f.hidden_field :community_name # <=データ保持 %>
-  .field
-    category: #{@community.category}
-    = f.hidden_field :category # <=データ保持 %>
-  / .field
-  /   image: = image_tag @community.image.to_s
-  /   = f.hidden_field :image # <=データ保持 %>
-  .field
-    = image_tag @community.image.url
-    = hidden_field_tag :"cache[image]",@community.image.cache_name # <=データ保持 %>
-  .actions
-    = f.submit 'Back!', name: 'back'  # <=戻る為のname %>
-  .actions
-    = f.submit 'create!'
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      =link_to "コミュニティTOP", communities_path, class:"page_back button_f button_white_a", id:"top_community_btn"
+      %span.page_tile
+        コミュニティをさがす
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        %form.form_search_category
+          / サーバー側と連動したselectを実装予定
+          / %select.category_select
+          .category_select
+            カテゴリから探す作成予定
+            %span.customSelect.select_category_id_input_search_categroy
+              %span.customSelectInner
+        %form.form_search_word
+          .search_input
+            %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
+            %button.button_search.button_f.button_blue_a
+              検索作成予定
+    .community_input_box
+      .data-community-confirm-form
+        .common_page_box.community_confirm_box
+          %p.common_title
+            確認画面
+          .common_box_inner
+            %p.common_inner_title
+              以下の内容でよろしいですか？
+              = form_for @community, html: { class: "common_table_b common_form"} do |f|
+                %table
+                  %tbody
+                    %tr
+                      %th コミュニティ名
+                      %td
+                        #{@community.community_name}
+                        = f.hidden_field :community_name # <=データ保持 %>
+                    %tr
+                      %th カテゴリ
+                      %td
+                        #{@community.category}
+                        = f.hidden_field :category # <=データ保持 %>
+                    %tr
+                      %th コミュニティの写真
+                      %td
+                        = image_tag @community.image.url
+                        = hidden_field_tag :"cache[image]",@community.image.cache_name # <=データ保持 %>
+                .common_button_area.layout_horizontal
+                  %ul
+                    %li.button_item
+                      = f.submit "キャンセル", name: 'back', class: "button_a button_white_a back_button"  # <=戻る為のname %>
+                    %li.button_item.w30p
+                      = f.submit "コミュニテイを作成する", class: "button_a button_blue_a confirm"
