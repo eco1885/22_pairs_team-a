@@ -102,14 +102,16 @@
   .box_user_action_a
     %ul.box_user_action_list
       %li.user_action_item.action_pager_pre
-        %a.button_white_a
-          %span 前へ
+        / %a.button_white_a
+        /   %span 前へ
+        = link_to_prev_page @users, "前へ"
       %li.user_action_item.action_favorite.padding_left.is_favorited
         %a#add_favorite_partner.button_white_a
           %span お気に入り
       %li.user_action_item.action_pager_next
-        %a.button_white_a
-          %span 次へ
+        / %a.button_white_a
+        /   %span 次へ
+        = link_to_next_page @users, "次へ"
       %li.user_action_item.action_hide.margin_right
         %div
           %a.button_white_a
