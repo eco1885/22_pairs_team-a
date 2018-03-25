@@ -34,7 +34,7 @@ class CommunitiesController < ApplicationController
   end
 
   def show
-    # @product = Product.find(params[:id])
+    @community = Community.find(params[:id])
   end
 
   def search

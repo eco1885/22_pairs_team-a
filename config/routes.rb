@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   get "visitorlistzero" => "pairs#visitor_list_zero"
   get "visitorsetting" => "pairs#visitor_setting"
   get "parts" => "pairs#parts"
-  get "community/view" => "communities#show"
+  get "community/view/:id" => "communities#show"
+  # get "community/view" => "communities#show"  個別詳細にアクセス出来ない為
   get "community/create" => "communities#new"
   get "community/complete" => "communities#complete"
   resources :communities, path: "community", only: [:index, :create] do
+  # resources :communities, path: "community", only: [:index, :create, :show] do
     collection do
       get  "search"
       post "confirm"

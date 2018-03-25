@@ -1,4 +1,31 @@
-作成完了〜〜〜
-だよ〜
-
-戻るボタンはない〜
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      =link_to "コミュニティTOP", communities_path, class:"page_back button_f button_white_a", id:"top_community_btn"
+      %span.page_tile
+        コミュニティをさがす
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        %form.form_search_category
+          / サーバー側と連動したselectを実装予定
+          / %select.category_select
+          .category_select
+            カテゴリから探す作成予定
+            %span.customSelect.select_category_id_input_search_categroy
+              %span.customSelectInner
+        %form.form_search_word
+          .search_input
+            %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
+            %button.button_search.button_f.button_blue_a
+              検索作成予定
+    .common_page_box.community_success_box
+      %p.common_title
+        コミュニティ審査を受け付けました。
+      .common_box_inner
+        %p.common_text.mb40
+          審査終了後、あなたの作成したコミュニティが公開されます。
+          %br
+          ※審査は通常30分程度で終わります。
+        .common_button_area
+          %p.button_item.w50p
+            = link_to "コミュニティトップに戻る", communities_path, class:"button_a button_gray_a"
