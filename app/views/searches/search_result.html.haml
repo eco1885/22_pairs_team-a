@@ -1,0 +1,41 @@
+.main_contents_style
+  #pairs_search_page.main.box_search_view.contents_padding
+    = render partial: "pairs/shared/notification"
+    = render partial: "pairs/shared/advertising"
+    = render partial: "pairs/shared/box_search_menu"
+    .box_grid_header.clearfix
+      .box_grid_header01
+        %p.header_diplay_label 表示人数:
+        .header_display_select
+          %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched.select_style
+            %option{selected: "selected", value: "16"} 16人
+            %option{value: "32"} 32人
+            %option{value: "64"} 64人
+            %option{value: "96"} 96人
+            %option{value: "128"} 128人
+          %span.customSelect.ng-pristine.ng-untouched.ng-valid
+            %span.customSelectInner 16人
+      .box_grid_header02
+        %button.button_b.button_white_a.button_show_pickup
+          今日のピックアップ
+      .box_grid_header03
+        %span.total_like_number_desc 「いいね！」をあと
+        %em
+          %span.total_like_number_header> 30
+          人
+        押しましょう！
+    .box_user_selected.ng-hide
+      .user_selected_list テスト
+    .box_list_view_user
+      %ul.list_view_users
+        - @users.each do |user|
+          = render partial: "pairs/shared/list_view_user_item", locals:{user: user}
+    .box_result_pager
+      = paginate(@usersPage)
+    .box_like_remaining
+      %p
+        あと
+        %em
+          %span#total_like_numbers_footer 30
+          人
+        に「いいね！」ができます
