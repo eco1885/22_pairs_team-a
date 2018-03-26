@@ -313,3 +313,70 @@
 }
 
 //作成完了ページ
+
+//詳細ページ
+.box_community_detail_header {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  .breadcrumb_list {
+    font-size: 1.5rem;
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .community_info {
+    @include clearfix();
+    padding: 15px;
+    background-color: #fff;
+    .box_community_image {
+      position: relative;
+      .community_image {
+        float: left;
+        margin-right: 15px;
+        img {
+          height: 132px;
+          width: 132px;
+        }
+      }
+    }
+    .community_info_inner {
+      @include clearfix();
+      float: left;
+      width: 510px;
+    }
+    .community_title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .community_member_count {
+      font-size: 1.4rem;
+      font-size: 14px;
+      margin-bottom: 10px;
+      em {
+        padding-left: 10px;
+        color: #00abb3;
+      }
+    }
+    .community_entry {
+      @include clearfix();
+      padding: 15px;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      .entry_text {
+        float: left;
+        color: #788086;
+        strong {
+          font-size: 1.3rem;
+          font-size: 13px;
+          font-weight: 700;
+          display: block;
+        }
+      }
+      .button_entry {
+        float: right;
+        margin-top: 5px;
+      }
+    }
+  }
+}
