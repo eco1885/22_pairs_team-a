@@ -37,7 +37,7 @@
                     %tr
                       %th カテゴリ
                       %td
-                        #{@community.category}
+                        = t("enums.community.category.#{@community.category}")
                         = f.hidden_field :category # <=データ保持 %>
                     %tr
                       %th コミュニティの写真

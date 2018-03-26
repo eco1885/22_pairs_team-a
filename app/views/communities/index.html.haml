@@ -35,8 +35,10 @@
                       %p.community_item_title
                         = community.community_name
                       %p.community_item_count
-                        = community.category
+                        / 本来は人数を表示するエリア
+                        = t("enums.community.category.#{community.category}")
             .box_community_pager.box_pager
+              = paginate(@communities)
         .box_everyone_community.popular_community
           繰り返し
           .data-community-popular-communities

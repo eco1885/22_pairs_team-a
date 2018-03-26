@@ -21,7 +21,8 @@
     .data-community-detail
       .box_community_detail_header
         %ul.breadcrumb_list
-          %li #{@community.category}
+          %li
+            = t("enums.community.category.#{@community.category}")
         .community_info
           .box_community_image
             .community_image.image-round
