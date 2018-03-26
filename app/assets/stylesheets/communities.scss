@@ -27,9 +27,8 @@
   .button_search {
     margin-left: 5px;
   }
-  // 上と同じクラス
-  .common_inline_box {
-  }
+  // To do プロパティ
+  .common_inline_box {}
   //検索ボタン
   .box_community_header {
     margin-bottom: 10px;
@@ -45,7 +44,6 @@
     border-left: 5px solid #cbced0;
   }
   .page_tile {
-    font-size: 1.6rem;
     font-size: 16px;
     vertical-align: middle;
     color: #8d9399;
@@ -79,6 +77,7 @@
       .my_community_title {
         margin-bottom: 15px;
       }
+      // To do プロパティ
       .community_list_box {}
       .my_community_list {
         @include clearfix();
@@ -88,7 +87,6 @@
         &:nth-child(5) {
           border-right: none;
         }
-        font-size: 1.3rem;
         font-size: 13px;
         float: left;
         box-sizing: border-box;
@@ -126,8 +124,11 @@
       &.popular_community {
         border-color: #ffbe40;
         .data-community-popular-communities {
+          // To do プロパティ
           .everyone_community_title {}
+          // To do プロパティ
           .community_list_box {}
+          // To do プロパティ
           .link_more_community {}
         }
       }
@@ -176,13 +177,11 @@
     margin-bottom: 15px;
   }
   .modal_text_a {
-    font-size: 1.5rem;
     font-size: 15px;
     margin-bottom: 15px;
     text-align: center;
   }
   .modal_sub_title {
-    font-size: 1.8rem;
     font-size: 18px;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -231,7 +230,6 @@
 .common_table_c {
   margin: 0 15px 20px;
   table {
-    font-size: 1.4rem;
     font-size: 14px;
     width: 100%;
     border-collapse: collapse;
@@ -268,7 +266,6 @@
 
 //関連ページ使用パーツ
 .ribbon_title {
-  font-size: 1.8rem;
   font-size: 18px;
   line-height: 1.0;
   position: relative;
@@ -290,6 +287,7 @@
   padding: 6px 10px 10px;
   text-align: center;
 }
+// To do プロパティ
 .box_pager {}
 .common_form select {
   -webkit-appearance: menulist-button;
@@ -302,7 +300,6 @@
   background-color: #fff;
 }
 .customSelect {
-  font-size: 1.2rem;
   font-size: 1.2px;
   box-sizing: border-box;
   height: 29px;
@@ -333,7 +330,6 @@
   padding: 15px;
   background-color: #f7f7f7;
   .breadcrumb_list {
-    font-size: 1.5rem;
     font-size: 15px;
     margin-bottom: 10px;
   }
@@ -363,7 +359,6 @@
       margin-bottom: 10px;
     }
     .community_member_count {
-      font-size: 1.4rem;
       font-size: 14px;
       margin-bottom: 10px;
       em {
@@ -380,7 +375,6 @@
         float: left;
         color: #788086;
         strong {
-          font-size: 1.3rem;
           font-size: 13px;
           font-weight: 700;
           display: block;
