@@ -1,23 +1,22 @@
 class DetailsController < ApplicationController
-def show
-    @usersPage = User.page(params[:page]).per(1)
-    @users = User.all
-    @relationship = Relationship.new
+# def show  後で使う予定
+#     @usersPage = User.page(params[:page]).per(1)
+#     @users = User.all
+#     @user = User.find(params[:id])
+#     @relationship = Relationship.new
+#   end
+
+  def edit
+    @user =  User.find(params[:id])
   end
 
-  def new
-    # @user = User.find(params[:product_id])
-    @residence =  Residence.new
-  end
-
-  def create
-   @residence =  Residence.create(prefecture: residence_params[:prefecture],user_id: current_user.id)
-    # @residence = Residence.new
-    # @residence.save
+  def update
+   user = User.find(params[:id])
+   user.update(residence_params)
   end
 
 private
   def residence_params
-    params.require(:residence).permit(:prefecture)
+    params.require(:user).permit(:residence_id, :alcohol_id)#Userモデルのresidence_id,alcohol_idに値を追加する
   end
 end
