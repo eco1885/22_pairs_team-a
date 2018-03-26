@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180323075403) do
+ActiveRecord::Schema.define(version: 20180324104850) do
+
+  create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "frequency",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "community_name", null: false
@@ -33,6 +39,12 @@ ActiveRecord::Schema.define(version: 20180323075403) do
     t.integer  "following_id", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "residences", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "prefecture", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -59,9 +71,15 @@ ActiveRecord::Schema.define(version: 20180323075403) do
     t.datetime "updated_at",                          null: false
     t.string   "nickname"
     t.integer  "gender"
+    t.integer  "residence_id"
+    t.integer  "alcohol_id"
+    t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["residence_id"], name: "index_users_on_residence_id", using: :btree
   end
 
   add_foreign_key "foots", "users"
+  add_foreign_key "users", "alcohols"
+  add_foreign_key "users", "residences"
 end

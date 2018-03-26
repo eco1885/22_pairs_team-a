@@ -42,6 +42,7 @@ gem 'devise'
 gem 'enum_help'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
