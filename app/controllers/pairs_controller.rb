@@ -1,8 +1,8 @@
 class PairsController < ApplicationController
 
   def index
-    @usersPage = User.page(params[:page]).per(1)
-    @users = current_user.comings
+    # @users = current_user.comings
+    @users = User.page(params[:page]).per(8)
     @relationship = Relationship.new
   end
   def messages_index
@@ -18,6 +18,7 @@ class PairsController < ApplicationController
       @foot = Foot.new(user_id: current_user.id, visitor_id: 3)
       @foot.save
     end
+    @users = User.page(params[:page]).per(1)
   end
 
   def myprofile

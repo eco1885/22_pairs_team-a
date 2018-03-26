@@ -1,0 +1,229 @@
+.contetnts {
+    width: 100%;
+    height: 100%;
+}
+.main_content {
+    clear: both;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 720px;
+    height: 700px;
+    margin: 75px auto auto;
+    background: white;
+    color: gray;
+    .logo {
+        background-image: url(https://lh3.googleusercontent.com/z2GWNM-MdNUiS8vhDcDwj0KbGySqPYLjqfaA8dYqsFH81IB1A8WureFenZgiQ-5SeCpXHvCjG6AHTJ1wWWAC9np1U0uKc3tPBTerTTIjC0aqG64z708J4czo96KTzmjkojw8HKmEwbzmoZBRR-J5oUVcL05_Ux95Dtch10-C5rGK7eKCcvzrycaRcMst1PMZujdHkveGKJYjZ_5VoQVnrEVno8IMwGwYNNTU0f33H2b3hRxK66tYb4aGHk5lpz4TLIcSm50LbC-qw5cHeXrbte0MEEXZu7HUfvOWptwDhOIK9T4D3_Z6zkLnmY5o2eyk0qeCU_qU-qXn4ryK222bZgH1fq5LVGP7e4GbbEhq3NMXW3pFK5rBMoO1z7y3WyYR2uqJym2rqehr9gkqjNmcVO1Y8GuWIeLHSgcXjrFH7Hso1JngLPogpCh1LhQ-fMHBf7y0WG5S_ZeaxKyjgvGCyiToH0eothRKeFKVLDJOvW_TXabufOKrmdReAMLgf-EFlNg7MNjfyM_nOb3fygsLiHCT8qo2WQtshWQDqsyOyUd4nkhKbMzJl36IJw7Py5KBEytfTGBh23cdY4QnIpxyASmQvd4EKPMELEJjK6OQByHMKJhAH6KZmk_pQ6-Q4PIZtWcXaoZNoDti77rCRVeBQvO6t0b3GEgm=w404-h81-no);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 720px;
+        height: 80px;
+        margin-bottom: 20px;
+        position: relative;
+        left: 150px;
+    }
+    .form_content {
+        padding: 30px 60px;
+        background: white;
+    }
+    .new_user {
+        background: white;
+        height: 530px;
+    }
+    .field_nickname_gender {
+        background: white;
+        margin-bottom: 18px;
+        height: 76px;
+        .field_nickname {
+            width: 50%;
+            height: 25%;
+            text-align: left;
+            display: inline;
+            float: left;
+            .label_nickname {
+                padding-bottom: 10px;
+                font-weight: 900;
+            }
+            #user_nickname {
+                margin-top: 10px;
+                padding: 10px;
+                width: 85%;
+                color: #a1a7ac;
+                background: #f8f9f9;
+                border-radius: 5px;
+                border: none #ccc //radiusで生成されるformの影を消す処理;
+            }
+        }
+    }
+    .field_gender {
+        width: 50%;
+        height: 76px;
+        background: white;
+        padding-top: 0px;
+        margin-top: 0px;
+        float: right;
+    }
+    .gender_type_engine {
+        font-weight: 900;
+        display: inline;
+        padding: 10px;
+    }
+    .gender_type_label_male {
+        font-weight: 900;
+        position: relative;
+        top: 13px;
+        left: 20px;
+        display: block;
+        float: left;
+        width: 60px;
+        padding: 13px;
+        background: white;
+        color: #54595d;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1;
+        transition: .2s;
+        border-radius: 20px;
+        border: 1px solid #54595d;
+        //radiusで生成されるformの影を消す処理;
+    }
+    .gender_type_label_female {
+        font-weight: 900;
+        position: relative;
+        left: 40px;
+        top: 13px;
+        padding: 13px;
+        display: block;
+        float: left;
+        width: 60px;
+        margin: 0;
+        background: #white;
+        color: #54595d;
+        font-size: 16px;
+        text-align: center;
+        line-height: 1;
+        transition: .2s;
+        border-radius: 20px;
+        border: 1px solid #54595d;
+        //radiusで生成されるformの影を消す処理;
+    }
+    .radio-inline {
+        display: inline;
+        // display: none;
+    }
+    .button_male {
+        opacity: 0.0;
+    }
+    .button_female {
+        opacity: 0.0;
+    }
+    .field_email {
+        margin-bottom: 18px;
+        background: white;
+        .label_email {
+            font-weight: 900;
+            padding-bottom: 10px;
+        }
+        #user_email {
+            border: none;
+            color: #a1a7ac;
+            font-size: 15px;
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            //radiusで生成されるformの影を消す処理;
+        }
+    }
+    ::-webkit-input-placeholder {
+        color: #ccc;
+    }
+    .field_password {
+        background: white;
+        margin-bottom: 18px;
+        .label_password {
+            font-weight: 900;
+            padding-bottom: 10px;
+        }
+        #user_password {
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            border: none //radiusで生成されるformの影を消す処理;
+        }
+    }
+    .field_password_confirmation {
+        background: white;
+        margin-bottom: 18px;
+        .label_password_confirmation {
+            padding-bottom: 10px;
+            font-weight: 900;
+        }
+        #user_password_confirmation {
+            margin-top: 10px;
+            padding: 10px;
+            width: 95%;
+            background: #f8f9f9;
+            border-radius: 5px;
+            border: none //radiusで生成されるformの影を消す処理;
+        }
+    }
+    .field_checkbox {
+        background: white;
+        margin-bottom: 18px;
+        height: 76px;
+        .checkbox_icon {
+            background-image: url(https://lh3.googleusercontent.com/SsuwFUD19y20Sfw2u3WliB75_q1tRg6RP7SRRuUZHatAwCnIKQ3GR5swYv4lgHwOSwluorNIAOJq3JzFTLNu88-jUu9EMBE-vNzziHv5m0VxOusKTllXYgtthgVFj1lRKR8o7LAeRjEgD4nvt3O59iXuGBVosmoMBbPd7aiKlp1m6E-5xzUHi3Mz8_bub4RcLhnvmqze6QmFwUS3elub5Yqn48d5jT_q1CIh-wRV5H-Cy4Cwb_yq8RssG-TWmFDx56hb45EkOUqBLV2qr9UoDjvt6WKwBCh9g3upR8dUK8RCk5aCXQ3HEw1s42S9vhcmv8bOSrk-VvQMbEBRF6AvYC1xqQ_IsxVUi8ZScl_btVU2TnZrpT7Q4xaO2Qedi9RBHcoLXxLOMo6LVeEJkgWNqixfIjP5UGtmIonBtgaNaCl_TXF1Z81j97bCetWi-R-Xn-zdGFh_BKzHJ4mKmz6S-8cyP6Lrh27F5C5L0_duwcE1aCC0-Q_8Na8WQiPSxjhodVUlxd3rJ-ki5nl11O-tFXyVHLKPCMU3LtiIaj7vxLYVLm0zuNcCx4gzKszYXFqSF3Rm2tnwV5714ReN_30g9OaiPpEaMN3eYfZ3Y_evtD0hcb5R-0b5LKrP3TZtweTm8KtxbyVQYUIi4mZOsBs4HjR49lG-UUtn=s52-no);
+            height: 33px;
+            width: 33px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            float: left;
+            position: relative;
+            left: 135px;
+            top: 20px;
+        }
+        .checkbox_text {
+            position: relative;
+            width: 300px;
+            left: 50px;
+            font-size: 14px;
+        }
+        .checkbox_label {
+            position: relative;
+            left: 0px;
+            bottom: 48px;
+            font-size: 35px;
+            opacity: 0.0;
+            cursor: pointer;
+        }
+        .checkbox {
+            width: 100%;
+            #user_checkbox_example {
+                opacity: 0.0;
+            }
+        }
+    }
+    .actions {
+        text-align: center;
+        padding: 30px;
+        input {
+            border: none;
+            background: #f3f3f3;
+            border-radius: 20px;
+            width: 344px;
+            height: 38px;
+            color: #8d9399;
+            box-shadow: 0 2px 0 #c9c9c9;
+        }
+    }
+}
+.main_footer {
+    width: 700px;
+}

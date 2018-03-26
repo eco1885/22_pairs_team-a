@@ -1,5 +1,3 @@
-.pc-web-footer-banner
-  広告
 %nav.footer_navi
   %ul
     %li.footer_navi_item
@@ -13,7 +11,7 @@
     %li.footer_navi_item
       = link_to "ヘルプ", "#", target: "_blank"
     %li.footer_navi_item
-      = link_to "お問い合わせ", destroy_user_session_path, method: :delete
+      = link_to "お問い合わせ", "#"
   %ul
     %li.footer_navi_item
       = link_to "会社概要", "#", target: "_blank"
@@ -35,5 +33,4 @@
             = link_to do
               = image_tag "//smarticon.geotrust.com/smarticon?ref=pairs.lv", alt: "クリックして企業プロファイルを表示", name: "doidxvgm", oncontextmenu: "return false;"
             = link_to "SSLとは", "", target: "_blank", class:"ssl_link"
-%p.footer_approved インターネット異性紹介事業 届出済み
 %small.footer_copyright (c) eureka, Inc.
