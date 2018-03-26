@@ -1,8 +1,7 @@
 class PairsController < ApplicationController
 
   def index
-    @usersPage = User.page(params[:page]).per(1)
-    @users = User.all
+    @users = User.page(params[:page]).per(8)
     @relationship = Relationship.new
   end
   def messages_index
@@ -10,6 +9,7 @@ class PairsController < ApplicationController
   end
 
   def search_one
+    @users = User.page(params[:page]).per(1)
   end
 
   def myprofile

@@ -18,6 +18,7 @@
               = f.label :password, "パスワード"
               %br/
               = f.password_field :password, autocomplete: "off"
+            / ログインパスワードではなく、ログイン状態を保持する機能
             - if devise_mapping.rememberable?
               .field.my_town
                 = f.check_box :remember_me
