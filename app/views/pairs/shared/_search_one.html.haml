@@ -60,7 +60,8 @@
           .summary_info_inner
             .user_info_wrapper
               %p.user_info
-                %span.user_name aiko
+                %span.user_name
+                  = user.nickname
                 %span.user_age 42歳
                 %span.user_area
               %p.user_tweet
@@ -101,14 +102,16 @@
   .box_user_action_a
     %ul.box_user_action_list
       %li.user_action_item.action_pager_pre
-        %a.button_white_a
-          %span 前へ
+        / %a.button_white_a
+        /   %span 前へ
+        = link_to_prev_page @users, "前へ", class: "js_click_hide"
       %li.user_action_item.action_favorite.padding_left.is_favorited
         %a#add_favorite_partner.button_white_a
           %span お気に入り
       %li.user_action_item.action_pager_next
-        %a.button_white_a
-          %span 次へ
+        / %a.button_white_a
+        /   %span 次へ
+        = link_to_next_page @users, "次へ", class: "js_click_hide"
       %li.user_action_item.action_hide.margin_right
         %div
           %a.button_white_a
@@ -293,11 +296,8 @@
     %span
       %a.button_like.button_like_default.button_pink_c.button_like_view.button_like_c.button_e
         %span.like いいね！
-.box_personal_pager
-  %a.pager_pre.button_c.button_white_a
-    前へ
-  %a.pager_next.button_c.button_white_a
-    次へ
+.box_result_pager.js_click_hide
+  = paginate(@users)
   %p.personal_pager_text.box_like_remaining
     1,972,772人中 2人表示 :
     あと
