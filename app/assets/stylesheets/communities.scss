@@ -140,19 +140,20 @@
 #modal_community_about {
   position: absolute;
   width: 600px;
-  // top: 50px;
-  // left: 0px;
-  // right: 0px;
+  top: 50px;
+  left: 0px;
+  right: 0px;
   margin: auto;
 }
 .box_modal_window {
+  display: none;
   position: absolute;
   z-index: 2001;
   letter-spacing: .5px;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
   &.modal_fixed {
-    // position: fixed;
-    // top: 100px;
+    position: fixed;
+    top: 100px;
   }
   .box_modal_window_inner {
     position: relative;
