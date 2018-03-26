@@ -20,13 +20,13 @@
       人
     押しましょう！
 .box_user_selected.ng-hide
-  .user_selected_list
+  .user_selected_list テスト
 .box_list_view_user
   %ul.list_view_users
     - @users.each do |user|
-      = render partial: "pairs/shared/list_view_user_item", locals:{user: user}
+      = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
 .box_result_pager
-  = paginate(@usersPage)
+  = paginate(@users)
 .box_like_remaining
   %p
     あと
