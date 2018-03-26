@@ -11,8 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-# ActiveRecord::Schema.define(version: 20180321073909) do
-
 ActiveRecord::Schema.define(version: 20180322071513) do
 
   create_table "foots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
