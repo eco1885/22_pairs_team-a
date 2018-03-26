@@ -2,7 +2,7 @@ class CommunitiesController < ApplicationController
   # before_action :authenticate_user!, only: :search
 
   def index
-    @communities = Community.order("created_at DESC").limit(50)
+    @communities = Community.order("created_at DESC").limit(5)
     # @products = Product.order('id ASC').limit(20)
   end
 
