@@ -18,27 +18,37 @@
                   %td
                     .mb10
                       %input{type:"checkbox", checked:"checked", id:"like_mail"}
-                      %label.form_label
+                      %label.form_label{for: "like_mail"}
                         いいね！をもらった時
                     .mb10
-                      %input{type:"checkbox", checked:"checked", id:"like_mail"}
-                      %label.form_label
-                        いいね！をもらった時
+                      %input{type:"checkbox", id:"matching_mail"}
+                      %label.form_label{for: "matching_mail"}
+                        マッチングした時
                     .mb10
-                      %input{type:"checkbox", checked:"checked", id:"like_mail"}
-                      %label.form_label
-                        いいね！をもらった時
+                      %input{type:"checkbox", checked:"checked", id:"message_mail"}
+                      %label.form_label{for: "message_mail"}
+                        メッセージを受信した時
                     .mb10
-                      %input{type:"checkbox", checked:"checked", id:"like_mail"}
-                      %label.form_label
-                        いいね！をもらった時
+                      %input{type:"checkbox", checked:"checked", id:"facebook_mail"}
+                      %label.form_label{for: "facebook_mail"}
+                        お相手がFacebookを公開した時
                     .mb10
-                      %input{type:"checkbox", checked:"checked", id:"like_mail"}
-                      %label.form_label
-                        いいね！をもらった時
+                      %input{type:"checkbox", checked:"checked", id:"other_mail"}
+                      %label.form_label{for: "other_mail"}
+                        その他のお知らせ
                     %p.fnt_base03.fnt12.mb10
+                      ※Pairsからの重要なお知らせについては通知設定に関わらず通知されますのでご了承ください。
                     .common_page_box
+                      %p.fnt_base03.fnt12.mt3
+                        お知らせ配信先メールアドレス：
+                      %p.fnt_bold.mb10.fnt14
+                        xxx@hotmail.com
                     %p.mb5
+                      =link_to "メールが届かない場合","/404", class: "link_change_mail", target: "_blank"
+                      %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
+                    %p.mb5
+                      =link_to "配信先メールアドレスの変更方法はこちら","/404", class: "link_change_mail", target: "_blank"
+                      %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
                 %tr
                   %th.v_align_top
                   %td
@@ -86,10 +96,11 @@
               %a{href:"/dislikeuserlist/block", class:"button_a button_white_a"} ブロックユーザーリストへ
     /『オフラインモード設定』（男性用）欄
     .data-offline-mode
-      /中身空（ポップアップで下記を表示）
+      /↑中身空（ポップアップで下記を表示）
+    /男性用
     .data-promotion-premium-modal
-      .bg_overlay.modal_animation
-      .box_modal_window.modal_fixed.modal_animation.modal_only_premium
+      / .bg_overlay.modal_animation
+      .box_modal_window.modal_fixed.modal_animation.modal_only_premium#box_offline_male
         .box_modal_window_inner
           %a.modal_close
             %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
@@ -103,16 +114,24 @@
             %em プレミアムオプションの申し込み
             が必要です。
           %p.modal_text_center.mb20
-            / 男性用表示画像
             %img{src:"https://lh3.googleusercontent.com/X8xfaUwzuf2GM2yIX2OMLO8ilTfRxT-z4Oh7J02EIMcvuPtsIi-2xTCK7gUcCesS28BT9eSv2M7StLsjdwMaqz5-3aFDbk80o8r63c5wmqwQmNA3wgl79-YFUsIkeWvN1RyhP1a-6DwC4BV3Kfuq-26trgnfah1EHtHUdmwECBIJJUdd4S6fE-OvVuCASFNhPqlyCC5wS3tZZa8v0u5cY65-xFzj4QwciE6pwZrBfxLSuRYm9Uyo3ZOgPgOBFter0W_91BoUUMm5NX24zrCv-Dm5b2zRylfg0sc1ZRWkAUivxhSyk9ncof-nJwfJkN5lx1-4xkmChL32OxUwatL1BCnM4mIZIPFrJI-7Qku6CIkzm7x8J4HX_PhfhFC4VPoQzqLf9nBNhLDIQk74JyhSbzQA4ConGFviaTFnMZ6bdaosC1K2nmjQEt0KGvGoL8L3gtTD9hqPtS27XL1_W5h-L7Loz5W3rgR-WUzwdXeFFxmYq8PjfqGascISrYB_TZtS39H3ztJmpEnNN4HLZA9sjmohx6r7ez-kWiTa3p3h1LlLMGmgQH6FgDd13_ETFTDNJ1rOj0jyl_cMcS1ubTPFjdx0emikuBYMQtkrLlk=w530-h158-no"}
-            / 女性用表示画像
-            / %img{src:"https://lh3.googleusercontent.com/MlozjP3q5nh6a5P-CqwmypoaFIIsi0XvKau5ElqUk24htTZSA9nch4bDox5VlEVg3-u-hZnKv_4f13nnUkz3IiTbMZDhdwhXsJJ2YdlFGWQOZPJ4Y1r5ZjF2eqI3TwX5uTGp2nqgD_S_hsEUdlsbvPuWBLpWcqrwV-VnolNb0ALUenl0aBGhTM9sS_X5b2l0mS5--jgPKUkpvBHXIJf8HvFNL5EAtF73XAwh5ozFc3cje9W-gYO9aI02-9X9GwUhH-nI_hmahi_xqqzueYDiJkvUfPhgYiOCCK8i0IdyYRnJgASy1UoELV8UZIlRJH4MFRchurxSqGIJJYD17CAUxu8TSjv6l84fwyoB3i8V-oHkwhMLa9qW9k4cvmf0cvNq5AxdgC99SC2pyfAImHdpzlcCl1vYWveeUDPC5Kn5OP2GseufUYmZX2oJ_S75ojvSkjAgEqQIUz_B5BXismLMYiJMWD1gEMzVTMGnjrc3jm5UjM5V4bTHulRw0_ZfcxzpAYshWHILgmGEx8ShHHxIlrTopwKJTwDhqA1JcNV_TYzfv6h90Fa9gCez3fHxlE8xIizEaxLxkN4_p9TJZmc8dwm7ry6dSZpE366yvOI=w530-h158-no"}
-            / 女性用文章
-            / %p.modal_text_a.mb20
-            /   検索を利用するためには、
-            /   %br
-            /   %em レディースオプションの申し込み
-            /   が必要です。
-            / %p.modal_text_center.mb20
           .modal_button_area.text_center
-            %a.button_a.button_blue_a.mb20 申し込んでこの機能を使う
+            = link_to "申し込んでこの機能を使う", "/membership/about_premium", class: "button_a button_blue_a mb20"
+    /女性用
+    .data-promotion-ladys-modal
+      / .bg_overlay.modal_animation
+      .box_modal_window.modal_fixed.modal_animation.modal_only_premium#box_offline_female
+        .box_modal_window_inner
+          %a.modal_close
+            %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+          %p.modal_title.ribbon_title.ribbon_blue
+            レディースオプション専用です
+          %p.modal_text_a.mb20
+            検索を利用するためには、
+            %br
+            %em レディースオプションの申し込み
+            が必要です。
+          %p.modal_text_center.mb20
+            %img{src:"https://lh3.googleusercontent.com/MlozjP3q5nh6a5P-CqwmypoaFIIsi0XvKau5ElqUk24htTZSA9nch4bDox5VlEVg3-u-hZnKv_4f13nnUkz3IiTbMZDhdwhXsJJ2YdlFGWQOZPJ4Y1r5ZjF2eqI3TwX5uTGp2nqgD_S_hsEUdlsbvPuWBLpWcqrwV-VnolNb0ALUenl0aBGhTM9sS_X5b2l0mS5--jgPKUkpvBHXIJf8HvFNL5EAtF73XAwh5ozFc3cje9W-gYO9aI02-9X9GwUhH-nI_hmahi_xqqzueYDiJkvUfPhgYiOCCK8i0IdyYRnJgASy1UoELV8UZIlRJH4MFRchurxSqGIJJYD17CAUxu8TSjv6l84fwyoB3i8V-oHkwhMLa9qW9k4cvmf0cvNq5AxdgC99SC2pyfAImHdpzlcCl1vYWveeUDPC5Kn5OP2GseufUYmZX2oJ_S75ojvSkjAgEqQIUz_B5BXismLMYiJMWD1gEMzVTMGnjrc3jm5UjM5V4bTHulRw0_ZfcxzpAYshWHILgmGEx8ShHHxIlrTopwKJTwDhqA1JcNV_TYzfv6h90Fa9gCez3fHxlE8xIizEaxLxkN4_p9TJZmc8dwm7ry6dSZpE366yvOI=w530-h158-no"}
+          .modal_button_area.text_center
+            = link_to "申し込んでこの機能を使う", "/membership/about_ladys", class: "button_a button_blue_a mb20"

@@ -295,3 +295,33 @@
     background-position: -119px -175px;
   }
 }
+
+// リボン
+@mixin ribbon_title_before() {
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-left: 10px solid white;
+  }
+}
+@mixin ribbon_title_after() {
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-right: 10px solid white;
+  }
+}
