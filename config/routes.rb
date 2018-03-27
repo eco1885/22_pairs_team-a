@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "searchone" => "pairs#search_one"
   get "visitorlist" => "pairs#visitor_list"
   get "visitorsetting" => "pairs#visitor_setting"
+  get "createfoot" => "pairs#create_foot"
 end
