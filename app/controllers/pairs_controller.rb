@@ -40,8 +40,8 @@ class PairsController < ApplicationController
     def save_foot(visitor_id)
       if Foot.exists?(user_id: current_user.id, visitor_id: visitor_id)
         @foot = Foot.where(user_id: current_user.id, visitor_id: visitor_id)
-        @foot.update(user_id: current_user.id+1, visitor_id: visitor_id)
-        @foot.update(user_id: current_user.id, visitor_id: visitor_id)
+        @foot.touch
+        @foot.save
       else
         @foot = Foot.new(user_id: current_user.id, visitor_id: visitor_id)
         @foot.save
