@@ -5,12 +5,8 @@ class PairsController < ApplicationController
     @users = User.page(params[:page]).per(8)
     @relationship = Relationship.new
   end
-
-
-
-
-
   def messages_index
+
   end
 
   def search_one
@@ -22,6 +18,7 @@ class PairsController < ApplicationController
   end
 
   def from_partner
+
   end
 
   def visitor_list
@@ -39,7 +36,7 @@ class PairsController < ApplicationController
 
     def save_foot(visitor_id)
       if Foot.exists?(user_id: current_user.id, visitor_id: visitor_id)
-        @foot = Foot.where(user_id: current_user.id, visitor_id: visitor_id)
+        @foot = Foot.find_by(user_id: current_user.id, visitor_id: visitor_id)
         @foot.touch
         @foot.save
       else
