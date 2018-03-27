@@ -106,6 +106,16 @@
               %a{href:"/dislikeuserlist/hide", class:"button_a button_white_a"} 非表示ユーザーリストへ
             %p.button_item
               %a{href:"/dislikeuserlist/block", class:"button_a button_white_a"} ブロックユーザーリストへ
+    /『オフラインモード設定』欄（独自仕様）
+    .data-hide-block-user
+      .common_page_box#box_offline
+        %p.common_title オフラインモード設定
+        .common_box_inner
+          .common_button_area.mb10
+            %p.button_item
+              %a{href:"/privacysetting#box_offline_male", class:"button_a button_white_a", id:"male_gnavi_item"} オフラインモード設定（男性）
+            %p.button_item
+              %a{href:"/privacysetting#box_offline_female", class:"button_a button_white_a", id:"female_gnavi_item"} オフラインモード設定（女性）
     /『オフラインモード設定』（男性用）欄
     .data-offline-mode
       /↑中身空（ポップアップで下記を表示）
