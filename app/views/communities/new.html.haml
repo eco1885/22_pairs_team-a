@@ -49,25 +49,25 @@
                       %td.community_name
                         = f.text_field :community_name, class: "input_name input_search_word", placeholder: "コミュニティ名を入力する", maxlength: "20"
                         / 下記２箇所の『%br』は暫定対処
-                        %br
-                        %em.input_error.error_empty_name.required.hide
-                          ※コミュニティ名を入力して下さい。
-                        %br
-                        %em.input_error.error_over_name.required.hide
-                          ※コミュニティ名は全角20文字までです。
+                        / %br
+                        / %em.input_error.error_empty_name.required.hide
+                        /   ※コミュニティ名を入力して下さい。
+                        / %br
+                        / %em.input_error.error_over_name.required.hide
+                        /   ※コミュニティ名は全角20文字までです。
                     %tr
                       %th.community_category
                         カテゴリ
                         %em.required
                           必須
                       %td.community_category
-                        = f.select :category, Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}, class: "input_category_id"
+                        = f.select :category, Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}, class: "input_category_id", prompt: "カテゴリを選択する"
                         / %span.customSelect.customSelectChanged.input_category_id
                         /   %span.customSelectInner
                         /     カテゴリを選択する
                         %p.fnt_base03.fnt12.mt10 カテゴリは、そのコミュニティの内容をよく表したものを選択してください。
-                        %em.input_error.error_empty_category.required.hide
-                          ※カテゴリを選択して下さい。
+                        / %em.input_error.error_empty_category.required.hide
+                        /   ※カテゴリを選択して下さい。
                     %tr
                       %th.community_photo
                         コミュニティの
@@ -77,17 +77,22 @@
                           必須
                       %td.community_photo
                         = f.file_field :image, class: "input_photo", id: "community_photo_url"
-                        %p.input_error.error_empty_photo.hide
-                          %em.required
-                            ※写真を選択して下さい。
-                        %p.input_error.error_empty_not_photo.hide
-                          %em.required
-                            ※JPG/PNG/GIF形式の写真を選択してください。
-                        %p.input_error.error_empty_over_photo.hide
-                          %em.required
-                            ※5MB以内の写真を選択して下さい。
+                        / %p.input_error.error_empty_photo.hide
+                        /   %em.required
+                        /     ※写真を選択して下さい。
+                        / %p.input_error.error_empty_not_photo.hide
+                        /   %em.required
+                        /     ※JPG/PNG/GIF形式の写真を選択してください。
+                        / %p.input_error.error_empty_over_photo.hide
+                        /   %em.required
+                        /     ※5MB以内の写真を選択して下さい。
               .common_button_area
-                %p.button_item.w50p
+                - @community.errors.full_messages.each do |community|
+                  %p.input_error
+                    %em.required
+                      ※#{community}
+
+                %p.button_item.w50p.pt15
                   = f.submit "このコミュニティを作成する", class: "button_a button_blue_a input_community"
       .common_page_box.community_rules_box
         %p.common_title

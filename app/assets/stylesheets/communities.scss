@@ -206,6 +206,13 @@
 }
 
 // 新規作成画面
+.common_button_area {
+  .button_item {
+    input {
+      width: 100%;
+    }
+  }
+}
 .common_page_box {
   margin-bottom: 25px;
   padding: 15px;
@@ -225,6 +232,11 @@
 }
 .input_error {
   padding-top: 5px;
+  em {
+    &.required {
+      color: #ed4655;
+    }
+  }
 }
 .common_table_a,
 .common_table_c {
