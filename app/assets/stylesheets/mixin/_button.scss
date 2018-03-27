@@ -132,3 +132,12 @@
   color: #fff;
   background-color: #ffbe40;
 }
+@mixin button_cancel {
+  display: inline-block;
+  width: 120px;
+}
+@mixin button_commit {
+  display: inline-block;
+  width: 160px;
+  margin-left: 10px;
+}

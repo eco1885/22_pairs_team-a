@@ -16,8 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-*.png
+*.jpg
 
-*.JPG
+*.png
 
 *.jpeg
