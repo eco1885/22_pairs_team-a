@@ -25,7 +25,13 @@ class PairsController < ApplicationController
     @foot = current_user.comings
   end
 
+  def visitor_list_zero
+  end
+
   def visitor_setting
+  end
+
+  def parts
   end
 
   def create_foot

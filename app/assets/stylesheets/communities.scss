@@ -1,0 +1,401 @@
+//大枠内
+.box_community_view {
+  .box_community_header {
+    @include clearfix();
+    margin-bottom: 10px;
+    .category_select {
+      float: left;
+      margin-right: 10px;
+      //デバックプロパティ3つ
+      height: 29px;
+      width: 200px;
+      line-height: 1.0;
+      .customSelect {
+        width: 200px;
+        .customSelectInner {
+          width: 62px;
+        }
+      }
+    }
+  }
+  .search_input {
+    float: right;
+  }
+  .input_search_word {
+    line-height: 1.2;
+  }
+  .button_search {
+    margin-left: 5px;
+  }
+  // To do プロパティ
+  .common_inline_box {}
+  //検索ボタン
+  .box_community_header {
+    margin-bottom: 10px;
+  }
+}
+
+
+//コンテツ内、タイトルバー
+.common_page_header {
+  margin-bottom: 12px;
+  .icon_square {
+    padding-left: 10px;
+    border-left: 5px solid #cbced0;
+  }
+  .page_tile {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8d9399;
+  }
+}
+
+
+//メイン内部
+.box_wrapper_inner {
+  @include clearfix();
+  //デバックP2つ
+  height: 1760px;
+  border: 1px solid orange;
+  .box_community_side {
+    float: left;
+    width: 172px;
+    //デバックプロパティ2つ
+    border: 1px solid silver;
+    height: 894px;
+  }
+  .box_community_main {
+    float: right;
+    width: 530px;
+    //デバックプロパティ2つ
+    border: 1px solid yellow;
+    height: 100%;
+    .box_my_community {
+      margin-bottom: 28px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      .my_community_title {
+        margin-bottom: 15px;
+      }
+      // To do プロパティ
+      .community_list_box {}
+      .my_community_list {
+        @include clearfix();
+        border-bottom: 1px solid #e1e3e5;
+      }
+      .my_community_item {
+        &:nth-child(5) {
+          border-right: none;
+        }
+        font-size: 13px;
+        float: left;
+        box-sizing: border-box;
+        width: 20%;
+        text-align: center;
+        border-right: 1px solid #e1e3e5;
+        background: #fff;
+        a {
+          display: block;
+          padding: 12px 10px;
+        }
+        .community_item_img {
+          margin-bottom: 5px;
+          width: 70px;
+          height: 70px;
+        }
+        .community_item_title {
+          overflow: hidden;
+          width: 79px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .community_item_count {
+          color: #00b8c0;
+        }
+      }
+    }
+    .box_everyone_community {
+      margin-bottom: 30px;
+      border-width: 2px 0 0;
+      border-style: solid;
+      //デバックプロパティ2つ
+      width: 530px;
+      height: 388px;
+      &.popular_community {
+        border-color: #ffbe40;
+        .data-community-popular-communities {
+          // To do プロパティ
+          .everyone_community_title {}
+          // To do プロパティ
+          .community_list_box {}
+          // To do プロパティ
+          .link_more_community {}
+        }
+      }
+      &.recommend_community {
+        border-color: #00b8c0;
+      }
+      &.newcomer_community {
+        border-color: #f06976;
+      }
+      &.fame_community {
+        border-color: #82cc87;
+      }
+    }
+  }
+}
+
+
+//作成ポップアップ
+#modal_community_about {
+  position: absolute;
+  width: 600px;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+.box_modal_window {
+  display: none;
+  position: absolute;
+  z-index: 2001;
+  letter-spacing: .5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  &.modal_fixed {
+    position: fixed;
+    top: 100px;
+  }
+  .box_modal_window_inner {
+    position: relative;
+    box-sizing: border-box;
+    width: 600px;
+    padding: 28px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  .modal_title {
+    margin-bottom: 15px;
+  }
+  .modal_text_a {
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .modal_sub_title {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    color: #00abb3;
+    border-left: 4px solid #00abb3;
+  }
+  img &.mb10 {
+    height: 191px;
+    width: 529px;
+  }
+}
+.bg_overlay,
+.modal_overlay {
+  position:fixed;
+  // z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background-color: rgba(255,255,255,.7);
+}
+
+// 新規作成画面
+.common_button_area {
+  .button_item {
+    input {
+      width: 100%;
+    }
+  }
+}
+.common_page_box {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: #f3f3f3;
+}
+.comon_box_inner {
+  padding: 20px 0;
+  background-color: #fff;
+}
+
+.input_name
+.input_search_word {
+  line-height: 1.2;
+}
+.common_form input[type=text] {
+  width: 100%;
+}
+.input_error {
+  padding-top: 5px;
+  em {
+    &.required {
+      color: #ed4655;
+    }
+  }
+}
+.common_table_a,
+.common_table_c {
+  margin: 0 15px 20px;
+  table {
+    font-size: 14px;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #cbced0;
+    th{
+      font-weight: 400;
+      color: #00abb3;
+      background-color: #e1f9fa;
+    }
+    th,
+    td {
+      padding: 12px 17px;
+      text-align: left;
+      vertical-align: middle;
+      border: 1px solid #cbced0;
+    }
+  }
+}
+
+//確認画面
+.common_table_b {
+  &.common_form {
+    margin-bottom: 0px;
+    table {
+      margin-bottom: 20px;
+      tr td img {
+        height: 100px;
+        width: 100px;
+        vertical-align: baseline;
+      }
+    }
+  }
+}
+
+//関連ページ使用パーツ
+.ribbon_title {
+  font-size: 18px;
+  line-height: 1.0;
+  position: relative;
+  margin: 0 0 10px;
+  padding: 15px 0;
+  text-align: center;
+  color: #fff;
+  &.ribbon_blue {
+    @include ribbon_title_before();
+    @include ribbon_title_after();
+    background-color: #00c4cc;
+  }
+}
+
+.bg-white {
+  background-color: #fff;
+}
+.box_community_pager {
+  padding: 6px 10px 10px;
+  text-align: center;
+}
+// To do プロパティ
+.box_pager {}
+.common_form select {
+  -webkit-appearance: menulist-button;
+  width: 174px;
+  // position: absolute;
+  // opacity: 0;
+  height: 31px;
+  font-size: 12.5px;
+  color: #8d9399;
+  background-color: #fff;
+}
+.customSelect {
+  font-size: 1.2px;
+  box-sizing: border-box;
+  height: 29px;
+  padding: 6px 40px 6px 14px;
+  border-collapse: separate;
+  white-space: nowrap;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 30px;
+  background-color: #fff;
+  background-image: url(https://lh3.googleusercontent.com/wqkSmqPA1TshsystiBabhfmQ7Tnj7DNcNCuQhqE_zvvVdeR0G3J1xvfhUyDs6IwQebYz-bPLFrzJ8cY6fctjWpAwkeboV6V6Q3MXEsAE02AZLWIS97XKc-rs90iNcYZw_aWQ0qInhsvSGQgagk0_UJyQTKlqiaurpuUz0PPfSnTjEXabDLTfnL7C1AEuC83WzAGQzoKdx3oTkR1ckfU_PTuuWMjW1t8VpNWRBJb28tLyYe2NLIwu-6f7JFB4_EGqZ0ECZ4MYZkXH7-MyNwwbUyKutK-wQuqA3zhnPF7HiX1lPspdq8cgfg_bmthbPH3OhOlZbreDboRFabKkhd3hsR6sd9YWYnAkLxQf2MvSglT7RA-4-6Cz-xx1jxR4gdx2YtEKmupC5VvTkAspeaa5CYpSSZ9lO3J2c_GxIuLEQuD-T6Z8EY5QLZsLjBAJFK8vJfUCUmkgUb6laGhk-Ihi2r3vCe0fnZ-5_iE3wXAlnd55KOOwmddS11oIQa1AdObWPR5QUFU77NiV6hcprHbQyBbghAvwI10qygUxnR4r0QLzDyWVL_Qb-ohsT3ax97ZIKJT5Wcvk-EP9kA0i-g1g-Pd3I6SYFBn7LtdGCs1n3S3zB6jRn2ve7sWvXGuKxEylq1esEeIaGzpVsLwwDx8vdBSRRGj_oYNA=w26-h51-no),none;
+  background-repeat: no-repeat;
+  background-position: right center;
+  box-shadow: 0 2px 0 #c9c9c9;
+  width: auto!important;
+}
+.customSelectInner {
+  width: 62px;
+  display: inline-block;
+  width: auto!important;
+}
+
+//作成完了ページ
+
+//詳細ページ
+.box_community_detail_header {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  .breadcrumb_list {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .community_info {
+    @include clearfix();
+    padding: 15px;
+    background-color: #fff;
+    .box_community_image {
+      position: relative;
+      .community_image {
+        float: left;
+        margin-right: 15px;
+        img {
+          height: 132px;
+          width: 132px;
+        }
+      }
+    }
+    .community_info_inner {
+      @include clearfix();
+      float: left;
+      width: 510px;
+    }
+    .community_title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .community_member_count {
+      font-size: 14px;
+      margin-bottom: 10px;
+      em {
+        padding-left: 10px;
+        color: #00abb3;
+      }
+    }
+    .community_entry {
+      @include clearfix();
+      padding: 15px;
+      border-radius: 4px;
+      background-color: #f7f7f7;
+      .entry_text {
+        float: left;
+        color: #788086;
+        strong {
+          font-size: 13px;
+          font-weight: 700;
+          display: block;
+        }
+      }
+      .button_entry {
+        float: right;
+        margin-top: 5px;
+      }
+    }
+  }
+}

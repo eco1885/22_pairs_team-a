@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20180324104850) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "community_name", null: false
+    t.integer  "category",       null: false
+    t.string   "image",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "foots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "visitor_id", null: false
