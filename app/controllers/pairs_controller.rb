@@ -29,6 +29,7 @@ class PairsController < ApplicationController
   end
 
   def privacy_setting
+    @user = User.find(current_user)
   end
 
   def hide

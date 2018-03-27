@@ -11,7 +11,6 @@
           .common_table_b.common_form
             %table
               %tbody
-                / 未設定箇所
                 %tr
                   %th.v_align_top
                     Pairsからのお知らせを受け取る
@@ -42,17 +41,30 @@
                       %p.fnt_base03.fnt12.mt3
                         お知らせ配信先メールアドレス：
                       %p.fnt_bold.mb10.fnt14
-                        xxx@hotmail.com
+                        #{@user.email}
                     %p.mb5
-                      =link_to "メールが届かない場合","/404", class: "link_change_mail", target: "_blank"
-                      %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
+                      =link_to "/404" ,class: "link_change_mail", target: "_blank" do
+                        メールが届かない場合
+                        %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
                     %p.mb5
-                      =link_to "配信先メールアドレスの変更方法はこちら","/404", class: "link_change_mail", target: "_blank"
-                      %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
+                      =link_to "/404", class: "link_change_mail", target: "_blank" do
+                        配信先メールアドレスの変更方法はこちら
+                        %img{src: "https://lh3.googleusercontent.com/ZcI0SsdLi10CbqxQdTlNbE0QxzPk9jSVHHfk1-nl7EHNZrD_pMOZdfZchyOrKQ9qZgF0nTzC5hYaPmGIMDdVXKGpsNEbfZfDVrITa65mAxWcsDUH1dTAkYv_IAx_klKrk_Qdk8YMgAYYIPk6-1Mu4rmtNUVN5E-n3hlay5T6r0X_ZfGrCXvS52O_dCYBQgl5KaYyGnWFtCopMLf-PXlu1m4M4unEVx4LCG9QNcaVO8XTzTv4Mz0fgXfVzejuzm9OE32gowdixaYlyOMZhJkooDhR_C4_IzYvWzQsC3Gp6-5FWzT9FjMJfrM0Vj8riwpYdvFptddSVu1VcRTrx9UC6oDQY1BjhBA9dDycSw85q9dEgUZir-hMQrlztpq2_8M7QOqr9D3xGW3LF_i8hORZqlySH9wLpoGS1gyVQd5F5UghziSdrKVj2C9CRvuHfU5eCR6QxksNYFYOdBGOjDWpJ5BaLHn4wqWu4jCsCImlNkVeqAWFXJ1g6_TW2Y9Mp9WvJ4NX2KrdqYgSU_GFv8bNhTvUPthpfkupyNCm8qO9p5bzesqRWDP2Bu_OFufVjZHPy5n8pCb4RYQmUh5qS9UNp2C8pvbIqqPc-VZKxKgUCgIrWmug8TS6bok7JUpyLo4gcd5_EbKiL628fUpZq4ZPjK21aTQStHEK=s15-no"}
                 %tr
                   %th.v_align_top
+                    1日に受診するいいね！数上限
                   %td
-                / 未設定箇所
+                    .mb10
+                      たくさんのいいね！を受け取り過ぎてお困りの場合は、1日に受信できるいいね！数の上限をご設定ください。
+                    %select.hasCustomSelect
+                      %option{selected: "selected", value: "1"} 制限しない
+                      %option{value: "2"} 10人程度
+                      %option{value: "3"} 20人程度
+                      %option{value: "4"} 30人程度
+                    %p.class.fnt_base03.fnt12.mt10
+                      ※プレミアムオプションに加入している男性会員からのいいね！は上限とは関係なく受信します
+                      %br
+                      ※レディースオプションに加入している女性会員からのいいね！は上限とは関係なく受信します
           .common_button_area
             .button_item.w30p
               %button{type:"submit", class:"button_a button_blue_a", id:"submitNotifySetting"}

@@ -3,6 +3,62 @@ html, body {
   margin: 0;
   padding: 0;
 }
+.common_box_inner_pddtp0 {
+  padding: 0 0 20px;
+  background-color: #fff;
+  .mb10 {
+    input[type=checkbox] {
+      display: none;
+    }
+    input[type=checkbox]:not(.not_use_default):checked+label {
+      color: #00abb3;
+    }
+  }
+}
+.common_table_b {
+  th {
+    font-weight: 400;
+    width: 25%;
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: #e1e3e5;
+    white-space: nowrap;
+  }
+  .v_align_top {
+    vertical-align: top;
+  }
+}
+.link_change_mail {
+  text-decoration: underline;
+  color: #53b7bb;
+  img {
+    height: 15px!important;
+    width: 15px!important;
+  }
+}
+.hasCustomSelect {
+  -webkit-appearance: menulist-button;
+  width: 174px;
+  height: 31px;
+  font-size: 12.5px;
+  color: #8d9399;
+  background-color: #fff;
+}
+
+//各種設定ページメイン
+.common_page_header {
+  margin-bottom: 12px;
+  .page_tile {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #8d9399;
+  }
+  .icon_square {
+    padding-left: 10px;
+    border-left: 5px solid #cbced0;
+  }
+
+}
 
 //各種設定ページ追加要素
 #box_offline_female,
@@ -12,9 +68,11 @@ html, body {
 #modal_community_about {
   position: absolute;
   width: 600px;
-  // top: 50px;
-  // left: 0px;
-  // right: 0px;
+
+  top: 50px;
+  left: 0px;
+  right: 0px;
+
   margin: auto;
 }
 .box_modal_window {
@@ -23,8 +81,10 @@ html, body {
   letter-spacing: .5px;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
   &.modal_fixed {
-    // position: fixed;
-    // top: 100px;
+
+    position: fixed;
+    top: 100px;
+
     &.modal_only_premium {
       z-index: 10000;
     }
