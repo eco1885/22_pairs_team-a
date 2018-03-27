@@ -31,6 +31,16 @@ class PairsController < ApplicationController
   def visitor_setting
   end
 
+  def privacy_setting
+    @user = User.find(current_user)
+  end
+
+  def hide
+  end
+
+  def block
+  end
+
   def parts
   end
 

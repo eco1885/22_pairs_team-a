@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get "visitorlist" => "pairs#visitor_list"
   get "visitorlistzero" => "pairs#visitor_list_zero"
   get "visitorsetting" => "pairs#visitor_setting"
+  #各種設定関連のrouting
+  get "privacysetting" => "pairs#privacy_setting"
+  get "dislikeuserlist/hide" => "pairs#hide"
+  get "dislikeuserlist/block" => "pairs#block"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
