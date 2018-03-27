@@ -11,14 +11,7 @@ class PairsController < ApplicationController
 
   def search_one
     @users = User.page(params[:page]).per(1)
-    if Foot.exists?(user_id: current_user.id, visitor_id: @users[0].id)
-      @foot = Foot.where(user_id: current_user.id, visitor_id: @users[0].id)
-      @foot.update(user_id: current_user.id+1, visitor_id: @users[0].id)
-      @foot.update(user_id: current_user.id, visitor_id: @users[0].id)
-    else
-      @foot = Foot.new(user_id: current_user.id, visitor_id: @users[0].id)
-      @foot.save
-    end
+    save_foot(@users[0].id)
   end
 
   def myprofile
@@ -36,14 +29,20 @@ class PairsController < ApplicationController
   end
 
   def create_foot
-    if Foot.exists?(user_id: current_user.id, visitor_id: params[:id])
-      @foot = Foot.where(user_id: current_user.id, visitor_id: params[:id])
-      @foot.update(user_id: current_user.id+1, visitor_id: params[:id])
-      @foot.update(user_id: current_user.id, visitor_id: params[:id])
-    else
-      @foot = Foot.new(user_id: current_user.id, visitor_id: params[:id])
-      @foot.save
-    end
+    save_foot(params[:id])
   end
+
+  private
+
+    def save_foot(visitor_id)
+      if Foot.exists?(user_id: current_user.id, visitor_id: visitor_id)
+        @foot = Foot.where(user_id: current_user.id, visitor_id: visitor_id)
+        @foot.update(user_id: current_user.id+1, visitor_id: visitor_id)
+        @foot.update(user_id: current_user.id, visitor_id: visitor_id)
+      else
+        @foot = Foot.new(user_id: current_user.id, visitor_id: visitor_id)
+        @foot.save
+      end
+    end
 
 end
