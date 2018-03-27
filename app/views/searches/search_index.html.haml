@@ -1,0 +1,7 @@
+.search
+  = search_form_for(@q, url:search_result_path) do |f|
+    = f.label :residence_id_eq, '都道府県'
+    = f.collection_select :residence_id_eq, @residence, :id, :prefecture, :include_blank => 'こだわらない'
+    = f.label :alcohol_id_eq, 'お酒'
+    = f.collection_radio_buttons :alcohol_id_eq, @alcohol, :id, :frequency, :include_blank => 'こだわらない'
+    = f.submit
