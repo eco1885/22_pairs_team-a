@@ -1,16 +1,22 @@
 $(document).on('turbolinks:load',function(){
   $(function() {
     $(".showPersonalViewModal").on("click", function(e){
-      e.preventDefault();
-      $(".js_click_hide").hide();
-      $(".bg_overlay").fadeIn(300);
       var imageId = $(this).data("id")
-      $(".showProfile").each(function(){
-        if ($(this).data("id") == imageId){
-          $(this).fadeIn(800)
-        }
-      })
-
+      $.ajax({
+          type: "GET",
+          url: "/createfoot",
+          data: {"id": imageId},
+          complete: function(){
+            $(".js_click_hide").hide();
+            $(".bg_overlay").fadeIn(300);
+            $(".showProfile").each(function(){
+              if ($(this).data("id") == imageId){
+                $(this).fadeIn(800)
+              }
+            })
+          }
+      });
+      e.preventDefault();
     });
     $(".modal_close").on("click", function(e){
       e.preventDefault();
