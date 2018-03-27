@@ -257,6 +257,9 @@ input[type=text] {
 .button_blue_a {
   @include button_blue_a;
 }
+.button_blue_b {
+  @include button_blue_b;
+}
 .button_white_a {
   @include button_white_a;
 }

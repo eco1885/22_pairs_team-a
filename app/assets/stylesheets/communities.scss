@@ -260,6 +260,24 @@
     }
   }
 }
+// 参加・退会ポップアップ
+.box_modal_window {
+  &.modal_community {
+    .modal_title {
+      font-size: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .button_a {
+      width: 70px;
+      cursor: pointer;
+    }
+  }
+  .modal_button_area a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
 
 //確認画面
 .common_table_b {

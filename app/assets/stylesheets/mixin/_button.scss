@@ -59,6 +59,11 @@
   background-color: #00b8c0;
   box-shadow: 0 3px 0 #00abb3;
 }
+@mixin button_blue_b {
+  color: #fff;
+  background-color: #00b8c0;
+  box-shadow: 0 3px 0 #00abb3;
+}
 @mixin button_white_a {
   color: #8d9399;
   border: 1px solid #cbced0;
