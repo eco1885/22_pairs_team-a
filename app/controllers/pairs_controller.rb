@@ -1,9 +1,16 @@
 class PairsController < ApplicationController
 
   def index
-    @users = User.page(params[:page]).per(8)
+    if current_user.gender == "male"
+      @users = User.where( gender: 2).page(params[:page]).per(8)
+    else
+      @users = User.where( gender: 1).page(params[:page]).per(8)
+    end
+
     @relationship = Relationship.new
+
   end
+
   def messages_index
 
   end
