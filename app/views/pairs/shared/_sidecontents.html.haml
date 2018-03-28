@@ -50,7 +50,7 @@
       .box_gnavis01
         %p.gnavi_title さがす
         %ul
-          %li.gnavi_item.is_currentgnavi_item.is_current
+          %li.gnavi_item
             =link_to root_path,class: "sidemenu_link" do
               %span お相手を探す
 
@@ -74,7 +74,7 @@
         %p.gnavi_title コミュニティ
         %ul
           %li.gnavi_item
-            =link_to "コミュニティを探す","",class: "sidemenu_link"
+            =link_to "コミュニティを探す", communities_path,class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 年齢確認
@@ -104,11 +104,13 @@
         %p.gnavi_title 各種設定
         %ul#sidemenu_settings
           %li.gnavi_item
-            =link_to "通知/いいね上限","",class: "sidemenu_link"
+            =link_to "通知/いいね上限","/privacysetting#box_notify",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "非表示・ブロック","",class: "sidemenu_link"
+            =link_to "Facebook友達更新","/privacysetting#box_fb_friend",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "オフラインモード設定","",class: "sidemenu_link"
+            =link_to "非表示・ブロック","/privacysetting#box_hide_block",class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "オフラインモード設定","/privacysetting#box_offline",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 困ったときは

@@ -295,3 +295,61 @@
     background-position: -119px -175px;
   }
 }
+
+// 足あと0人時に表示されるアイコンたち
+@mixin guide01() {
+  &:before {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin-right: 5px;
+    content: "";
+    vertical-align: middle;
+    background-image:url(https://lh3.googleusercontent.com/ke-dJr7AnSd6JLFySq_pbOftUo-INEAsEZ3lsh5BpxMKXWNN9IGMBsGOYXbAPs3iytqpUZmRspPk0wxXNm7oTYz0bEVy5UJ7doyaTj4tJZEpvXpfmYK-JNnZOuhYjx6Dj3vj4NCZUXcbQYt0wyTalo3J_UkeoQAl0toqH-kSlXtEMmNfukojkjxLrkpHZ7o5snDIfNIXa3tXp-B4uAqxWSNgCkMnMtPCZHkvVnAXmN6fl6pqKYzAXCHd32JLq3xswFlA5rv0Jh40YYQ8wAjGfbLsLglax9gaB2zVdI39yYmQS7wrD9bGM3EVoo07Ab6OpS4GLaSrdcrapmN1U1pQAERM4v1MLTdCv1KSi_7FMPf-JEkvJz4WlM5wFHHvlrBtBkTaIhJLlpPwp6dP2CwDvHpFqOy14iAC91ANoH8Jfe1hm58pk905Y0dqg2adQGevEnSaLAhxTHPyFJBV_kMpV-wG-FwEkvhNuzlLCIxqZ0csaGbCwcJFVDAdPHBCuIDwXsWdD3iDz4ibxfzTq2cAnUxtzopngscQDz7qgXIbJa8blz31rSv1ImKKCuh5u36nKqDt-E-rcPHqdIGJ8ZSXvU3Fi-XUcLRIvbguyuRri9AhB32fqhoeVyqtYCvhRY4nJ3C3tSVq6UUgTOivlnmWHhAZc-EnuMEw=w259-h1188-no),none;
+    background-repeat: no-repeat;
+    background-position: 0px -692px;
+  }
+}
+@mixin visitor_guide_premium() {
+  &:before {
+    display: inline-block;
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-right: 5px;
+    content: "";
+    background-image:url(https://lh3.googleusercontent.com/vdRwE6XWowsf29YYvhZV-EDy6lHJGaEJ_OOw-jEsahn1VKdgdGGk6Yd-Lx5I3ispbaQ4ADprjT_16ChgA0xH5V3C-LawWnWgwNbkZRgnq29olGm4_dc9RWwigRjo8gzqyaGFjCI1YsVbbZlyuk1bzwWJnRdBh65bptKedMgq6qceOm06Zb-AM19Z-hMKa2k4lXGjL6blv95CjaGmjYaHTQ5DUmu-i9j79lQgvaFbcTKm0KGHeNaefSkvVgZpYdIOEcAlva_QqPPpuFM3HwWmPSvrYOzb0CK6D_f6sbHTMasoHYXlblFSEDyh5F7LjgIWjZ4LiFnAR5fZQ6Oii-sBD9uAB_jzEInHx5BwLvykoQ2daJkudRNUuP5L7A4wEad52duV5QKXz9haMAmA6oWRHZvGXEX2OndcYKKU9d8PBaMoqwaMEqTmS-k6wLWeioT0HdjGjWA9HWIpnh2WkySoKgkY94CV7zB90EWuXQpeBClwzPzIUl6Ptp3ZcIwc9UVOAZV8Kq8LICeiON-4vGKTyN10guJ4fKGDCtPih2wWrcbjO-7ILRaLOQS_yT05k7zrgiHYkQ-2BF8wDKEYVzyWUEIVkRwXBBpA6HOgb-bUxrZ2UKu0fTxpuvYzjeNnmjUPLxH7YA5_VqoWx9RwcHf4N4nkzh-3KORK=s42-no),none;
+    background-repeat: no-repeat;
+    background-position: 0 -1px;
+  }
+}
+
+// リボン
+@mixin ribbon_title_before() {
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-left: 10px solid white;
+  }
+}
+@mixin ribbon_title_after() {
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 23px solid transparent;
+    border-bottom: 23px solid transparent;
+    border-right: 10px solid white;
+  }
+}

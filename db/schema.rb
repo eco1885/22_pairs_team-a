@@ -22,6 +22,20 @@ ActiveRecord::Schema.define(version: 20180328075406) do
     t.string   "job_category", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "community_name", null: false
+    t.integer  "category",       null: false
+    t.string   "image",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "foots", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "visitor_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_foots_on_user_id", using: :btree
   end
 
   create_table "relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -69,6 +83,7 @@ ActiveRecord::Schema.define(version: 20180328075406) do
     t.index ["residence_id"], name: "index_users_on_residence_id", using: :btree
   end
 
+  add_foreign_key "foots", "users"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "residences"
 end
