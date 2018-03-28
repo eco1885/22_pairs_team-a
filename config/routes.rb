@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users do
-  #マッチング機能のためのrouting1
+  #マッチング機能のためのrouting
     member do
      get :following, :followers
     end
