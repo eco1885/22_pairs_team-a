@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180328075406) do
     t.string   "job_category", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
   create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "community_name", null: false
     t.integer  "category",       null: false
