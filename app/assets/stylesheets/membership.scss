@@ -124,3 +124,64 @@
     box-shadow: none;
   }
 }
+
+
+//会員ステータス
+.like_icon {
+  position: relative;
+  @include icon_like();
+  &:before {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    margin: -5px 2px 0px 0px;
+    vertical-align: top;
+    background-position: 0px -45px;
+  }
+}
+.box_member_status_view {
+  .common_text {
+    &.mb0 {
+      margin-bottom: 0px;
+    }
+  }
+  .like_restore_text_box {
+    font-size: 12px;
+    margin: 0px 15px;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(251, 212, 216);
+    border-image: initial;
+    border-radius: 4px;
+    background: rgb(255, 248, 248);
+    .box_header {
+      font-size: 14px;
+      color: rgb(240, 105, 118);
+      margin: 0px 0px 10px;
+    }
+    table {
+      .status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(240, 105, 118);
+      }
+      .status_top {
+        padding-bottom: 10px;
+      }
+      .premium_status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(219, 180, 28);
+      }
+    }
+  }
+}

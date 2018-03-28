@@ -159,7 +159,8 @@ input[type=text] {
 .w30p {
   width: 30%;
 }
-.w40p {
+.w40p,
+.wide40 {
   width: 40%;
 }
 .w50p {
@@ -170,6 +171,9 @@ input[type=text] {
 }
 .mr0 {
   margin-right: 0px;
+}
+.mr5 {
+  margin-right: 5px;
 }
 .mr10 {
   margin-right: 10px;
