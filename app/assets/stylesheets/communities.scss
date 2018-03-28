@@ -79,6 +79,9 @@
       }
       // To do プロパティ
       .community_list_box {}
+      .bg_white {
+        background-color: #fff;
+      }
       .my_community_list {
         @include clearfix();
         border-bottom: 1px solid #e1e3e5;
@@ -121,25 +124,117 @@
       //デバックプロパティ2つ
       width: 530px;
       height: 388px;
+      .everyone_community_title {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .community_list {
+        @include clearfix();
+      }
+      .community_item {
+        &:nth-child(5) {
+          margin-right: 0;
+        }
+        font-size: 13px;
+        position: relative;
+        top: 1px;
+        float: left;
+        box-sizing: border-box;
+        width: 84px;
+        height: 160px;
+        margin-right: 27px;
+        text-align: center;
+        a {
+          display: block;
+          padding: 5px 0px;
+        }
+        .community_item_img {
+          margin-bottom: 5px;
+          width: 70px;
+          height: 70px;
+        }
+        .community_item_title {
+          height: 36px;
+          letter-spacing: -1px;
+        }
+        .community_item_count {
+          color: #8d9399;
+        }
+      }
+      .link_more_community {
+        text-align: right;
+        a {
+          font-size: 13px;
+          display: inline-block;
+          padding: 2px 8px;
+          border: 1px solid #e1e3e5;
+          border-radius: 30px;
+          background-color: #fff;
+        }
+      }
       &.popular_community {
         border-color: #ffbe40;
-        .data-community-popular-communities {
-          // To do プロパティ
-          .everyone_community_title {}
-          // To do プロパティ
-          .community_list_box {}
-          // To do プロパティ
-          .link_more_community {}
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -46px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
         }
       }
       &.recommend_community {
         border-color: #00b8c0;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -83px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
       }
       &.newcomer_community {
         border-color: #f06976;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -126px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
       }
       &.fame_community {
         border-color: #82cc87;
+        .everyone_community_title {
+          &:before {
+            @include community_title_icon();
+            background-position: -169px -435px;
+          }
+        }
+        .link_more_community {
+          a {
+            text-decoration: underline;
+            color: #ffbe40;
+            background-color: #f3f3f3;
+          }
+        }
       }
     }
   }
