@@ -1,7 +1,6 @@
 class PairsController < ApplicationController
 
   def index
-    # @users = current_user.comings
     @users = User.page(params[:page]).per(8)
     @relationship = Relationship.new
   end
@@ -22,7 +21,7 @@ class PairsController < ApplicationController
   end
 
   def visitor_list
-    @foot = current_user.comings.order("updated_at DESC").page(params[:page]).per(3)
+    @foot = current_user.comings.order("updated_at DESC").page(params[:page]).per(10)
   end
 
   def visitor_setting

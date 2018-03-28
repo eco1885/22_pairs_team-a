@@ -2,8 +2,8 @@
   %p.common_title<
     過去ー週間の足あと：
     %em.fnt_pink02>
-      %span.visitor_count<> 118
-      人
+      %span.visitor_count<>
+        = "#{@foot.length} 人"
   .common_box_inner.pt0
     .box_visitor_list
       %table.visitor_lists.sample
@@ -13,14 +13,15 @@
     .box_visitor_pager
       %p.pager_info.common_text.text_center
         %span.pager_count
-          13
-          人中
+          = "#{@foot.length} 人中"
         %span.pager_start
           1
           〜
         %span.pager_end
-          10
-          人を表示
+          -if(@foot.length<10)
+            = "#{@foot.length} 人を表示"
+          -else
+            10人を表示
       .box_result_pager
         = paginate(@foot)
     .box_more_visitor.ng-hide
