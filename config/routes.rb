@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   get "membership/aboutpoint" => "pairs#about_point"
   get "membership/aboutallpoint" => "pairs#about_all_point"
   get "membership/pointlog" => "pairs#point_log"
+  get "membership/status" => "pairs#status"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting

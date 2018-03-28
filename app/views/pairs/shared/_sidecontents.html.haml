@@ -10,11 +10,12 @@
         = link_to "秋元康 東京", "/users/#{current_user.id}"
 
       %p.profile_status.is_free_member
-        = link_to "ここに年齢",""
+        = link_to "ここに年齢","/membership/status"
 
     .my_profile_input_rate
       %p.input_rate_label
-        %span.input_rate_percent_value ここに%
+        プロフィール入力率
+        %span.input_rate_percent_value %%
 
       .box_input_rate_grahp
         .input_rate_grahp_value.is_percent_100
