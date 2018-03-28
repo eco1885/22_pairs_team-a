@@ -22,7 +22,7 @@ class PairsController < ApplicationController
   end
 
   def visitor_list
-    @foot = current_user.comings
+    @foot = current_user.comings.order("updated_at DESC").page(params[:page]).per(3)
   end
 
   def visitor_setting
