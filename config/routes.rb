@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get "privacysetting" => "pairs#privacy_setting"
   get "dislikeuserlist/hide" => "pairs#hide"
   get "dislikeuserlist/block" => "pairs#block"
+  #membership関連のrouting
+  get "membership/aboutpoint" => "pairs#about_point"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
