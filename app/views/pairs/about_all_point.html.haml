@@ -1,0 +1,71 @@
+.ui-view.class_style
+  .data-membership-point-about-all
+    .main.box_member_view.contents_padding
+      .common_page_header
+        %span.page_tile.icon_square
+          Pairsポイント
+        .mt10
+          =link_to "戻る", "/membership/aboutpoint", class:"page_back button_f button_white_a"
+      #about_point
+        .common_page_box#purchase_point
+          %p.common_title
+            Pairsポイントの購入
+          .common_box_inner
+            .common_table_a.mb30
+
+
+              %table.purchage_list
+                %tbody
+                  %tr
+                    %th.w40p
+                      %p.text_center
+                        ポイント残高
+                    %td
+                      %p.icon_point.text_center.valign_middle
+                        %span.fnt24 15
+                          %span
+                            %small.fnt13 &nbsp;ポイント
+            %p.common_text.fnt14
+              ご希望のPairsポイントを選んで購入ボタンを押してください。
+
+
+            .common_table_a.mb30
+              %table.purchage_list
+                %tbody
+                  %tr
+                    %th.w30p
+                      %p.text_center
+                        交換内容
+                    %th.w30p
+                      %p.text_center
+                        使用ポイント数
+                    %th
+                  %tr
+                    %td
+                      %p.icon_like.ml30.fnt_pink03
+                        %strong.fnt24 5
+                        いいね！
+                    %td
+                      .text_center
+                        %strong.fnt24 5
+                        &nbsp;pt
+                    %td
+                      .common_button_area
+                        %p.button_item.w90p
+                          =link_to "交換する","", class:"button_a button_b js_exchange_pairs_point"
+
+
+              .notice
+                %p.fnt12 表示価格は全て税込みです。
+                .clear:_both
+            .caution.fnt12
+              %p.ml10.fnt14
+                注意
+              %ul.common_list.mb0
+                %li.mb0
+                  保有できるPairsポイントは最大10,000ポイントです
+                %li.mb0
+                  ご購入いただいたPairsポイントは返金できません
+                %li.mb0
+                  ご購入いただいたPairsポイントの有効期限は購入日を含め180日です。
+                  2014年9月30日以前に購入されたポイントには有効期限はありません
