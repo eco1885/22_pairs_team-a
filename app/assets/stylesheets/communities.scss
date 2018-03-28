@@ -300,6 +300,7 @@
   // background-color: rgba(255,255,255,.7);
 }
 
+
 // 新規作成画面
 .common_button_area {
   .button_item {
@@ -355,24 +356,7 @@
     }
   }
 }
-// 参加・退会ポップアップ
-.box_modal_window {
-  &.modal_community {
-    .modal_title {
-      font-size: 16px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .button_a {
-      width: 70px;
-      cursor: pointer;
-    }
-  }
-  .modal_button_area a {
-    display: inline-block;
-    margin: 0 10px;
-  }
-}
+
 
 //確認画面
 .common_table_b {
@@ -388,6 +372,10 @@
     }
   }
 }
+
+
+//作成完了ページ
+
 
 //関連ページ使用パーツ
 .ribbon_title {
@@ -446,8 +434,6 @@
   display: inline-block;
   width: auto!important;
 }
-
-//作成完了ページ
 
 //詳細ページ
 .box_community_detail_header {
@@ -511,4 +497,190 @@
       }
     }
   }
+}
+// 参加・退会ポップアップ
+.box_modal_window {
+  &.modal_community {
+    .modal_title {
+      font-size: 16px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .button_a {
+      width: 70px;
+      cursor: pointer;
+    }
+  }
+  .modal_button_area a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
+
+//検索ページ
+.bg_white {
+  background-color: #fff;
+}
+.box_community_pager {
+  padding: 6px 10px 10px;
+  text-align: center;
+  height: 34px;
+}
+// 検索結果0以外
+.box_community_category {
+  position: relative;
+  padding: 15px 13px;
+  background-color: #f7f7f7;
+  .community_category_header {
+    @include clearfix();
+    margin-bottom: 12px;
+    .breadcrumb_list {
+      font-size: 15px;
+      float: left;
+    }
+    .community_count {
+      font-size: 13px;
+      float: right;
+      margin-top: 3px;
+    }
+  }
+  // To Doプロパティ
+  .box_community_pager.box_pager {}
+  .community_list_box {}
+  .community_list {
+    @include clearfix();
+    border-top: 1px solid #e1e3e5;
+    border-bottom: 1px solid #e1e3e5;
+    background-color: #fff;
+    .community_item {
+      &:nth-child(6n) {
+        border-right: none;
+      }
+      font-size: 13px;
+      position: relative;
+      top: 1px;
+      float: left;
+      box-sizing: border-box;
+      width: 16.6%;
+      height: 170px;
+      text-align: center;
+      border-right: 1px solid #e1e3e5;
+      border-bottom: 1px solid #e1e3e5;
+      a {
+        display: block;
+        padding: 15px 10px;
+      }
+      .community_item_title {
+        width: 94px;
+        height: 37px;
+        overflow: hidden;
+      }
+    }
+    .community_item_img {
+      margin-bottom: 5px;
+      width: 84px;
+      height: 84px;
+    }
+    .community_item_count {
+      color: #00b8c0;
+    }
+  }
+  .box_community_color_note {
+    font-size: 11px;
+    position: absolute;
+    right: 6px;
+    // bottom: 3px; 希望の場所にならない為、コメアウト
+    bottom: 3px;
+    margin: 0 8px 16px;
+    padding: 5px;
+    text-align: center;
+    .color_note_item {
+      margin: 0 5px;
+      @include community_color_note();
+      &.color_joined {
+        &:before {
+         background-color: #ffffe8;
+        }
+      }
+      &.color_created {
+        &:before {
+          background-color: #e1f9fa;
+        }
+      }
+    }
+  }
+}
+// 検索結果0
+.box_community_not_found {
+  .not_found_title {
+    @include not_found_title();
+    font-size: 16px;
+    line-height: 1.0;
+    margin: 30px 15px;
+    text-align: center;
+    em {
+      color: #ed4655;
+    }
+    .text_center {
+      img {
+        height: 119px;
+        width: 636px;
+      }
+    }
+  }
+  .not_found_text {
+    font-size: 16px;
+    line-height: 1.0;
+    margin: 30px 15px;
+    text-align: center;
+    em {
+      color: #ed4655;
+    }
+  }
+}
+.box_other_community_category {
+  margin-top: 20px;
+  .category_item {
+    font-size: 13px;
+    float: left;
+    box-sizing: border-box;
+    width: 25%;
+    padding: 5px 11px;
+    border-right: 1px dashed #e1e3e5;
+    &:last-child {
+      border-right: none;
+    }
+    a {
+      display: block;
+    }
+    .category_img {
+      margin-right: 5px;
+      vertical-align: middle;
+      width: 46px;
+      height: 46px;
+    }
+    .category_title {
+      line-height: 1.2;
+      display: inline-block;
+      width: 100px;
+      vertical-align: middle;
+      text-decoration: underline;
+    }
+  }
+  .popular_item {
+    color: #ffbe40;
+  }
+  .recommend_item {
+    color: #00b8c0;
+  }
+  .newcomer_item {
+    color: #f06976;
+  }
+  .fame_item {
+    color: #82cc87;
+  }
+}
+.category_list {
+  @include clearfix();
 }
