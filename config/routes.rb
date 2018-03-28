@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get "dislikeuserlist/block" => "pairs#block"
   #membership関連のrouting
   get "membership/aboutpoint" => "pairs#about_point"
+  get "membership/pointlog" => "pairs#point_log"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
