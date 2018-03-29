@@ -8,7 +8,8 @@
     .box_user_info01
       %p.user_summary
         %span.is_3days
-        %span.user_area{limit_length: "5"} 東京
+        %span.user_area{limit_length: "5"}
+          = user.residence.prefecture
         %span.user_age 23歳
     .box_user_info03
       %p.user_chemistry.user_chemistry_a.is_chemistry_heart75_a
