@@ -9,7 +9,7 @@ class SearchesController < ApplicationController
 
   def search_result
     @q = User.search(search_params)
-    @users = @q.result(distinct: true).page(params[:page]).per(1)
+    @users = @q.result(distinct: true).page(params[:page]).per(16)
   end
 
   private
