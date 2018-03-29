@@ -8,18 +8,14 @@
     .box_community_header.common_inline_box
       %form.form_search_word
         .search_input
-          %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
-          %button.button_search.button_f.button_blue_a
-            検索作成予定
-      %div
-        = form_tag(communities_path, method: "get") do
-          = label_tag :community_name, "コミュニティ名を入れよう"
-          = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索だよん"
-          %br
-          = label_tag :name, "カテゴリーを検索する場所"
-          = select_tag :category, options_for_select(Community.categories), prompt: "カテゴリから探す"
-          = submit_tag "検索"
-
+          = form_tag(communities_path, method: "get") do
+            = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
+            = submit_tag "検索", class: "button_search button_f button_blue_a"
+        / 正常に動くやつ
+        / .search_input
+        /   = form_tag(communities_path, method: "get") do
+        /     = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
+        /     = submit_tag "検索", class: "button_search button_f button_blue_a"
     .box_wrapper_inner
       .box_community_side
       .box_community_main
