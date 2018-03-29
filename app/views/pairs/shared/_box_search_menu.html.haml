@@ -9,4 +9,9 @@
         = link_to "", root_path, id: "tab_item001"
       %li.tab_item.tab_item02
         = link_to "", searchone_path, id: "tab_item002"
-  %p.search_result_count 46人中 7人表示
+  %p.search_result_count
+    = "#{@users.length}人中 1 〜"
+    -if(@users.length<@selected)
+      = "#{@users.length}人を表示"
+    -else
+      = "#{@selected} 人を表示"
