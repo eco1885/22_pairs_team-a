@@ -7,6 +7,7 @@ class SearchesController < ApplicationController
     @q = User.ransack(params[:q])
     @residence = Residence.all
     @alcohol = Alcohol.all
+    @smoke = Smoke.all
   end
 
   def search_result
@@ -16,6 +17,6 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit(:residence_id_eq, :alcohol_id_eq)
+    params.require(:q).permit(:residence_id_eq, :alcohol_id_eq, :smoke_id_eq,)
   end
 end
