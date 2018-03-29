@@ -9,6 +9,11 @@
             = f.collection_select :residence_id_eq, @residence,  :id, :prefecture, include_blank: 'こだわらない'
         %tr
           %th
+            = f.label :occupancy_id_eq, '職業'
+          %td
+            = f.collection_select :occupancy_id_eq, @occupancy,  :id, :occupancy, include_blank: 'こだわらない'
+        %tr
+          %th
             = f.label :smoke_id_eq, 'タバコ'
           %td
             = f.collection_select :smoke_id_eq, @smoke,  :id, :frequency, include_blank: 'こだわらない'
