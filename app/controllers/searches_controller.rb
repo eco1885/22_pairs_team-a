@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  DISPLAYED_USER = 16
+  # DISPLAYED_USER = 16
 
 
   #条件検索用にgem "ransack"を使用しています
@@ -12,8 +12,15 @@ class SearchesController < ApplicationController
   end
 
   def search_result
+    @selected = params[:selected_value].present? ? params[:selected_value] : 16
     @q = User.search(search_params)
-    @users = @q.result(distinct: true).page(params[:page]).per(DISPLAYED_USER)
+    if current_user.gender == "male"
+      @users = @q.result(distinct: true).page(params[:page]).per(@selected)
+    else
+      @users = @q.result(distinct: true).page(params[:page]).per(@selected)
+    end
+    # @q = User.search(search_params)
+    # @users = @q.result(distinct: true).page(params[:page]).per(DISPLAYED_USER)
   end
 
   private
