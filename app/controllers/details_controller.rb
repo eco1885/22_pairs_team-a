@@ -17,6 +17,6 @@ class DetailsController < ApplicationController
 
 private
   def details_params
-    params.require(:user).permit(:residence_id, :alcohol_id)#Userモデルのresidence_id,alcohol_idに値を追加する
+    params.require(:user).permit(:residence_id, :alcohol_id, :smoke_id)#Userモデルの○○_idに値を追加する
   end
 end

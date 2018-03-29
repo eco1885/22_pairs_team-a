@@ -1,10 +1,10 @@
 .profile__contents {
     width: 680px;
-    background-color: red;
+    background-color: gray;
     position: relative;
     left: 17px;
     margin: 40px;
-    height: 100px;
+    height: 500px;
     font-size: 12px;
     table {
         width: 680px;
@@ -61,6 +61,9 @@
         @include allow_icon;
     }
     #user_alcohol_id {
+        @include allow_icon;
+    }
+    #user_smoke_id {
         @include allow_icon;
     }
 }
