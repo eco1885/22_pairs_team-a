@@ -1,20 +1,10 @@
 .ui-view_class
   .main.box_community_view.contents_padding
     .common_page_header
-      =link_to "コミュニティTOP", communities_path, class:"page_back button_f button_white_a", id:"top_community_btn"
-      %span.page_tile
-        コミュニティをさがす
+      = render partial: "common_page_header"
     .data-community-search-area
       .box_community_header.common_inline_box
-        %form.form_search_word
-          .search_input
-            = form_tag(search_communities_path, method: "get") do
-              = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
-              = submit_tag "検索", class: "button_search button_f button_blue_a"
-              %br
-              = label_tag :name, "カテゴリを検索する場所"
-              = select_tag :category, options_for_select(Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}), prompt: "カテゴリから探す"
-              = submit_tag "検索", class: "button_search button_f button_blue_a"
+        = render partial: "box_community_header"
     .data-community-result-list
       - if @communities.present?
         .box_community_category
@@ -64,7 +54,7 @@
               / %em #{@input}
               」に該当するコミュニティは見つかりませんでした。
             %p.text_center.mb30
-              %img{src: "https://lh3.googleusercontent.com/Qrj722mVD_uBShryF7Hl9WuFhNi2BJn0Ba-Q4ZZ-xGyafIel2k0m3o1Z00qdIvrXduFTt4H50GRd98v9oTaUhsh5g0K75DEro_Y7troBFnbO-WnQG20_Y-dCwxQ96LBMuCe5y7u0s1310yQ5JJyo2U01BdzmnbitI-Y4yT-t42XaKRYTHnjenhhF3bByZaJoex3eqnh7b8J-Y_Pf-a4uQh-5TIT3nXYoJSBiRE6zoX63TULmWfQtwdeDdMkKC47RcTGelnGZ9BIUogKyCDCMcnULhD3ouXEb3GsymzXdPcnluSWc-Ztnjszp12CNyT7I19wyN16X8wXbXkLj14_2stiP3wB2lW-OlE45oeyMPsrZeA2aDXYXuiHo0-3Yqop2zXne6_AeBow2Tx8NKLssjKGglLI-v-hGG_Zpv7umc7HDCfl4aL-sMk4ykQmKzb6mzKTHGKXeFhO8vdUIC5vU9FoQQLEjHkWqNZBKIvmyoxS9_hNvILD0UTQ1N8boqBFy_qaobOLfXoA-_s--639MDFx2AXaoRBINYWuZSWq7sqyr0E0E6Tk2I8B5IRkd9qd57uTMxKOMMlsgW-9V18a0_4vejFcYZFjEOZCplsU=w636-h119-no"}
+              %img{src: "https://lh3.googleusercontent.com/oJSsLQLsWDdeN_awnv4fwTsOJ6Dc7vrwx5dJHYsnwa6qTXQJcsYzO6dwpI7iOqZsVJ33kC2r3MWvnGs1x6zUopAOq0mEpzFblOfKdwGACqUkuLPWWp6iKgJ_FBkD452U6jEk15pMk2t3s7mVna7KUmzV5mRY6F6HlHcQdboSzD4-HO1BO9arO8DBDKBFEPd-hgkusXiAeKS47EKfmoW--IfdO7MI2nn1UR33niPciOmIwPMZqUbgqDb748cWhJhUcxcslA2ABvUfKczZwo_J4dozmWEkegxTF21uKp3oWbvceYPEGsYasGkAwsyaZrOdYG12wlLlf7vbCIgw_QR93Cj6TAkQNf_5vggS4Rvxmu2wjfAPrT9y_MqDrxHdeJhwMMNNew7uW_ghY3Vcsa6lFtFDiWYQnWOOmWhf48nkSwiaKjXxObbKRl7jAXcmqB_V7vpNuun0N2iBfwnqia-hzC_4tLPa4ZD7_JeKTFNy4L18YVF47V-m-u2bqYskmP8-HGQyF9SmG6CItH6lw8hWSI2-qVgowgLAffSkKdEfKZ_T4CeDSGyYGDCW-4HWwXBUEt7HqbjU_6rm0e5WBq3aYkMImEe3s8eti7-8spuCaXRZh8kEc8N2JYbUMNOQFkEs8cfG6Fh5cTzu9dtGNSN1bXU9ZLinxSTy=w529-h191-no"}
             %p.not_found_text
               「
               -if @input_n.present?

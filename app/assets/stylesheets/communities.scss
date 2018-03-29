@@ -1,8 +1,38 @@
 //大枠内
+input[type=text] {
+  font-size: 13px;
+  box-sizing: border-box;
+  padding: 7px;
+  white-space: nowrap;
+  color: #788086;
+  border: 1px solid #cbced0;
+  border-radius: 4px;
+  background-color: #fff;
+}
 .box_community_view {
   .box_community_header {
     @include clearfix();
     margin-bottom: 10px;
+    .category_select {
+      float: left;
+      margin-right: 10px;
+      select {
+        -webkit-appearance: menulist-button;
+        font-size: 12px;
+        box-sizing: border-box;
+        height: 29px;
+        width: 200px;
+        padding: 6px 40px 6px 14px;
+        border-collapse: separate;
+        white-space: nowrap;
+        color: #788086;
+        border: 1px solid #cbced0;
+        border-radius: 30px;
+        background-color: #fff;
+        // position: absolute;
+        // opacity: 0;
+      }
+    }
     .category_select {
       float: left;
       margin-right: 10px;
@@ -20,6 +50,11 @@
   }
   .search_input {
     float: right;
+    input[type=text] {
+      &.pr50 {
+        padding-right: 50px;
+      }
+    }
   }
   .input_search_word {
     line-height: 1.2;
