@@ -1,0 +1,187 @@
+//Pairsポイント
+.icon_point {
+  @include icon_point();
+  &:before {
+    background-position: -28px -42px;
+    vertical-align: text-bottom;
+  }
+  &.valign_middle {
+    line-height: 24px;
+    height: 24px;
+  }
+}
+#purchase_point {
+  .purchage_list {
+    .icon_big_point {
+      @include icon_point();
+      &:before {
+        width: 40px;
+        height: 38px;
+        vertical-align: bottom;
+        background-position: -132px -644px;
+      }
+    }
+    .js_exchange_pairs_point {
+      height: 26px;
+      width: 180px;
+      background-image: url(https://lh3.googleusercontent.com/lEHWBEWSznHXu4F1lXpXMDYLRYTw_o_hs88WZRGj0hyv2F0_rpvjcbNa4dv4y6SFEgcOTAxKI6xaPcOAdUW2suUspQh7Qhx15h1cRsZWRCtXxJnSMb-Lxfj_r_gy7xrKcH36mTlhNGI5UMoaHK7Y3lzHnobpK_rYJ9LGKKWtjf4WZmgLqw-RgrGwC7aw8FANtJK2WCtojCGp10bhxwVzhbE6V_ihOoE1OZHcCss4QnpgnazSdu1WZyAM5Y9BscmRD6hiTKAQ2CMiDWTbQDrQRE9xosa-BkTKnozJ7cqAbVOBqPqQ2Lgk23EvQVaTlGNMgWOyNzdmwnT8dwH9T6D122YOOkQNZVOOD7G5XsyEt1jB7Mb4SK1OBrprXy7oKNuN6zJzJtxDMMip-KO4keFhz1VmZ4mQ13jG05oLU_uqCouvZv5q2iksbj-pJ6MNWC_Jw0vTaZ21mNj6VKd96nzxrAGMXT6KimADl4IlDCcHRQEBC9A2FiavB7g_NTO3sJxk5Kq1bfoCuA9MTpoMrX58P3jCT4Heer_6xkru_5DGlfuSDJXpODeZYk7cnflUp4XWSMBKu782VCNM-00yOaYKTKQqO0qG2K_clbuqW8TVvCFG9fZXTaR2MHAPnur-4xYkoU0M1x7MD-LF5N9ux-aZ5lWzrajeK5vx=w194-h150-no);
+      background-repeat: no-repeat;
+      background-position: center top;
+      &:hover {
+        background-position: center center;
+      }
+      &:active {
+        background-position: center bottom;
+      }
+    }
+  }
+  .notice {
+    margin: 10px 0px;
+    a {
+      float: right;
+      color: #00abb3;
+      text-decoration: underline;
+    }
+    .fnt16 {
+      @include clearfix();
+    }
+  }
+}
+
+.caution {
+  background-color: #f3f3f3;
+  margin: 10px;
+  padding: 10px;
+  p {
+    font-weight: 700;
+    margin-bottom: 5px;
+    margin-left: 24px;
+  }
+}
+.icon_like {
+  @include icon_like();
+  &:before {
+    background-position: 1px -45px;
+  }
+}
+.point_log_link {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: underline;
+  color: #00abb3;
+  margin: 15px 0 25px;
+}
+
+
+//Pairsポイントall
+
+
+//ポイント履歴
+.box_news_header,
+.box_news_footer {
+  margin-bottom: 15px;
+  background-color: #f3f3f3;
+  padding: 7px 12px 9px;
+  .news_pager {
+    @include clearfix();
+    float: right;
+    vertical-align: top;
+    .pager_pre {
+      float: left;
+      border-radius: 30px 0px 0px 30px;
+      a {
+        display: block;
+        padding: 8px 12px 8px 16px;
+      }
+    }
+    .news_pager_item {
+      font-size: 12px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .pager_next {
+      float: left;
+      border-radius: 0px 30px 30px 0px;
+      a {
+        display: block;
+        padding: 8px 16px 8px 12px;
+      }
+    }
+  }
+  .news_number {
+    font-size: 14px;
+    padding-top: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+}
+.button_white_a {
+  &.disabled {
+    // position: relative;
+    top: 2px;
+    cursor: default;
+    background-color: #f3f3f3;
+    box-shadow: none;
+  }
+}
+
+
+//会員ステータス
+.like_icon {
+  position: relative;
+  @include icon_like();
+  &:before {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 16px;
+    height: 17px;
+    margin: -5px 2px 0px 0px;
+    vertical-align: top;
+    background-position: 0px -45px;
+  }
+}
+.box_member_status_view {
+  .common_text {
+    &.mb0 {
+      margin-bottom: 0px;
+    }
+  }
+  .like_restore_text_box {
+    font-size: 12px;
+    margin: 0px 15px;
+    padding: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(251, 212, 216);
+    border-image: initial;
+    border-radius: 4px;
+    background: rgb(255, 248, 248);
+    .box_header {
+      font-size: 14px;
+      color: rgb(240, 105, 118);
+      margin: 0px 0px 10px;
+    }
+    table {
+      .status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(240, 105, 118);
+      }
+      .status_top {
+        padding-bottom: 10px;
+      }
+      .premium_status_name {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        margin: 2px 0px;
+        padding: 2px 4px;
+        border-radius: 3px;
+        background: rgb(219, 180, 28);
+      }
+    }
+  }
+}
