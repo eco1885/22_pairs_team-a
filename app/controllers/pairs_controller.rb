@@ -1,9 +1,17 @@
 class PairsController < ApplicationController
 
   def index
-    @users = User.page(params[:page]).per(8)
+    @selected = params[:selected_value].present? ? params[:selected_value] : 16
+    if current_user.gender == "male"
+      @users = User.where(gender: 2).page(params[:page]).per(@selected)
+    else
+      @users = User.where(gender: 1).page(params[:page]).per(@selected)
+    end
+
     @relationship = Relationship.new
+
   end
+
   def messages_index
 
   end
