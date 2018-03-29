@@ -20,6 +20,10 @@
             .radio-inline
               = f.radio_button :gender, :female, class: "button_female"
               = f.label :gender_女性, "女性" , class: "gender_type_label_female"
+        .select_box
+          = f.label :residence_id, "都道府県", class: "label_select"
+          %br/
+          = f.collection_select :residence_id, Residence.all, :id, :prefecture, :prompt => "選択してください"
         .field_email
           = f.label :メールアドレス,  class: 'label_email'
           %br/
