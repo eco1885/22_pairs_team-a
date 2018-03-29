@@ -9,6 +9,11 @@
             = f.collection_select :residence_id, Residence.all, :id, :prefecture, prompt: "選択してください"
         %tr
           %th
+            = f.label :occupancy_id, "職業"
+          %td
+            = f.collection_select :occupancy_id, Occupancy.all, :id, :occupancy, prompt: "選択してください"
+        %tr
+          %th
             = f.label :smoke_id, "タバコ"
           %td
             = f.collection_select :smoke_id, Smoke.all, :id, :frequency, prompt: "選択してください"
