@@ -7,7 +7,7 @@
           =image_tag "https://lh3.googleusercontent.com/H0cY37aczqfZ-UQAYgXxUciykbSIvs-2FRH-GI_VMdaP882ZipIi9Zw4_9s0D5COA4QWsYzWgbAYezBDc5tLdyKJq2cHhaBOzypJsEShuUQkV8wCmBWsudMN_b-XQZiw4yUSpd-zXSGDCHJk1Opb9l2eiDgZBYke0ba27rRDKlSG4vSOZINeUmvvMnLynPXzWk1oX4bSFa8JNz6qYJYQw11oo9jlFRmfdtOYEqt_TASeZgXbdLHbrhjq6LfdCAA5GMcLGhigm0xDQVZeEmVV3TqexAxQgAWk7Td2NTLqelLdretLYU8rxkZpNmHUBHdYxOIXJEOsb7OyaKtQUvZuaT-i9E8VvBBPC0r2pKLH3HPeW0M_MjPQtvJX-d0VLxfNawC1Zz6zrqvaC3AH5bnveo_BMzxLj7gp__GvA27u256lDNTnXIza2yHtr7vb-kNe7e8e5JUe27MF8qjvLXkzfkXSpYBIEcBDuOvsWA2Qs2PjzfS4eGIo7qIUUbpWL2PqrPZT92MPiuysKV7HXnBlU6xZsrKcK_eXj8GmEhno8BjryCfmQnMoU4BZxwQcBaoY0zxfHvHEHv775fs1oaXMxDSE9Z0O6WpKSLrxKRZcfRHBp079HT_w8ASr4s1xAE1EcPNZssFBXdyOqRj_OhjIdfDXHzPy0DPB=s636-no", height:"60", width:"60"
 
       %p.profile_name
-        = link_to "#{current_user.nickname} 東京",user_path
+        = link_to "#{current_user.nickname} 東京",user_path(current_user)
 
       %p.profile_status.is_free_member
         = link_to "ここに年齢",""
