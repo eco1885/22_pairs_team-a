@@ -1,21 +1,29 @@
 class CommunitiesController < ApplicationController
   # before_action :set_user
+  # before_action :search_default, only: :search
   # before_action :authenticate_user!, only: :search
 
   def index
+    # カレントユーザーが持っている（作成）したコミュニティ全て
+    @communities = Community.all
+
+    @communities = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
     # 作成されているコミュニティ全て
     @communities_all = Community.page(params[:page]).order("created_at DESC").per(5)
-    # カレントユーザーが持っている（作成）したコミュニティ全て
-    @communities = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
+
+    # 検索結果コミュニティ
+    @communities_result = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
 
     # パラメータとして名前か性別を受け取っている場合は絞って検索する
     if params[:community_name].present?
     # @communities_result = @communities_all.get_by_community_name params[:community_name]
-    @communities = @communities_all.get_by_community_name params[:community_name]
+    @communities_result = @communities_all.get_by_community_name params[:community_name]
+    search_communities_path
     end
     if params[:category].present?
     # @communities_result = @communities_all.get_by_category params[:category]
-    @communities = @communities_all.get_by_category params[:category]
+    @communities_result = @communities_all.get_by_category params[:category]
+    redirect_to search_communities_path
     end
 
   end
@@ -52,11 +60,16 @@ class CommunitiesController < ApplicationController
   end
 
   def search
-    # @products = Product.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
-    # respond_to do |format|
-    #   format.html
-    #   format.json
-    # end
+      @communities = Community.all
+
+    if params[:community_name].present?
+      @input_n = params[:community_name]
+      @communities = @communities.get_by_community_name params[:community_name]
+    end
+    if params[:category].present?
+      @input_c = t("enums.community.category.#{params[:category]}")
+      @communities = @communities.get_by_category params[:category]
+    end
   end
 
   private
@@ -64,11 +77,14 @@ class CommunitiesController < ApplicationController
   def community_params
     params.require(:community).permit(:community_name, :category, :image, { :user_ids => [] })
     # params.require(:community).permit(:community_name, :category, :image).merge(user_id: current_user.id)
+  end
 
+  # def search_default
+  #   @communities_all = Community.page(params[:page]).order("created_at DESC").per(5)
+  # end
   # 参考
   # def group_params
   #   params.require(:group).permit(:group_name, { :user_ids => [] })
   # end
-  end
 
 end

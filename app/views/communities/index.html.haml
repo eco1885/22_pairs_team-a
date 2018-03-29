@@ -22,9 +22,9 @@
         / 参加コミュ一覧ゾーン
         .box_my_community
           .data-community-joined-communities
-            .my_community_title.title_b
+            .my_community_title.title_b<>
               あなたが参加しているコミュニティ(全
-              %span.community_total x
+              %span.community_total<> #{@communities.count}
               件)
             .community_list_box.bg-white
               %ul.my_community_list

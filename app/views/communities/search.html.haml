@@ -8,66 +8,73 @@
       .box_community_header.common_inline_box
         %form.form_search_word
           .search_input
-            %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
-            %button.button_search.button_f.button_blue_a
-              検索作成予定
-        %div
-          = form_tag(communities_path, method: "get") do
-            = label_tag :community_name, "コミュニティ名を入れよう"
-            = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索だよん"
-            %br
-            = label_tag :name, "カテゴリーを検索する場所"
-            = select_tag :category, options_for_select(Community.categories), prompt: "カテゴリから探す"
-            = submit_tag "検索"
-    .community_type
+            = form_tag(search_communities_path, method: "get") do
+              = text_field_tag :community_name, params[:community_name], placeholder: "コミュニティを検索", class: "input_search_word pr50"
+              = submit_tag "検索", class: "button_search button_f button_blue_a"
+              %br
+              = label_tag :name, "カテゴリを検索する場所"
+              = select_tag :category, options_for_select(Community.categories.keys.map {|k| [Community.categories_i18n[k], k]}), prompt: "カテゴリから探す"
+              = submit_tag "検索", class: "button_search button_f button_blue_a"
     .data-community-result-list
-      / 検索結果0以外の場合
-      .box_community_category
-        .community_category_header
-          %ul.breadcrumb_list
-            %li.toggle.keyword
-              検索入力文字列
-          %p.community_count
-        .box_community_pager.box_pager.bg_white
-          pagenateを入れる予定
-        .community_list_box
-          %ul.community_list
-            %li.community_item
-              %a.community_link
-                %p
-                  %img{src:"https://lh3.googleusercontent.com/LKqbXTTdgCAIPV47gUylCGuk_dN9z5_OsvzoVisDaj_NtJMT1c_PqVrFFIU4HpOn0FpPYAaxCKYUWN__83QTCFFnHDuaBC8BYAgFklB9lGGFRAcISkbGzmYGKsKimP6_26QEDqO1hdo_Xsp4c1e_i9lB9KzVaxH__CZQDjJ6L-HQvYNXcIfCMfyuvXPo6P57chJ7EnjsY2uL7JSLwZfYAan_zIdmt9jyUJg8RYJmqb1RyuV-mApszOKfuSknIIDBZqxoZUk9MLn_d5sTMGfVLunqQhfDwTmYDZP_2MWuS4m97KuQ_XpQLkZSFSb6OEBDF323juy1MEgpBwUfcubhGwi10muKZRIg_H1Ian22lLFRBytfU_0WgRkb67Qu7l3cmCBCdiDMXst7WVKdBZuswg03958wYY_3Xyw1kL9ueJKGoVSi-9Y3ccgaSAJg3wVLnyD8HIC6LZ_2oIGuo3n4-xXiC8lcP0cbAjPolph7Ruhb0mA1MfiKJpVcmJyDe9bc7sKhR09pOVqEMw4g61UqdlZOk_uc855_9ZA1gan0VcmWbsXSns2G0nNiy4X6r8-jThn-71OC35CuQJ-zz3-NcthASVpRCsDQWa0jOsCsYiCRYtwYfF7wHkKzvUzlxEnvdQ_vTtELF0qRxO4KNpXjRqLx2UqNNFlQ=s46-no", class:"community_item_img image-round"}
-                %p.community_item_title
-                  静的
-                %p.community_item_count
-                  %span 9999
-                  人
-        .box_community_pager.box_pager.bg_white
-          pagenateを入れる予定
-        .box_community_color_note
-          %ul.color_notes
-            %li.color_note_item.color_joined
-              参加しているコミュニティ
-            %li.color_note_item.color_created
-              作成しているコミュニティ
-
-      / 検索結果0の場合
-      .box_community_not_found.common_page_box
-        %p.common_title
-          コミュニティ検索結果一覧
-        .common_box_inner
-          %p.not_found_title
-            「
-            %em text comment
-            」に該当するコミュニティは見つかりませんでした。
-          %p.text_center.mb30
-            %img{src: "https://lh3.googleusercontent.com/Qrj722mVD_uBShryF7Hl9WuFhNi2BJn0Ba-Q4ZZ-xGyafIel2k0m3o1Z00qdIvrXduFTt4H50GRd98v9oTaUhsh5g0K75DEro_Y7troBFnbO-WnQG20_Y-dCwxQ96LBMuCe5y7u0s1310yQ5JJyo2U01BdzmnbitI-Y4yT-t42XaKRYTHnjenhhF3bByZaJoex3eqnh7b8J-Y_Pf-a4uQh-5TIT3nXYoJSBiRE6zoX63TULmWfQtwdeDdMkKC47RcTGelnGZ9BIUogKyCDCMcnULhD3ouXEb3GsymzXdPcnluSWc-Ztnjszp12CNyT7I19wyN16X8wXbXkLj14_2stiP3wB2lW-OlE45oeyMPsrZeA2aDXYXuiHo0-3Yqop2zXne6_AeBow2Tx8NKLssjKGglLI-v-hGG_Zpv7umc7HDCfl4aL-sMk4ykQmKzb6mzKTHGKXeFhO8vdUIC5vU9FoQQLEjHkWqNZBKIvmyoxS9_hNvILD0UTQ1N8boqBFy_qaobOLfXoA-_s--639MDFx2AXaoRBINYWuZSWq7sqyr0E0E6Tk2I8B5IRkd9qd57uTMxKOMMlsgW-9V18a0_4vejFcYZFjEOZCplsU=w636-h119-no"}
-          %p.not_found_text
-            「
-            %em text comment
-            」に関するコミュニティを作成してみましょう！
-          .common_button_area.mb20
-            %p.button_item.w60p
-              = link_to "新しいコミュニティを作成する", community_create_path, class:"button_e button_blue_a"
+      - if @communities.present?
+        .box_community_category
+          .community_category_header
+            %ul.breadcrumb_list
+              %li.toggle.keyword
+                -if @input_n.present?
+                  #{@input_n}
+                -else
+                  #{@input_c}
+            %p.community_count
+          .box_community_pager.box_pager.bg_white
+            pagenateを入れる予定
+          .community_list_box
+            %ul.community_list
+              - @communities.each do |community|
+                %li.community_item
+                  %a{href: "/community/#{community.id}", class: "community_link"}
+                    %p
+                      = image_tag community.image.url, class:"community_item_img image-round"
+                    %p.community_item_title
+                      = community.community_name
+                    %p.community_item_count
+                      %span<>
+                        / 本来は人数を表示するエリア
+                        = t("enums.community.category.#{community.category}")
+                      / 人
+          .box_community_pager.box_pager.bg_white
+            pagenateを入れる予定
+          .box_community_color_note
+            %ul.color_notes
+              %li.color_note_item.color_joined
+                参加しているコミュニティ
+              %li.color_note_item.color_created
+                作成しているコミュニティ
+      - else
+        .box_community_not_found.common_page_box
+          %p.common_title
+            コミュニティ検索結果
+          .common_box_inner
+            %p.not_found_title
+              「
+              -if @input_n.present?
+                %em #{@input_n}
+              -else
+                %em #{@input_c}
+              / %em #{@input}
+              」に該当するコミュニティは見つかりませんでした。
+            %p.text_center.mb30
+              %img{src: "https://lh3.googleusercontent.com/Qrj722mVD_uBShryF7Hl9WuFhNi2BJn0Ba-Q4ZZ-xGyafIel2k0m3o1Z00qdIvrXduFTt4H50GRd98v9oTaUhsh5g0K75DEro_Y7troBFnbO-WnQG20_Y-dCwxQ96LBMuCe5y7u0s1310yQ5JJyo2U01BdzmnbitI-Y4yT-t42XaKRYTHnjenhhF3bByZaJoex3eqnh7b8J-Y_Pf-a4uQh-5TIT3nXYoJSBiRE6zoX63TULmWfQtwdeDdMkKC47RcTGelnGZ9BIUogKyCDCMcnULhD3ouXEb3GsymzXdPcnluSWc-Ztnjszp12CNyT7I19wyN16X8wXbXkLj14_2stiP3wB2lW-OlE45oeyMPsrZeA2aDXYXuiHo0-3Yqop2zXne6_AeBow2Tx8NKLssjKGglLI-v-hGG_Zpv7umc7HDCfl4aL-sMk4ykQmKzb6mzKTHGKXeFhO8vdUIC5vU9FoQQLEjHkWqNZBKIvmyoxS9_hNvILD0UTQ1N8boqBFy_qaobOLfXoA-_s--639MDFx2AXaoRBINYWuZSWq7sqyr0E0E6Tk2I8B5IRkd9qd57uTMxKOMMlsgW-9V18a0_4vejFcYZFjEOZCplsU=w636-h119-no"}
+            %p.not_found_text
+              「
+              -if @input_n.present?
+                %em #{@input_n}
+              -else
+                %em #{@input_c}
+              」に関するコミュニティを作成してみましょう！
+            .common_button_area.mb20
+              %p.button_item.w60p
+                = link_to "新しいコミュニティを作成する", community_create_path, class:"button_e button_blue_a"
   .box_community_not_found.hide
   /本来のクラス名は『 .box_community_not_found.common_page_box.hide』
   .data-community-head-communities
@@ -89,4 +96,3 @@
           %a
             %img.category_img.image-round{src: "https://lh3.googleusercontent.com/LKqbXTTdgCAIPV47gUylCGuk_dN9z5_OsvzoVisDaj_NtJMT1c_PqVrFFIU4HpOn0FpPYAaxCKYUWN__83QTCFFnHDuaBC8BYAgFklB9lGGFRAcISkbGzmYGKsKimP6_26QEDqO1hdo_Xsp4c1e_i9lB9KzVaxH__CZQDjJ6L-HQvYNXcIfCMfyuvXPo6P57chJ7EnjsY2uL7JSLwZfYAan_zIdmt9jyUJg8RYJmqb1RyuV-mApszOKfuSknIIDBZqxoZUk9MLn_d5sTMGfVLunqQhfDwTmYDZP_2MWuS4m97KuQ_XpQLkZSFSb6OEBDF323juy1MEgpBwUfcubhGwi10muKZRIg_H1Ian22lLFRBytfU_0WgRkb67Qu7l3cmCBCdiDMXst7WVKdBZuswg03958wYY_3Xyw1kL9ueJKGoVSi-9Y3ccgaSAJg3wVLnyD8HIC6LZ_2oIGuo3n4-xXiC8lcP0cbAjPolph7Ruhb0mA1MfiKJpVcmJyDe9bc7sKhR09pOVqEMw4g61UqdlZOk_uc855_9ZA1gan0VcmWbsXSns2G0nNiy4X6r8-jThn-71OC35CuQJ-zz3-NcthASVpRCsDQWa0jOsCsYiCRYtwYfF7wHkKzvUzlxEnvdQ_vTtELF0qRxO4KNpXjRqLx2UqNNFlQ=s46-no"}
             %span.category_title 殿堂入りコミュニティを見る→
-

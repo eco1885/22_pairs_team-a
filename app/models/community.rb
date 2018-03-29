@@ -8,4 +8,14 @@ class Community < ApplicationRecord
   validates :community_name, presence: true, length: { maximum: 20 }
   validates :category, presence: true
   validates :image, presence: true
+
+  # コミュニティ名による絞り込み
+  scope :get_by_community_name, ->(community_name) {
+  where("community_name like ?", "%#{community_name}%")
+  }
+  # カテゴリによる絞り込み
+  scope :get_by_category, ->(category) {
+  where(category: category)
+  }
+
 end
