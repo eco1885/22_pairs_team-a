@@ -1,4 +1,4 @@
-.search {
+.profile__contents {
     width: 680px;
     background-color: red;
     position: relative;
@@ -57,7 +57,10 @@
     .f_collection_select {
         text-align: right;
     }
-    #q_residence_id_eq {
+    #user_residence_id {
+        @include allow_icon;
+    }
+    #user_alcohol_id {
         @include allow_icon;
     }
 }

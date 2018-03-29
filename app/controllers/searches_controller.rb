@@ -1,4 +1,6 @@
 class SearchesController < ApplicationController
+  DISPLAYED_USER = 16
+
 
   #条件検索用にgem "ransack"を使用しています
   def search_index
@@ -9,7 +11,7 @@ class SearchesController < ApplicationController
 
   def search_result
     @q = User.search(search_params)
-    @users = @q.result(distinct: true).page(params[:page]).per(16)
+    @users = @q.result(distinct: true).page(params[:page]).per(DISPLAYED_USER)
   end
 
   private
