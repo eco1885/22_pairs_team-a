@@ -3,9 +3,9 @@ class PairsController < ApplicationController
   def index
     @selected = params[:selected_value].present? ? params[:selected_value] : 16
     if current_user.gender == "male"
-      @users = User.where( gender: 2).page(params[:page]).per(@selected)
+      @users = User.where(gender: 2).page(params[:page]).per(@selected)
     else
-      @users = User.where( gender: 1).page(params[:page]).per(@selected)
+      @users = User.where(gender: 1).page(params[:page]).per(@selected)
     end
 
     @relationship = Relationship.new
