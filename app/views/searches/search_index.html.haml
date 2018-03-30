@@ -4,6 +4,13 @@
       %tbody
         %tr
           %th
+            = f.label :height_id_eq, '身長'
+          %td
+            = f.collection_select :height_id_gteq, @height, :id, :height, include_blank: 'こだわらない'
+            &#126;
+            = f.collection_select :height_id_lteq, @height, :id, :height, include_blank:  'こだわらない'
+        %tr
+          %th
             = f.label :residence_id_eq, '居住地'
           %td
             = f.collection_select :residence_id_eq, @residence,  :id, :prefecture, include_blank: 'こだわらない'

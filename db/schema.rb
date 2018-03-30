@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330065543) do
+ActiveRecord::Schema.define(version: 20180330075342) do
 
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
@@ -38,6 +38,12 @@ ActiveRecord::Schema.define(version: 20180330065543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_foots_on_user_id", using: :btree
+  end
+
+  create_table "heights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "height",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "holidays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -115,9 +121,11 @@ ActiveRecord::Schema.define(version: 20180330065543) do
     t.integer  "body_id"
     t.integer  "holiday_id"
     t.integer  "living_with_id"
+    t.integer  "height_id"
     t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
     t.index ["body_id"], name: "index_users_on_body_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["height_id"], name: "index_users_on_height_id", using: :btree
     t.index ["holiday_id"], name: "index_users_on_holiday_id", using: :btree
     t.index ["living_with_id"], name: "index_users_on_living_with_id", using: :btree
     t.index ["occupancy_id"], name: "index_users_on_occupancy_id", using: :btree
@@ -130,6 +138,7 @@ ActiveRecord::Schema.define(version: 20180330065543) do
   add_foreign_key "foots", "users"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"
+  add_foreign_key "users", "heights"
   add_foreign_key "users", "holidays"
   add_foreign_key "users", "living_withs"
   add_foreign_key "users", "occupancies"
