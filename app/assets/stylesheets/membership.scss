@@ -185,3 +185,193 @@
     }
   }
 }
+
+
+//レディースオプション
+//プレミアムオプション
+.button_premium {
+  @include button_premium;
+}
+.button_paid {
+  @include button_paid;
+  cursor: pointer;
+  &:hover {
+    background-position: 0 -75px;
+  }
+  &:active {
+    background-position: 0 -150px;
+  }
+}
+.box_pay_plan {
+  position: relative;
+  margin-bottom: 20px;
+  .pay_plan_item {
+    position: absolute;
+    z-index: 10;
+  }
+  .premium_plan_item01 {
+    top: 235px;
+    left: 14px;
+  }
+  .badge {
+    position: absolute;
+    right: 0;
+    bottom: 25px;
+    height: 52px;
+    width: 52px;
+  }
+  .premium_plan_item02 {
+    top: 235px;
+    left: 256px;
+  }
+  .premium_plan_item03 {
+    top: 235px;
+    left: 495px;
+  }
+  .premium_plan_item04 {
+    right: 10px;
+    bottom: 33px;
+  }
+}
+.move_box {
+  .mb20 {
+    margin-bottom: 20px;
+  }
+}
+.button_premium_mini {
+  @include button_premium_mini;
+  &:hover {
+    background-position: 0 -60px;
+  }
+  &:active {
+    background-position: 0 -120px;
+  }
+}
+.button_premium_mini_blue {
+  @include button_premium_mini_blue;
+  &:hover {
+    background-position: 0 -42px;
+  }
+  &:active {
+    background-position: 0 -84px;
+  }
+}
+//有料会員とは？
+.button_paid_register {
+  width: 412px;
+  background-image: url(https://lh3.googleusercontent.com/Cw5karIgjkUC_ojqHLAW316AzdjtCKCYn_aE6GGlw34k6nBYR9pBr3L50NuIX8ON2kk9EDTrvJze0QeULbnesGqBWh3ftCiPiiT-PTHsUHWalmLcHwqc3XIjxefPgt_lxguzd8737v32-__kI5DA2xc6lhVxR5M_6oU8d5rn_mqNlpd1Ur8W5iDU_BhgtLMCElJr11cC4bvGMhqqjIW-pfn2_s_EuKYH822fyd5nOhnv22wCHQnG8PG_GDPIhkFHq2Cyr7RXChDfUeokHIvwOQahSsrnfkD9jukd04cOR26u_WgDYVfSh4BYA_q2byX3B6e5WQgfPfC0rAws2ibVS9EtgcrV3RAJPrhv0KLQS71J4GBAVI9xSm5vVTxVHRvRSQT2IUAHHU3pYLLBlS86M-bpbso8uDxYWDC71JpX09GAYUxIukZ1AFcS6s4qpyK3gIIxcg4PzBcIFRYJSy3w9h7drunuCX7XK_XpNQbZ-h79gH2QVJ6fq1VyDC0uiDj3HkNT2yN2sXAfd1GU9hIA_CKVrAgY-bHiuHg6P0c_4wyv6NtpOzZvrxuGlH8VL7GIWyscNCAOT05eKczyjTP-pApcCKvfc2ljIqOqVp8Bd3gCnTOZiTFBw_hin4XFVqxfCzq3bSB-pI5F2Rfo6HuUXy_K_KRh3A9q=w412-h225-no);
+}
+.button_paid {
+  @include button_paid;
+  &:hover {
+    background-position: 0 -75px;
+  }
+  &:active {
+    background-position: 0 -150px;
+  }
+}
+.button_paid_mini {
+  @include button_paid_mini;
+  position: relative;
+  &:hover {
+    background-position: 0 -60px;
+  }
+  &:active {
+    background-position: 0 -120px;
+  }
+}
+.button_paid_mini_blue {
+  @include button_paid_mini_blue;
+  &:hover {
+    background-position: 0 -42px;
+  }
+  &:active {
+    background-position: 0 -84px;
+  }
+}
+#select_plan {
+  .pay_play_list {
+    position: absolute;
+    top: 355px;
+    left: 30px;
+  }
+}
+#pay_plan_list {
+  .button_paid_mini{
+    position: absolute;
+    top: 614px;
+    left: -239px;
+  }
+  .pay_plan_item01 {
+    top: -273px;
+    left: 256px;
+  }
+  .pay_plan_item02 {
+    top: -273px;
+    left: 495px;
+  }
+  .pay_plan_item03 {
+    top: -273px;
+    left: 735px;
+  }
+  .pay_plan_item04 {
+    right: 5px;
+    bottom: 17px;
+  }
+}
+.common_inner_title {
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0 15px 20px;
+  padding-left: 8px;
+  color: #00abb3;
+  border-left: 4px solid #00abb3;
+}
+.common_sub_note {
+  font-size: 14px;
+  margin: 0 15px 20px;
+  padding: 15px;
+  color: #788086;
+  background-color: #f3f3f3;
+}
+//プライベートモードとは？
+.button_private_mode {
+  @include button_private_mode;
+}
+.private_mode_paid_header_male_view {
+  width: 721px;
+  height: 412px;
+  background-image: url(https://lh3.googleusercontent.com/C8a86oe0nn81xBMqVphNk8GpIvvE9g3wWXxYW31uD-LglOua6eQaTLk1Zf7vbY0df5sAWv3Bq1E_Jfg0Ma1e5VOIhcdmqAMGZDYtrFMSdVcbWlk2saVhN3_Y75SMPKuPL-wwZA6WvAcgn0zToKgh7CVprjmE75kgilJ4QjsVD2a1_oWXqVtptNo8QcM4aYO26j1NaAnG0JtlZh2qDjRiWBv3x-kXEoceYm4RJ3bmCQMm4rEKfrEDvOHjA2-Rueoup31FwVnFBsAnWG6kHzUsEfd1DJyltDhMq_IZ4vXsLbDns65X8TD_qXtTJP5F3YgOQKezhSXp80Kid1cp5RUNCI0IA3TI3vW7TVyr9rnYUBAcsxyfcgy8YZfpiCFGIhOfYzDH0GUpI1Q0MOSpsu_r1aPu7E-0DWLCsRl_gJ_3gZrXsKhv4rnMhqRZP5axI3Q-vD0IO09KstyYgZnatFSU597p8yg-kQRY1y97mg-7p6Xo-E8lUglXPgw-cbRJEV7xxfH2DF2jpySQ1WSk4MCegrSi6tkXNwHfJLaoJF3zLYu_noErlvelaPw62RItKJeydqVUoz-TTc-LwYoRM1yLIxxOlXHA-cyVnvLgbgy7Z2W6LTrF77hPFR7FJLZBkj5pb3PNn3UnH9exb_WbXmfYxS71loFy5n_8=w567-h324-no);
+  background-size: contain;
+  .private_mode_plan {
+    position: relative;
+    top: 261px;
+    left: 36px;
+  }
+}
+.box_pay_plan {
+  .top343 {
+    top: 343px;
+  }
+  .private_mode_item01 {
+    top:360px;
+    left: 18px;
+  }
+  .private_mode_item02 {
+    top:360px;
+    left: 262px;
+  }
+  .private_mode_item03 {
+    top:360px;
+    left: 505px;
+  }
+  .private_mode_item04 {
+    right: 17px;
+    bottom: 18px;
+  }
+  .button_private_mode_mini {
+    @include button_private_mode_mini;
+  }
+}
+
+// ブースト
