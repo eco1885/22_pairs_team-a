@@ -19,6 +19,11 @@
             = f.collection_select :school_id, School.all, :id, :school, prompt: "選択してください"
         %tr
           %th
+            = f.label :body_id, "体型"
+          %td
+            = f.collection_select :body_id, Body.all, :id, :body, prompt: "選択してください"
+        %tr
+          %th
             = f.label :smoke_id, "タバコ"
           %td
             = f.collection_select :smoke_id, Smoke.all, :id, :frequency, prompt: "選択してください"
