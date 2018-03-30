@@ -7,6 +7,10 @@
     Pairsからのお知らせ
 .box_mypage_detail
   .box_mypage_detail_inner01
+    .box_photo_request
+      %p.photo_request_text
+        %em 1000人があなたの写真を待っています。
+        写真を追加すると、リクエストを送った人が見られます。
     .mypage_detail_inner_left
       .user_status
         .user_status_title
@@ -63,13 +67,13 @@
         .my_summary_info
           %ul.my_display_photo_list
             %li.my_display_photo_item.is_current
-              %img{src: "https://lh3.googleusercontent.com/S-1N1Z90jXDUyA3SdqKdyF6MF4bRM9diGWlKW9lpZSBJCZ8nrHzOBhvP74dP4KPtznV1cyMl1kLkKMj5Ffp7gBsx110UkHQbVD9X-yOtyvwQbhGMokedMD8ss42LmMeAh0oX0sZVhuMXYX45WBc0QtCArCLFbIo5sKRMUPKvZ0T4hEnHQyAL2RjoHM4rYABxb3wwTHbhrQmcgdSxFLXOG0iz2MKUUxjvb0SyIGzfE-99pQH3Hj25U_yF4w56JB0uJ33cTQmgmAI1gQtU3oL1DOb1pL7CzcOjvduxwzty_FY1EFZ9XFH1byv8LzcbHC4Chwuv3niZjf9MIa44Ljr2y824PGDJb6fUmhG5D-mYAh4MQ0j_c0zQyTznYlqYbCLRS58gNoOTHhiBUj9YKkd3G1H-LFFFcAoPU-3XbdGfmQz8dqSHKX6EMAl6pCOweJvmFxYfVN3taexbVuNM5PN7oOAgwmjc_iV3X0DZbr4GspB31imRlZ_kZ5vp-dzXXA0o0PEXQuMs54wBt6N1_QU9s3s2ElwPxtjbk7xDIiHgVnvMfZIG8EI3X9RlqydEBdTaUbike5BuDwHT0l-cuD2r6MdQqfSDkcPfrSyTyhcwj99x0AwUqc1ClyI831coWYqMOSVsetBth9VtPsoljXM-LxYyKLHrExU=w800-h534-no"}/
+              %img{src: "https://lh3.googleusercontent.com/4aEtRn5Cstlgj6Qz5pVhEc4TiTyeqcXHT3uXwjSNAx5NtSEcbDIFOJacNS_gYvJHIPrikzcmWD2_kWFNB9KknvNaAPS7O0-xeTPKo8i_wN-peEzEfFkkRuxPgvHzpflit91MAjzEJWx6PMw0T2DM5B9FkvtAGEO2q8vUOdw1RF1-aWfV8MHDdEz-O5z079jf6QziotbcOGp3gcZZVzOo67eXfW3Lp9Z044n6WcX8E7zuSfvjsadupvQ88W5Qf69rSvApwlSxXRlhexzUXjd_Meiuhp4-U0m36tWosz5UUGDBrgBjPhstvvQVb3QDErV92zZEDqvpeckyBzLDE17vIFDBMlNyrkRiexoVxmqBEeerXQE3JPtqPR8lHdylGWE_J7J2gBwxGejKWbGB3VfumWVuDZlM29n7uQO_oPu8w9_5ml24Y_q6uuUVe18hFci1aXuF6fLzmC9IEAladjBZUsThKQlg-MgVPlovIlITXkA1nOyWt5pFk4_yGjA4zGlopCxdgLLg1iupAvr-m_LOMRFSKXkuqXZpUfjpS6QOv24uxQbk5c8osxbKVxHV25-SY8CjLjW12xC88p2c4rPnXy3buEnG6OpFVCqWhLgyoOGqYfrRafGyGu66lgogbsLZvUO7CNiSEcYRZSE17CiHvds3aEe6-evs=w455-h682-no"}/
         .box_my_photo
           .box_my_photo_inner
             %ul.my_photo_list
               %li.photo_item.is_current
                 .image-round
-                  %img{src: "https://lh3.googleusercontent.com/S-1N1Z90jXDUyA3SdqKdyF6MF4bRM9diGWlKW9lpZSBJCZ8nrHzOBhvP74dP4KPtznV1cyMl1kLkKMj5Ffp7gBsx110UkHQbVD9X-yOtyvwQbhGMokedMD8ss42LmMeAh0oX0sZVhuMXYX45WBc0QtCArCLFbIo5sKRMUPKvZ0T4hEnHQyAL2RjoHM4rYABxb3wwTHbhrQmcgdSxFLXOG0iz2MKUUxjvb0SyIGzfE-99pQH3Hj25U_yF4w56JB0uJ33cTQmgmAI1gQtU3oL1DOb1pL7CzcOjvduxwzty_FY1EFZ9XFH1byv8LzcbHC4Chwuv3niZjf9MIa44Ljr2y824PGDJb6fUmhG5D-mYAh4MQ0j_c0zQyTznYlqYbCLRS58gNoOTHhiBUj9YKkd3G1H-LFFFcAoPU-3XbdGfmQz8dqSHKX6EMAl6pCOweJvmFxYfVN3taexbVuNM5PN7oOAgwmjc_iV3X0DZbr4GspB31imRlZ_kZ5vp-dzXXA0o0PEXQuMs54wBt6N1_QU9s3s2ElwPxtjbk7xDIiHgVnvMfZIG8EI3X9RlqydEBdTaUbike5BuDwHT0l-cuD2r6MdQqfSDkcPfrSyTyhcwj99x0AwUqc1ClyI831coWYqMOSVsetBth9VtPsoljXM-LxYyKLHrExU=w800-h534-no"}/
+                  %img{src: "https://lh3.googleusercontent.com/4aEtRn5Cstlgj6Qz5pVhEc4TiTyeqcXHT3uXwjSNAx5NtSEcbDIFOJacNS_gYvJHIPrikzcmWD2_kWFNB9KknvNaAPS7O0-xeTPKo8i_wN-peEzEfFkkRuxPgvHzpflit91MAjzEJWx6PMw0T2DM5B9FkvtAGEO2q8vUOdw1RF1-aWfV8MHDdEz-O5z079jf6QziotbcOGp3gcZZVzOo67eXfW3Lp9Z044n6WcX8E7zuSfvjsadupvQ88W5Qf69rSvApwlSxXRlhexzUXjd_Meiuhp4-U0m36tWosz5UUGDBrgBjPhstvvQVb3QDErV92zZEDqvpeckyBzLDE17vIFDBMlNyrkRiexoVxmqBEeerXQE3JPtqPR8lHdylGWE_J7J2gBwxGejKWbGB3VfumWVuDZlM29n7uQO_oPu8w9_5ml24Y_q6uuUVe18hFci1aXuF6fLzmC9IEAladjBZUsThKQlg-MgVPlovIlITXkA1nOyWt5pFk4_yGjA4zGlopCxdgLLg1iupAvr-m_LOMRFSKXkuqXZpUfjpS6QOv24uxQbk5c8osxbKVxHV25-SY8CjLjW12xC88p2c4rPnXy3buEnG6OpFVCqWhLgyoOGqYfrRafGyGu66lgogbsLZvUO7CNiSEcYRZSE17CiHvds3aEe6-evs=w455-h682-no"}/
                   %a.link_photo_edit
                     メイン写真
               %li.photo_item

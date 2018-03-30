@@ -17,8 +17,25 @@ body {
 }
 a {
   text-decoration: none;
+  transition: background-color .25s linear;
+  color: inherit;
+  outline: none;
+}
+.box_other_navi a:hover {
+  text-decoration: underline;
 }
 
+.box_gnavi .gnavi_item a:hover,
+.sidecontents .box_my_private_mode .box_pm:hover {
+  background-color: #dfe1e3;
+}
+.sidecontents .my_profile_summary .profile_name a:hover {
+  color: #8d9399;
+}
+.sidecontents .my_profile_summary .profile_photo img:hover,
+.sidecontents .my_profile_summary .profile_status:hover {
+  opacity: .7;
+}
 li {
   list-style: none;
 }
@@ -84,8 +101,14 @@ html, body {
 .fnt14 {
   font-size: 1.4rem!important;
 }
+.fnt_pink02 {
+  color: #f06976!important;
+}
 .w30p {
   width: 30%!important;
+}
+.w40p {
+  width: 40%!important;
 }
 .w50p {
   width: 50%!important;
@@ -120,6 +143,9 @@ html, body {
 .mb40 {
   margin-bottom: 40px!important;
 }
+.pt0 {
+  padding-top: 0px!important;
+}
 .pt15 {
   padding-top: 15px!important;
 }
@@ -144,6 +170,9 @@ html, body {
   @include button_b;
 }
 .button_c {
+  @include button_c;
+}
+.button_d {
   @include button_c;
 }
 .button_f {
@@ -172,6 +201,9 @@ html, body {
 }
 .button_pink_a {
   @include button_pink_a;
+}
+.button_pink_b {
+  @include button_pink_b;
 }
 .button_pink_c {
   @include button_pink_c;

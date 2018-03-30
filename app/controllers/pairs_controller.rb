@@ -15,4 +15,10 @@ class PairsController < ApplicationController
   def from_partner
 
   end
+
+  def visitor_list
+  end
+
+  def visitor_setting
+  end
 end

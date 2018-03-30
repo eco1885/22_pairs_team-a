@@ -30,6 +30,20 @@
     }
   }
 }
+
+//『三角アイコンのベース』
+.box_mypage_detail .box_photo_request:before,
+.box_mypage_detail .box_photo_request:after {
+  position: absolute;
+  top: 100%;
+  left: 90%;
+  width: 0;
+  height: 0;
+  content: "";
+  pointer-events: none;
+  border: solid transparent;
+}
+
 .box_mypage_detail {
   margin-bottom: 15px;
   padding: 15px;
@@ -38,6 +52,18 @@
     margin-bottom: 10px;
     @include clearfix();
     .box_photo_request {
+      &:before {
+        margin-left: -11px;
+        border-width: 11px;
+        border-color: rgba(245,230,173,0);
+        border-top-color: #f5e6ad;
+      }
+      &:after {
+        margin-left: -10px;
+        border-width: 10px;
+        border-color: rgba(255,255,232,0);
+        border-top-color: #ffffe8;
+      }
       position: relative;
       margin-bottom: 15px;
       border: 1px solid #f5e6ad;

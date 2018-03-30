@@ -4,7 +4,7 @@ Rails.application.routes.draw do
      get :following, :followers
     end
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root 'pairs#index'
   resources :groups do
     resources :messages, only: [:index,:create]
@@ -14,5 +14,8 @@ Rails.application.routes.draw do
   get 'like/from_partner' => 'pairs#from_partner'
   get 'like/from_me'  => 'pairs#from_me'
   get 'like/favorite' => 'pairs#favorite'
-
+  get "myprofile" => "pairs#myprofile"
+  get "searchone" => "pairs#search_one"
+  get "visitorlist" => "pairs#visitor_list"
+  get "visitorsetting" => "pairs#visitor_setting"
 end
