@@ -4,7 +4,7 @@
       %tbody
         %tr
           %th
-            = f.label :residence_id, "都道府県"
+            = f.label :residence_id, "居住地"
           %td
             = f.collection_select :residence_id, Residence.all, :id, :prefecture, prompt: "選択してください"
         %tr
@@ -22,6 +22,11 @@
             = f.label :body_id, "体型"
           %td
             = f.collection_select :body_id, Body.all, :id, :body, prompt: "選択してください"
+        %tr
+          %th
+            = f.label :holiday_id, "休日"
+          %td
+            = f.collection_select :holiday_id, Holiday.all, :id, :holiday, prompt: "選択してください"
         %tr
           %th
             = f.label :smoke_id, "タバコ"

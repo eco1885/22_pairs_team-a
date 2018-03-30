@@ -35,4 +35,10 @@
           %td
             -# = f.button "リセット", type: :button, class: "reset_button"
             = f.collection_check_boxes :body_id_in, @body, :id, :body
+        %tr
+          %th
+            = f.label :holiday_id_in, '休日'
+          %td
+            -# = f.button "リセット", type: :button, class: "reset_button"
+            = f.collection_check_boxes :holiday_id_in, @holiday, :id, :holiday
     = f.submit
