@@ -19,8 +19,14 @@
             = f.collection_select :smoke_id_eq, @smoke,  :id, :frequency, include_blank: 'こだわらない'
         %tr
           %th
-            = f.label :alcohol_id_eq, 'お酒'
+            = f.label :alcohol_id_in, 'お酒'
           %td
             -# = f.button "リセット", type: :button, class: "reset_button"
-            = f.collection_check_boxes :alcohol_id_eq, @alcohol, :id, :frequency, include_blank: 'こだわらない',  class: "alcohol_checkboxes"
+            = f.collection_check_boxes :alcohol_id_in, @alcohol, :id, :frequency
+        %tr
+          %th
+            = f.label :school_id_in, '学歴'
+          %td
+            -# = f.button "リセット", type: :button, class: "reset_button"
+            = f.collection_check_boxes :school_id_in, @school, :id, :school
     = f.submit

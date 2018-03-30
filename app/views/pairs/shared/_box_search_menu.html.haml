@@ -10,8 +10,8 @@
       %li.tab_item.tab_item02
         = link_to "", searchone_path, id: "tab_item002"
   %p.search_result_count
-    = "#{@users.length}人中 1 〜"
-    -if(@users.length < @selected)
-      = "#{@users.length}人を表示"
-    -else
-      = "#{@selected} 人を表示"
+    -# = "#{@users.length}人中 1 〜"
+    -# -if(@users.length < @selected)
+    -#   = "#{@users.length}人を表示"
+    -# -else
+    -#   = "#{@selected} 人を表示"

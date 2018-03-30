@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329111444) do
+ActiveRecord::Schema.define(version: 20180329120922) do
 
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
@@ -53,6 +53,12 @@ ActiveRecord::Schema.define(version: 20180329111444) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "schools", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "school",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "smokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
     t.datetime "created_at", null: false
@@ -87,11 +93,13 @@ ActiveRecord::Schema.define(version: 20180329111444) do
     t.integer  "alcohol_id"
     t.integer  "smoke_id"
     t.integer  "occupancy_id"
+    t.integer  "school_id"
     t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["occupancy_id"], name: "index_users_on_occupancy_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
     t.index ["residence_id"], name: "index_users_on_residence_id", using: :btree
+    t.index ["school_id"], name: "index_users_on_school_id", using: :btree
     t.index ["smoke_id"], name: "index_users_on_smoke_id", using: :btree
   end
 
@@ -99,5 +107,6 @@ ActiveRecord::Schema.define(version: 20180329111444) do
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "occupancies"
   add_foreign_key "users", "residences"
+  add_foreign_key "users", "schools"
   add_foreign_key "users", "smokes"
 end
