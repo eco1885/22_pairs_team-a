@@ -4,7 +4,7 @@
     position: relative;
     left: 17px;
     margin: 40px;
-    height: 500px;
+    height: 600px;
     font-size: 12px;
     table {
         width: 680px;
@@ -83,6 +83,14 @@
     }
 
     #q_age_id_lteq {
+        @include allow_icon;
+    }
+
+    #q_income_id_gteq {
+        @include allow_icon;
+    }
+
+    #q_income_id_lteq {
         @include allow_icon;
     }
 

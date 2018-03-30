@@ -8,14 +8,21 @@
           %td
             = f.collection_select :age_id_gteq, @age, :id, :age, include_blank: 'こだわらない'
             &#126;
-            = f.collection_select :age_id_lteq, @age, :id, :age, include_blank:  'こだわらない'
+            = f.collection_select :age_id_lteq, @age, :id, :age, include_blank: 'こだわらない'
         %tr
           %th
             = f.label :height_id_eq, '身長'
           %td
             = f.collection_select :height_id_gteq, @height, :id, :height, include_blank: 'こだわらない'
             &#126;
-            = f.collection_select :height_id_lteq, @height, :id, :height, include_blank:  'こだわらない'
+            = f.collection_select :height_id_lteq, @height, :id, :height, include_blank: 'こだわらない'
+        %tr
+          %th
+            = f.label :income_id_eq, '収入'
+          %td
+            = f.collection_select :income_id_gteq, @income, :id, :income, include_blank: 'こだわらない'
+            &#126;
+            = f.collection_select :income_id_lteq, @income, :id, :income, include_blank: 'こだわらない'
         %tr
           %th
             = f.label :residence_id_eq, '居住地'
