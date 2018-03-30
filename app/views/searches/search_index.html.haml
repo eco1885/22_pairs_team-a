@@ -29,4 +29,10 @@
           %td
             -# = f.button "リセット", type: :button, class: "reset_button"
             = f.collection_check_boxes :school_id_in, @school, :id, :school
+        %tr
+          %th
+            = f.label :body_id_in, '体型'
+          %td
+            -# = f.button "リセット", type: :button, class: "reset_button"
+            = f.collection_check_boxes :body_id_in, @body, :id, :body
     = f.submit

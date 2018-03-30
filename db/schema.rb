@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180329120922) do
+ActiveRecord::Schema.define(version: 20180330034906) do
 
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bodies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,7 +100,9 @@ ActiveRecord::Schema.define(version: 20180329120922) do
     t.integer  "smoke_id"
     t.integer  "occupancy_id"
     t.integer  "school_id"
+    t.integer  "body_id"
     t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
+    t.index ["body_id"], name: "index_users_on_body_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["occupancy_id"], name: "index_users_on_occupancy_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
@@ -104,8 +112,8 @@ ActiveRecord::Schema.define(version: 20180329120922) do
   end
 
   add_foreign_key "foots", "users"
-  add_foreign_key "user_images", "users"
   add_foreign_key "users", "alcohols"
+  add_foreign_key "users", "bodies"
   add_foreign_key "users", "occupancies"
   add_foreign_key "users", "residences"
   add_foreign_key "users", "schools"

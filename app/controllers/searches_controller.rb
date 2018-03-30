@@ -10,6 +10,7 @@ class SearchesController < ApplicationController
     @smoke = Smoke.all
     @occupancy = Occupancy.all
     @school = School.all
+    @body = Body.all
   end
 
   def search_result
@@ -26,6 +27,6 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit(:residence_id_eq, :smoke_id_eq, :occupancy_id_eq, alcohol_id_in:[], school_id_in:[])
+    params.require(:q).permit(:residence_id_eq, :smoke_id_eq, :occupancy_id_eq, alcohol_id_in:[], school_id_in:[], body_id_in:[])
   end
 end
