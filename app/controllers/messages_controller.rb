@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @groups = current_user.matchers.map { |id| Member.find_by(before_user_id: current_user.id, after_user_id: id) ? Member.find_by(before_user_id: current_user.id, after_user_id:id) : Member.find_by(before_user_id:id, after_user_id: current_user.id) }
+    @groups = current_user.matchers.map { |id| Member.find_by(before_user_id: current_user.id, after_user_id: id) ? Member.find_by(before_user_id: current_user.id, after_user_id: id) : Member.find_by(before_user_id: id, after_user_id: current_user.id) }
 
     @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
@@ -41,7 +41,6 @@ class MessagesController < ApplicationController
         @group = Group.new
         @group.save
         @groups = Member.create(before_user_id: current_user.id, after_user_id: match_user.id, group_id:@groups.id)
-        @groups.save
       end
     end
   end
