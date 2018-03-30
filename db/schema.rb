@@ -60,11 +60,11 @@ ActiveRecord::Schema.define(version: 20180329111444) do
   end
 
   create_table "user_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status",     null: false
-    t.string   "content"
+    t.integer  "status",                   null: false
+    t.text     "content",    limit: 65535
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_user_images_on_user_id", using: :btree
   end
 

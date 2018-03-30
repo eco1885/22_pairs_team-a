@@ -2,8 +2,12 @@
   %div
     %div
       %div
-        = link_to "", class: "showPersonalViewModal","data-id": "#{user.id}" do
-          = image_tag "https://lh3.googleusercontent.com/F90t0RCwPpsxLWHuAxZxJntagAbCLW20BgcY44mljphwTgtAN1C3Df8pIwqLKfkN0AywfjMmmTTyTjwuY6q_bqU5bWxo33M0j7VJPVbercsR12fQrwzaLlkojLk_wnjlmujkFGE5A290fnIWGAl7rp-vdQGjrEX6tXjvKhcBXmUutoUl9VgQlqZx3WKx-W91Y0pNqMfQzOn_gv2A9wC6HBx5qKvkekSdkJ8cGXhWffyeOI1XDX2WP3QcO5DaSxB4ZE76djSDnJfkimvHDbpG_B8uJE1sN6YWr5IYnSr_lCkMQbdyRGsVUceYrvfwfRTri_G28az4FRx2_cvdg7FnWJ5Gf6ltwJJXhai4LLkVXyCSbAo8k6D_0kHloFHdWOPnT8vL0ZttvEiCxQe4sZj70Mv3nsmIYUFRj4oQJd6Ff1cVsgYG7o4oYopdN82eYUFouN4cHVnpX1bmne1dmC16AiW4VKwo6DlqYwoaMWh4EUn1YzGPZxQqCqgRZSmEm2ewsgNKZzv-TlGAI5570jD5ny52SiKZtDlm5JdN_aSHGYPcuOxpW2TB4kekudPFTu38Lq3n4BDWvuZJ-e8zIzzBtAiHfwASNJMHxLDbOh2KWnlfe0E0e7l4vRsFJ22tweL4hKCNeIdU9rsXzVl3-kcwKqMSi4XZwgqV=w204-h247-no", class: "list_view_user_photo image-circle"
+        = link_to "", class: "showPersonalViewModal","data-id": "#{user.id}"
+        / - binding.pry
+        - if user.UserImages.find_by(status: 1).present?
+          = image_tag "#{user.UserImages.find_by(status: 1).content}", class: "list_view_user_photo image-circle"
+        - else
+          = image_tag "https://lh3.googleusercontent.com/Et4dOME6W3BR2bStYsfuqepOnwVT3V1g9j7PNOtGfmAnzpf4boCZvjwl4D82xN3EfONfBk0zEos1UEFMgh_1j4rEDDhuWpLoVowEyWe-ozBM3CNlYlI2SBi19iAz3vB1CHP35sB1VDz0QLkN-0zkQpOFPl5j0mKM2xE7wdAukhk0ECd3h1je9riLnunqDhygm_I3RTQY5009cTcgaY1M-3ms6-AIBzeHFRc166Zv5sx3pmo4GEB1iWQqsbIsj4EzM43q9dkfEScb_FbmN50iuoZJL9aCdTsjrA5n56zszLWes7Vu3b8l1pjAMwMqbJLsDHpep0997lHzkzNEb7unTdRD2UCtsv9u5Cegn3fFvRg5u0zVNWkFM2KzdO3V7zK5hYmKdDlfrULd3P_pxMFCiOK55CMXX2LIko6UMt5oUt4NAmV_8GMucSWr8r2D3sOn_Iu8AwCKANUHKPTmfcr7AiYGjnolGOHfmCbpEumLjfsPIwYc4KKDAxut3xmVv392x7HRMgpU9PS58POl0y7JjNpHJCRdJ_5X0iHyhP3_5qX8VGuwXViOCUh2BcvYCAcQw2fmilhlfH4H5pGa_i46OuELCLNNRnSADVpWw0RPEBlZaP3EyDQyKMhdFS4Aw7h7QxUPeUgr3BV2TeOCQE-wj3Bpa9kRrw-z=s640-no", class: "list_view_user_photo image-circle"
   .PrivateMode
     .box_user_info01
       %p.user_summary

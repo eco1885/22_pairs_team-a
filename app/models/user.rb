@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :coming_foots, foreign_key: "visitor_id", class_name: "Foot", dependent: :destroy
   has_many :comings, through: :coming_foots
 
+#user_imageとのアソシエーション
+  has_many :UserImages, foreign_key: "user_id"
+
   belongs_to :residence,  optional: true
   belongs_to :alcohol,  optional: true
   belongs_to :smoke,  optional: true
