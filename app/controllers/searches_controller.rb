@@ -15,9 +15,9 @@ class SearchesController < ApplicationController
     @selected = params[:selected_value].present? ? params[:selected_value] : 16
     @q = User.search(search_params)
     if current_user.gender == "male"
-      @users = @q.result(distinct: true).page(params[:page]).per(@selected)
+      @users = @q.result(distinct: true).where(gender: 2).page(params[:page]).per(@selected)
     else
-      @users = @q.result(distinct: true).page(params[:page]).per(@selected)
+      @users = @q.result(distinct: true).where(gender: 1).page(params[:page]).per(@selected)
     end
     # @q = User.search(search_params)
     # @users = @q.result(distinct: true).page(params[:page]).per(DISPLAYED_USER)
