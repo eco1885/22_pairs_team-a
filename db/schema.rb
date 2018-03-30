@@ -104,6 +104,7 @@ ActiveRecord::Schema.define(version: 20180329120922) do
   end
 
   add_foreign_key "foots", "users"
+  add_foreign_key "user_images", "users"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "occupancies"
   add_foreign_key "users", "residences"
