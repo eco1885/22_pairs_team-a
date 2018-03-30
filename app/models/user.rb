@@ -21,6 +21,7 @@ class User < ApplicationRecord
   belongs_to :alcohol,  optional: true
   belongs_to :smoke,  optional: true
   belongs_to :occupancy,  optional: true
+  belongs_to :school,  optional: true
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)

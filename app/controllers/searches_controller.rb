@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  # DISPLAYED_USER = 16
+   DISPLAYED_USER = 16
 
 
   #条件検索用にgem "ransack"を使用しています
@@ -9,6 +9,7 @@ class SearchesController < ApplicationController
     @alcohol = Alcohol.all
     @smoke = Smoke.all
     @occupancy = Occupancy.all
+    @school = School.all
   end
 
   def search_result
@@ -25,6 +26,6 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit(:residence_id_eq, :alcohol_id_eq, :smoke_id_eq, :occupancy_id_eq)
+    params.require(:q).permit(:residence_id_eq, :smoke_id_eq, :occupancy_id_eq, alcohol_id_in:[], school_id_in:[])
   end
 end
