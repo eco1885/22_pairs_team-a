@@ -27,13 +27,13 @@
                       %p.community_item_count
                         / 本来は人数を表示するエリア
                         = t("enums.community.category.#{community.category}")
-            .box_community_pager.box_pager
-              = paginate(@communities)
+            .box_community_pager.box_pager.bg_white
+              = paginate(@communities, theme: "patern_b")
         .box_everyone_community.popular_community#popular
           .data-community-popular-communities
             .everyone_community_title
               /人気コミュニティ（本来実装されている箇所）
-              ※現在、作成されているコミュニティ一覧
+              作成されているコミュニティ
               = Community.count
               件
             .community_list_box
@@ -49,12 +49,12 @@
                         / 本来は人数を表示するエリア
                         = t("enums.community.category.#{community.category}")
             .link_more_community
-              作る方針（予定）
               .div
-                %a#load_button_populer
-                  もっと見る
-                %a#load_button_populer
-                  全てみる
+                =link_to "全てみる", search_communities_path, id: "load_button_populer"
+                / %a#load_button_populer
+                /   もっと見る
+                / %a#load_button_populer
+                /   全てみる
         / 以降、算出ロジックが不明な為、一旦すべてコメントアウト
         / .box_everyone_community.recommend_community#recommend
         /   .data-community-recommend-communities

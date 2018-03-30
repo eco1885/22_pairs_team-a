@@ -16,8 +16,7 @@
                 -else
                   #{@input_c}
             %p.community_count
-          .box_community_pager.box_pager.bg_white
-            pagenateを入れる予定
+          = paginate(@communities, theme: "patern_b")
           .community_list_box
             %ul.community_list
               - @communities.each do |community|
@@ -32,14 +31,14 @@
                         / 本来は人数を表示するエリア
                         = t("enums.community.category.#{community.category}")
                       / 人
-          .box_community_pager.box_pager.bg_white
-            pagenateを入れる予定
-          .box_community_color_note
-            %ul.color_notes
-              %li.color_note_item.color_joined
-                参加しているコミュニティ
-              %li.color_note_item.color_created
-                作成しているコミュニティ
+          = paginate(@communities, theme: "patern_b")
+          / 未実装機能の為、一時的に非表示
+          / .box_community_color_note
+          /   %ul.color_notes
+          /     %li.color_note_item.color_joined
+          /       参加しているコミュニティ
+          /     %li.color_note_item.color_created
+          /       作成しているコミュニティ
       - else
         .box_community_not_found.common_page_box
           %p.common_title

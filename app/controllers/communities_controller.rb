@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
     @communities = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
 
     # 作成されているコミュニティ全て
-    @communities_all = Community.page(params[:page]).order("created_at DESC").per(5)
+    @communities_all = Community.page(params[:page]).order("created_at DESC").per(15)
 
     # 検索結果コミュニティ
     @communities_result = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
@@ -57,7 +57,8 @@ class CommunitiesController < ApplicationController
   end
 
   def search
-      @communities = Community.all
+      # @communities = Community.all :ページネイト仕様変更前/本サイトのperは300
+    @communities = Community.all.page(params[:page]).order("created_at DESC").per(12)
 
     if params[:community_name].present?
       @input_n = params[:community_name]

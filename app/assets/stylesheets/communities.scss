@@ -68,6 +68,16 @@ input[type=text] {
   .box_community_header {
     margin-bottom: 10px;
   }
+  .box_community_pager {
+    &.box_pager {
+      .pager_next {
+        float: none;
+      }
+      .pager_pre {
+        float: none;
+      }
+    }
+  }
 }
 
 
@@ -123,6 +133,7 @@ input[type=text] {
         float: left;
         box-sizing: border-box;
         width: 20%;
+        height: 133px;
         text-align: center;
         border-right: 1px solid #e1e3e5;
         background: #fff;
@@ -164,7 +175,8 @@ input[type=text] {
         @include clearfix();
       }
       .community_item {
-        &:nth-child(5) {
+        // &:nth-child(5) { ：見本に戻す際に使用
+        &:nth-child(5n) {
           margin-right: 0;
         }
         font-size: 13px;
