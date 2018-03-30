@@ -12,33 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180330065543) do
 
-  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-  end
-
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
-    t.integer  "before_user_id"
-    t.integer  "after_user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["group_id"], name: "index_members_on_group_id", using: :btree
-  end
-
-  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "content"
-    t.string   "image_url"
-    t.integer  "group_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
-    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "bodies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "body",       null: false
@@ -62,6 +40,11 @@ ActiveRecord::Schema.define(version: 20180330065543) do
     t.index ["user_id"], name: "index_foots_on_user_id", using: :btree
   end
 
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "holidays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "holiday",    null: false
     t.datetime "created_at", null: false
@@ -72,6 +55,26 @@ ActiveRecord::Schema.define(version: 20180330065543) do
     t.string   "living_with", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id"
+    t.integer  "before_user_id"
+    t.integer  "after_user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["group_id"], name: "index_members_on_group_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.string   "image_url"
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "occupancies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -149,10 +152,11 @@ ActiveRecord::Schema.define(version: 20180330065543) do
     t.index ["smoke_id"], name: "index_users_on_smoke_id", using: :btree
   end
 
+  add_foreign_key "foots", "users"
   add_foreign_key "members", "groups"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
-  add_foreign_key "foots", "users"
+  add_foreign_key "user_images", "users"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"
   add_foreign_key "users", "holidays"
