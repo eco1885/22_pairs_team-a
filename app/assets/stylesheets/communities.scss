@@ -89,9 +89,6 @@ input[type=text] {
 //メイン内部
 .box_wrapper_inner {
   @include clearfix();
-  //デバックP2つ
-  height: 1760px;
-  border: 1px solid orange;
   .box_community_side {
     float: left;
     width: 172px;
@@ -102,9 +99,6 @@ input[type=text] {
   .box_community_main {
     float: right;
     width: 530px;
-    //デバックプロパティ2つ
-    border: 1px solid yellow;
-    height: 100%;
     .box_my_community {
       margin-bottom: 28px;
       padding: 15px;
@@ -135,6 +129,9 @@ input[type=text] {
         a {
           display: block;
           padding: 12px 10px;
+          &:hover {
+            opacity: .8;
+          }
         }
         .community_item_img {
           margin-bottom: 5px;
@@ -209,6 +206,13 @@ input[type=text] {
       }
       &.popular_community {
         border-color: #ffbe40;
+        .community_item {
+          a {
+            &:hover {
+              opacity: .8;
+            }
+          }
+        }
         .everyone_community_title {
           &:before {
             @include community_title_icon();
@@ -217,9 +221,13 @@ input[type=text] {
         }
         .link_more_community {
           a {
+            cursor: pointer;
             text-decoration: underline;
             color: #ffbe40;
             background-color: #f3f3f3;
+            &:hover {
+              text-decoration: none;
+            }
           }
         }
       }
@@ -567,6 +575,15 @@ input[type=text] {
   position: relative;
   padding: 15px 13px;
   background-color: #f7f7f7;
+  .community_list {
+    .community_item {
+      a {
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+  }
   .community_category_header {
     @include clearfix();
     margin-bottom: 12px;
@@ -701,6 +718,9 @@ input[type=text] {
       width: 100px;
       vertical-align: middle;
       text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
   .popular_item {

@@ -7,19 +7,17 @@
       = render partial: "box_community_header"
     .box_wrapper_inner
       .box_community_side
+        / カテゴリーゾーン
       .box_community_main
-        / 参加コミュ一覧ゾーン
         .box_my_community
           .data-community-joined-communities
             .my_community_title.title_b<>
               あなたが参加しているコミュニティ(全
-              %span.community_total<> #{@communities.count}
+              %span.community_total<> #{@communities_count.count}
               件)
             .community_list_box.bg-white
               %ul.my_community_list
                 - @communities.each do |community|
-                  / 0件の場合、コメント類は特に何も表示されない。
-                  / = community.users.count
                   %li.my_community_item
                     %a{href: "/community/#{community.id}", class: "community_link"}
                       %p.box_community_item_img
@@ -31,12 +29,11 @@
                         = t("enums.community.category.#{community.category}")
             .box_community_pager.box_pager
               = paginate(@communities)
-        .box_everyone_community.popular_community
+        .box_everyone_community.popular_community#popular
           .data-community-popular-communities
             .everyone_community_title
               /人気コミュニティ（本来実装されている箇所）
               ※現在、作成されているコミュニティ一覧
-              / 仮表示
               = Community.count
               件
             .community_list_box
@@ -58,42 +55,40 @@
                   もっと見る
                 %a#load_button_populer
                   全てみる
-        .box_everyone_community.recommend_community
-          .data-community-recommend-communities
-            .everyone_community_title
-              / おすすめコミュニティ（本来実装されている箇所）
-              ※検索結果表示
-              / 仮表示
-              = Community.count
-              件
-            .community_list_box
-              %ul.community_list
-                / - @communities_result.each do |community| if文分岐作成したら（0の場合、エラーになるため）
-                - @communities_result.each do |community|
-                  %li.community_item.joined
-                    %a{href: "/community/#{community.id}", class: "community_link"}
-                      .box_community_item_img
-                        = image_tag community.image.url, class:"community_item_img image-round"
-                      %p.community_item_title
-                        = community.community_name
-                      %p.community_item_count
-                        / 本来は人数を表示するエリア
-                        = t("enums.community.category.#{community.category}")
-            .link_more_community
-              作る方針（予定）
-              .div
-                %a#load_button_populer
-                  もっと見る
-                %a#load_button_populer
-                  全てみる
-        .box_everyone_community.newcomer_community
-          .data-community-new-communities
-            .everyone_community_title
-              新着コミュニティ（作成予定）
-        .box_everyone_community.fame_community
-          .data-community-fame-communities
-            .everyone_community_title
-              殿堂入りコミュニティ（作成予定）
+        / 以降、算出ロジックが不明な為、一旦すべてコメントアウト
+        / .box_everyone_community.recommend_community#recommend
+        /   .data-community-recommend-communities
+        /     .everyone_community_title
+        /       / おすすめコミュニティ（本来実装されている箇所）
+        /       ※検索結果表示（仮表示）
+        /       = Community.count
+        /       件
+        /     .community_list_box
+        /       %ul.community_list
+        /         - @communities_result.each do |community|
+        /           %li.community_item.joined
+        /             %a{href: "", class: "community_link"}
+        /               .box_community_item_img
+        /                 = image_tag community.image.url, class:"community_item_img image-round"
+        /               %p.community_item_title
+        /                 = community.community_name
+        /               %p.community_item_count
+        /                 / 本来は人数を表示するエリア
+        /     .link_more_community
+        /       作る方針（予定）
+        /       .div
+        /         %a#load_button_populer
+        /           もっと見る
+        /         %a#load_button_populer
+        /           全てみる
+        / .box_everyone_community.newcomer_community#newcomer
+        /   .data-community-new-communities
+        /     .everyone_community_title
+        /       新着コミュニティ（作成予定）
+        / .box_everyone_community.fame_community#fame
+        /   .data-community-fame-communities
+        /     .everyone_community_title
+        /       殿堂入りコミュニティ（作成予定）
 
     .box_gnavis04
     =link_to "search（searchビュー）", search_communities_path,class: "sidemenu_link"

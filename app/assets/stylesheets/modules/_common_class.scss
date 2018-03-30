@@ -112,6 +112,9 @@ input[type=text] {
   cursor: pointer;
   text-decoration: underline;
   color: #00abb3;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .fnt12 {
