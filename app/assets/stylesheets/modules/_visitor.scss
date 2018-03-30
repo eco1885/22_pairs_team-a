@@ -258,6 +258,14 @@ table {
   margin: 0 15px 20px;
   color: #8d9399;
 }
+.empty {
+  &.pt60 {
+    .common_note {
+      font-size: 20px;
+      color: #ed4655;
+    }
+  }
+}
 .box_visitor_view {
   .box_visitor_guide {
     .visitor_guide_list {
