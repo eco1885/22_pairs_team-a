@@ -9,6 +9,11 @@
             = f.collection_select :height_id, Height.all, :id, :height, prompt: "選択してください"
         %tr
           %th
+            = f.label :height_id, "身長"
+          %td
+            = f.collection_select :height_id, Height.all, :id, :height, prompt: "選択してください"
+        %tr
+          %th
             = f.label :residence_id, "居住地"
           %td
             = f.collection_select :residence_id, Residence.all, :id, :prefecture, prompt: "選択してください"

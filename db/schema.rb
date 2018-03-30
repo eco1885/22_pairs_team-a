@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330075342) do
+ActiveRecord::Schema.define(version: 20180330093736) do
+
+  create_table "ages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "age",        null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
@@ -122,6 +128,8 @@ ActiveRecord::Schema.define(version: 20180330075342) do
     t.integer  "holiday_id"
     t.integer  "living_with_id"
     t.integer  "height_id"
+    t.integer  "age_id"
+    t.index ["age_id"], name: "index_users_on_age_id", using: :btree
     t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
     t.index ["body_id"], name: "index_users_on_body_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -136,6 +144,7 @@ ActiveRecord::Schema.define(version: 20180330075342) do
   end
 
   add_foreign_key "foots", "users"
+  add_foreign_key "users", "ages"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"
   add_foreign_key "users", "heights"
