@@ -4,6 +4,13 @@
       %tbody
         %tr
           %th
+            = f.label :height_id_eq, '身長'
+          %td
+            = f.collection_select :height_id_gteq, @height, :id, :height, include_blank: 'こだわらない'
+            &#126;
+            = f.collection_select :height_id_lteq, @height, :id, :height, include_blank:  'こだわらない'
+        %tr
+          %th
             = f.label :residence_id_eq, '居住地'
           %td
             = f.collection_select :residence_id_eq, @residence,  :id, :prefecture, include_blank: 'こだわらない'
@@ -41,4 +48,10 @@
           %td
             -# = f.button "リセット", type: :button, class: "reset_button"
             = f.collection_check_boxes :holiday_id_in, @holiday, :id, :holiday
+        %tr
+          %th
+            = f.label :living_with_id_in, '同居人'
+          %td
+            -# = f.button "リセット", type: :button, class: "reset_button"
+            = f.collection_check_boxes :living_with_id_in, @living_with, :id, :living_with
     = f.submit
