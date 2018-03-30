@@ -11,26 +11,12 @@
           .community_category_header
             %ul.breadcrumb_list
               %li.toggle.keyword
-                -if @input_n.present?
-                  #{@input_n}
-                -else
-                  #{@input_c}
+                %em
+                  =search_input
             %p.community_count
           = paginate(@communities, theme: "patern_b")
           .community_list_box
-            %ul.community_list
-              - @communities.each do |community|
-                %li.community_item
-                  %a{href: "/community/#{community.id}", class: "community_link"}
-                    %p
-                      = image_tag community.image.url, class:"community_item_img image-round"
-                    %p.community_item_title
-                      = community.community_name
-                    %p.community_item_count
-                      %span<>
-                        / 本来は人数を表示するエリア
-                        = t("enums.community.category.#{community.category}")
-                      / 人
+            = render partial: "communities_list", locals: { communiteis: @communiteis}
           = paginate(@communities, theme: "patern_b")
           / 未実装機能の為、一時的に非表示
           / .box_community_color_note
@@ -46,20 +32,15 @@
           .common_box_inner
             %p.not_found_title
               「
-              -if @input_n.present?
-                %em #{@input_n}
-              -else
-                %em #{@input_c}
-              / %em #{@input}
+              %em
+                =search_input
               」に該当するコミュニティは見つかりませんでした。
             %p.text_center.mb30
               %img{src: "https://lh3.googleusercontent.com/oJSsLQLsWDdeN_awnv4fwTsOJ6Dc7vrwx5dJHYsnwa6qTXQJcsYzO6dwpI7iOqZsVJ33kC2r3MWvnGs1x6zUopAOq0mEpzFblOfKdwGACqUkuLPWWp6iKgJ_FBkD452U6jEk15pMk2t3s7mVna7KUmzV5mRY6F6HlHcQdboSzD4-HO1BO9arO8DBDKBFEPd-hgkusXiAeKS47EKfmoW--IfdO7MI2nn1UR33niPciOmIwPMZqUbgqDb748cWhJhUcxcslA2ABvUfKczZwo_J4dozmWEkegxTF21uKp3oWbvceYPEGsYasGkAwsyaZrOdYG12wlLlf7vbCIgw_QR93Cj6TAkQNf_5vggS4Rvxmu2wjfAPrT9y_MqDrxHdeJhwMMNNew7uW_ghY3Vcsa6lFtFDiWYQnWOOmWhf48nkSwiaKjXxObbKRl7jAXcmqB_V7vpNuun0N2iBfwnqia-hzC_4tLPa4ZD7_JeKTFNy4L18YVF47V-m-u2bqYskmP8-HGQyF9SmG6CItH6lw8hWSI2-qVgowgLAffSkKdEfKZ_T4CeDSGyYGDCW-4HWwXBUEt7HqbjU_6rm0e5WBq3aYkMImEe3s8eti7-8spuCaXRZh8kEc8N2JYbUMNOQFkEs8cfG6Fh5cTzu9dtGNSN1bXU9ZLinxSTy=w529-h191-no"}
             %p.not_found_text
               「
-              -if @input_n.present?
-                %em #{@input_n}
-              -else
-                %em #{@input_c}
+              %em
+                =search_input
               」に関するコミュニティを作成してみましょう！
             .common_button_area.mb20
               %p.button_item.w60p

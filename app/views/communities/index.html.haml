@@ -37,17 +37,7 @@
               = Community.count
               件
             .community_list_box
-              %ul.community_list
-                - @communities_all.each do |community|
-                  %li.community_item.joined
-                    %a{href: "/community/#{community.id}", class: "community_link"}
-                      .box_community_item_img
-                        = image_tag community.image.url, class:"community_item_img image-round"
-                      %p.community_item_title
-                        = community.community_name
-                      %p.community_item_count
-                        / 本来は人数を表示するエリア
-                        = t("enums.community.category.#{community.category}")
+              = render partial: "communities_list", locals: { communiteis: @communiteis_all}
             .link_more_community
               .div
                 =link_to "全てみる", search_communities_path, id: "load_button_populer"
