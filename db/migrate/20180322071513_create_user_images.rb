@@ -3,7 +3,7 @@ class CreateUserImages < ActiveRecord::Migration[5.0]
     create_table :user_images do |t|
       t.integer :status, null: false
       t.string :content
-      t.references :user, foreign: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

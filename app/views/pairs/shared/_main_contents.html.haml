@@ -2,14 +2,8 @@
   .box_grid_header01
     %p.header_diplay_label 表示人数:
     .header_display_select
-      %select.customSelect.ng-pristine.ng-valid.hasCustomSelect.ng-not-empty.ng-touched.select_style
-        %option{selected: "selected", value: "16"} 16人
-        %option{value: "32"} 32人
-        %option{value: "64"} 64人
-        %option{value: "96"} 96人
-        %option{value: "128"} 128人
-      %span.customSelect.ng-pristine.ng-untouched.ng-valid
-        %span.customSelectInner 16人
+      = form_tag root_path, method: :get do
+        = select_tag(:selected_value, options_for_select([["16人", "16"], ["32人", "32"], ["64人", "64"], ["96人", "96"], ["128人", "128"]], class: "customSelect ng-pristine ng-valid hasCustomSelect ng-not-empty ng-touched select_style"), prompt: "#{@selected}人")
   .box_grid_header02
     %button.button_b.button_white_a.button_show_pickup
       今日のピックアップ

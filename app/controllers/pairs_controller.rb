@@ -1,10 +1,17 @@
 class PairsController < ApplicationController
 
   def index
-    # @users = current_user.comings
-    @users = User.page(params[:page]).per(8)
+    @selected = params[:selected_value].present? ? params[:selected_value] : 16
+    if current_user.gender == "male"
+      @users = User.where(gender: 2).page(params[:page]).per(@selected)
+    else
+      @users = User.where(gender: 1).page(params[:page]).per(@selected)
+    end
+
     @relationship = Relationship.new
+
   end
+
   def messages_index
 
   end
@@ -22,7 +29,7 @@ class PairsController < ApplicationController
   end
 
   def visitor_list
-    @foot = current_user.comings
+    @foot = current_user.comings.order("updated_at DESC").page(params[:page]).per(10)
   end
 
   def visitor_list_zero

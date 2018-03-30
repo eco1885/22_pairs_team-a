@@ -12,11 +12,11 @@ class DetailsController < ApplicationController
 
   def update
    user = User.find(params[:id])
-   user.update(residence_params)
+   user.update(details_params)
   end
 
 private
-  def residence_params
-    params.require(:user).permit(:residence_id, :alcohol_id)#Userモデルのresidence_id,alcohol_idに値を追加する
+  def details_params
+    params.require(:user).permit(:residence_id, :alcohol_id, :smoke_id, :occupancy_id, :school_id, :body_id, :holiday_id )#Userモデルの○○_idに値を追加する
   end
 end

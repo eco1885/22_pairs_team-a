@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users do
-  #マッチング機能のためのrouting1
+  #マッチング機能のためのrouting
     member do
      get :following, :followers
     end
@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   get "privacysetting" => "pairs#privacy_setting"
   get "dislikeuserlist/hide" => "pairs#hide"
   get "dislikeuserlist/block" => "pairs#block"
+  #membership関連のrouting
+  get "membership/aboutpoint" => "pairs#about_point"
+  get "membership/aboutallpoint" => "pairs#about_all_point"
+  get "membership/pointlog" => "pairs#point_log"
+  get "membership/status" => "pairs#status"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
