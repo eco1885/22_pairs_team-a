@@ -5,9 +5,6 @@ class PairsController < ApplicationController
     @users = User.all
     @relationship = Relationship.new
   end
-  def messages_index
-
-  end
 
   def search_one
   end
