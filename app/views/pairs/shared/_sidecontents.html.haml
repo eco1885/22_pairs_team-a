@@ -7,14 +7,15 @@
           =image_tag "https://lh3.googleusercontent.com/H0cY37aczqfZ-UQAYgXxUciykbSIvs-2FRH-GI_VMdaP882ZipIi9Zw4_9s0D5COA4QWsYzWgbAYezBDc5tLdyKJq2cHhaBOzypJsEShuUQkV8wCmBWsudMN_b-XQZiw4yUSpd-zXSGDCHJk1Opb9l2eiDgZBYke0ba27rRDKlSG4vSOZINeUmvvMnLynPXzWk1oX4bSFa8JNz6qYJYQw11oo9jlFRmfdtOYEqt_TASeZgXbdLHbrhjq6LfdCAA5GMcLGhigm0xDQVZeEmVV3TqexAxQgAWk7Td2NTLqelLdretLYU8rxkZpNmHUBHdYxOIXJEOsb7OyaKtQUvZuaT-i9E8VvBBPC0r2pKLH3HPeW0M_MjPQtvJX-d0VLxfNawC1Zz6zrqvaC3AH5bnveo_BMzxLj7gp__GvA27u256lDNTnXIza2yHtr7vb-kNe7e8e5JUe27MF8qjvLXkzfkXSpYBIEcBDuOvsWA2Qs2PjzfS4eGIo7qIUUbpWL2PqrPZT92MPiuysKV7HXnBlU6xZsrKcK_eXj8GmEhno8BjryCfmQnMoU4BZxwQcBaoY0zxfHvHEHv775fs1oaXMxDSE9Z0O6WpKSLrxKRZcfRHBp079HT_w8ASr4s1xAE1EcPNZssFBXdyOqRj_OhjIdfDXHzPy0DPB=s636-no", height:"60", width:"60"
 
       %p.profile_name
-        = link_to "秋元康 東京", myprofile_path
+        = link_to "#{current_user.nickname} 東京",user_path(current_user)
 
       %p.profile_status.is_free_member
-        = link_to "ここに年齢",""
+        = link_to "ここに年齢","/membership/status"
 
     .my_profile_input_rate
       %p.input_rate_label
-        %span.input_rate_percent_value ここに%
+        プロフィール入力率
+        %span.input_rate_percent_value %%
 
       .box_input_rate_grahp
         .input_rate_grahp_value.is_percent_100
@@ -29,12 +30,12 @@
         %li.my_status_item.leftover_like
           %p.status_label 残りいいね数
           %p#total_like_numbers.stats_value 9億
-          = link_to "追加する","",class: "button_c button_orange_a link_more"
+          = link_to "追加する","/membership/aboutpoint#exchange_point",class: "button_c button_orange_a link_more"
 
         %li.my_status_item.leftover_point
           %p.status_label ポイント残高
           %p#total_point_numbers.stats_value 9億
-          = link_to "追加する","",class: "button_c button_orange_a link_more"
+          = link_to "追加する","/membership/aboutpoint#purchase_point",class: "button_c button_orange_a link_more"
 
 
     .box_my_private_mode
@@ -50,7 +51,7 @@
       .box_gnavis01
         %p.gnavi_title さがす
         %ul
-          %li.gnavi_item.is_currentgnavi_item.is_current
+          %li.gnavi_item
             =link_to root_path,class: "sidemenu_link" do
               %span お相手を探す
 
@@ -74,7 +75,7 @@
         %p.gnavi_title コミュニティ
         %ul
           %li.gnavi_item
-            =link_to "コミュニティを探す","",class: "sidemenu_link"
+            =link_to "コミュニティを探す", communities_path,class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 年齢確認
@@ -92,7 +93,7 @@
           %li.gnavi_item
             =link_to "レディースオプション","",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "Pairsポイント","",class: "sidemenu_link"
+            =link_to "Pairsポイント","/membership/aboutpoint",class: "sidemenu_link"
 
       .box_gnavis04
         .gnavi_title 足あと
@@ -104,11 +105,13 @@
         %p.gnavi_title 各種設定
         %ul#sidemenu_settings
           %li.gnavi_item
-            =link_to "通知/いいね上限","",class: "sidemenu_link"
+            =link_to "通知/いいね上限","/privacysetting#box_notify",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "非表示・ブロック","",class: "sidemenu_link"
+            =link_to "Facebook友達更新","/privacysetting#box_fb_friend",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "オフラインモード設定","",class: "sidemenu_link"
+            =link_to "非表示・ブロック","/privacysetting#box_hide_block",class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "オフラインモード設定","/privacysetting#box_offline",class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 困ったときは

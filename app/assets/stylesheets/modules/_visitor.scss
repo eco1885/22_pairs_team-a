@@ -66,7 +66,7 @@ table {
         padding: 10px;
       }
       .time {
-        width: 40px;
+        width: 55px;
         text-align: center;
         vertical-align: top;
         border-right: 1px solid rgb(225, 227, 229);
@@ -247,5 +247,88 @@ table {
     content: "";
     border-radius: 50%;
     background: #00abb3;
+  }
+}
+
+
+//足あとが0人の場合（footer箇所は特別なCSSは当たっていない）
+.common_note {
+  font-size: 1.2rem;
+  font-size: 12px;
+  margin: 0 15px 20px;
+  color: #8d9399;
+}
+.box_visitor_view {
+  .box_visitor_guide {
+    .visitor_guide_list {
+      margin: 0 15px;
+    }
+    .visitor_guide_list {
+      @include clearfix();
+      margin: 0 15px;
+      .guide_item {
+        float: left;
+        box-sizing: border-box;
+        width: 208px;
+        margin: 0 18px 20px 0;
+        padding: 14px 12px 16px;
+        background-color: #e1f9fa;
+        &:last-child {
+          margin-right: 0;
+        }
+        .guide_title {
+          @include guide01();
+          font-size: 1.5rem;
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 10px;
+          color: #00abb3;
+          &.guide02 {
+            &:before {
+              background-position: -45px -692px;
+            }
+          }
+          &.guide03 {
+            &:before {
+              background-position: -95px -692px;
+            }
+          }
+          span {
+            display: inline-block;
+            width: 130px;
+            vertical-align: middle;
+          }
+        }
+        .guide_text {
+          font-size: 1.3rem;
+          font-size: 13px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .visitor_guide_premium {
+      @include clearfix();
+      @include visitor_guide_premium();
+      margin: 0 15px;
+      padding: 15px 20px;
+      background-color: #f8f2cb;
+      .guide_premium_inner {
+        float: left;
+        .guide_premium_title {
+          font-size: 1.5rem;
+          font-size: 15px;
+          color: #b7a45d;
+        }
+        .guide_premium_text {
+          font-size: 1.3rem;
+          font-size: 13px;
+        }
+      }
+      .button_more {
+        float: right;
+        margin-top: 5px;
+      }
+    }
   }
 }

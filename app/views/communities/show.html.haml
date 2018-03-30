@@ -1,0 +1,65 @@
+.ui-view_class
+  .main.box_community_view.contents_padding
+    .common_page_header
+      =link_to "コミュニティTOP", communities_path, class:"page_back button_f button_white_a", id:"top_community_btn"
+      %span.page_tile
+        コミュニティをさがす
+    .data-community-search-area
+      .box_community_header.common_inline_box
+        %form.form_search_category
+          / サーバー側と連動したselectを実装予定
+          / %select.category_select
+          .category_select
+            カテゴリから探す作成予定
+            %span.customSelect.select_category_id_input_search_categroy
+              %span.customSelectInner
+        %form.form_search_word
+          .search_input
+            %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
+            %button.button_search.button_f.button_blue_a
+              検索作成予定
+    .data-community-detail
+      .box_community_detail_header
+        %ul.breadcrumb_list
+          %li
+            = t("enums.community.category.#{@community.category}")
+        .community_info
+          .box_community_image
+            .community_image.image-round
+              = image_tag @community.image.url
+          .community_info_inner
+            %p.community_title.title_b
+              #{@community.community_name}
+            %p.community_member_count<>
+              メンバー
+              %em
+                %span.member_total 2
+                人
+              %span 女性
+              %span.ng-hide 男性
+              %em
+                %span.member_total 1
+                人
+            .community_entry
+              .entry_text
+                %strong<>
+                  コミュニティに参加すると、共通の趣味
+                  %br<>
+                  ユーザーからいいね！をもらいやすい！
+                %p ※参加したことは異性にしか表示されません。
+              .div
+                / if文で切り分け？
+                %a.button_entry.button_a.button_pink_a
+                  このコミュニティを退会する
+                %a.button_entry.button_a.button_blue_a
+                  このコミュニティに参加する
+    /参加メンバーに関してのコンテンツ
+    / .data-community-view-users
+    /   .box_community_member_header.mb0
+    /   .box_community_pager.box_pager
+    /   .box_list_view_user
+    /   / 異性メンバーがいない場合に表示
+    /   %div
+    /     %p.taxt_no_partner
+    /       %span このコミュニテイに異性のメンバーはまだいません。
+    /   .box_community_pager.box_pager

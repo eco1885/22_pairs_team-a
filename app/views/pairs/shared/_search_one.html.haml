@@ -60,7 +60,8 @@
           .summary_info_inner
             .user_info_wrapper
               %p.user_info
-                %span.user_name aiko
+                %span.user_name
+                  = user.nickname
                 %span.user_age 42歳
                 %span.user_area
               %p.user_tweet
@@ -77,11 +78,11 @@
           .box_user_photo_inner
             %ul.user_photo_list.four_photos
               %li.photo_item.is_current
-                %img.image-round{src: "https://lh3.googleusercontent.com/27s-fXqzSC32F8AlnJWxm6cIsXKZ3TcD9jt4XoW8de8AyRL2oxb8P-0yX0gg_mxlSp9resX0JrG55YIrI_heIbgUMXqfvcORAfMvGvqhLNGmlXpRTLUDHEfn8F-2yJHURLiOv2Dul4pfdNSNUgw6RMexoI4I3n_E7K4xtDkE4zEtNV22XtXcBpfKd_8I7b45PTEC1KKPnnP8N8pmPrApJ141DjgYYJN0ukaccMJ7KgNknxqAYxtB5pmwUMgGTfNZ1gOt29JbdAruu_KwqZyRGIRLOvl-rsL-uPPloIucVQjU19bg-wshXsRwHkbh0ahMkbnh15DezODKSCyrtB7U1qV0lDDtYiLRZ2XUIhu9rReOKCE3FxfnQIJfsDkVw4X_oB_ZKgOpnPFQPgLHOTGuWZ3X9FEuT8BN3VRR3IiI4ID-dRFcFWFwXeJjPnEFuGxsO6b-k4r8QNvqKtDJO7Gv--7-B-nyExuXYB9ABq8ViwcvTQ3MePNVMNYIlMnogO7242DEVLJuU7wt_hoxVm4ZSqrA1-1iXUdmDlOFZpaj0oFkSP3QTZh6igFiAhzx2UU2X-ou5XjAGjMJRrDWELT_k9BKD0MDgGnZujksVYEkJzQpTwdujvw15Kqa7gfrFEk8j31Ul3qJZ3q_YuOpKdISWTxwwq21Wgo=w800-h534-no"}/
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/27s-fXqzSC32F8AlnJWxm6cIsXKZ3TcD9jt4XoW8de8AyRL2oxb8P-0yX0gg_mxlSp9resX0JrG55YIrI_heIbgUMXqfvcORAfMvGvqhLNGmlXpRTLUDHEfn8F-2yJHURLiOv2Dul4pfdNSNUgw6RMexoI4I3n_E7K4xtDkE4zEtNV22XtXcBpfKd_8I7b45PTEC1KKPnnP8N8pmPrApJ141DjgYYJN0ukaccMJ7KgNknxqAYxtB5pmwUMgGTfNZ1gOt29JbdAruu_KwqZyRGIRLOvl-rsL-uPPloIucVQjU19bg-wshXsRwHkbh0ahMkbnh15DezODKSCyrtB7U1qV0lDDtYiLRZ2XUIhu9rReOKCE3FxfnQIJfsDkVw4X_oB_ZKgOpnPFQPgLHOTGuWZ3X9FEuT8BN3VRR3IiI4ID-dRFcFWFwXeJjPnEFuGxsO6b-k4r8QNvqKtDJO7Gv--7-B-nyExuXYB9ABq8ViwcvTQ3MePNVMNYIlMnogO7242DEVLJuU7wt_hoxVm4ZSqrA1-1iXUdmDlOFZpaj0oFkSP3QTZh6igFiAhzx2UU2X-ou5XjAGjMJRrDWELT_k9BKD0MDgGnZujksVYEkJzQpTwdujvw15Kqa7gfrFEk8j31Ul3qJZ3q_YuOpKdISWTxwwq21Wgo=w800-h534-no"}/
               %li.photo_item
-                %img.image-round{src: "https://lh3.googleusercontent.com/6IaADoHBAae3R5F6jrWgw7e6K7enn6rKH0rhSStM3KVvJHOvpl1vDkSSZ5144wIVjTXo0eY7Qpy85pRAtePwd0ATA1yo2Bk-FYDvFpSqB2tIbyGbFCxVDmKhoWxm3HcsaClvnYxhf8kAXwHRrV3zUpOn9R1s6nh04rnmo94Bcs3mIN9SF0feL8PXz1X6t6uMIJJpGD41HwHUbt_55TlHfOWIS1ERpLty3cvaoBRqAkh9HfOJVdpDSBgfUHmDA7UW6jk90bGucrRMPo2lR6o8neSErBL31eGdt57BSV6_zSmqbype0kE4Q-AK1nG0ImfCn6oEm-Rk-NfkMF8qHmWubYgbr625OK_p3TuzDcbeAYlA9Tv66XW2owlqrqOBid6PSuptP1EpNr1BKbymnWeO3WwAe9c8wPFCxnyS3HHhjfoGDmdYwQcZ7C9Y7CZmyNtdUeEQX9cbip57NodKToM7tr2I2VGatt9RdpYrC06wEsK8W5p081r7l5z0dOg2egpNLaT-mfO2nJ5gGuPIDRpiFkqC9l4e-_D0yMOIMsTaAjonBItHZElm6B4BcCk3Bd6v0GxkqsDWn_oPwIW_DTlUbexPKiHq8KEAbeauVMa8WJU2czlCdeQPTGNdfIDXT6o0mKXLrN3kZB1XQzu7fgQ8dZB5fT4Uoos=s220-no"}/
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/6IaADoHBAae3R5F6jrWgw7e6K7enn6rKH0rhSStM3KVvJHOvpl1vDkSSZ5144wIVjTXo0eY7Qpy85pRAtePwd0ATA1yo2Bk-FYDvFpSqB2tIbyGbFCxVDmKhoWxm3HcsaClvnYxhf8kAXwHRrV3zUpOn9R1s6nh04rnmo94Bcs3mIN9SF0feL8PXz1X6t6uMIJJpGD41HwHUbt_55TlHfOWIS1ERpLty3cvaoBRqAkh9HfOJVdpDSBgfUHmDA7UW6jk90bGucrRMPo2lR6o8neSErBL31eGdt57BSV6_zSmqbype0kE4Q-AK1nG0ImfCn6oEm-Rk-NfkMF8qHmWubYgbr625OK_p3TuzDcbeAYlA9Tv66XW2owlqrqOBid6PSuptP1EpNr1BKbymnWeO3WwAe9c8wPFCxnyS3HHhjfoGDmdYwQcZ7C9Y7CZmyNtdUeEQX9cbip57NodKToM7tr2I2VGatt9RdpYrC06wEsK8W5p081r7l5z0dOg2egpNLaT-mfO2nJ5gGuPIDRpiFkqC9l4e-_D0yMOIMsTaAjonBItHZElm6B4BcCk3Bd6v0GxkqsDWn_oPwIW_DTlUbexPKiHq8KEAbeauVMa8WJU2czlCdeQPTGNdfIDXT6o0mKXLrN3kZB1XQzu7fgQ8dZB5fT4Uoos=s220-no"}/
               %li.photo_item.last_photo_item
-                %img.image-round{src: "https://lh3.googleusercontent.com/mlX12RNQYOhLpJD15kokCfLU8-UgmS-q_WDMpVM3cZiqvnQPQcemy-a8PRsrNjAIvBabHmKagfUsDswYs6z1znaDS1XBf1QZCGP6FfoVOboAnRsw0K4eLhJt3ZYwEh7YVNohCTSRXPVKJYr84m_JtHytVXaCjWC2QxSp8pt_klbpWv3KFeDzbkqoNjGj4uOr8ns8_f1GFiBj_uAgvwpS-aT1ItKIK_a5SXdIVd8PxZhzCxd-37hvOoHFrGlUOGKUuY1VqvZgEvz3d388naduIi9_hr1S4G3F94xa5SSjhzA-EJkfgL9KFa1YoVbNY9tK_C0bgEV1RLDNmWCmMfPLxRxiFsgWgpZYFu0_9B50Iy6F6sfMkU1JQeGk6aU91Xn7wKHAjGbZirhntD3rb_dTLOOrHxMc5dqu2B7YjPGaKaWosU7savNnnGcCzfZ-SY6snuXzCV3-OeiqBBOIYqxQ0RWqAfSvRoTaB4tFcmaDHi-_Agn_TkE2pg_Xf1kMPANa-FUsogv3Xm8Moe_uDVsEK-5Zyq6JZp-WS2oZ7icfqUG2OqFtH06ezeDMtMRkpW_6SPc14eCEwtR0m1g8kPgrNGLhs7Iqke1_LcCcFLHyG8CwcMLgMTkbd4thjP-lOSgnopWHYbzCzBjJQFOvVf4szBimzy_Dvow=s220-no"}/
+                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/mlX12RNQYOhLpJD15kokCfLU8-UgmS-q_WDMpVM3cZiqvnQPQcemy-a8PRsrNjAIvBabHmKagfUsDswYs6z1znaDS1XBf1QZCGP6FfoVOboAnRsw0K4eLhJt3ZYwEh7YVNohCTSRXPVKJYr84m_JtHytVXaCjWC2QxSp8pt_klbpWv3KFeDzbkqoNjGj4uOr8ns8_f1GFiBj_uAgvwpS-aT1ItKIK_a5SXdIVd8PxZhzCxd-37hvOoHFrGlUOGKUuY1VqvZgEvz3d388naduIi9_hr1S4G3F94xa5SSjhzA-EJkfgL9KFa1YoVbNY9tK_C0bgEV1RLDNmWCmMfPLxRxiFsgWgpZYFu0_9B50Iy6F6sfMkU1JQeGk6aU91Xn7wKHAjGbZirhntD3rb_dTLOOrHxMc5dqu2B7YjPGaKaWosU7savNnnGcCzfZ-SY6snuXzCV3-OeiqBBOIYqxQ0RWqAfSvRoTaB4tFcmaDHi-_Agn_TkE2pg_Xf1kMPANa-FUsogv3Xm8Moe_uDVsEK-5Zyq6JZp-WS2oZ7icfqUG2OqFtH06ezeDMtMRkpW_6SPc14eCEwtR0m1g8kPgrNGLhs7Iqke1_LcCcFLHyG8CwcMLgMTkbd4thjP-lOSgnopWHYbzCzBjJQFOvVf4szBimzy_Dvow=s220-no"}/
         .box_user_photo_pager
           %a.pager_pre.button_c.button_white_a
             前の
@@ -101,14 +102,16 @@
   .box_user_action_a
     %ul.box_user_action_list
       %li.user_action_item.action_pager_pre
-        %a.button_white_a
-          %span 前へ
+        / %a.button_white_a
+        /   %span 前へ
+        = link_to_prev_page @users, "前へ", class: "js_click_hide"
       %li.user_action_item.action_favorite.padding_left.is_favorited
         %a#add_favorite_partner.button_white_a
           %span お気に入り
       %li.user_action_item.action_pager_next
-        %a.button_white_a
-          %span 次へ
+        / %a.button_white_a
+        /   %span 次へ
+        = link_to_next_page @users, "次へ", class: "js_click_hide"
       %li.user_action_item.action_hide.margin_right
         %div
           %a.button_white_a
@@ -293,11 +296,8 @@
     %span
       %a.button_like.button_like_default.button_pink_c.button_like_view.button_like_c.button_e
         %span.like いいね！
-.box_personal_pager
-  %a.pager_pre.button_c.button_white_a
-    前へ
-  %a.pager_next.button_c.button_white_a
-    次へ
+.box_result_pager.js_click_hide
+  = paginate(@users)
   %p.personal_pager_text.box_like_remaining
     1,972,772人中 2人表示 :
     あと

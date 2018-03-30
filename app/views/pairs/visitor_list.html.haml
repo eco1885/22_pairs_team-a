@@ -2,7 +2,7 @@
   .main.box_visitor_view.contents_padding
     .data-visitor-list
       .common_page_header
-        %a{href: "/myprofile", class: "page_back button_f button_white_a"}
+        %a{href: "/users/#{current_user.id}", class: "page_back button_f button_white_a"}
           マイページへ
         %span.page_tile
           足あと
@@ -10,3 +10,6 @@
           足あと設定
       = render partial: "pairs/shared/advertising"
       = render partial: "pairs/shared/visitor_list"
+  / 本来存在しないリンク
+  %a{href:"visitorlistzero", class:"pc-web-footer-banner", style: "background-color:lime;"}
+    足あと0人へのリンク

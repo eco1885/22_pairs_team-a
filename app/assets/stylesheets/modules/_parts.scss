@@ -705,4 +705,11 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 }
-// ログイン画面
+// サイドバーアクセス中
+.box_gnavi {
+  .gnavi_item {
+    &.is_current a {
+      background-color: #dfe1e3;
+    }
+  }
+}

@@ -15,6 +15,21 @@ class User < ApplicationRecord
   has_many :groups
   has_many :members, through: :members
 
+#Footモデルとのアソシエーション
+  has_many :visiting_foots, foreign_key: "user_id", class_name: "Foot", dependent: :destroy
+  has_many :visitings, through: :visiting_foots
+  has_many :coming_foots, foreign_key: "visitor_id", class_name: "Foot", dependent: :destroy
+  has_many :comings, through: :coming_foots
+
+  belongs_to :residence,  optional: true
+  belongs_to :alcohol,  optional: true
+  belongs_to :smoke,  optional: true
+  belongs_to :occupancy,  optional: true
+  belongs_to :school,  optional: true
+  belongs_to :body,  optional: true
+  belongs_to :holiday,  optional: true
+  belongs_to :living_with,  optional: true
+
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
   end
