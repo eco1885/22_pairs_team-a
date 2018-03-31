@@ -4,7 +4,7 @@
     position: relative;
     left: 17px;
     margin: 40px;
-    height: 500px;
+    height: 600px;
     font-size: 12px;
     table {
         width: 680px;
@@ -64,6 +64,28 @@
         @include allow_icon;
     }
     #user_smoke_id {
+        @include allow_icon;
+    }
+    #user_occupancy_id {
+        @include allow_icon;
+    }
+    #user_school_id {
+        @include allow_icon;
+    }
+    #user_body_id {
+        @include allow_icon;
+    }
+    #user_holiday_id {
+        @include allow_icon;
+    }
+    #user_living_with_id {
+        @include allow_icon;
+    }
+
+    #user_height_id {
+        @include allow_icon;
+    }
+    #user_income_id {
         @include allow_icon;
     }
 }

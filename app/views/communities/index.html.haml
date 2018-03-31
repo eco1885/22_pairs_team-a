@@ -2,61 +2,88 @@
   .main.box_community_view.contents_padding
     = render partial: "pairs/shared/advertising"
     .common_page_header.mb0
-      %span.page_tile.icon_square.mt10.mbo.ml0.mr10
-        コミュニティをさがす
-      = link_to "コミュニティとは？","", class: "link_help"
+      = render partial: "common_page_header"
     .box_community_header.common_inline_box
-      %form.form_search_word
-        .search_input
-          %input.input_search_word.pr50{placeholder: "コミュニティを検索"}
-          %button.button_search.button_f.button_blue_a
-            検索作成予定
-
+      = render partial: "box_community_header"
     .box_wrapper_inner
       .box_community_side
+        = render partial: "search_category"
       .box_community_main
-        / 参加コミュ一覧ゾーン
         .box_my_community
           .data-community-joined-communities
-            .my_community_title.title_b
-              ※現在、作成されているコミュニティ一覧
-              / あなたが参加しているコミュニティ(全
-              / %span.ommunity_total x
-              / 件)
+            .my_community_title.title_b<>
+              あなたが参加しているコミュニティ(全
+              %span.community_total<> #{@communities_count.count}
+              件)
             .community_list_box.bg-white
               %ul.my_community_list
                 - @communities.each do |community|
-                  / 0件の場合、コメント類は特に何も表示されない。
-                  / = community.users.count
                   %li.my_community_item
-                    %a{href: "/community/#{community.id}"}
-                      .box_community_item_img
+                    %a{href: "/community/#{community.id}", class: "community_link"}
+                      %p.box_community_item_img
                         = image_tag community.image.url, class:"community_item_img image-round"
                       %p.community_item_title
                         = community.community_name
                       %p.community_item_count
                         / 本来は人数を表示するエリア
                         = t("enums.community.category.#{community.category}")
-            .box_community_pager.box_pager
-              = paginate(@communities)
-        .box_everyone_community.popular_community
-          繰り返し
+            .box_community_pager.box_pager.bg_white
+              = paginate(@communities, theme: "patern_b")
+        .box_everyone_community.popular_community#popular
           .data-community-popular-communities
-            箇所と
             .everyone_community_title
-              なりそうな為
+              /人気コミュニティ（本来実装されている箇所）
+              作成されているコミュニティ
+              = Community.count
+              件
             .community_list_box
-              一箇所のみ
+              = render partial: "communities_list", locals: { communitiess: @communities_all}
             .link_more_community
-              作る方針（予定）
-        .box_everyone_community.recommend_community
-        .box_everyone_community.newcomer_community
-        .box_everyone_community.fame_community
+              .div
+                =link_to "全てみる", search_communities_path, id: "load_button_populer"
+                / %a#load_button_populer
+                /   もっと見る
+                / %a#load_button_populer
+                /   全てみる
+        / 以降、算出ロジックが不明な為、一旦すべてコメントアウト
+        / .box_everyone_community.recommend_community#recommend
+        /   .data-community-recommend-communities
+        /     .everyone_community_title
+        /       / おすすめコミュニティ（本来実装されている箇所）
+        /       ※検索結果表示（仮表示）
+        /       = Community.count
+        /       件
+        /     .community_list_box
+        /       %ul.community_list
+        /         - @communities_result.each do |community|
+        /           %li.community_item.joined
+        /             %a{href: "", class: "community_link"}
+        /               .box_community_item_img
+        /                 = image_tag community.image.url, class:"community_item_img image-round"
+        /               %p.community_item_title
+        /                 = community.community_name
+        /               %p.community_item_count
+        /                 / 本来は人数を表示するエリア
+        /     .link_more_community
+        /       作る方針（予定）
+        /       .div
+        /         %a#load_button_populer
+        /           もっと見る
+        /         %a#load_button_populer
+        /           全てみる
+        / .box_everyone_community.newcomer_community#newcomer
+        /   .data-community-new-communities
+        /     .everyone_community_title
+        /       新着コミュニティ（作成予定）
+        / .box_everyone_community.fame_community#fame
+        /   .data-community-fame-communities
+        /     .everyone_community_title
+        /       殿堂入りコミュニティ（作成予定）
 
-  .box_gnavis04
-  =link_to "search（searchビュー）", search_communities_path,class: "sidemenu_link"
-  .box_gnavis04
-  =link_to "complete（completeビュー）", community_complete_path,class: "sidemenu_link"
+    .box_gnavis04
+    =link_to "search（searchビュー）", search_communities_path,class: "sidemenu_link"
+    .box_gnavis04
+    =link_to "complete（completeビュー）", community_complete_path,class: "sidemenu_link"
 
   / インデックスの作成から表示されるポップアップ
   .data-community-help-modal
@@ -75,5 +102,3 @@
           .common_button_area.mt20
             .button_item.w50p
               = link_to "コミュニティを作成する", community_create_path, class:"button_a button_blue_a"
-      / .bg_overlay.modal-close.modal_animation
-

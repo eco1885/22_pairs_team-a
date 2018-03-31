@@ -112,6 +112,9 @@ input[type=text] {
   cursor: pointer;
   text-decoration: underline;
   color: #00abb3;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .fnt12 {
@@ -256,6 +259,9 @@ input[type=text] {
 .pl60 {
   padding-left: 60px;
 }
+.pr50 {
+  padding-right: 50px;
+}
 
 // ボタンクラス
 .button_a {
@@ -281,6 +287,9 @@ input[type=text] {
 }
 .button_blue_a {
   @include button_blue_a;
+}
+.button_blue_b {
+  @include button_blue_b;
 }
 .button_white_a {
   @include button_white_a;
