@@ -14,6 +14,8 @@ class SearchesController < ApplicationController
     @holiday = Holiday.all
     @living_with = LivingWith.all
     @height = Height.all
+    @age = Age.all
+    @income = Income.all
   end
 
   def search_result
@@ -30,6 +32,18 @@ class SearchesController < ApplicationController
 
   private
   def search_params
-    params.require(:q).permit(:height_id_gteq, :height_id_lteq, :residence_id_eq, :smoke_id_eq, :occupancy_id_eq, alcohol_id_in:[], school_id_in:[], body_id_in:[], holiday_id_in:[], living_with_id_in:[])
+    params.require(:q).permit(
+      :income_id_gteq, :income_id_lteq,
+      :age_id_gteq, :age_id_lteq,
+      :height_id_gteq, :height_id_lteq,
+      :residence_id_eq,
+      :smoke_id_eq,
+      :occupancy_id_eq,
+      alcohol_id_in:[],
+      school_id_in:[],
+      body_id_in:[],
+      holiday_id_in:[],
+      living_with_id_in:[]
+      )
   end
 end

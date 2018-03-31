@@ -29,6 +29,8 @@ class User < ApplicationRecord
   belongs_to :holiday,  optional: true
   belongs_to :living_with,  optional: true
   belongs_to :height,  optional: true
+  belongs_to :age,  optional: true
+  belongs_to :income,  optional: true
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
