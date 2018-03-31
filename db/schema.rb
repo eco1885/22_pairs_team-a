@@ -46,6 +46,15 @@ ActiveRecord::Schema.define(version: 20180330110113) do
     t.index ["user_id"], name: "index_foots_on_user_id", using: :btree
   end
 
+  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "community_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_members_on_community_id", using: :btree
+    t.index ["user_id"], name: "index_members_on_user_id", using: :btree
+  end
+
   create_table "heights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "height",     null: false
     t.datetime "created_at", null: false
@@ -152,6 +161,8 @@ ActiveRecord::Schema.define(version: 20180330110113) do
   end
 
   add_foreign_key "foots", "users"
+  add_foreign_key "members", "communities"
+  add_foreign_key "members", "users"
   add_foreign_key "users", "ages"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"

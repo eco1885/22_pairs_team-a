@@ -107,8 +107,8 @@
 ## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|community_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|community|references|null: false, foreign_key: true|
 
 ### Association
 

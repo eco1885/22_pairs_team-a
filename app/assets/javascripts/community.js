@@ -16,5 +16,9 @@ $(document).on('turbolinks:load',function(){
       $(".box_modal_window").fadeOut(100);
       }
     });
+    $("#selected_value").on("change", function(e){
+      e.preventDefault();
+      $(this).parents("form").submit();
+    });
   });
 })
