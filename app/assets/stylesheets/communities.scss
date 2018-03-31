@@ -747,19 +747,28 @@ input[type=text] {
 // ページネート
 .box_community_pager.box_pager{}
 // メンバー表示域
-.box_list_view_user {}
-//  異性メンバーがいる場合
-  .list_view_user {
+.box_list_view_user {
     width: 720px;
+//  異性メンバーがいる場合
+  .list_view_users {
+    overflow: hidden;
+    width: 732px;
+    margin-right: -13px;
+    margin-bottom: 15px;
     .list_view_user_item {
-      overflow: hidden;
-      width: 732px;
-      margin-right: -13px;
-      margin-bottom: 15px;
+      position: relative;
+      float: left;
+      width: 168px;
+      min-height: 320px;
+      margin: 0 13px 13px 0;
     }
   }
+}
 
 
+.no_member_list {
+  margin-top: 30px;
+}
 .text_no_partner_in_community {
   font-size: 16px;
   text-align: center;
