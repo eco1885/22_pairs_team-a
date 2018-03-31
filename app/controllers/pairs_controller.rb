@@ -22,6 +22,7 @@ class PairsController < ApplicationController
   end
 
   def myprofile
+    @user = User.find(current_user)
   end
 
   def from_partner
