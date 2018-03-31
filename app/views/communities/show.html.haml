@@ -10,6 +10,7 @@
         %ul.breadcrumb_list
           %li
             = t("enums.community.category.#{@community.category}")
+
         .community_info
           .box_community_image
             .community_image.image-round
@@ -35,21 +36,55 @@
                   ユーザーからいいね！をもらいやすい！
                 %p ※参加したことは異性にしか表示されません。
               .div
+
                 / if文で切り分け？
-                %a.button_entry.button_a.button_pink_a
+                %a.button_entry.button_a.button_pink_a#unsubscribe
                   このコミュニティを退会する
-                %a.button_entry.button_a.button_blue_a
+                %a.button_entry.button_a.button_blue_a#entry
                   このコミュニティに参加する
+
     /参加メンバーに関してのコンテンツ
-    / .data-community-view-users
-    /   .box_community_member_header.mb0
-    /   .box_community_pager.box_pager
-    /   .box_list_view_user
-    /   / 異性メンバーがいない場合に表示
-    /   %div
-    /     %p.taxt_no_partner
-    /       %span このコミュニテイに異性のメンバーはまだいません。
-    /   .box_community_pager.box_pager
+    - if @users.present?
+      %ul.list_view_users
+        - @users.each do |user|
+          = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
+
+
+    .data-community-view-users
+      .box_community_member_header.mb0
+        %p.member_header_title
+          %span メンバー
+          %em.member_count
+            %span.member_total 31
+            人
+          %span.member_note ※女性のみ表示されます
+        %pager_info
+          %span.pager_count 4
+          人中
+          %span.pager_start 1
+          〜
+          %span.pager_end
+          人を表示
+      /ページネート
+      .box_community_pager.box_pager
+        .pager_pre.pager_item.button_c.button_white_a
+        %ol.pager_num
+        %a.pager_next.pager_item.button_c.button_white_a
+
+      /メンバー表示域
+      .box_list_view_user
+        / 異性メンバーがいる場合
+        %ul.list_view_user
+          %li.list_view_user_item
+
+
+      / 異性メンバーがいない場合に表示
+      %div
+        %p.text_no_partner_in_community
+          %span このコミュニテイに異性のメンバーはまだいません。
+
+      .box_community_pager.box_pager
+
     / コミュニティ参加ポップアップ
     .data-community-join-modal
       .box_modal_window.hide.modal_community#modal_comunity_join

@@ -54,6 +54,27 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
+
+    # @selected = params[:selected_value].present? ? params[:selected_value] : 16
+    if current_user.gender == "male"
+      @users = User.where(gender: 2).page(params[:page]).per(16)
+      @users = User.all
+      # @users = @users.where(community_id: 1).page(params[:page]).per(16)
+    else
+      @users = User.where(gender: 1).page(params[:page]).per(16)
+    end
+
+  # def index
+  #   @selected = params[:selected_value].present? ? params[:selected_value] : 16
+  #   if current_user.gender == "male"
+  #     @users = User.where(gender: 2).page(params[:page]).per(@selected)
+  #   else
+  #     @users = User.where(gender: 1).page(params[:page]).per(@selected)
+  #   end
+
+  #   @relationship = Relationship.new
+  # end
+
   end
 
   def search
