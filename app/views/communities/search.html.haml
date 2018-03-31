@@ -6,7 +6,7 @@
       .box_community_header.common_inline_box
         = render partial: "box_community_header"
     .data-community-result-list
-      - if @communities.present?
+      - if @communities_result.present?
         .box_community_category
           .community_category_header
             %ul.breadcrumb_list
@@ -14,10 +14,10 @@
                 %em
                   =search_input
             %p.community_count
-          = paginate(@communities, theme: "patern_b")
+          = paginate(@communities_result, theme: "patern_b")
           .community_list_box
-            = render partial: "communities_list", locals: { communiteis: @communiteis}
-          = paginate(@communities, theme: "patern_b")
+            = render partial: "communities_list", locals: { communitiess: @communities_result}
+          = paginate(@communities_result, theme: "patern_b")
           / 未実装機能の為、一時的に非表示
           / .box_community_color_note
           /   %ul.color_notes

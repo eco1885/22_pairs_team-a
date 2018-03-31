@@ -102,9 +102,175 @@ input[type=text] {
   .box_community_side {
     float: left;
     width: 172px;
-    //デバックプロパティ2つ
-    border: 1px solid silver;
-    height: 894px;
+    .box_community_category {
+      position: relative;
+      padding: 15px 13px;
+      background-color: #f7f7f7;
+      .community_category_list_title {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: #00abb3;
+      }
+      .community_category_list {
+        @include clearfix();
+        .category_item {
+          form {
+            line-height: 1.0;
+            margin-bottom: 14px;
+            @include category_item();
+            input[type=submit] {
+              -webkit-appearance: none;
+              border-style: none;
+              width: 100px;
+              cursor: pointer;
+              height: 17px;
+              font-size: 13px;
+              background-color: #f7f7f7;
+              text-align: left;
+              vertical-align: bottom;
+              &:hover {
+                color: #00abb3;
+              }
+            }
+            &.category_item_music {
+              &:before {
+                background-position: 0 -483px;
+              }
+            }
+            &.category_item_movie {
+              &:before {
+                background-position: 0 -515px;
+              }
+            }
+            &.category_item_entertainment {
+              &:before {
+                background-position: 0 -547px;
+              }
+            }
+            &.category_item_game {
+              &:before {
+                background-position: 0 -579px;
+              }
+            }
+            &.category_item_book {
+              &:before {
+                background-position: -32px -483px;
+              }
+            }
+            &.category_item_art {
+              &:before {
+                background-position: -32px -515px;
+              }
+            }
+            &.category_item_sport {
+              &:before {
+                background-position: -206px -548px;
+              }
+            }
+            &.category_item_moter {
+              &:before {
+                background-position: -32px -579px;
+              }
+            }
+            &.category_item_trip {
+              &:before {
+                background-position: -32px -547px;
+              }
+            }
+            &.category_item_diy {
+              &:before {
+                background-position: -67px -483px;
+              }
+            }
+            &.category_item_animal {
+              &:before {
+                background-position: -67px -515px;
+              }
+            }
+            &.category_item_pc {
+              &:before {
+                background-position: -67px -548px;
+              }
+            }
+            &.category_item_fashion {
+              &:before {
+                background-position: -67px -580px;
+              }
+            }
+            &.category_item_cook {
+              &:before {
+                background-position: -105px -483px;
+              }
+            }
+            &.category_item_fortune {
+              &:before {
+                background-position: -105px -515px;
+              }
+            }
+            &.category_item_hobby {
+              &:before {
+                background-position: -105px -548px;
+              }
+            }
+            &.category_item_marry {
+              &:before {
+                background-position: -105px -580px;
+              }
+            }
+            &.category_item_spiritual {
+              &:before {
+                background-position: -138px -483px;
+              }
+            }
+            &.category_item_life {
+              &:before {
+                background-position: -138px -515px;
+              }
+            }
+            &.category_item_health {
+              &:before {
+                background-position: -138px -547px;
+              }
+            }
+            &.category_item_housekeep {
+              &:before {
+                background-position: -138px -580px;
+              }
+            }
+            &.category_item_social {
+              &:before {
+                background-position: -172px -483px;
+              }
+            }
+            &.category_item_school {
+              &:before {
+                background-position: -172px -515px;
+              }
+            }
+            &.category_item_organization {
+              &:before {
+                background-position: -172px -547px;
+              }
+            }
+            &.category_item_occupation {
+              &:before {
+                background-position: -172px -580px;
+              }
+            }
+            &.category_item_qualification {
+              &:before {
+                background-position: -206px -483px;
+              }
+            }
+            &.category_item_business {
+              &:before {
+                background-position: -206px -515px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .box_community_main {
     float: right;
@@ -553,6 +719,53 @@ input[type=text] {
     }
   }
 }
+
+
+// 参加メンバー領域
+.box_community_member_header {
+  @include clearfix();
+  line-height: 1.0;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  .member_header_title {
+    font-size: 13px;
+    float: left;
+    .member_count {
+      color: #00abb3;
+    }
+    .member_note {
+      padding-left: 5px;
+      color: #788086;
+    }
+  }
+  .pager_info {
+    font-size: 13px;
+    float: right;
+  }
+}
+// ページネート
+.box_community_pager.box_pager{}
+// メンバー表示域
+.box_list_view_user {}
+//  異性メンバーがいる場合
+  .list_view_user {
+    width: 720px;
+    .list_view_user_item {
+      overflow: hidden;
+      width: 732px;
+      margin-right: -13px;
+      margin-bottom: 15px;
+    }
+  }
+
+
+.text_no_partner_in_community {
+  font-size: 16px;
+  text-align: center;
+}
+
+
 // 参加・退会ポップアップ
 .box_modal_window {
   &.modal_community {

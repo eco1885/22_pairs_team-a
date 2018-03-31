@@ -7,13 +7,13 @@ class CommunitiesController < ApplicationController
     # カレントユーザーが持っている（作成）したコミュニティカウント用
     @communities_count = current_user.communities
     # カレントユーザーが持っている（作成）したコミュニティ全て
-    @communities = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
+    @communities = @communities_count.page(params[:page]).order("created_at DESC").per(5)
 
     # 作成されているコミュニティ全て
     @communities_all = Community.page(params[:page]).order("created_at DESC").per(15)
 
-    # 検索結果コミュニティ
-    @communities_result = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
+    # 検索結果コミュニティ（おすすめコミュニティなどで使用しており、現在コメアウトされているのでオフ）
+    # @communities_result = current_user.communities.page(params[:page]).order("created_at DESC").per(5)
 
     # パラメータとして名前かカテゴリを受け取っている場合は絞って検索する
     if params[:community_name].present?
@@ -58,15 +58,17 @@ class CommunitiesController < ApplicationController
 
   def search
       # @communities = Community.all :ページネイト仕様変更前/本サイトのperは300
-    @communities = Community.all.page(params[:page]).order("created_at DESC").per(12)
+    @communities_result = Community.all.page(params[:page]).order("created_at DESC").per(12)
 
     if params[:community_name].present?
       @input_n = params[:community_name]
-      @communities = @communities.get_by_community_name params[:community_name]
+      @communities_result = @communities_result.get_by_community_name params[:community_name]
+      @communities_result = @communities_result.page(params[:page]).order("created_at DESC").per(12)
     end
     if params[:category].present?
       @input_c = t("enums.community.category.#{params[:category]}")
-      @communities = @communities.get_by_category params[:category]
+      @communities_result = @communities_result.get_by_category params[:category]
+      @communities_result = @communities_result.page(params[:page]).order("created_at DESC").per(12)
     end
   end
 

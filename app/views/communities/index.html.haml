@@ -7,7 +7,7 @@
       = render partial: "box_community_header"
     .box_wrapper_inner
       .box_community_side
-        / カテゴリーゾーン
+        = render partial: "search_category"
       .box_community_main
         .box_my_community
           .data-community-joined-communities
@@ -37,7 +37,7 @@
               = Community.count
               件
             .community_list_box
-              = render partial: "communities_list", locals: { communiteis: @communiteis_all}
+              = render partial: "communities_list", locals: { communitiess: @communities_all}
             .link_more_community
               .div
                 =link_to "全てみる", search_communities_path, id: "load_button_populer"

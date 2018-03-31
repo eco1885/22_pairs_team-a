@@ -58,6 +58,15 @@
   color: #fff;
   background-color: #00b8c0;
   box-shadow: 0 3px 0 #00abb3;
+  &:active {
+    position: relative;
+    top: 3px;
+    background-color: #00abb3;
+    box-shadow: none;
+  }
+  &:hover {
+    opacity: .8;
+  }
 }
 @mixin button_blue_b {
   color: #fff;
@@ -111,6 +120,15 @@
   color: #8d9399;
   background-color: #f3f3f3;
   box-shadow: 0 2px 0 #c9c9c9;
+  &:active {
+    position: relative;
+    top: 3px;
+    background-color: #f5f5f5;
+    box-shadow: none;
+  }
+  &:hover {
+    opacity: .8;
+  }
 }
 
 @mixin button_like_done {
