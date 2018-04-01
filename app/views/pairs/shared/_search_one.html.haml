@@ -114,7 +114,7 @@
         = link_to_next_page @users, "次へ", class: "js_click_hide"
       %li.user_action_item.action_hide.margin_right
         %div
-          %a.button_white_a
+          %a.button_white_a#appear_setting
             %span 表示設定
       %li.user_action_item.action_like
         %div
@@ -306,3 +306,64 @@
         28
       人
     に「いいね！」ができます
+
+
+/ 『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ
+.bg_overlay_more.modal_animation
+.box_modal_window.modal_fixed.modal_animation.hide_block_select.box_modal_like_with_text#top_modal
+  .box_modal_window_inner
+    %a.modal_close
+      %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+    %p.modal_sub_title_b
+      非表示・ブロックの設定
+    .modal_hideblock_text
+      %p
+        %span.nickname Yuki
+        さんを非表示またはブロックの設定ができます。
+      %p 設定したい内容を下記から選択してください。
+    .modal_note_border
+      %ul
+        %li
+          %input#hide_block_hide.hide_block_radio.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "30", type: "radio", value: "hide"}/
+          %label{for: "hide_block_hide"} 非表示
+        %li
+          %input#hide_block_block.hide_block_radio.ng-pristine.ng-untouched.ng-valid.ng-empty{name: "30", type: "radio", value: "block"}/
+          %label{for: "hide_block_block"} ブロック
+      %div
+        .modal_hideblock_inner_text
+          ▼非表示
+          %br/
+          お客様の画面にお相手が表示されないようになります。
+          %br/
+          「特に問題があったわけではないが当面表示しておきたくないお相手」を検索結果やメッセージのリストなどに現れなくする機能です。
+
+        .modal_hideblock_inner_text_notice
+          ※非表示は、各種設定の「非表示ユーザーリスト」から設定解除できます。
+      %div
+        .modal_hideblock_inner_text
+          ▼ブロック
+          %br/
+          お互いに一切のコンタクトができなくなります。
+        .modal_hideblock_inner_text_notice
+          %span.text_red ※一度、お相手をブロックすると解除することができません。
+          %br/
+          ※お相手の「いいね」「お気に入り」「メッセージ」画面には、お客様が「退会済み」として表示されます。
+    .modal_button_area.text_center.mt30
+      %button.button_a.button_white_a.w30p キャンセル
+      %button.button_a.button_red_a.w30p#setting 設定する
+
+/ 『非表示完了時』ポップアップ
+.box_modal_window.modal_fixed.modal_animation.hide_complete.box_modal_like_with_text
+  .box_modal_window_inner.original_class
+    %a.modal_close
+      %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+    %p.modal_sub_title_b
+      %span.nickname Yuki
+      さんを非表示にしました。
+    .modal_text_b.modal_note_area_b.common_text
+      非表示にしたユーザーは各種設定の
+      %a{href: "/privacysetting#box_hide_block"} 非表示ユーザーリスト
+      から設定解除することができます。
+    .modal_button_area.text_center.mt30
+      %button.button_a.button_white_a.w30p
+        閉じる
