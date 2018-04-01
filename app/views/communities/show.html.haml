@@ -22,12 +22,11 @@
             %p.community_member_count<>
               メンバー
               %em
-                %span.member_total 2
+                %span.member_total #{(@users_opposite.count + @users.count)}
                 人
-              %span 女性
-              %span.ng-hide 男性
+              %span 異性
               %em
-                %span.member_total 1
+                %span.member_total #{(@users.count)}
                 人
             .community_entry
               .entry_text
@@ -74,12 +73,7 @@
         .box_list_view_user
           %ul.list_view_users
             - @users.each do |user|
-              %li.list_view_user_item
-                = render partial: "join_member", locals: { user: user }
-                .PrivateMode
-                  = render partial: "join_member2", locals: { user: user }
-              .showProfile{"data-id": "#{user.id}"}
-                = render partial: "join_member3", locals: { user: user }
+              = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
 
         /ページネート
         .box_community_pager.box_pager

@@ -59,10 +59,12 @@ class CommunitiesController < ApplicationController
     # @selected = params[:selected_value].present? ? params[:selected_value] : 16
     if current_user.gender == "male"
       @users = @community.users.where(gender: 2).page(params[:page]).per(16)
+      @users_opposite = @community.users.where(gender: 1)
       # @users = User.where(gender: 2).page(params[:page]).per(16)
       # @users = @users.where(community_id: params[:id]).page(params[:page]).per(16)
     else
       @users = @community.users.where(gender: 1).page(params[:page]).per(16)
+      @users_opposite = @community.users.where(gender: 2)
     end
   end
 
