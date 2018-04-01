@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #その他
   root 'pairs#index'
   get 'messages' => 'pairs#messages_index'
+  get 'violation' => 'pairs#violation'
   #いいね関連のrouting
   get 'like/from_partner' => 'pairs#from_partner'
   get 'like/from_me'  => 'pairs#from_me'
