@@ -55,6 +55,5 @@
                 = f.label :living_with_id, "同居人"
               %td
                 = f.collection_select :living_with_id, LivingWith.all, :id, :living_with, prompt: "選択してください"
-        -# = f.label :alcohol_id, "お酒"
-        -# = f.text_field
-        = f.submit "Send"
+        .search_footer
+          = f.submit "Send"

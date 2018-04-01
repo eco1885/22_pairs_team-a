@@ -4,8 +4,9 @@
     position: relative;
     left: 17px;
     margin: 40px;
-    height: 800px;
+    height: 836px;
     font-size: 12px;
+    box-shadow: 0 0 8px #c9c9c9;
         .search_form{
         padding: 20px;
         background-color: white;
@@ -19,6 +20,7 @@
     font-size: 16px;
     position:relative;
     bottom: 20px;
+
     }
     table {
         width: 300px;
@@ -102,5 +104,24 @@
     }
     #user_income_id {
         @include allow_icon;
+    }
+
+    .search_footer{
+        margin-top: 20px;
+        padding: 15px 0;
+        text-align: center;
+        background-color: #f7f7f7;
+    }
+
+     input[type=submit]{
+        -webkit-appearance: none;
+        background-color: #00abb3;;
+        border-radius: 20px;
+        border: none;
+        height: 38px;
+        width: 250px;
+        box-shadow: 0 4px 0 #009F8C;
+        font-size: 14px;
+        color: white;
     }
 }

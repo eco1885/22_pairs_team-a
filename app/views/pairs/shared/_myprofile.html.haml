@@ -109,13 +109,21 @@
           %dt.detail_item_title
             %span.item_title
               身長
-          %dd.detail_item_value.is_no_select#detail_item_value_height
-            選択してください
+          - if @user.height_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.height.height}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               体型
-          %dd.detail_item_value.is_no_select#detail_item_value_body_build
-            選択してください
+          - if @user.body_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.body.body}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               血液型
@@ -124,8 +132,12 @@
           %dt.detail_item_title
             %span.item_title
               居住地
-          %dd.detail_item_value#detail_item_value_residence_state
-            埼玉（日本）
+          - if @user.residence_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.residence.prefecture}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               出身地
@@ -134,23 +146,39 @@
           %dt.detail_item_title
             %span.item_title
               職種
-          %dd.detail_item_value.is_no_select#detail_item_value_job
-            選択してください
+          - if @user.occupancy_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.occupancy.occupancy}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               学歴
-          %dd.detail_item_value.is_no_select#detail_item_value_education
-            選択してください
-          %dt.detail_item_title.ng-hide
+          - if @user.school_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.school.school}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
+          %dt.detail_item_title
             %span.item_title
               年収
-          %dd.detail_item_value.is_no_select.ng-hide#detail_item_value_annual_income
-            選択してください
-          %dt.detail_item_title.ng-hide
+          - if @user.income_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.income.income}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
+          %dt.detail_item_title
             %span.item_title
               同居人
-          %dd.detail_item_value.is_no_select.ng-hide#detail_item_value_lodger
-            選択してください
+          - if @user.living_with_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.living_with.living_with}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               休日
@@ -159,8 +187,12 @@
           %dt.detail_item_title
             %span.item_title
               お酒
-          %dd.detail_item_value.is_no_select#detail_item_value_drinking
-            選択してください
+          - if @user.alcohol_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.alcohol.frequency}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title.is_no_select.ng-hide
             %span.item_title
               タバコ
@@ -180,8 +212,12 @@
           %dt.detail_item_title
             %span.item_title
               年齢
-          %dd.detail_item_age#detail_item_value_age
-            31歳
+          - if @user.age_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = @user.age.age
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               兄弟姉妹
@@ -274,8 +310,12 @@
           %dt.detail_item_title
             %span.item_title
               タバコ
-          %dd.detail_item_value.is_no_select#detail_item_value_smoking2
-            選択してください
+          - if @user.smoke_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.smoke.frequency}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               好きなこと・趣味
