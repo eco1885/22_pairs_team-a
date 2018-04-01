@@ -44,8 +44,6 @@ Rails.application.routes.draw do
   get "membership/aboutprivate" => "pairs#about_private"
   get "membership/aboutageproof" => "pairs#about_age_proof"
   get "pairsstore" => "pairs#pairs_store"
-  #サービス内での使用ビューへのrouting
-  get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
   get "community/create" => "communities#new"
   get "community/complete" => "communities#complete"

@@ -24,5 +24,28 @@ $(document).on('turbolinks:load',function(){
       $(".bg_overlay").fadeIn(300);
       $(".hide_complete").fadeIn(800)
     });
+    //一人のプロフィール、『設定』ボタンからのポップアップ
+    $(function() {
+      $("#button_setting").click(function(){
+        $(".box_custom_display_form").toggle();
+      });
+    });
+    // 右上アイコンクリックによるポップアップ表示
+    $(function() {
+      $("#header_logo").click(function(){
+        console.log(this);
+        $("#box_header_message").toggle();
+      });
+    });
+    // 右上アイコンクリックによるアイコン色変化
+    $(function(){
+      $(".notifCentered_messeage").click(function(){
+        if($(this).attr("class")=="notifCentered_messeage"){
+          $(this).removeClass("notifCentered_messeage").addClass("notifCentered_messeage is_active");
+        }else{
+          $(this).removeClass("notifCentered_messeage is_active").addClass("notifCentered_messeage");
+        }
+      });
+    });
   });
 })

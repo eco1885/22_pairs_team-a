@@ -56,6 +56,9 @@
     border-color: #e1e3e5;
     border-radius: 4px;
     .form_item {
+      input[type=checkbox] {
+        display: none;
+      }
       font-size: 1.3rem;
       font-size: 13px;
       position: relative;
@@ -94,8 +97,12 @@ input[type=checkbox]:not(.not_use_default)+label:before {
   background-repeat: no-repeat;
   background-position: 0 -105px;
 }
-input[type=checkbox]:not(.not_use_default):checked+label:before {
-  background-position: -27px -105px;
+input[type=checkbox]:not(.not_use_default):checked+label {
+  color: #00abb3;
+  background-color: #e1f9fa;
+  &:before {
+    background-position: -27px -105px;
+  }
 }
 /* 上記、『設定ボタン』からのポップアップする画面*/
 
@@ -454,7 +461,7 @@ textarea {
   z-index: 200;
   position: absolute;
   top: 55px;
-  right: 160px;
+  right: 2px;
   width: 430px;
   border: 1px solid #cbced0;
   border-radius: 4px;
