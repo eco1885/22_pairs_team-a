@@ -20,11 +20,11 @@
             %p.community_title.title_b
               #{@community.community_name}
             %p.community_member_count<>
-              メンバー
+              参加メンバー
               %em
                 %span.member_total #{(@users_opposite.count + @users.count)}
                 人
-              %span 異性
+              %span 異性メンバー
               %em
                 %span.member_total #{(@users.count)}
                 人
@@ -45,45 +45,45 @@
                   %a.button_entry.button_a.button_blue_a#entry
                     このコミュニティに参加する
 
-      / if文挿入箇所
-      /参加メンバーに関してのコンテンツ
-      .data-community-view-users
-        .box_community_member_header.mb0
-          %p.member_header_title
-            %span メンバー
-            %em.member_count
-              %span.member_total
+      - if @community.members.present?
+        /異性の参加メンバーがいる場合に表示
+        .data-community-view-users
+          .box_community_member_header.mb0
+            %p.member_header_title
+              %span 異性メンバー
+              %em.member_count
+                %span.member_total
+                =@users.count
+                人
+              %span.member_note ※異性のみ表示されます
+            %p.pager_info
+              %span.pager_count
               =@users.count
-              人
-            %span.member_note ※異性のみ表示されます
-          %p.pager_info
-            %span.pager_count
-            =@users.count
-            人中
-            %span.pager_start 1
-            〜
-            %span.pager_end 16
-            人を表示
+              人中
+              %span.pager_start 1
+              〜
+              %span.pager_end 16
+              人を表示
 
-        /ページネート
-        .box_community_pager.box_pager
-          = paginate(@users, theme: "patern_b")
+          /ページネート
+          .box_community_pager.box_pager
+            = paginate(@users, theme: "patern_b")
 
-        /メンバー表示域
-        .box_list_view_user
-          %ul.list_view_users
-            - @users.each do |user|
-              = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
+          /メンバー表示域
+          .box_list_view_user
+            %ul.list_view_users
+              - @users.each do |user|
+                = render partial: "pairs/shared/list_view_user_item", locals: { user: user }
 
-        /ページネート
-        .box_community_pager.box_pager
-          = paginate(@users, theme: "patern_b")
+          /ページネート
+          .box_community_pager.box_pager
+            = paginate(@users, theme: "patern_b")
 
-      / else文挿入箇所
-      / 異性メンバーがいない場合に表示
-      .no_member_list
-        %p.text_no_partner_in_community
-          %span このコミュニテイに異性のメンバーはまだいません。
+      - else
+        / 異性の参加メンバーがいない場合に表示
+        .no_member_list
+          %p.text_no_partner_in_community
+            %span このコミュニテイに異性のメンバーはまだいません。
 
 
     / コミュニティ参加ポップアップ
