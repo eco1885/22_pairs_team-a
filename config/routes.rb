@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   #ユーザー情報登録のためのrouting
   resources :users, only: [:show] do
+    resources :user_images, only: [:create]
     resources :details, only: [:edit, :update]
   end
   #検索機能関連のrouting

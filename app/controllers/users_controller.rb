@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     # @usersPage = User.page(params[:page]).per(1)
     # @users = User.all
     # @relationship = Relationship.new
+    @image = UserImage.new
   end
 
 end
