@@ -55,26 +55,25 @@ class CommunitiesController < ApplicationController
   def show
     @community = Community.find(params[:id])
 
+    # @community.users.build
     # @selected = params[:selected_value].present? ? params[:selected_value] : 16
     if current_user.gender == "male"
-      @users = User.where(gender: 2).page(params[:page]).per(16)
-      @users = User.all
-      # @users = @users.where(community_id: 1).page(params[:page]).per(16)
+      @users = @community.users.where(gender: 2).page(params[:page]).per(16)
+      # @users = User.where(gender: 2).page(params[:page]).per(16)
+      # @users = @users.where(community_id: params[:id]).page(params[:page]).per(16)
     else
-      @users = User.where(gender: 1).page(params[:page]).per(16)
+      @users = @community.users.where(gender: 1).page(params[:page]).per(16)
     end
+  end
 
-  # def index
-  #   @selected = params[:selected_value].present? ? params[:selected_value] : 16
-  #   if current_user.gender == "male"
-  #     @users = User.where(gender: 2).page(params[:page]).per(@selected)
-  #   else
-  #     @users = User.where(gender: 1).page(params[:page]).per(@selected)
-  #   end
+  def join
+    @community = Community.find(params[:id])
+    @community.users << current_user
+  end
 
-  #   @relationship = Relationship.new
-  # end
-
+  def leave
+    @community = Member.find_by(user_id: current_user.id, community_id: params[:id])
+    @community.destroy
   end
 
   def search
@@ -96,10 +95,14 @@ class CommunitiesController < ApplicationController
   private
 
   def community_params
-    params.require(:community).permit(:community_name, :category, :image, { :user_ids => [] })
+    params.require(:community).permit(:community_name, :category, :image, user_ids: [] )
     # params.require(:community).permit(:community_name, :category, :image).merge(user_id: current_user.id)
   end
 
+  def community_users_params
+    params.require(:community).permit(:community_name, :category, :image, communities_attributes: [:name] )
+    # params.require(:community).permit(:community_name, :category, :image).merge(user_id: current_user.id)
+  end
   # def search_default
   #   @communities_all = Community.page(params[:page]).order("created_at DESC").per(5)
   # end

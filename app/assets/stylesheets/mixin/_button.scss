@@ -58,6 +58,7 @@
   color: #fff;
   background-color: #00b8c0;
   box-shadow: 0 3px 0 #00abb3;
+  cursor: pointer;
   &:active {
     position: relative;
     top: 3px;
@@ -72,6 +73,15 @@
   color: #fff;
   background-color: #00b8c0;
   box-shadow: 0 3px 0 #00abb3;
+  &:active {
+    position: relative;
+    top: 3px;
+    background-color: #00abb3;
+    box-shadow: none;
+  }
+  &:hover {
+    opacity: .8;
+  }
 }
 @mixin button_white_a {
   color: #8d9399;
@@ -100,6 +110,12 @@
   color: #fff;
   background-color: #f06976;
   box-shadow: 0 2px 0 #ed4655;
+  cursor: pointer;
+  &:active {
+    position: relative;
+    top: 3px;
+    box-shadow: none;
+  }
   &:hover {
     opacity: .8;
   }

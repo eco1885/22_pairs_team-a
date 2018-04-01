@@ -53,5 +53,9 @@ Rails.application.routes.draw do
       get  "search"
       post "confirm"
     end
+    member do
+      get "join"
+      get "leave"
+    end
   end
 end
