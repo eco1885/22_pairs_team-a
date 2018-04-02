@@ -67,7 +67,10 @@
         .my_summary_info
           %ul.my_display_photo_list
             %li.my_display_photo_item.is_current
-              %img{src: "https://lh3.googleusercontent.com/4aEtRn5Cstlgj6Qz5pVhEc4TiTyeqcXHT3uXwjSNAx5NtSEcbDIFOJacNS_gYvJHIPrikzcmWD2_kWFNB9KknvNaAPS7O0-xeTPKo8i_wN-peEzEfFkkRuxPgvHzpflit91MAjzEJWx6PMw0T2DM5B9FkvtAGEO2q8vUOdw1RF1-aWfV8MHDdEz-O5z079jf6QziotbcOGp3gcZZVzOo67eXfW3Lp9Z044n6WcX8E7zuSfvjsadupvQ88W5Qf69rSvApwlSxXRlhexzUXjd_Meiuhp4-U0m36tWosz5UUGDBrgBjPhstvvQVb3QDErV92zZEDqvpeckyBzLDE17vIFDBMlNyrkRiexoVxmqBEeerXQE3JPtqPR8lHdylGWE_J7J2gBwxGejKWbGB3VfumWVuDZlM29n7uQO_oPu8w9_5ml24Y_q6uuUVe18hFci1aXuF6fLzmC9IEAladjBZUsThKQlg-MgVPlovIlITXkA1nOyWt5pFk4_yGjA4zGlopCxdgLLg1iupAvr-m_LOMRFSKXkuqXZpUfjpS6QOv24uxQbk5c8osxbKVxHV25-SY8CjLjW12xC88p2c4rPnXy3buEnG6OpFVCqWhLgyoOGqYfrRafGyGu66lgogbsLZvUO7CNiSEcYRZSE17CiHvds3aEe6-evs=w455-h682-no"}/
+              - if @user.UserImages.find_by(status: 1).present?
+                = image_tag "#{@user.UserImages.find_by(status: 1).content}"
+              - else
+                = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no"
         .box_my_photo
           .box_my_photo_inner
             %ul.my_photo_list
@@ -97,6 +100,46 @@
             %li.pager_num
               %a
                 2
+        #modal_edit_photo.box_modal_window.box_mypage_view.modal_animation.hide{style:"display: none;"}
+          .box_modal_window_inner
+            = link_to "", class: "modal_close" do
+              = image_tag "https://lh3.googleusercontent.com/OvuCiYa4BQTysD4hGAvHvq-jiPzIeDHw-6sV3O-muacAKiaaUhOvNUZwn6OMIfUk9b_vdKp0t2QuwjRBsH4sjYdLqrAZHt9detzixJnogSfAgMG5OJO10G5p_meBL6CyFBzbtVDzjjs6ZXHTpW1gzEfuOzXztuIM4QkluaBhfmDKYmJIvzahQmxmw-nonBhpMTqjDij0mlXKce2glt-obC9QIeNy0PJ7VdGLyzXZ2z2WFZurXGTS2ka7xuW575lP2IrhJ-stbK3GbejGzcZNNBIaE0Yn7V4dardy76vDbuANY3VjK8CQsfsTx9q379P-QNqo_OlQpjRujAKkW8JVOPLoWcX4WxMQbziwvlrb_5AbD731gKuhIbrFBpKunjk3hFaoNhKwtGS9wPwldUavwQTsBDR7uUCY-mEGgQNuKYFwimfrZefkBsI9CqQzsg7M3WK9goK0MK_14qTiopQvdP6Ri4ILk6S8bYv7UeERA2WMdsa7s-OsuNRsAEEgNbgIfXsCfVcLRPeqSj7fz6Dme4GbFHQlQLVX_7j7Adbs3xUyWZs3i-NtmD-uR1MpoF6LxYVciij4AbVJtDnvhFU00IrorcUQ9xwUcTXp_l8G81lDUEICGj9p0iEi0RaRaJDzKXf2mciENSGorXl3BXhqSVqhD4ilGIPC=s53-no"
+            %p.modal_sub_title_b メイン写真の編集
+            .box_edit_main_photo_status
+              = form_for [@user, @image] do |f|
+                .user_main_photo
+                  - if @user.UserImages.find_by(status: 1).present?
+                    = image_tag "#{@user.UserImages.find_by(status: 1).content}"
+                  - else
+                    = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no"
+                .modal_button_area.text_center.mb50
+                  = f.file_field :content
+                  = f.hidden_field :status, value: 1
+                  = f.submit "PUBLISH"
+                %input#upload_mainphoto_button.hide
+            %p.modal_sub_title_b サブ写真の追加・削除
+            %ul.photo_edit_list_a
+              = form_for @user do |f|
+                = f.hidden_field :user_id, value: current_user.id
+                - 4.times do |i|
+                  = f.fields_for :user_images do |image|
+                    %li.photo_edit_item.box_edit_sub_photo_status
+                      = image_tag "https://lh3.googleusercontent.com/C_srCdJMKLgLge2kMbdYRKAV4PVgY1BwxErqzTMneKOL622TkslXAePM9TO73dRAJFUDAsNGZTDK3eEpmDRatqWCuJmOzkkYh9c4AbBD33bh4jlqWqgNoB_xYzDjFrL5U7qIp7uMCc1R8xZ4HpUuEp7Pux2N2UN1HslJikl2n-akYBsKelod8haz0pfMD6vPvt1m0qZFVoV0nprpv89iLLhKKanSHNe5rPz9Ch8GeTn-Ce8yP3bKWgl-FkNOgbRD-skaUsaEcMHEbzXZxjSIfRvq5Bo18Nhh-reNIGhSBBtuZ0-8znpVoo7xLLCUhXsTCoRtv4VTuSxi_1c0yp0gKYxJPonhsJ9ETMsV9ONAa_NoFTqbDgrlTKi7SQqPl0Yj2AHLZiotQ39LzE5fXt-Z8Gtlny69-gCMPqtV-9VR754jDRLw0jzMxa4hOWZIIKTlDQv7FOog14yC0wiHE9Jw7X_bEbITqZxXoslic26x4Otyx58FQ84Ev3EzZ5T2E1Tdic2B3eyvBTBIpxHgDmU5RAgy0Va9haPXUc5jDSGcZf0pRBYpSeAeLG1sBrIckhFosBYtKNnMuj4Won98WKQG3_3DaTDSYSGZ9GTPjo-y9LNkktgEeZlD5e1-boPGB0u_8ial3reHfDlib3X307nUg-XME3WvtYBS=w204-h247-no"
+                      = link_to "×", "", class: "label_photo_delete"
+                / %li.photo_edit_item.box_edit_sub_photo_status
+                /   = image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/myprofile/photo_place_holddr_profile.png"
+                / %li.photo_edit_item.box_edit_sub_photo_status
+                /   = image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/myprofile/photo_place_holddr_profile.png"
+                / %li.photo_edit_item.box_edit_sub_photo_status
+                /   = image_tag "https://static-pairs.akamaized.net/public/img/pc/img_jp/myprofile/photo_place_holddr_profile.png"
+                .modal_button_area.text_left.mb30
+                  .modal_button_area.text_center
+                    = f.fields_for :user_images do |image|
+                      / = link_to "ファイルから選ぶ", "", class: "button_a w30p button_blue_a"
+                      = image.file_field :content
+                      = image.hidden_field :status, value: 2
+                      = f.submit "PUBLISH"
+                    %input#upload_subphoto_button.hide
   .box_mypage_detail_inner02
     .mypage_detail_inner_left
       .box_profile_detail
@@ -109,13 +152,21 @@
           %dt.detail_item_title
             %span.item_title
               身長
-          %dd.detail_item_value.is_no_select#detail_item_value_height
-            選択してください
+          - if @user.height_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.height.height}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               体型
-          %dd.detail_item_value.is_no_select#detail_item_value_body_build
-            選択してください
+          - if @user.body_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.body.body}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               血液型
@@ -124,8 +175,12 @@
           %dt.detail_item_title
             %span.item_title
               居住地
-          %dd.detail_item_value#detail_item_value_residence_state
-            埼玉（日本）
+          - if @user.residence_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.residence.prefecture}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               出身地
@@ -134,23 +189,39 @@
           %dt.detail_item_title
             %span.item_title
               職種
-          %dd.detail_item_value.is_no_select#detail_item_value_job
-            選択してください
+          - if @user.occupancy_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.occupancy.occupancy}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               学歴
-          %dd.detail_item_value.is_no_select#detail_item_value_education
-            選択してください
-          %dt.detail_item_title.ng-hide
+          - if @user.school_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.school.school}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
+          %dt.detail_item_title
             %span.item_title
               年収
-          %dd.detail_item_value.is_no_select.ng-hide#detail_item_value_annual_income
-            選択してください
-          %dt.detail_item_title.ng-hide
+          - if @user.income_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.income.income}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
+          %dt.detail_item_title
             %span.item_title
               同居人
-          %dd.detail_item_value.is_no_select.ng-hide#detail_item_value_lodger
-            選択してください
+          - if @user.living_with_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.living_with.living_with}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               休日
@@ -159,8 +230,12 @@
           %dt.detail_item_title
             %span.item_title
               お酒
-          %dd.detail_item_value.is_no_select#detail_item_value_drinking
-            選択してください
+          - if @user.alcohol_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.alcohol.frequency}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title.is_no_select.ng-hide
             %span.item_title
               タバコ
@@ -176,12 +251,16 @@
             %span.item_title
               ニックネーム
           %dd.detail_item_value#detail_item_value_nickname
-            aiko
+            =@user.nickname
           %dt.detail_item_title
             %span.item_title
               年齢
-          %dd.detail_item_age#detail_item_value_age
-            31歳
+          - if @user.age_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = @user.age.age
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               兄弟姉妹
@@ -274,8 +353,12 @@
           %dt.detail_item_title
             %span.item_title
               タバコ
-          %dd.detail_item_value.is_no_select#detail_item_value_smoking2
-            選択してください
+          - if @user.smoke_id.present?
+            %dd.detail_item_value#detail_item_value_residence_state
+              = link_to "#{@user.smoke.frequency}", "/users/#{current_user.id}/details/#{current_user.id}/edit"
+          - else
+            %dd.detail_item_value.is_no_select#detail_item_value_blood_type
+              選択してください
           %dt.detail_item_title
             %span.item_title
               好きなこと・趣味

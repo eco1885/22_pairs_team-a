@@ -18,6 +18,7 @@ class PairsController < ApplicationController
   end
 
   def myprofile
+    @user = User.find(current_user)
   end
 
   def from_partner
@@ -42,9 +43,6 @@ class PairsController < ApplicationController
   end
 
   def block
-  end
-
-  def parts
   end
 
   def create_foot

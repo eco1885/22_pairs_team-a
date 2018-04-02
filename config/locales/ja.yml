@@ -31,6 +31,11 @@ ja:
         qualification: 研究・学問
         business: ビジネス・経済
 
+    user:
+      gender:
+        male: 男性
+        female: 女性
+
   # 以降gitテンプレート引用
   activerecord:
     errors:

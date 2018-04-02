@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   #ユーザー情報登録のためのrouting
   resources :users, only: [:show] do
+    resources :user_images, only: [:create]
     resources :details, only: [:edit, :update]
   end
   #検索機能関連のrouting
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   end
   resources:relationships, only: [:create, :destroy]
 
+  get 'messages' => 'pairs#messages_index'
+  get 'violation' => 'pairs#violation'
   #いいね関連のrouting
   get 'like/from_partner' => 'pairs#from_partner'
   get 'like/from_me'  => 'pairs#from_me'
@@ -41,8 +44,12 @@ Rails.application.routes.draw do
   get "membership/aboutallpoint" => "pairs#about_all_point"
   get "membership/pointlog" => "pairs#point_log"
   get "membership/status" => "pairs#status"
-  #サービス内での使用ビューへのrouting
-  get "parts" => "pairs#parts"
+  get "membership/aboutladys" => "pairs#about_ladys"
+  get "membership/aboutpremium" => "pairs#about_premium"
+  get "membership/aboutpaid" => "pairs#about_paid"
+  get "membership/aboutprivate" => "pairs#about_private"
+  get "membership/aboutageproof" => "pairs#about_age_proof"
+  get "pairsstore" => "pairs#pairs_store"
   #コミュニティ関連のrouting
   get "community/create" => "communities#new"
   get "community/complete" => "communities#complete"
@@ -50,6 +57,10 @@ Rails.application.routes.draw do
     collection do
       get  "search"
       post "confirm"
+    end
+    member do
+      get "join"
+      get "leave"
     end
   end
 end
