@@ -136,11 +136,11 @@ ActiveRecord::Schema.define(version: 20180402014124) do
   end
 
   create_table "user_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status",                   null: false
-    t.text     "content",    limit: 65535
+    t.integer  "status",     null: false
+    t.string   "content"
     t.integer  "user_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_images_on_user_id", using: :btree
   end
 
@@ -191,7 +191,6 @@ ActiveRecord::Schema.define(version: 20180402014124) do
   add_foreign_key "members", "users"
   add_foreign_key "messages", "groups"
   add_foreign_key "messages", "users"
-  add_foreign_key "user_images", "users"
   add_foreign_key "users", "ages"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"

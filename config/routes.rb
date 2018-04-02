@@ -33,7 +33,6 @@ Rails.application.routes.draw do
   #足あと関連のrouting
   get "createfoot" => "pairs#create_foot"
   get "visitorlist" => "pairs#visitor_list"
-  get "visitorlistzero" => "pairs#visitor_list_zero"
   get "visitorsetting" => "pairs#visitor_setting"
   #各種設定関連のrouting
   get "privacysetting" => "pairs#privacy_setting"

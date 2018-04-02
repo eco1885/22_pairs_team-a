@@ -2,8 +2,8 @@
   %p.common_title<
     過去ー週間の足あと：
     %em.fnt_pink02>
-      %span.visitor_count<> 118
-      人
+      %span.visitor_count<>
+        = "#{@foot.length} 人"
   .common_box_inner.pt0
     / 足あと0の場合（『box_visitor_list』内が空となり、上記の内部は空になる。）
     .empty.pt60

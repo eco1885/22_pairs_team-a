@@ -15,8 +15,7 @@
       .user_status
         .user_status_title
           %p 会員ステータス
-          %a.button_status_conf.button_f.button_white_a
-            確認
+          = link_to '確認', "/membership/status", class: "button_status_conf button_f button_white_a"
         %p.user_status_label.is_free_member
           年齢未確認
       .user_tweet
@@ -371,59 +370,29 @@
         .join_community_title_b
           %span.title_a
             参加しているコミュニティ
-          %a.button_new_entry.button_f.button_white_a
-            新しいコミュニティに入る
+          = link_to "新しいコミュニティに入る", communities_path, class: "button_new_entry button_f button_white_a"
         %ul.join_community_list
-          %li.join_community_item
-            %a{href: ""}
-              .box_community_item_img
-                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/hKTlIcQ7ZfSdfB4DswczxSzj99H-tmlwE8ZOwupwj9wfq7-geigm9L9MfhwL4mIE-K3tOftPUiPzAdOq9swsO7iqyNpXF8ZkhXkc8XLOUbvS4x_n_pJYXaRO_Ov2DPvvWAgR9I1G6MN0L5706W_r51DhAkaKRTEQ1DIeC_y8AdB-rLRgau6_ot9d_I-jIgFrIjHZYznoQbABr2-RlKmcljXN-283xTVy_uL2jGUmkmaTfnCyHErJeFpMEZSAco0jn2rdCrP05NBSLjtzgFMu3JmoubtKxZ59oBYVykJcsC_h47IA6Qq81emx_wQgOIqVRdie3oHZ8kr4Eq0aoRKGJfErUNYFaOz81VUIMJxlm7um-hPkPhK_c7LTjlRu40PaFnLv6QNvnTurvSAgFpCQVpCAlZtuLogUCMTNka8aSCYfk-Hx5VQUCVXOzC0MD40L15yvTV9OwjdoV0694rKETGY95WvE8wlVk-BNpMNizX5VgRSvlrmH2AumAIDmPCf9l05lq6R5pvul4Xoxqvf2eomPKOntTwc3D6Aqw1tmW5dhvXqBFtImtw0XpKGeeqeMmaQ5zcoSNqa9tW_FDcjX0tkFvui8lOslol39GIIpTIiFKgqqDqqn2EPqY91VsuNlSslLE4oXinRDSGba_D_Ln8cCYDOwX54=w600-h592-no"}/
-              %p.community_item_title
-                登録は全角20文字制限
-              %p.community_item_count
-                表示5字2行
-          %li.join_community_item
-            %a{href: ""}
-              .box_community_item_img
-                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/wG48h97TH38ph5gCFc-N8bzOV86xdqsktAihzxMoul3PCNGWvsybMDjv5KfZjLbFuyw2nwNmzrsrDxaP9vLJ6-hEY10nbKlmC3iUcgO7MkX75pe1ArTXUgdXY6PvoA2VKOpAipSfPEd9uTHwM1LIZUfLjJctXDzZ_p6mk1sgccyWDA56i_wfBxpUu4yEOqyC8aYQ3_wMDWEOsBXEegPMd9svyibt0Xo6wcE0CXNwpDaXzaDSGHHRdUzUPRzut3V6rbMWDmUyRIvPYZSFyok1-zmHaHir6sjZktCAsxmc8Ib3rkv-KcHNkvpSeJ_Ka1CbsJhHix2m-CdXOnuamIo7gF1m6SIKgjGaJdYNL4LVcBeXse3ALdWgsf17Utxdlo2t76ZZH7wuq7AauRZRSCE2aevD866oaapI7WQ2A8w2jM_ZgNm6lP8yNkBNUcs0vkMmZEpz90ohAmrMeuxsDwR9G3su21aOoId3H1xFxdmvPQN6mEo645SdOtuwKAmc6XYBV7SQj-Fud0Usr7GEuuZYxVUmvIi717m2k9-FgewC_PufrfiVpQLoNY9QR0t53FRYWap07Wz3W_YjK_NhW67kBiFO80zPjoxBEzkeoXZ8WptZvx3YIAgyhS3GlmHOih7KeXcWzrICLDGnCzXY_GvDTGZq-_aTSgg=w675-h669-no"}/
-              %p.community_item_title
-                中には３行もあるが崩れている
-              %p.community_item_count
-                逆にここ1行
-          %li.join_community_item
-            %a{href: ""}
-              .box_community_item_img
-                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/6iLqcrxw6LwahPQtx1GY2qFEfkAX6jBAAji8U3UeCjaA451FEbI1fkCMIbmAMHzjROHQr-yzhycE5cA8Kx57Q9Drobd52Msl5cZ3TIA4MkP-N82oyxXbISuHyL38XXhRyKAneFucrM0xNj5leUEWynluAfJT-2KYMrwra8qDdKSxXDQs69uJ2CmPCLUrlly_eSJoLOX4yA5ABk3QYXfsdgAHVDNCD3U9lHSPKPkmSZdlfYuvPOzwU9TIogICvppynZwJy8vAfww-a0LhmS4sGJT2f5K4LPFMCh8KXtloA5n0YwWeQ2GHsrSakrU7BFmmd8mr4eDK8UXtGlsXggYmYo6n3KFIyhaK0OMKVe_d2nunSNGzEvjueLQ0HV-IWmIUB_9bD57xGS1LpukXOPdfAJrIRYzVT3fVoRMvj4d7DPtk6lzgMyg5yg2LTyI-CPTHyA2a-TKsCJGPhBLhPSLpmER3J4RfD5Tc7xQfl59sXQAjzovwaC3oSldQzJGpfMJ0kmV8QgDFQmQtN_i6wgv2Yi1FNXsrjNztX1emw4g6nuKalFwVD7tiznwncm8EQkGyiE34L_7c__mSub6YDubANKGqWn-fTD2aNE6WwG2t1SBcKoOPd0uCv1eNfR3plm8hJeVzhaW5OmavPp__BP1tMUvggsIwGY0=w600-h593-no"}/
-              %p.community_item_title
-                a要素内の他要素の高さ
-              %p.community_item_count
-                出ずシカト
-          %li.join_community_item
-            %a{href: ""}
-              .box_community_item_img
-                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/AfsrgwFPo0RKhxfdI1Dv1jP14ogVc6UjCtZDGD8ycYslMUEBw6UduU1f5Hk2KGYrKDH6kW1Z1LSzolX3uOKpR9YXVZtQN5KnoDQlJN6ekW3cSLdBSwasEqwh2C-s-FawvDFedkVF5ryi-XNF-gVXrqqGJR5UV4zqixWEifF2R0cTKewdKFOQXVmT-8JHJqD_N6rSkkRwTp0r4xiX0o1gF3VFsfuhip8e0do4numtrlwNRRYzTZ6ohteMERiIcb6migWQbzp9uYkUZwzSSbkg2DBW1dhOmtXmmphg8eslMmTVVCLukScF5KNPwucTbDO-0KS2ImjxLUpDiIMc1gwDd6OT1ZdH-_HNGvnumCQTIoymqTxoxl9opujCD9w93n4QaGgaUh8TZaVOjJqai19l-Ijjd-DB6JIDsGcnC1rpdDHRFgpcCdmFSstjUbzQxOMNlHD9FkTpWQI2nSFcpPBwVQulwv2hTkVvf2LIoGVBEo3h1kJAY1xOArCJRztyd_CnfpCsdo0HkWcOKsFVtjfTw5RzJYRQchK9YzkwxhHhLbVkber2xgFJvgoBDq_38D2-xVkgdS7WmYbkT7fFxc2AAp5nI33X1F6iDR8vImxhII6dlLpTu-Zz4QXHgNW_BOyBfyimJOUpXSOreHIoIMfvcMd80UvWvC0=w600-h593-no"}/
-              %p.community_item_title
-                してたが、ほぼ
-              %p.community_item_count
-                修正完了
-          %li.join_community_item
-            %a{href: ""}
-              .box_community_item_img
-                %img.community_item_img.image-round{src: "https://lh3.googleusercontent.com/5htui60WRXshRzuCEJxU1wt9CtG9oQ6CR5Wtrlcg6bm2dLAbz8GX3qgnNDWQXeKZGqJkvne8zX0erW0RTo3oCi6aJI6H5XS0MqTjixWE8Gy-HLYOnSNqkxCwO-cZ5P-bhl8U9xr3gdrl03bOrnspP80hzeEi2PmHdCWjWHNPRQaVutGEjeHBhCUSFVf3yT160LfbIgFREnilBYZmGBjWssxsyptmuUb31bJdBHNhqDtI4A0dCQgMxqW-NBVeytdT6FSU0WNJE0UrAvW4gLp1WLz1G2gJytEDj-39HOnZjOLrtOwomYClGtFQavju3F4zKGnDugcHl3oiY56lCN0fyaiy59PCgq57WO15wH6LmWirkX0m6cIAf6jg3uJFp5kzj1MRAsDOodb-7Nrv4NhsmrFvfVwvoCg6nga6cbyuyxf8EbH-qdgzKT6bPdt_2h7-qQp-JaAgk6QTJPyLaLAleyN_G7J3UYrO7vvvRwHHQLWYgsoEMFl1uhQes3xUpjjAidmCZQ9_nXN9yNWzXKaZWVrTSo08O4Ya85296mBz9-XEqPk_pN2RDWsPvJXfKzTIn2rlFEEtrIDQMo0GFLktW7IrQaHZKiXZ069aR6jWX0T3FfKJVF_hdh5_S3i5GPPPiEC_yiEJ7wt6Plg_wMbQTY-iQC4f20E=w600-h593-no"}/
-              %p.community_item_title
-                プラマイ
-              %p.community_item_count
-                34th single
+          - if @communities.present?
+            - @communities.each do |community|
+              %li.join_community_item
+                %a{href: "/community/#{community.id}", class: "community_link"}
+                  .box_community_item_img
+                    = image_tag community.image.url, class:"community_item_img image-round"
+                  %p.community_item_title
+                    = community.community_name
+                  %p.community_item_count
+                    = t("enums.community.category.#{community.category}")
+
+          - else
+            %li.about_community
+              コミュニティに参加して、
+              %br
+              共通の趣味や好みのお相手とつながろう！
+              %br
+              = link_to "コミュニティとは？","", class: "link_help mr10"
+
         .box_community_pager
-          %a.pager_pre.button_c.button_white_a.disabled
-          %ol.pager_nums
-            %li.pager_num.is_current
-              1
-            %li.pager_num
-              2
-            %li.pager_num
-              3
-          %a.pager_next.button_c.button_white_a
+          = paginate(@communities, theme: "patern_b")
       .box_mypage_introduction
         %p.introduction_title
           自己紹介文
@@ -442,3 +411,21 @@
           よろしくお願いします。
         %p.introduction_text.empty.ng-hide
           自己紹介文はまだ入力されておりません。
+
+/ インデックスの作成から表示されるポップアップ
+.data-community-help-modal
+  .modal_community
+    .box_modal_window.modal_fixed.modal_animation#modal_community_about
+      .box_modal_window_inner
+        %a.modal_close.modal-close
+          %img{src: "https://lh3.googleusercontent.com/JZ5QgP9n4HLC-gnXIcJAsLL2zh7NV0OxNWjjOWOoxbD5gU8a1VBfjDBNzifCYTU9cwBfJByoPM6QPg0BMLsgcA2biofLRmrpfI3trDe8vXreEbsQQ4q9HR_n7iPL3E16d3a4k0W4saje0qJMC6j2vyVepU1EWQj2BEiQcB8iXviUAhzI3Rw4cPIAzZUKv4FJf8d2gBODxBt7nUyWkdR6DlUuAo5X8WxW-7c7PRb9Z0_VzojmdeKrOGmtTYE4LGflbY4dkwRUt7owI0oYY-NWZGRiyMBANMfnfKJZrM7NrA8R3gvX6gNxQ9lb-2H4kdZBxnNJJiIZCbA3U6FkJ7L7qCoRPcSY7A31anQLjuZp2F6zQEbKRZevBtrU6KfCGEMf-k6a7dNbTfx1LiwUa1WbXcWmrqXt1upE1hSlolc4bc5xDXHh22L9OydnIHQ7M8LB-Pqk-9nDdHAM4MpYk16mGNSgFaV7wPAdPAHqTcF3szUqQ-r-wAqSmcb_8RmKplujpNHYcRI1-42F9gCF4ibvYV3ir1fGRZIRkYQsqtbbXReqsQi_mfqmJ5djsW1f60oR9kuTiMMjvMChx8b0a1O19Iin7jEfomS9fvQUKdQuscsYlMTcNddsNpFkrO1GiBLkR_hqVzUHmtQPZC2_Omnx8veBWnRVDywk=s53-no"}/
+        %p.modal_title.ribbon_title.ribbon_blue
+          コミュニティとは？
+        %p.modal_text_a コミュニティに参加して、共通の趣味や好みのお相手とつながろう！
+        %p.modal_sub_title コミュニティに参加すると…
+        %img.mb10{src:"https://lh3.googleusercontent.com/5Wd__gY0BqguEt4c5KUPsftmAf1Jbc-yWCW9m2JxSAc6wR_FSUu4k_y4ukFhvQa_Smv4hFZEyClgUARdWCXeF1hA93XlFWQnWG0yiewqvxpgyeN9F1wwqSalJ26wlR3XroS4fLYj0uiZPyFsojANMTBwd7xfXfj2EA8bv_oDnsyqqXCqcdbYng5ZCX62p_NyJkuVGOvXvvFB3SDu-Q6FMQ00DmOhpWSJQhS5fGwZx4OfqQyFcvs4Iat9hG16xV-YLSyE7CnW-WyyEm61GgUsIHBig05UY-HbzKI0iS3YOle-hXlp2ThWl6X7Q5v99meQi1_rmFJWzvRdNoD7FP8Wlyf4wnPWT0NrVqD7lqxDmoDDtckRH_y0ZZX7-zCm5wNu5-IiuNEUQ8_XeEnfo5_MjrXlXjLQKfxQetzyYVpoEXQRKpxFs9EaopIWVMPTQLtPYjtXUrUZLRd1DBmTaVqQn5k_hKq4FLFHp3ORcksuTqepYf5kXtiXJv_XdWqHgDqN5tkdrc0F2yPRUvZKt1Mw9BGv05FygTKWfTqP_ZETSmCiUwHeb59XZKHLacVtWOBk-xSCw7l3n5qL7RFdGjh5rehdROA4zAwE1Bw5sYargO8zacqhACaBtoguPzQuW5Q6Zr4kKDSioj6ulVDXrWWAo3CMDXMFbBLZ=w529-h191-no"}
+        %p.modal_sub_title コミュニティを作成すると…
+        %img.mb10{src:"https://lh3.googleusercontent.com/O-_FpTUFN5SdGTQ325cW1vCQpJtmY8CTDVVmn0ngj72cQNzPCN6jzW9pY_6Q9AqBMNxjvr320FGaMPkoYYJFClbJrmYMj2bk30YA7gq5LbnX2FP-IbUt1D51dGauViwLubyJ2sc4XLSnCsk6hGp2BHkPCmtiD0bdpFrXpKCLjHNqNjWlqViNr7vJ8GVPJXjeQT8a3lQQq15PiMKOnXu0piA4v_gtASkN0tmYpDLRjWLQtqVMSh600Ard-8ZpWULu7kaJFq0GBunRYBGCwj59bqpQoMq5mMv_L2ovmACPqM0goihHAiv1TZNgSuE6hNzzDkKapex__6TBzBg8_okNMOEEGnQUXBC0pB273vcehDIgMr_6pAWytJbywgrkK6hP-w71HqunwPFHHm4FfQKSaz8Wre4RqkOgm2HIwg4aOGF7otkx_ZFrNKuNP0JC8-rmP1HiIDXVsFio8OKFw9iNWKWLni2jzR-HGHDHrAr1kQ-R8gT4D6uD3rl0g2GcqLyakz8O1pshiBDottqtwmBGwYgHPRyxI6uWbUNXm_VhLd22-AzqCYFwToXz4dVV_ZCLtF14e0bESPH5JJWxtMAI5poGgsQvg0IKqhY3WQg94V1cDTdsC-xHd29UTDUxBhx_5Op88lpVJMWZXOB_GfJ6NwHFy5GpijEP=w529-h191-no"}
+        .common_button_area.mt20
+          .button_item.w50p
+            = link_to "コミュニティを作成する", community_create_path, class:"button_a button_blue_a"
