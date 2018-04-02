@@ -10,10 +10,10 @@
             = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", width: "60", height: "60"
 
       %p.profile_name
-        = link_to "#{current_user.nickname} 東京",user_path(current_user)
+        = link_to "#{current_user.nickname}",user_path(current_user)
 
       %p.profile_status.is_free_member
-        = link_to "ここに年齢",membership_status_path
+        = link_to "#{current_user.residence.prefecture}",membership_status_path
 
     .my_profile_input_rate
       %p.input_rate_label
@@ -72,7 +72,7 @@
         %p.gnavi_title マッチング
         %ul
           %li.gnavi_item
-            =link_to "メッセージ",messages_path,class: "sidemenu_link"
+            =link_to "メッセージ",group_messages_path(1),class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title コミュニティ

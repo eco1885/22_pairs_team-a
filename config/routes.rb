@@ -16,6 +16,11 @@ Rails.application.routes.draw do
   get 'search_result' => 'searches#search_result'
   #その他
   root 'pairs#index'
+  resources :groups do
+    resources :messages, only: [:index,:create]
+  end
+  resources:relationships, only: [:create, :destroy]
+
   get 'messages' => 'pairs#messages_index'
   get 'violation' => 'pairs#violation'
   #いいね関連のrouting
