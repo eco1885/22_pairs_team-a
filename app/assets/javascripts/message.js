@@ -52,28 +52,28 @@ $(function() {
   });
 
 // 自動更新
-      var interval = setInterval(function(){
-      // 正規表現でURLに一致しないページで自動更新しないよう分岐
-      if (location.href.match(/\/groups\/\d+\/messages/)){
-        var message_id = $('.messages_dates:last').data('id')
-        console.log(message_id)
-    $.ajax({
-      url: location.href,
-      type: 'GET',
-      data: { message: { id: message_id } },
-      dataType: 'json'
-    })
-    .done(function(new_messages){
-      $.each(new_messages,function(i,new_message){
-        var html = messagesHTML(new_message)
-        $('#message_scroll').append(html)
-        $("#message_scroll").animate({scrollTop: $("#message_scroll")[0].scrollHeight}, 500, 'swing');
-      })
-    })
-    .fail(function() {
-      alert('自動更新失敗');
-    });
-  } else {
-    clearInterval(interval);
-  }} , 5000 );
+  //     var interval = setInterval(function(){
+  //     // 正規表現でURLに一致しないページで自動更新しないよう分岐
+  //     if (location.href.match(/\/groups\/\d+\/messages/)){
+  //       var message_id = $('.messages_dates:last').data('id')
+  //       console.log(message_id)
+  //   $.ajax({
+  //     url: location.href,
+  //     type: 'GET',
+  //     data: { message: { id: message_id } },
+  //     dataType: 'json'
+  //   })
+  //   .done(function(new_messages){
+  //     $.each(new_messages,function(i,new_message){
+  //       var html = messagesHTML(new_message)
+  //       $('#message_scroll').append(html)
+  //       $("#message_scroll").animate({scrollTop: $("#message_scroll")[0].scrollHeight}, 500, 'swing');
+  //     })
+  //   })
+  //   .fail(function() {
+  //     alert('自動更新失敗');
+  //   });
+  // } else {
+  //   clearInterval(interval);
+  // }} , 5000 );
 });
