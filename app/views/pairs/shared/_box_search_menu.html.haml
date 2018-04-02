@@ -1,8 +1,7 @@
 .box_search_menu
   .button_search_setting
-    = link_to "", id: "openSearchConditionBtn", class: "button_b button_white_a is_set_search_condition" do
-      %span.is_set_search_condition
-        = link_to "検索条件設定中", "/searches"
+    = link_to "検索条件設定中", searches_path, id: "openSearchConditionBtn", class: "button_b button_white_a is_set_search_condition"
+    %span.is_set_search_condition
   %nav.box_change_view_tabs
     %ul.change_view_tabs
       %li.tab_item.tab_item01.is_current
