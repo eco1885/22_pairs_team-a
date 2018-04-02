@@ -56,6 +56,9 @@
     border-color: #e1e3e5;
     border-radius: 4px;
     .form_item {
+      input[type=checkbox] {
+        display: none;
+      }
       font-size: 1.3rem;
       font-size: 13px;
       position: relative;
@@ -94,21 +97,33 @@ input[type=checkbox]:not(.not_use_default)+label:before {
   background-repeat: no-repeat;
   background-position: 0 -105px;
 }
-input[type=checkbox]:not(.not_use_default):checked+label:before {
-  background-position: -27px -105px;
+input[type=checkbox]:not(.not_use_default):checked+label {
+  color: #00abb3;
+  background-color: #e1f9fa;
+  &:before {
+    background-position: -27px -105px;
+  }
 }
 /* 上記、『設定ボタン』からのポップアップする画面*/
 
 
 /*下記、『表示設定』ボタンからの『非表示・ブロックの設定』ポップアップ */
+// .bg_overlay_more {
+//   position: fixed;
+//   z-index: 2000;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background-color: rgba(255, 255, 255, .7);
+// }
 .box_modal_window {
   &.modal_fixed {
-    // コンテンツエリア内で表示させる為、下記4つを一旦コメアウト
-    // position: fixed;
-    // top: 100px;
+    position: fixed;
+    top: 100px;
   }
-  // position: absolute;
-  // z-index: 2001;
+  position: absolute;
+  z-index: 2001;
   letter-spacing: .5px;
   box-shadow: 0 0 8px rgba(0,0,0,.2);
   .box_modal_window_inner {
@@ -446,7 +461,7 @@ textarea {
   z-index: 200;
   position: absolute;
   top: 55px;
-  right: 160px;
+  right: 2px;
   width: 430px;
   border: 1px solid #cbced0;
   border-radius: 4px;

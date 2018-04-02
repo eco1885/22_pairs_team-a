@@ -94,7 +94,8 @@
 .modal_close {
   position: absolute;
   top: -26px;
-  right: -26px;
+  // right: -26px;：位置調整のために下記に変更
+  right: 2px;
   cursor: pointer;
   img{
     height: 53px;

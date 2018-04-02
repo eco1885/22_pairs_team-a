@@ -21,6 +21,13 @@ class User < ApplicationRecord
   has_many :coming_foots, foreign_key: "visitor_id", class_name: "Foot", dependent: :destroy
   has_many :comings, through: :coming_foots
 
+#user_imageとのアソシエーション
+  has_many :UserImages, foreign_key: "user_id"
+
+  has_many :communities, through: :members, dependent: :destroy
+  has_many :members
+
+
   belongs_to :residence,  optional: true
   belongs_to :alcohol,  optional: true
   belongs_to :smoke,  optional: true
@@ -30,6 +37,8 @@ class User < ApplicationRecord
   belongs_to :holiday,  optional: true
   belongs_to :living_with,  optional: true
   belongs_to :height,  optional: true
+  belongs_to :age,  optional: true
+  belongs_to :income,  optional: true
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)

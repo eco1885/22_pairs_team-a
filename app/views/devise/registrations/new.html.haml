@@ -15,15 +15,20 @@
             %span.gender_type_engine 性別
             %br/
             .radio-inline
-              = f.radio_button :gender, :male, class: "button_male", checked: "checked"
-              = f.label :gender_男性,"男性", class: "gender_type_label_male "
+              = f.radio_button :gender, :male, class: "button_male"
+              = f.label :gender_male,"男性", class: "gender_type_label_male"
             .radio-inline
               = f.radio_button :gender, :female, class: "button_female"
-              = f.label :gender_女性, "女性" , class: "gender_type_label_female"
+              = f.label :gender_female, "女性" , class: "gender_type_label_female"
         .select_box
-          = f.label :residence_id, "都道府県", class: "label_select"
-          %br/
-          = f.collection_select :residence_id, Residence.all, :id, :prefecture, :prompt => "選択してください"
+          .select_residence
+            = f.label :residence_id, "都道府県"
+            %br/
+            = f.collection_select :residence_id, Residence.all, :id, :prefecture, :prompt => "選択してください"
+          .select_age
+            = f.label :age_id, "年齢"
+            %br/
+            = f.collection_select :age_id, Age.all, :id, :age, :prompt => "選択してください"
         .field_email
           = f.label :メールアドレス,  class: 'label_email'
           %br/
@@ -39,11 +44,9 @@
           %br/
           = f.password_field :password_confirmation, placeholder:"パスワード(最小6文字)", autocomplete: "off"
         .field_checkbox
-          .checkbox
-            .checkbox_icon
-              .checkbox_text 私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーにも同意します。
-              = f.label :checkbox_example, "//" , class: 'checkbox_label'
-              = f.check_box :checkbox_example,  :as => :boolean, checked:false, :required => true
+          .checkbox_text 私は18歳以上で独身です。Pairsの利用規約、プライバシーポリシーにも同意します。
+          = f.label :checkbox_example, "a",  class: 'checkbox_label'
+          = f.check_box :checkbox_example, class: 'checkbox_button', :as => :boolean, checked:false, :required => true
         .actions
           = f.submit "Pairsをはじめる", class: 'form_text'
           -# = render "devise/shared/links"
