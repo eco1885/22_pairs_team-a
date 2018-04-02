@@ -6,9 +6,9 @@
         %span{limit_length: "5"}
           = match_user.nickname
         %span
-          21歳
+          = match_user.age.age
         %span{limit_length: "8"}
-          東京
+          = match_user.residence.prefecture
       .user_info02
         %p.message
           - if (match_user.messages.present?)
