@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @groups = current_user.matchers.map { |id| Member.find_by(before_user_id: current_user.id, after_user_id: id) ? Member.find_by(before_user_id: current_user.id, after_user_id: id) : Member.find_by(before_user_id: id, after_user_id: current_user.id) }
+    @groups = current_user.matchers.map { |id| MatchUser.find_by(before_user_id: current_user.id, after_user_id: id) ? MatchUser.find_by(before_user_id: current_user.id, after_user_id: id) : MatchUser.find_by(before_user_id: id, after_user_id: current_user.id) }
 
     @group = Group.find(params[:group_id])
     @messages = @group.messages.includes(:user)
@@ -33,14 +33,14 @@ class MessagesController < ApplicationController
 
   def group_create
     current_user.matchers.each do |match_user|
-      if Member.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
-        @groups = Member.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
-      elsif Member.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
-        @groups = Member.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
+      if MatchUser.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
+        @groups = MatchUser.find_by(before_user_id: current_user.id, after_user_id: match_user.id)
+      elsif MatchUser.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
+        @groups = MatchUser.find_by(after_user_id: current_user.id, before_user_id: match_user.id)
       else
         @group = Group.new
         @group.save
-        @groups = Member.create(before_user_id: current_user.id, after_user_id: match_user.id, group_id:@groups.id)
+        @groups = MatchUser.create(before_user_id: current_user.id, after_user_id: match_user.id, group_id:@group.id)
       end
     end
   end

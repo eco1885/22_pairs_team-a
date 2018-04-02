@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   has_many :messages
   has_many :groups
-  has_many :members, through: :members
+  has_many :match_users
 
 #Footモデルとのアソシエーション
   has_many :visiting_foots, foreign_key: "user_id", class_name: "Foot", dependent: :destroy

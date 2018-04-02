@@ -1,4 +1,3 @@
-// $(document).on('turbolinks:load',)
 $(function() {
   function messagesHTML(message){
     if (message.user_id){
@@ -57,7 +56,7 @@ $(function() {
       // 正規表現でURLに一致しないページで自動更新しないよう分岐
       if (location.href.match(/\/groups\/\d+\/messages/)){
         var message_id = $('.messages_dates:last').data('id')
-        console.log
+        console.log(message_id)
     $.ajax({
       url: location.href,
       type: 'GET',
