@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330110113) do
+ActiveRecord::Schema.define(version: 20180402014124) do
 
   create_table "ages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "age",        null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
+  
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
     t.datetime "created_at", null: false
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20180330110113) do
     t.index ["user_id"], name: "index_foots_on_user_id", using: :btree
   end
 
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
   create_table "heights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "height",     null: false
     t.datetime "created_at", null: false
@@ -69,6 +72,34 @@ ActiveRecord::Schema.define(version: 20180330110113) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "match_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id"
+    t.integer  "before_user_id"
+    t.integer  "after_user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["group_id"], name: "index_match_users_on_group_id", using: :btree
+  end
+
+  create_table "matchusers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id"
+    t.integer  "before_user_id"
+    t.integer  "after_user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["group_id"], name: "index_matchusers_on_group_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.string   "image_url"
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",      null: false
@@ -161,6 +192,11 @@ ActiveRecord::Schema.define(version: 20180330110113) do
   end
 
   add_foreign_key "foots", "users"
+  add_foreign_key "match_users", "groups"
+  add_foreign_key "matchusers", "groups"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
+  add_foreign_key "user_images", "users"
   add_foreign_key "members", "communities"
   add_foreign_key "members", "users"
   add_foreign_key "user_images", "users"

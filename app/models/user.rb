@@ -11,6 +11,10 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
+  has_many :messages
+  has_many :groups
+  has_many :match_users
+
 #Footモデルとのアソシエーション
   has_many :visiting_foots, foreign_key: "user_id", class_name: "Foot", dependent: :destroy
   has_many :visitings, through: :visiting_foots

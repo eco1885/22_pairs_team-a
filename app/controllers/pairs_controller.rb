@@ -12,10 +12,6 @@ class PairsController < ApplicationController
 
   end
 
-  def messages_index
-
-  end
-
   def search_one
     @users = User.page(params[:page]).per(1)
     save_foot(@users[0].id)
