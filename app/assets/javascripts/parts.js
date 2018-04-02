@@ -7,11 +7,11 @@ $(document).on('turbolinks:load',function(){
       $(".box_modal_window").fadeIn(800)
     });
     //ポップアップの閉じる動作（閉じるボタン）
-    $(".modal-ok").on("click", function(e){
-      e.preventDefault();
-      $(".bg_overlay").fadeOut(300);
-      $(".box_modal_window").fadeOut(800);
-    });
+    // $(".modal-ok").on("click", function(e){
+    //   e.preventDefault();
+    //   $(".bg_overlay").fadeOut(300);
+    //   $(".box_modal_window").fadeOut(800);
+    // });
     //非表示・ブロックの設定ポップアップ
     $("#appear_setting").on("click", function(e){
       e.preventDefault();

@@ -20,7 +20,7 @@
             %p.community_title.title_b
               #{@community.community_name}
             %p.community_member_count<>
-              参加メンバー
+              全参加メンバー
               %em
                 %span.member_total #{(@users_opposite.count + @users.count)}
                 人
@@ -38,13 +38,13 @@
               .div
                 / if文での切り分けが不完全
                 / - if @community.members.rejects {|item| item ==current_user
-                / - if @community.members.present?
+                - if @community.members.find_by(user_id: current_user.id).present?
 
-                %a.button_entry.button_a.button_pink_a#unsubscribe
-                  このコミュニティを退会する
-                / - else
-                %a.button_entry.button_a.button_blue_a#entry
-                  このコミュニティに参加する
+                  %a.button_entry.button_a.button_pink_a#unsubscribe
+                    このコミュニティを退会する
+                - else
+                  %a.button_entry.button_a.button_blue_a#entry
+                    このコミュニティに参加する
 
       - if @users.present?
         /異性の参加メンバーがいる場合に表示
