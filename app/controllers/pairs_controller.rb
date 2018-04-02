@@ -12,9 +12,14 @@ class PairsController < ApplicationController
 
   end
 
+  def messages_index
+
+  end
+
   def search_one
     @users = User.page(params[:page]).per(1)
     save_foot(@users[0].id)
+    # @communities = user.communities.page(params[:page]).per(12)
   end
 
   def myprofile
@@ -27,9 +32,6 @@ class PairsController < ApplicationController
 
   def visitor_list
     @foot = current_user.comings.order("updated_at DESC").page(params[:page]).per(10)
-  end
-
-  def visitor_list_zero
   end
 
   def visitor_setting

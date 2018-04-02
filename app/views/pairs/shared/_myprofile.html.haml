@@ -15,8 +15,7 @@
       .user_status
         .user_status_title
           %p 会員ステータス
-          %a.button_status_conf.button_f.button_white_a
-            確認
+          = link_to '確認', "/membership/status", class: "button_status_conf button_f button_white_a"
         %p.user_status_label.is_free_member
           年齢未確認
       .user_tweet
