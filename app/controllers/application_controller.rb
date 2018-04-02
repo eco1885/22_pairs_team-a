@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_user, unless: :devise_controller?
 
   before_action :request_path
   def request_path
@@ -17,5 +18,9 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:gender])
       devise_parameter_sanitizer.permit(:sign_up, keys: [:residence_id])
       devise_parameter_sanitizer.permit(:sign_up, keys: [:age_id])
+    end
+
+    def set_user
+      @sideUser = User.find_by(id: current_user.id)
     end
 end
