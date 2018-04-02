@@ -12,6 +12,12 @@ $(document).on('turbolinks:load',function(){
       $(".bg_overlay").fadeOut(500);
       $(".box_modal_window").fadeOut(100);
     });
+    //ポップアップの閉じる動作（いいえボタン）
+    $(".modal-close").on("click", function(e){
+      e.preventDefault();
+      $(".bg_overlay").fadeOut(500);
+      $(".box_modal_window").fadeOut(100);
+    });
     //ポップアップの閉じる動作（バツボタン以外）
     $(".bg_overlay").on('click', function(e) {
       if (!$(e.target).closest('.box_modal_window').length) {

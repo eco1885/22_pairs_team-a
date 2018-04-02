@@ -36,16 +36,17 @@
                   ユーザーからいいね！をもらいやすい！
                 %p ※参加したことは異性にしか表示されません。
               .div
+                / if文での切り分けが不完全
+                / - if @community.members.rejects {|item| item ==current_user
+                / - if @community.members.present?
 
-                / if文で切り分け？
-                - if @community.members.present?
-                  %a.button_entry.button_a.button_pink_a#unsubscribe
-                    このコミュニティを退会する
-                - else
-                  %a.button_entry.button_a.button_blue_a#entry
-                    このコミュニティに参加する
+                %a.button_entry.button_a.button_pink_a#unsubscribe
+                  このコミュニティを退会する
+                / - else
+                %a.button_entry.button_a.button_blue_a#entry
+                  このコミュニティに参加する
 
-      - if @community.members.present?
+      - if @users.present?
         /異性の参加メンバーがいる場合に表示
         .data-community-view-users
           .box_community_member_header.mb0
