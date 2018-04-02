@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 20180402014124) do
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  end
+
+  create_table "heights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "height",     null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -149,9 +153,11 @@ ActiveRecord::Schema.define(version: 20180402014124) do
     t.integer  "body_id"
     t.integer  "holiday_id"
     t.integer  "living_with_id"
+    t.integer  "height_id"
     t.index ["alcohol_id"], name: "index_users_on_alcohol_id", using: :btree
     t.index ["body_id"], name: "index_users_on_body_id", using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["height_id"], name: "index_users_on_height_id", using: :btree
     t.index ["holiday_id"], name: "index_users_on_holiday_id", using: :btree
     t.index ["living_with_id"], name: "index_users_on_living_with_id", using: :btree
     t.index ["occupancy_id"], name: "index_users_on_occupancy_id", using: :btree
@@ -169,6 +175,7 @@ ActiveRecord::Schema.define(version: 20180402014124) do
   add_foreign_key "user_images", "users"
   add_foreign_key "users", "alcohols"
   add_foreign_key "users", "bodies"
+  add_foreign_key "users", "heights"
   add_foreign_key "users", "holidays"
   add_foreign_key "users", "living_withs"
   add_foreign_key "users", "occupancies"
