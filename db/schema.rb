@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20180402014124) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
+
   create_table "alcohols", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "frequency",  null: false
     t.datetime "created_at", null: false
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 20180402014124) do
   end
 
   create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "heights", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,13 +84,13 @@ ActiveRecord::Schema.define(version: 20180402014124) do
     t.index ["group_id"], name: "index_match_users_on_group_id", using: :btree
   end
 
-  create_table "matchusers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "group_id"
-    t.integer  "before_user_id"
-    t.integer  "after_user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["group_id"], name: "index_matchusers_on_group_id", using: :btree
+  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",      null: false
+    t.integer  "community_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_members_on_community_id", using: :btree
+    t.index ["user_id"], name: "index_members_on_user_id", using: :btree
   end
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -100,14 +102,6 @@ ActiveRecord::Schema.define(version: 20180402014124) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
-
-  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",      null: false
-    t.integer  "community_id", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["community_id"], name: "index_members_on_community_id", using: :btree
-    t.index ["user_id"], name: "index_members_on_user_id", using: :btree
   end
 
   create_table "occupancies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -193,12 +187,10 @@ ActiveRecord::Schema.define(version: 20180402014124) do
 
   add_foreign_key "foots", "users"
   add_foreign_key "match_users", "groups"
-  add_foreign_key "matchusers", "groups"
-  add_foreign_key "messages", "groups"
-  add_foreign_key "messages", "users"
-  add_foreign_key "user_images", "users"
   add_foreign_key "members", "communities"
   add_foreign_key "members", "users"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
   add_foreign_key "user_images", "users"
   add_foreign_key "users", "ages"
   add_foreign_key "users", "alcohols"

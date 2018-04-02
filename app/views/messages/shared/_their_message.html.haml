@@ -1,7 +1,10 @@
 %p.hr_date 3/5(月)
 .their_message
   =link_to "" do
-    =image_tag "https://lh3.googleusercontent.com/aID1PPSk4P-TlWFzYkJSB4_Dwdv3A3c5U0iZrEy6TXnyeJ4akneb7EVnuGrTIL6845cE7eFIiBUF53Yq2c6OIw8P2sv4hbZPC6_vNkZu7djY2O_OvPlmJFNwkn8kVBHzi1TaK5QItRieHFE-zT6cirS-G_sat3g632zGHQ4U20M1TUBv-qnBIFzefZVVgOhEgo_PLQO4_k4FCDukhdHZd5rIuAm65mPWqlWyzsjXXTvbovfT3mF9go9DeueTBj5SQahtC7Hy6o3HEyxm3i-10so_-xvK6N2CZE-v-bP5PPtTTcLQAHq-R5Z8NoeotpIZEOvArb8Xt2PRLPEtefK03iCJZBhJSmLopgtOocgsBJC-vVuz7WTI0qIG1DoLgFjwTvsHC0WfeSkLUeInYAQpFPW7l1WdK4LXJzrNdHqQ61-SFTuMiSLUYCczccuq_J0Br0dV9oihpXCpMHaprDuuf15QpD6JP1TdM8rLGdXgLXQWnhIDWvk0l_G7fhitky3CxadDsg30Ta7ApZoXVb5SSWP1VAUnmdT-bbAdPQbFsoWquM3Wem3J73843hyM5BK2qhH7NG3EgdBzvUu5DwvJWBOyROGSJpmrSqHYwpqGDlni4eGfwt_vPGz63o_K7bM2GbsqWL34JwsIslhtdVFDWcfLaG5elN7b=w204-h247-no", class: "their_photo image-circle"
+    - if UserImage.find_by(user_id: message.user_id, status:1).present?
+      = image_tag "#{UserImage.find_by(user_id: message.user_id, status:1).content}", class: "their_photo image-circle"
+    - else
+      = image_tag "https://lh3.googleusercontent.com/jmxL41Xoh0hwYidEE0Mt_mO6hKBrPYVwQpNOFSDHHaFYY30WxFuqehwH6e1AGG8LNA1cnmO-Xu1r7IAKxEkxMwzAg6yiJSfWHpV16volf3DK78EXqEEs_Nc2zQJBEU0b86PRkcq_7DW8mLbaKNgj1QGVsME8Pqu-qOlpWJ3o0TZIlshWLaA2HypQgZRP1ETY8XGUr01jB7iMoasAP1xUzJyxUFl5i-miinWCzu5MgkmZuUS6KCyfy_Fdozn5xvI3J_sGRA9yJ_yg3NcM-b4mf6LOuZ_89eW7RbxVOalsUQ5Z6iMMZWagh3uNh3pW0CrldkOKUB1_3AbBVxTJZOcGolBcGit1TWxmDa6XUgzjSSipZURmQ7XkdjkYOIW9NSOJuQNkDMPskpOfnC-jELZWwfqrc1BxZB4qSXQyVQV-qeZ2L8_D6Pq0VvRCf77QkiX7S2f74bQ-BHEjCaaNX_3xhx0nk1Ihjfr09JuuxILeXsgSa--RQTupf0CHicd8SkiHQbsvw8IwvC9CEySbZLBjmsCUqXMc3jOGxbpKNy6x-ygrQ46ELi-3ml6dNCfNOVBmJdOTsZzPKpZB5W_M6AF2PyamLxfCfG2wj4KHEO1rDSHGkDZrc16-lzvzK4YNmSOwK5Ynp-BIC0JoTZ--TvZsSiFbqd_VBfA=s98-no", class: "their_photo image-circle"
   .box_message_info
     %p.message_user_name
       = message.user.nickname
