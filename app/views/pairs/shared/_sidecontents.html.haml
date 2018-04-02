@@ -3,7 +3,7 @@
     .my_profile_summary
 
       %p.profile_photo
-        = link_to "" do
+        = link_to user_path(current_user) do
           - if @sideUser.UserImages.find_by(status: 1).present?
             = image_tag "#{@sideUser.UserImages.find_by(status: 1).content}", width: "60", height: "60"
           - else
@@ -13,7 +13,7 @@
         = link_to "#{current_user.nickname} 東京",user_path(current_user)
 
       %p.profile_status.is_free_member
-        = link_to "ここに年齢","/membership/status"
+        = link_to "ここに年齢",membership_status_path
 
     .my_profile_input_rate
       %p.input_rate_label
@@ -42,7 +42,7 @@
 
 
     .box_my_private_mode
-      =link_to "" do
+      =link_to membership_aboutprivate_path do
         .box_pm
           .box_pm_state
             .pm_state_image
@@ -84,19 +84,19 @@
         %p.gnavi_title 年齢確認
         %ul
           %li.gnavi_item
-            =link_to "年齢確認","",class: "sidemenu_link"
+            =link_to "年齢確認",membership_aboutageproof_path ,class: "sidemenu_link"
 
       .box_gnavis04
         %p.gnavi_title 有料サービス
         %ul
-          %li.gnavi_item.ng-hide
-            =link_to "有料会員とは？","",class: "sidemenu_link"
-          %li.gnavi_item.ng-hide
-            =link_to "プレミアムオプション","",class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "レディースオプション","",class: "sidemenu_link"
+            =link_to "有料会員とは？",membership_aboutpaid_path ,class: "sidemenu_link"
           %li.gnavi_item
-            =link_to "Pairsポイント","/membership/aboutpoint",class: "sidemenu_link"
+            =link_to "プレミアムオプション",membership_aboutpremium_path ,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "レディースオプション",membership_aboutladys_path ,class: "sidemenu_link"
+          %li.gnavi_item
+            =link_to "Pairsポイント",membership_aboutallpoint_path ,class: "sidemenu_link"
 
       .box_gnavis04
         .gnavi_title 足あと
@@ -116,11 +116,11 @@
           %li.gnavi_item
             =link_to "オフラインモード設定","/privacysetting#box_offline",class: "sidemenu_link"
 
-      .box_gnavis04
-        %p.gnavi_title 困ったときは
-        %ul#sidemenu_settings
-          %li.gnavi_item
-            =link_to "弁護士相談費用サポート","",class: "sidemenu_link"
+      / .box_gnavis04
+      /   %p.gnavi_title 困ったときは
+      /   %ul#sidemenu_settings
+      /     %li.gnavi_item
+      /       =link_to "弁護士相談費用サポート","",class: "sidemenu_link"
     %nav.box_other_navi
       %ul
         %li.other_navi_item.other_navi_item01

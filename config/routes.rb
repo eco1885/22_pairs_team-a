@@ -38,6 +38,12 @@ Rails.application.routes.draw do
   get "membership/aboutallpoint" => "pairs#about_all_point"
   get "membership/pointlog" => "pairs#point_log"
   get "membership/status" => "pairs#status"
+  get "membership/aboutladys" => "pairs#about_ladys"
+  get "membership/aboutpremium" => "pairs#about_premium"
+  get "membership/aboutpaid" => "pairs#about_paid"
+  get "membership/aboutprivate" => "pairs#about_private"
+  get "membership/aboutageproof" => "pairs#about_age_proof"
+  get "pairsstore" => "pairs#pairs_store"
   #サービス内での使用ビューへのrouting
   get "parts" => "pairs#parts"
   #コミュニティ関連のrouting

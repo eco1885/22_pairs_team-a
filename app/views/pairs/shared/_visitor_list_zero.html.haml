@@ -24,7 +24,7 @@
                 プロフィールを入力すると、
                 %br
                 お相手の検索結果に引っ掛かりやすくなります。
-              %a{href: "/myprofile", class:"button_d button_pink_b"}
+              %a{href: "/users/#{current_user.id}", class:"button_d button_pink_b"}
                 プロフィールを入力する
             %li.guide_item
               %p.guide_title.guide02
@@ -48,7 +48,7 @@
                 サブ写真の枚数が多いほど、
                 %br
                 お相手がプロフィールを見るきっかけになります。
-              %a{href: "/myprofile", class:"button_d button_pink_b"}
+              %a{href: "/users/#{current_user.id}", class:"button_d button_pink_b"}
                 サブ写真を設定する
           .visitor_guide_premium
             .guide_premium_inner
@@ -56,11 +56,11 @@
                 プレミアムオプションで表示されやすく！
               %p.guide_premium_text
                 プレミアムオプションに申し込むと、検索で上位に表示されやすくなります。
-            %a{href: "/membership/about_premium", class: "button_more button_d button_pink_b w20p"}
+            %a{href: "/membership/aboutpremium", class: "button_more button_d button_pink_b w20p"}
               詳しく見る
 /3つ上の階層（『ui-view_class styl』と同じ階層）
 .main_footer#main_footer
   .pc-web-footer-banner
     .mb30.ml15.pc_web_footer
-      %a{href:"/membership/about_paid"}
+      %a{href:"/membership/aboutpaid"}
         %img{src:"https://lh3.googleusercontent.com/NjokzW4Tq9nctbZH8suBvla0eHM46jtdRsoSABHhCZEKMEnhPAVPADuUgAeWEPXMJtvRH-FwvrlxwILE90ubz3N01gMjSzWHGiD87GxcfcIsJCjnLdTBwpydQzcwR54qrB6JlCPf2cCFMidzN_kZJ242AgAKXAAfv2mYx1UmE6Iugyg51fpovKfUk7a6WU2VKB8yLLfWQ_Np0E5plCt0wNU_RLTuOYky1Z-9Mfc4GfKeQaTo2boWbTrFrYsJlDdOisNwCL6t5-3F3eifnxQEMwJsJs7rGjxMB_Xs1_ZJDnRiEqx8NzmOUsCGEhKutLg__o3Q7OsGtAK8fLWydJejC1gWEIo3wq0Poz6iHHUPD8pD8LsccSf9mjl5QpycC-e7vyM65ZAC9DmVqXeTcYS6hIo9SCx8LckfmVrj61Et8vu4GPZb4qF924juxy-YOFD_zAjNfc-cT42TB3MKKoK8SIJqC_4cBfHbaccK1q-qua9OxSFKQiYvzUde-EJYjkVFXNxotrbnjtXJmnW8InZ_mC78K5Ujev34dB04W0qCJQ3xGBXV2Rt-0gh3RTAnvIhCxUfhzKDDL0BXvyNB0_y6cb6sRcvtzBoIYAqqyUj2PkXIxirqNSnSk1Y-eKd22qZIndtKJS9iFVF7cSekM2e-VUtP_P-Hau7q=w720-h70-no", height:"70", width:"720"}
