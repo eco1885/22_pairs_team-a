@@ -49,9 +49,6 @@ class PairsController < ApplicationController
   def block
   end
 
-  def parts
-  end
-
   def create_foot
     save_foot(params[:id])
   end

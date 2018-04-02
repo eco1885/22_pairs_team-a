@@ -188,6 +188,9 @@
 
 
 //レディースオプション
+.button_ladys_option {
+  @include button_ladys_option;
+}
 //プレミアムオプション
 .button_premium {
   @include button_premium;

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #その他
   root 'pairs#index'
   get 'messages' => 'pairs#messages_index'
+  get 'violation' => 'pairs#violation'
   #いいね関連のrouting
   get 'like/from_partner' => 'pairs#from_partner'
   get 'like/from_me'  => 'pairs#from_me'
@@ -44,8 +45,6 @@ Rails.application.routes.draw do
   get "membership/aboutprivate" => "pairs#about_private"
   get "membership/aboutageproof" => "pairs#about_age_proof"
   get "pairsstore" => "pairs#pairs_store"
-  #サービス内での使用ビューへのrouting
-  get "parts" => "pairs#parts"
   #コミュニティ関連のrouting
   get "community/create" => "communities#new"
   get "community/complete" => "communities#complete"
@@ -53,6 +52,10 @@ Rails.application.routes.draw do
     collection do
       get  "search"
       post "confirm"
+    end
+    member do
+      get "join"
+      get "leave"
     end
   end
 end
